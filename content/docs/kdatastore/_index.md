@@ -94,5 +94,3 @@ TODO
 ## Encryption
 
 ## Compose extension
-
-
