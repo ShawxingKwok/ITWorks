@@ -1,0 +1,59 @@
+baseURL = "https://apollokwok.github.io/HomeSite/"
+languageCode = "en-us"
+title = "HomeSite"
+theme = ["hugo-video", "hugo-book"]
+
+disableFingerprinting = true
+pluralizeListTitles = false
+
+# Geekdoc required configuration
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+disablePathToLower = true
+
+# Required if you want to render robots.txt template
+enableRobotsTXT = true
+
+# Needed for mermaid shortcodes
+[markup]
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = true
+
+# Needed for mermaid shortcode
+[markup.tableOfContents]
+startLevel = 1
+endLevel = 9
+
+[taxonomies]
+tag = "tags"
+
+[menu]
+#[[menu.before]]
+#name = "Kt util"
+#url = "https://shawxingkwok.github.io/HomeSite/docs/ktutil/-kt-util/pers.shawxingkwok.ktutil/"
+#weight = 1
+
+#[[menu.before]]
+#name = "Andorid util"
+#url = "https://shawxingkwok.github.io/HomeSite/docs/androidutil/core/pers.shawxingkwok.androidutil/-k-log"
+#weight = 2
+#
+#[[menu.before]]
+#name = "Andorid util-view"
+#url = "https://shawxingkwok.github.io/HomeSite/docs/androidutilview/view/pers.shawxingkwok.androidutil.view/"
+#weight = 3
+#
+[[menu.after]]
+name = "Tracer"
+url = "https://shawxingkwok.github.io/TracerTutorial/"
+weight = 9
+
+[[menu.after]]
+name = "Github"
+url = "https://github.com/ShawxingKwok/"
+weight = 10
+
+[params]
+BookRepo = 'https://github.com/ShawxingKwok/HomeSite'
+BookEditPath = 'blob/main'

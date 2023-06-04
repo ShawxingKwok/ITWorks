@@ -1,0 +1,49 @@
+---
+title: Android Util-view
+weight: 3
+draft: false
+---
+
+## Effect
+{{< video src="effect" >}} 
+
+## Setup
+Add this part directly, rather than insert messily.
+{{< tabs >}}
+{{< tab "Groovy" >}}
+
+```groovy
+//region shawxingkwok: android-util-view
+android.lintOptions.disable 'NonConstantResourceId'
+
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach{
+    kotlinOptions.freeCompilerArgs += "-Xcontext-receivers"
+}
+
+dependencies {
+    implementation 'io.github.shawxingkwok:kt-util:1.0.0'
+    implementation 'io.github.shawxingkwok:android-util-view:1.0.0'
+}
+//endregion
+```
+{{< /tab >}}
+{{< tab "Kotlin" >}}
+
+```kotlin
+//region shawxingkwok: android-util-view
+android.lintOptions.disable("NonConstantResourceId")
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+    kotlinOptions.freeCompilerArgs += "-Xcontext-receivers"
+}
+
+dependencies {
+    implementation("io.github.shawxingkwok:kt-util:1.0.0")
+    implementation("io.github.shawxingkwok:android-util-view:1.0.0")
+}
+//endregion
+```
+{{< /tab >}}
+{{< /tabs >}}
+
+## [Document](html/view/pers.shawxingkwok.androidutil.view/)

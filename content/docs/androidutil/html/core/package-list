@@ -1,0 +1,19 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:pers.shawxingkwok.androidutil////PointingToDeclaration/core/pers.shawxingkwok.androidutil/index.html
+$dokka.location:pers.shawxingkwok.androidutil/KLog///PointingToDeclaration/core/pers.shawxingkwok.androidutil/-k-log/index.html
+$dokka.location:pers.shawxingkwok.androidutil/KLog/KLog/#kotlin.String#kotlin.Boolean/PointingToDeclaration/core/pers.shawxingkwok.androidutil/-k-log/-k-log.html
+$dokka.location:pers.shawxingkwok.androidutil/KLog/e/#kotlin.Array[kotlin.Any?]#kotlin.String#kotlin.Throwable/PointingToDeclaration/core/pers.shawxingkwok.androidutil/-k-log/e.html
+$dokka.location:pers.shawxingkwok.androidutil/KLog/e/#kotlin.Array[kotlin.Any?]#kotlin.String/PointingToDeclaration/core/pers.shawxingkwok.androidutil/-k-log/e.html
+$dokka.location:pers.shawxingkwok.androidutil/KLog/e/#kotlin.Array[kotlin.Any?]#kotlin.Throwable/PointingToDeclaration/core/pers.shawxingkwok.androidutil/-k-log/e.html
+$dokka.location:pers.shawxingkwok.androidutil/KLog/e/#kotlin.Array[kotlin.Any?]/PointingToDeclaration/core/pers.shawxingkwok.androidutil/-k-log/e.html
+$dokka.location:pers.shawxingkwok.androidutil/KLog/i/#kotlin.Array[kotlin.Any?]#kotlin.String/PointingToDeclaration/core/pers.shawxingkwok.androidutil/-k-log/i.html
+$dokka.location:pers.shawxingkwok.androidutil/KLog/i/#kotlin.Array[kotlin.Any?]/PointingToDeclaration/core/pers.shawxingkwok.androidutil/-k-log/i.html
+$dokka.location:pers.shawxingkwok.androidutil/KLog/invoke/#kotlin.Array[kotlin.Any?]#kotlin.String/PointingToDeclaration/core/pers.shawxingkwok.androidutil/-k-log/invoke.html
+$dokka.location:pers.shawxingkwok.androidutil/KLog/invoke/#kotlin.Array[kotlin.Any?]/PointingToDeclaration/core/pers.shawxingkwok.androidutil/-k-log/invoke.html
+$dokka.location:pers.shawxingkwok.androidutil/KLog/v/#kotlin.Array[kotlin.Any?]#kotlin.String/PointingToDeclaration/core/pers.shawxingkwok.androidutil/-k-log/v.html
+$dokka.location:pers.shawxingkwok.androidutil/KLog/v/#kotlin.Array[kotlin.Any?]/PointingToDeclaration/core/pers.shawxingkwok.androidutil/-k-log/v.html
+$dokka.location:pers.shawxingkwok.androidutil/KLog/w/#kotlin.Array[kotlin.Any?]#kotlin.String/PointingToDeclaration/core/pers.shawxingkwok.androidutil/-k-log/w.html
+$dokka.location:pers.shawxingkwok.androidutil/KLog/w/#kotlin.Array[kotlin.Any?]/PointingToDeclaration/core/pers.shawxingkwok.androidutil/-k-log/w.html
+pers.shawxingkwok.androidutil
+
