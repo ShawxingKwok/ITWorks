@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>KListAdapter</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+            <a href="../../../index.html">
+                    <span>view</span>
+            </a>
+    </div>
+    <div>
+    </div>
+    <div class="pull-right d-flex">
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":view:dokkaHtml/release">androidJvm</button>
+        </div>
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="view::pers.shawxingkwok.androidutil.view/KListAdapter///PointingToDeclaration//-980548905">
+  <div class="breadcrumbs"><a href="../../../index.html">view</a><span class="delimiter">/</span><a href="../index.html">pers.shawxingkwok.androidutil.view</a><span class="delimiter">/</span><span class="current">KListAdapter</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>KList</span><wbr></wbr><span><span>Adapter</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">class </span><a href="index.html">KListAdapter</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="index.html">VB</a><span class="token operator"> : </span><span data-unresolved-link="androidx.viewbinding/ViewBinding///PointingToDeclaration/">ViewBinding</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">bindingKClass<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html">KClass</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">VB</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">scope<span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/CoroutineScope///PointingToDeclaration/">CoroutineScope</span><span class="token punctuation">, </span></span><span class="parameter ">initialItems<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span> : <a href="https://developer.android.com/reference/kotlin/androidx/recyclerview/widget/RecyclerView.Adapter.html">RecyclerView.Adapter</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="pers.shawxingkwok.androidutil.view/KListAdapter.ViewBindingHolder///PointingToDeclaration/">KListAdapter.ViewBindingHolder</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">VB</a><span class="token operator">&gt;</span><span class="token operator">&gt; </span></div><p class="paragraph">A simplified <a href="https://developer.android.com/reference/kotlin/androidx/recyclerview/widget/ListAdapter.html">ListAdapter</a> with easier usage and better performance. Also supports multiple kinds of <a href="https://developer.android.com/reference/kotlin/androidx/recyclerview/widget/RecyclerView.ViewHolder.html">ViewHolder</a>s in <a href="-multiple/index.html">KListAdapter.Multiple</a>.</p><p class="paragraph">Usage example:</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">class ItemAdapter(<br>    scope: CoroutineScope,<br>    initialItems: List&lt;User&gt;,<br>)<br>    : KListAdapter&lt;User, ItemTealBinding&gt;(<br>        ItemTealBinding::class,<br>        scope,<br>        initialItems<br>    )<br>{<br>    override fun onViewHolderCreated(<br>        holder: ViewBindingHolder&lt;ItemTealBinding&gt;<br>    ) {<br>        ...<br>    }<br><br>    override fun onBindViewHolder(<br>        holder: ViewBindingHolder&lt;ItemTealBinding&gt;,<br>        position: Int<br>    ) {<br>        holder.binding.tv.text = currentList[position].toString()<br>    }<br><br>    override fun areItemsTheSame(<br>        oldItem: User,<br>        newItem: User<br>    ): Boolean {<br>        return newItem == oldItem<br>    }<br>}</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><h4 class="">Inheritors</h4><div class="table"><div class="table-row" data-filterable-current=":view:dokkaHtml/release" data-filterable-set=":view:dokkaHtml/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="-multiple/index.html">Multiple</a></div></span></div><div></div></div></div></div></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,FUNCTION,PROPERTY">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="">Constructors</h2>
+        <div class="table"><a data-name="360592496%2FConstructors%2F-980548905" anchor-label="KListAdapter" id="360592496%2FConstructors%2F-980548905" data-filterable-set=":view:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="CONSTRUCTOR" data-filterable-current=":view:dokkaHtml/release" data-filterable-set=":view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-k-list-adapter.html"><span>KList</span><wbr></wbr><span><span>Adapter</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="360592496%2FConstructors%2F-980548905"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">bindingKClass<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html">KClass</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">VB</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">scope<span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/CoroutineScope///PointingToDeclaration/">CoroutineScope</span><span class="token punctuation">, </span></span><span class="parameter ">initialItems<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="-645114931%2FClasslikes%2F-980548905" anchor-label="Multiple" id="-645114931%2FClasslikes%2F-980548905" data-filterable-set=":view:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":view:dokkaHtml/release" data-filterable-set=":view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-multiple/index.html"><span><span>Multiple</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-645114931%2FClasslikes%2F-980548905"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">class </span><a href="-multiple/index.html">Multiple</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-multiple/index.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">scope<span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/CoroutineScope///PointingToDeclaration/">CoroutineScope</span><span class="token punctuation">, </span></span><span class="parameter ">initialItems<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-multiple/index.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span> : <a href="index.html">KListAdapter</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-multiple/index.html">T</a><span class="token punctuation">, </span><span class="token keyword"></span><span data-unresolved-link="androidx.viewbinding/ViewBinding///PointingToDeclaration/">ViewBinding</span><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Extends from <a href="index.html">KListAdapter</a> and supports multiple kinds of <a href="https://developer.android.com/reference/kotlin/androidx/recyclerview/widget/RecyclerView.ViewHolder.html">ViewHolder</a>s.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="1603070142%2FFunctions%2F-980548905" anchor-label="areContentsTheSame" id="1603070142%2FFunctions%2F-980548905" data-filterable-set=":view:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":view:dokkaHtml/release" data-filterable-set=":view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="are-contents-the-same.html"><span>are</span><wbr></wbr><span>Contents</span><wbr></wbr><span>The</span><wbr></wbr><span><span>Same</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1603070142%2FFunctions%2F-980548905"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="are-contents-the-same.html"><span class="token function">areContentsTheSame</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">oldItem<span class="token operator">: </span><a href="index.html">T</a><span class="token punctuation">, </span></span><span class="parameter ">newItem<span class="token operator">: </span><a href="index.html">T</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-905704458%2FFunctions%2F-980548905" anchor-label="areItemsTheSame" id="-905704458%2FFunctions%2F-980548905" data-filterable-set=":view:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":view:dokkaHtml/release" data-filterable-set=":view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="are-items-the-same.html"><span>are</span><wbr></wbr><span>Items</span><wbr></wbr><span>The</span><wbr></wbr><span><span>Same</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-905704458%2FFunctions%2F-980548905"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="are-items-the-same.html"><span class="token function">areItemsTheSame</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">oldItem<span class="token operator">: </span><a href="index.html">T</a><span class="token punctuation">, </span></span><span class="parameter ">newItem<span class="token operator">: </span><a href="index.html">T</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1400812035%2FFunctions%2F-980548905" anchor-label="getChangePayload" id="-1400812035%2FFunctions%2F-980548905" data-filterable-set=":view:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":view:dokkaHtml/release" data-filterable-set=":view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-change-payload.html"><span>get</span><wbr></wbr><span>Change</span><wbr></wbr><span><span>Payload</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1400812035%2FFunctions%2F-980548905"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-change-payload.html"><span class="token function">getChangePayload</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">oldItem<span class="token operator">: </span><a href="index.html">T</a><span class="token punctuation">, </span></span><span class="parameter ">newItem<span class="token operator">: </span><a href="index.html">T</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1037164141%2FFunctions%2F-980548905" anchor-label="onCurrentListChanged" id="-1037164141%2FFunctions%2F-980548905" data-filterable-set=":view:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":view:dokkaHtml/release" data-filterable-set=":view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="on-current-list-changed.html"><span>on</span><wbr></wbr><span>Current</span><wbr></wbr><span>List</span><wbr></wbr><span><span>Changed</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1037164141%2FFunctions%2F-980548905"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="on-current-list-changed.html"><span class="token function">onCurrentListChanged</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">previousList<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">currentList<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-23776080%2FFunctions%2F-980548905" anchor-label="onViewHolderCreated" id="-23776080%2FFunctions%2F-980548905" data-filterable-set=":view:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":view:dokkaHtml/release" data-filterable-set=":view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="on-view-holder-created.html"><span>on</span><wbr></wbr><span>View</span><wbr></wbr><span>Holder</span><wbr></wbr><span><span>Created</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-23776080%2FFunctions%2F-980548905"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="on-view-holder-created.html"><span class="token function">onViewHolderCreated</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">holder<span class="token operator">: </span><span data-unresolved-link="pers.shawxingkwok.androidutil.view/KListAdapter.ViewBindingHolder///PointingToDeclaration/">KListAdapter.ViewBindingHolder</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">VB</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1874899142%2FFunctions%2F-980548905" anchor-label="submitList" id="-1874899142%2FFunctions%2F-980548905" data-filterable-set=":view:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":view:dokkaHtml/release" data-filterable-set=":view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="submit-list.html"><span>submit</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1874899142%2FFunctions%2F-980548905"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="submit-list.html"><span class="token function">submitList</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">newList<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">actionOnDone<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="-1884622821%2FProperties%2F-980548905" anchor-label="currentList" id="-1884622821%2FProperties%2F-980548905" data-filterable-set=":view:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":view:dokkaHtml/release" data-filterable-set=":view:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="current-list.html"><span>current</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1884622821%2FProperties%2F-980548905"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":view:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="current-list.html">currentList</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>
