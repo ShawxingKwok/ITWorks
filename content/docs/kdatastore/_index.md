@@ -16,6 +16,9 @@ An extended data store with little configuration, easy encryption and extensive 
 {{< /tab >}}
 {{< /tabs >}}
 
+## Actual performance contrast
+TODO
+
 ## Setup
 Get a [sample](demo.zip) or configure as below.
 
