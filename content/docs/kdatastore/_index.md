@@ -9,7 +9,7 @@ An extended data store with little configuration, easy encryption and extensive 
 ## Basic feature preview
 {{< tabs "Preview">}}
 {{< tab "view" >}}
-{{< video src="preview" >}}
+
 {{< /tab >}}
 {{< tab "compose" >}}
 TODO
@@ -100,30 +100,36 @@ dependencies {
 {{< /tabs >}}
 
 ## Core Usage
-### Configure with extensive supported types
-<image src="functions.png" width=550></image>
+### Configure 
+<image src="config.png" width=550></image>
 
-### Collect or update `KDataStore.Flow` 
+### Update  
+```kotlin
+// async
+Settings.isDarkMode.toss(true)
+Settings.isDarkMode.toss{ !it }
+
+// suspend 
+Settings.isDarkMode.emit(true)
+Settings.isDarkMode.emit{ !it }
+```
 That type `Flow` is declared inside `class KDataStore` and extends from the official `Flow`, being both
 collectable and mutable.
 
-<image src="flow.png" width = 600></image>
+<image src="flow.png"></image>
 
----
+### Collect
+I suggest my flow collection extension. 
 
-<image src="bool.png" ></image>
+{{< tabs "collect" >}}
+{{< tab "view" >}}
 
----
+{{< /tab >}}
 
-```kotlin
-// update asyncly somewhere else
-Settings.bool.toss(true)
-Settings.bool.toss{ !it }
+{{< tab "compose" >}}
+{{< /tab >}}
 
-// or suspend in a suspended environment
-Settings.bool.emit(true)
-Settings.bool.emit{ !it }
-```
+{{< /tabs >}}
 
 ## Kotlin serialization
 ### Usage
@@ -170,8 +176,6 @@ dependencies {
 ```
 {{< /tab >}}
 {{< /tabs >}}
-
-## Extended collection
 
 ## Migration
 
