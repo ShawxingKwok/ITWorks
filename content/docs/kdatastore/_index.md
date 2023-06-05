@@ -142,7 +142,7 @@ I suggest my flow state extension.
 
 ---
 
-usage
+use
 <image src="compose collection.png"></image>
 {{< /tab >}}
 
@@ -199,8 +199,10 @@ dependencies {
 ## Side action 
 
 ## Encryption
-    
-    This part references (TODO)
+
+{{< hint info >}}
+This encryption part references https://github.com/MFlisar/MaterialPreferences.
+{{< /hint >}}
 ## Details
 ### Custom scope
 TODO(handlerScope, ioScope)
