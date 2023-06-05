@@ -9,9 +9,6 @@ $dokka.location:pers.shawxingkwok.ktutil//receivedLazy/#kotlin.LazyThreadSafetyM
 $dokka.location:pers.shawxingkwok.ktutil//roundToString/kotlin.Double#kotlin.Int/PointingToDeclaration/-kt-util/pers.shawxingkwok.ktutil/round-to-string.html
 $dokka.location:pers.shawxingkwok.ktutil//roundToString/kotlin.Float#kotlin.Int/PointingToDeclaration/-kt-util/pers.shawxingkwok.ktutil/round-to-string.html
 $dokka.location:pers.shawxingkwok.ktutil//swap/kotlin.collections.MutableList[TypeParam(bounds=[kotlin.Any?])]#kotlin.Int#kotlin.Int/PointingToDeclaration/-kt-util/pers.shawxingkwok.ktutil/swap.html
-$dokka.location:pers.shawxingkwok.ktutil//times/kotlin.CharSequence#kotlin.Int/PointingToDeclaration/-kt-util/pers.shawxingkwok.ktutil/times.html
-$dokka.location:pers.shawxingkwok.ktutil//times/kotlin.Int#kotlin.CharSequence/PointingToDeclaration/-kt-util/pers.shawxingkwok.ktutil/times.html
-$dokka.location:pers.shawxingkwok.ktutil//times/kotlin.Int#kotlin.Function1[kotlin.Int,kotlin.Unit]/PointingToDeclaration/-kt-util/pers.shawxingkwok.ktutil/times.html
 $dokka.location:pers.shawxingkwok.ktutil//toOrder/kotlin.Int#/PointingToDeclaration/-kt-util/pers.shawxingkwok.ktutil/to-order.html
 $dokka.location:pers.shawxingkwok.ktutil//toOrder/kotlin.Long#/PointingToDeclaration/-kt-util/pers.shawxingkwok.ktutil/to-order.html
 $dokka.location:pers.shawxingkwok.ktutil//toOrder/kotlin.Short#/PointingToDeclaration/-kt-util/pers.shawxingkwok.ktutil/to-order.html

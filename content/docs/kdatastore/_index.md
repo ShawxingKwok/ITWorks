@@ -9,10 +9,10 @@ An extended data store with little configuration, easy encryption and extensive 
 ## Basic feature preview
 {{< tabs "Preview">}}
 {{< tab "view" >}}
-
+{{< video src="view preview.mp4" >}}
 {{< /tab >}}
 {{< tab "compose" >}}
-TODO
+{{< video src="compose preview.mp4" >}}
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -119,21 +119,38 @@ collectable and mutable.
 <image src="flow.png"></image>
 
 ### Collect
-I suggest my flow collection extension. 
-
 {{< tabs "collect" >}}
 {{< tab "view" >}}
+I suggest my `collectOnResume` if in `Fragment`.
+```kotlin
+class MainFragment : Fragment(){
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
+        Settings.isDarkMode.collectOnResume{
+            switch.isChecked = it
+        }
+    }
+}
+```
 {{< /tab >}}
 
 {{< tab "compose" >}}
+I suggest my flow state extension.
+
+<image src="_compose collection.png"></image>
+
+---
+
+usage
+<image src="compose collection.png"></image>
 {{< /tab >}}
 
 {{< /tabs >}}
 
 ## Kotlin serialization
 ### Usage
-It's a platform-neutral data conversion, and directly savable in my `KDataStore`.
+It's an official platform-neutral data conversion, and directly savable in my `KDataStore`.
 
 ```kotlin
 import kotlinx.serialization.Serializable
@@ -182,3 +199,9 @@ dependencies {
 ## Side action 
 
 ## Encryption
+
+## Details
+### Custom scope
+TODO(handlerScope, ioScope)
+
+### Reset
