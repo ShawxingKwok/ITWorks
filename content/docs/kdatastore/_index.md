@@ -4,6 +4,8 @@ weight: 4
 draft: false
 ---
 
+[中文版本](../../中文版本)
+
 An extended data store with little configuration, easy encryption and extensive supported types.
 
 ## Basic feature preview
@@ -39,7 +41,7 @@ dependencies {
     implementation 'io.github.shawxingkwok:android-util-view:1.0.0'
     implementation 'io.github.shawxingkwok:android-kdatastore:1.0.0'
 }
-//endregion
+//endregion 
 ```
 {{< /tab >}}
 {{< tab "kotlin" >}}

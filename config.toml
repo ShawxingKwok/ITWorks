@@ -1,6 +1,6 @@
-baseURL = "https://apollokwok.github.io/HomeSite/"
+baseURL = "https://apollokwok.github.io/ITWorks/"
 languageCode = "en-us"
-title = "HomeSite"
+title = "ITWorks"
 theme = ["hugo-video", "hugo-book"]
 
 disableFingerprinting = true
@@ -31,17 +31,17 @@ tag = "tags"
 [menu]
 #[[menu.before]]
 #name = "Kt util"
-#url = "https://shawxingkwok.github.io/HomeSite/docs/ktutil/-kt-util/pers.shawxingkwok.ktutil/"
+#url = "https://shawxingkwok.github.io/ITWorks/docs/ktutil/-kt-util/pers.shawxingkwok.ktutil/"
 #weight = 1
 
 #[[menu.before]]
 #name = "Andorid util"
-#url = "https://shawxingkwok.github.io/HomeSite/docs/androidutil/core/pers.shawxingkwok.androidutil/-k-log"
+#url = "https://shawxingkwok.github.io/ITWorks/docs/androidutil/core/pers.shawxingkwok.androidutil/-k-log"
 #weight = 2
 #
 #[[menu.before]]
 #name = "Andorid util-view"
-#url = "https://shawxingkwok.github.io/HomeSite/docs/androidutilview/view/pers.shawxingkwok.androidutil.view/"
+#url = "https://shawxingkwok.github.io/ITWorks/docs/androidutilview/view/pers.shawxingkwok.androidutil.view/"
 #weight = 3
 #
 [[menu.after]]
@@ -55,5 +55,5 @@ url = "https://github.com/ShawxingKwok/"
 weight = 10
 
 [params]
-BookRepo = 'https://github.com/ShawxingKwok/HomeSite'
+BookRepo = 'https://github.com/ShawxingKwok/ITWorks'
 BookEditPath = 'blob/main'
