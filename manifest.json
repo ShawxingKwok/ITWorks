@@ -1,6 +1,6 @@
 {
-  "name": "HomeSite",
-  "short_name": "HomeSite",
+  "name": "ITWorks",
+  "short_name": "ITWorks",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
