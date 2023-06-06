@@ -174,7 +174,7 @@ object MDataStore: KDataStore(){
 {{< tab "Groovy" >}}
 ```groovy
 plugins{
-    id 'org.jetbrains.kotlin.plugin.serialization' version "$kt_version"
+    id 'kotlinx-serialization' version "$kt_version"
 }
 ```
 
@@ -187,7 +187,7 @@ dependencies {
 {{< tab "Kotlin" >}}
 ```groovy
 plugins{
-    id ("org.jetbrains.kotlin.plugin.serialization") version ("$kt_version")
+    id ("kotlinx-serialization") version ("$kt_version")
 }
 ```
 
