@@ -6,7 +6,8 @@ draft: false
 
 [中文版本](../../中文版本)
 
-An extended data store with little configuration, easy encryption and extensive supported types.
+An extended data store with little configuration, easy encryption and extensive supported types 
+(basic types, kt-serializable, java-serializable and customed).
 
 ## Basic feature preview
 {{< tabs "Preview">}}
@@ -201,15 +202,20 @@ dependencies {
 
 ## Migration
 
-## Side action 
-
 ## Encryption
+default encrypted
 
 {{< hint info >}}
 This encryption part references https://github.com/MFlisar/MaterialPreferences.
 {{< /hint >}}
-## Details
-### Custom scope
+
+## Options
+### scope
 TODO(handlerScope, ioScope)
 
+### file name
+
+## Details
 ### Reset
+
+### updateAll
