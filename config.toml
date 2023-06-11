@@ -23,7 +23,7 @@ unsafe = true
 # Needed for mermaid shortcode
 [markup.tableOfContents]
 startLevel = 1
-endLevel = 9
+endLevel = 11
 
 [taxonomies]
 tag = "tags"
@@ -50,9 +50,14 @@ url = "https://shawxingkwok.github.io/TracerTutorial/"
 weight = 9
 
 [[menu.after]]
-name = "Github"
-url = "https://github.com/ShawxingKwok/"
+name = "About me"
+url = "https://shawxingkwok.github.io/ITWorks/docs/"
 weight = 10
+
+[[menu.after]]
+name = "Github profile"
+url = "https://github.com/ShawxingKwok/"
+weight = 11
 
 [params]
 BookRepo = 'https://github.com/ShawxingKwok/ITWorks'

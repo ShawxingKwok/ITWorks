@@ -4,7 +4,7 @@ weight: 4
 draft: false
 ---
 
-[中文版本](../../中文版本)
+[中文版本](../../KDataStore中文版本)
 
 An extended data store with little configuration, easy encryption and extensive supported types 
 (basic types, kt-serializable, java-serializable and customed).
