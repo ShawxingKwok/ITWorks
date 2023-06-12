@@ -29,35 +29,26 @@ endLevel = 11
 tag = "tags"
 
 [menu]
-#[[menu.before]]
-#name = "Kt util"
-#url = "https://shawxingkwok.github.io/ITWorks/docs/ktutil/-kt-util/pers.shawxingkwok.ktutil/"
-#weight = 1
-
-#[[menu.before]]
-#name = "Andorid util"
-#url = "https://shawxingkwok.github.io/ITWorks/docs/androidutil/core/pers.shawxingkwok.androidutil/-k-log"
-#weight = 2
-#
-#[[menu.before]]
-#name = "Andorid util-view"
-#url = "https://shawxingkwok.github.io/ITWorks/docs/androidutilview/view/pers.shawxingkwok.androidutil.view/"
-#weight = 3
-#
 [[menu.after]]
 name = "Tracer"
 url = "https://shawxingkwok.github.io/TracerTutorial/"
-weight = 9
+weight = 10
+
+[[menu.after]]
+name = "-----------------"
+url = ""
+weight = 20
 
 [[menu.after]]
 name = "About me"
+pageRef = './docs/_index.md'
 url = "https://shawxingkwok.github.io/ITWorks/docs/"
-weight = 10
+weight = 30
 
 [[menu.after]]
 name = "Github profile"
 url = "https://github.com/ShawxingKwok/"
-weight = 11
+weight = 40
 
 [params]
 BookRepo = 'https://github.com/ShawxingKwok/ITWorks'

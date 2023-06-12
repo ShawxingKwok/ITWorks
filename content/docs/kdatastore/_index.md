@@ -201,6 +201,8 @@ dependencies {
 {{< /tabs >}}
 
 ## Migration
+There is a `protected context` inside `KDataStore` for you to get other stores like 
+`SharedPreferences`, `DataStore`.
 
 ## Encryption
 default encrypted
