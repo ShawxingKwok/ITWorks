@@ -30,7 +30,7 @@
 `KDataStore` 内置 `protected context` 供你获取其他存储仓库，如 `SharedPreferences`, `DataStore`.
 
 {{< hint info >}}
-这份中文版本主要为初期的宣传考虑，其他作品并不会写中文版本。
+这份中文版本主要为初期的宣传考虑，其他作品并不会写中文版本和 Java 扩展。
 {{< /hint >}}
 
 {{< hint warning >}}

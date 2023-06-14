@@ -35,8 +35,9 @@ url = "https://shawxingkwok.github.io/TracerTutorial/"
 weight = 10
 
 [[menu.after]]
-name = "-----------------"
-url = ""
+name = " "
+#name = "-----------------"
+url = "#"
 weight = 20
 
 [[menu.after]]
