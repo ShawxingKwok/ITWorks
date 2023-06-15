@@ -1,30 +1,20 @@
 # KDataStore
 
-- 多类型
-  - `Int`, `Long`, `Float`, `Double`, `Boolean`, `String`, `enum`, `Serializable`, `Kt Serializable`
-  - 其他类型(需附上与 `Serializable` 的转换)
-
 ## 不同存储方案对比
-|                          | SharedPreferences                                                     | MMKV                           | DataStore                        | KDataStore                                                        | 
-|--------------------------|-----------------------------------------------------------------------|--------------------------------|----------------------------------|-------------------------------------------------------------------|
-| 机制                       | commit 同步写入 <br/>apply 先写入内存，后异步写入磁盘， 其中的 `fsync()` 仍会有轻度堵塞 UI thread | mmap 原理，先写入系统级别的内存，然后隔一段时间写入磁盘 | 异步写入磁盘，通过 Flow 收集                | 基于 DataStore, 数据转为 MutableStateFlow。先写入应用程序级别的内存，即时异步写入磁盘，包括备份文件。 |
-| 读取耗时                     | 可忽略                                                                   | 可忽略                            | 0.04 ms，一般采取 `Flow.collect` 异步观察 | 可忽略                                                               |
-| 写入耗时                     | 0.8 ms                                                                | 0.02 ms                        | 1.6 ms                           | 可忽略                                                               |
-| 响应耗时                     | 230 ms (commit)<br/>Todo (apply)                                      | 可忽略                            | 3 ms                             | 可忽略                                                               |
-| 一般使用方式                   | 同步读取，异步写入，异步观察                                                        | 同步读取，同步写入                      | 异步观察，异步写入                        | 同步读写，异步观察                                                         |
-| 读取中遇 IOException         | 取默认值                                                                  |                                | 自行处理                             | 从备份文件中取                                                           |
-| 写入中遇 IOException         | commit 返回 false <br/> `apply` 通过事务回退，但此时已经事先写入内存，监听到的是没存进去的值          |                                | 自行处理                             | 记录，下次启动时从备份文件中更新                                                  | 
-| Corruption<br/>Exception |                                                                       | 断电或者系统崩溃后常见, 无法处理              | 不常见，自行处理                         | 不常见，通过复制备份文件数据处理                                                  |
-| 多进程共享                    | 支持                                                                    | 支持                             | 处于 alpha 阶段                      | DataStore 正式支持之后                                                  |
-| 类型支持                     | 常见基本类型                                                                | 常见基本类型, Parcelable             | 常见基本类型, 自定义(繁琐)                  | 广泛                                                                |
-| 加密                       | 自行封装                                                                  | 支持                             | 自行封装                             | 支持                                                                |
-| 配置                       | 繁琐                                                                    | 繁琐                             | 繁琐                               | 简单                                                                |
-| 是否支持 Java                | 是                                                                     | 是                              | 是                                | <font color="red">否</font>                                        | 
-| 使用量                      | 极多                                                                    | 多                              | 多                                | <font color="red">少</font>                                        |
+30 份 String 数据 
 
-{{< hint info >}}
-虽然 KDataStore 比较新，但基于 `DataStore` 且代码较少, 仅 TODO 行， 即时有 Bug 也比较少。
-{{< /hint >}}
+TODO(给出 KDataStore 的启动时间)
+|                          | SharedPreferences        | MMKV                                   | DataStore                      | KDataStore                   | 
+|--------------------------|--------------------------|----------------------------------------|--------------------------------|------------------------------|
+| 机制                       | commit 同步写入磁盘，后写入内存, <font color="red">但堵塞主线程 1.5 ms</font> <br/><br/> 一般通过 apply 先写入内存，后异步写入磁盘 | mmap 原理，先写入系统级别的内存，然后隔一段时间写入磁盘 | 异步写入磁盘，后更新内存，通过 Flow 异步观察      | 基于 DataStore。先写入内存，即时异步写入磁盘，包括备份文件。 |
+| 读取中遇 IOException         | 返回默认值                  | 返回默认值                                         | <font color="green"> 自行处理 </font>                           | <font color="green">从备份文件中取</font>                             |
+| 写入中遇 IOException         | 通过事务回退 <br/></br> <font color="red">commit(堵塞) 返回 false</br></br>apply 无反馈</font> | 后续校验数据，尝试恢复，不行则删除。              | 自行处理                           | <font color="green">记录，下次启动时从备份文件中更新</font>          | 
+| Corruption<br/>Exception | <font color="red">不方便处理</font>                                                                               | 后续校验数据，尝试恢复，不行则删除                       | 自行处理                       | <font color="green">已通过复制备份文件数据处理</font>                    |
+| 多进程共享                    |  自行封装                                                                              | <font color="green">支持</font>                    | 处于 alpha 阶段                    | DataStore 正式支持之后                    |
+| 加密                       | 自行封装                                                                            | <font color="green">支持</font>                                     | 自行封装                           | <font color="green">支持</font> |
+| 类型 | 常见基本类型 + String + Set&lt;String&gt;  | 常见基本类型 + String + Set&lt;String&gt; + <font color="green">Parcelable</font> | 常见基本类型 + String + Set&lt;String&gt; | <font color="green">常见基本类型 + String + enum + Serializable + KtSerializable + 自定义</font> | 
+| 额外信息                      |                                                                               |      <font color="green">ANR前一刻更新的数据不会丢失</font> </br></br> <font color="red">断电或者系统崩溃后容易丢失很多数据</font>                                |      <font color="red"> 第一次同步取数据时耗时 24 ms</font> </br>后续可忽略                         |          <font color="red">初启动时间 30 份数据的时间，300 份数据的时间, 可在 Application 中(或startup) 里通过 thread{ } 异步启动 </font> <br/><br/> <font color="green"> 微配置 </font> <br/><br/> <font color="green"> 同时支持单项数据的 nullability (可空性) 和 default (默认值) </font> </br></br> <font color="red">比较新，</font> </br> 但基于 `DataStore` 且代码较少, 仅 TODO 行， 即时有 Bug 也比较少。|
+
 
 ## 迁移
 `KDataStore` 内置 `protected context` 供你获取其他存储仓库，如 `SharedPreferences`, `DataStore`.
