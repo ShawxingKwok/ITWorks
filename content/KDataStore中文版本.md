@@ -16,13 +16,13 @@
 
 - <span style="color: green; "> 微配置，调用方便 </span> 
 - <span style="color: green; "> 同时支持单项数据的 nullability (可空性) 和 default (默认值) </span> 
-- <span style="color: red; "> 初启动时间 10 ms，</span>但数据显著增加并不会影响多少。如果介意亦可在 Application 中(或[startup](https://developer.android.com/topic/libraries/app-startup)) 里异步启动  
+- <span style="color: red; "> 初启动时间为 10 ms，</span>但数据显著增加并不会影响多少。如果介意亦可在 Application 中(或[startup](https://developer.android.com/topic/libraries/app-startup)) 里异步启动  
 - <span style="color: red; "> 比较新，</span> 但基于 `DataStore` 且代码较少, 仅 TODO 行， 即时有 Bug 也比较少。
 
 以上测试结果采用 30 份 7(key length) * 20(value length) 的 String 数据。
 
 ## 迁移 (Migration)
-`KDataStore` 内置 `protected context` 供你获取其他存储仓库，如 `SharedPreferences`, `MMKV`, `DataStore` 等。
+`KDataStore` 内置 `protected appContext` 供你获取其他存储仓库，如 `SharedPreferences`, `MMKV`, `DataStore` 等。
 
 {{< hint info >}}
 这份中文版本主要为初期的宣传考虑，其他作品并不会写中文版本和 Java 扩展。
