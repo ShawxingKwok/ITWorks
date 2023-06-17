@@ -29,27 +29,11 @@ endLevel = 11
 tag = "tags"
 
 [menu]
+
 [[menu.after]]
 name = "Tracer"
 url = "https://shawxingkwok.github.io/TracerTutorial/"
 weight = 10
-
-[[menu.after]]
-name = " "
-#name = "-----------------"
-url = "#"
-weight = 20
-
-[[menu.after]]
-name = "About me"
-pageRef = './docs/_index.md'
-url = "https://shawxingkwok.github.io/ITWorks/docs/"
-weight = 30
-
-[[menu.after]]
-name = "Github profile"
-url = "https://github.com/ShawxingKwok/"
-weight = 40
 
 [params]
 BookRepo = 'https://github.com/ShawxingKwok/ITWorks'

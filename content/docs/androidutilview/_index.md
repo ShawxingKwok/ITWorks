@@ -46,4 +46,6 @@ dependencies {
 {{< /tab >}}
 {{< /tabs >}}
 
-## [Document](html/view/pers.shawxingkwok.androidutil.view/)
+## <a href="html/view/pers.shawxingkwok.androidutil.view/" target="_blank">Document</a>
+
+## <a href="https://github.com/ShawxingKwok/AndroidUtil" target="_blank">GitHub repo</a>
