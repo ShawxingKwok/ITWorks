@@ -1,7 +1,6 @@
 ---
 title: Android Util-view
 weight: 3
-draft: false
 ---
 
 ## Effect

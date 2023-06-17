@@ -1,7 +1,6 @@
 ---
 title: Android Util
 weight: 2
-draft: false
 ---
 
 ## Effect

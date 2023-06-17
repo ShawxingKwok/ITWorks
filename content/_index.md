@@ -1,4 +1,26 @@
+[//]: # (<!DOCTYPE html>)
+<html>
+<head>
+  <style>
+    img {
+      width: 40px;
+      height: 40px;
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
 
+<a href="https://www.github.com/ShawxingKwok/" target="_blank">
+  <img src="github.png" alt="ShawxingKwok@126.com">
+</a>
+
+<a href="mailto:ShawxingKwok@126.com" target="_blank">
+  <img src="mail.png" alt="">
+</a>
+
+</body>
+</html>
 
 This website displays all my personal open-source works which are all written in `Kotlin-jvm` at present. 
 
@@ -15,6 +37,4 @@ job has its threshold.
 
 At last, **I have two other halfway done wonderful works** and am waiting for some company to help make IDE plugins.
 I have sent resumes to common top internet companies, but those limited resume sizes are too small
-and they didn't give me opportunities to display. 
-
-Welcome to browse my <a href="https://github.com/ShawxingKwok" target="_blank">GitHub profile</a>, or connect with me via ShawxingKwok@126.com. 
+and they didn't give me opportunities to display.

@@ -3,24 +3,31 @@ title: English
 weight: 1
 ---
 
-An extended data store with little configuration, easy encryption and extensive supported types 
-(basic types, kt-serializable, java-serializable and customed).
-
 ## Basic feature preview
 {{< tabs "Preview">}}
-{{< tab "view" >}}
-{{< video src="view preview.mp4" >}}
+
+{{< tab "view-kt" >}}
+<video width="720" controls>
+  <source src="../view.mp4" type="video/mp4">
+</video>
 {{< /tab >}}
+
+{{< tab "view-java" >}}
+<video width="720" controls>
+  <source src="../view.mp4" type="video/mp4">
+</video>
+{{< /tab >}}
+
 {{< tab "compose" >}}
-{{< video src="compose preview.mp4" >}}
+<video width="720" controls>
+  <source src="../compose.mp4" type="video/mp4">
+</video>
 {{< /tab >}}
+
 {{< /tabs >}}
 
-## Actual performance contrast
-TODO
-
 ## Setup
-Get a [sample](demo.zip) or configure as below.
+Get a [sample](../demo.zip) or configure as below.
 
 {{< tabs "setup" >}}
 {{< tab "view" >}}
@@ -103,14 +110,11 @@ dependencies {
 {{< /tabs >}}
 
 ## Core Usage
-### Configure 
-<image src="config.png" width=550></image>
+### Set data model 
+<image src="../config.png" width=550></image>
 
 ### Update  
 ```kotlin
-// async
-Settings.isDarkMode.toss(true)
-Settings.isDarkMode.toss{ !it }
 
 // suspend 
 Settings.isDarkMode.emit(true)
@@ -119,7 +123,7 @@ Settings.isDarkMode.emit{ !it }
 That type `Flow` is declared inside `class KDataStore` and extends from the official `Flow`, being both
 collectable and mutable.
 
-<image src="flow.png"></image>
+<image src="../flow.png"></image>
 
 ### Collect
 {{< tabs "collect" >}}
@@ -141,12 +145,12 @@ class MainFragment : Fragment(){
 {{< tab "compose" >}}
 I suggest my flow state extension.
 
-<image src="_compose collection.png"></image>
+<image src="../_compose collection.png"></image>
 
 ---
 
 use
-<image src="compose collection.png"></image>
+<image src="../compose collection.png"></image>
 {{< /tab >}}
 
 {{< /tabs >}}
@@ -202,10 +206,9 @@ There is a `protected context` inside `KDataStore` for you to get other stores l
 `SharedPreferences`, `DataStore`.
 
 ## Encryption
-default encrypted
 
 {{< hint info >}}
-This encryption part references https://github.com/MFlisar/MaterialPreferences.
+This default AES cipher references <a href="https://github.com/MFlisar/MaterialPreferences" target="_blank">some one else's design.</a>
 {{< /hint >}}
 
 ## Options
@@ -218,3 +221,5 @@ TODO(handlerScope, ioScope)
 ### Reset
 
 ### updateAll
+
+## <a href="https://github.com/ShawxingKwok/KDataStore" target="_blank">GitHub repo</a>
