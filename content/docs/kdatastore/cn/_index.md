@@ -41,9 +41,8 @@ weight: 2
     <td>启动时间(ms)</td>
     <td>2.2</td>
     <td>3.2</td>
-    <td>49(异步中)</td>
-    <td><span style="color: red; "> 13</span><br>但数据显著增加并不会影响多少, 也可借助 <a href="#预启动">start up</a> 预先启动。
-    </td>
+    <td>49(异步)</td>
+    <td><span style="color: red; ">13</span>, 文件显著增加时影响不大</td>
 </tr>
 
 <tr>
@@ -107,7 +106,7 @@ weight: 2
     </td>
     <td></td>
     <td>
-        <span style="color: green; "> 微配置，调用方便 </span>
+        <span style="color: green; "> 建模简单，调用方便 </span>
         <br><br><span style="color: green; "> 支持单项数据的 nullability (可空性) 和 default (默认值) </span>
     </td>
 </tr>
@@ -123,14 +122,12 @@ weight: 2
 
 以上测试结果采用 30 份 7(key length) * 20(value length) 的 String 数据，机型魅族18s。代码在[源码](https://github.com/ShawxingKwok/KDataStore/archive/refs/heads/master.zip)中。
 
-{{< hint danger >}}
+{{< hint warning >}}
 关于其他地方的存储方案对比分析，绝大多数都有严重错误。
 官网相对准确，但也很片面。如想探究，建议看源码并查阅 ChatGpt 分析。
 {{< /hint >}}
 
 ## 基础用法
-其中的 [MyInitializer](#预启动) 非必需，留后面讲。
-
 {{< tabs "Preview">}}
 
 {{< tab "view-kt" >}}
@@ -157,44 +154,85 @@ weight: 2
 
 或可直接看[源码](https://github.com/ShawxingKwok/KDataStore/archive/refs/heads/master.zip)中的 demo。
 
----
-根目录
-```groovy
+### 根目录 
+`build.gradle`
+{{< tabs "root plugins" >}}
+{{< tab "Groovy" >}}
+```
 plugins{
+    ...
     id 'org.jetbrains.kotlin.plugin.serialization' version "$version_kt" apply false
 }
 ```
+{{< /tab >}}
 
----
-单独分出一个 module, 常见命名为 `settings`, language 选择 **kotlin** 而非 java. 
-```groovy
+{{< tab "Kts" >}}
+```
+plugins{
+    ...
+    id ("org.jetbrains.kotlin.plugin.serialization") version "$version_kt" apply false
+}
+```
+{{< /tab >}}
+{{< /tabs >}}
+
+### 模型模块
+单独分出一个 module, 常见命名为 `settings`, （如果不采纳，后续的 `settings` 命名则一并更改）
+language 选择 **kotlin** 而非 java。
+
+`build.gradle`
+{{< tabs "settings plugins" >}}
+{{< tab "Groovy" >}}
+```
 plugins {
+    ...
     id 'kotlinx-serialization'
 }
 
 dependencies {
+    ...
     implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0'
     implementation 'io.github.shawxingkwok:kt-util:1.0.0'
     implementation 'io.github.shawxingkwok:android-kdatastore:1.0.0'
     implementation 'androidx.startup:startup-runtime:1.1.1'
 }
 ```
+{{< /tab >}}
+{{< tab "Kts" >}}
+```
+plugins {
+    ...
+    id ("kotlinx-serialization")
+}
 
----
-调用方
-{{< tabs >}}
+dependencies {
+    ...
+    implementation ("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0")
+    implementation ("io.github.shawxingkwok:kt-util:1.0.0")
+    implementation ("io.github.shawxingkwok:android-kdatastore:1.0.0")
+    implementation ("androidx.startup:startup-runtime:1.1.1")
+}
+```
+{{< /tab >}}
+{{< /tabs >}}
 
+### 调用方 `build.gradle`
+{{< tabs "caller side" >}}
+
+{{< tab "Groovy" >}}
+{{< tabs "Groovy">}}
 {{< tab "view-kt" >}}
 ```groovy
-tasks.withType(KotlinCompile).configureEach{
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach{
     kotlinOptions.freeCompilerArgs += "-Xcontext-receivers"
 }
 
 dependencies {
+    ...
     implementation 'io.github.shawxingkwok:android-util-view:1.0.0'
     implementation 'io.github.shawxingkwok:android-kdatastore:1.0.0'
     // 引入刚才设置的 module
-    implementation project(':previousModuleName') // 或者 implementation 远程仓库
+    implementation project(':settings') 
 }
 ```
 {{< /tab >}}
@@ -202,19 +240,52 @@ dependencies {
 {{< tab "view-java / compose" >}}
 ```groovy
 dependencies{
+    ...
     implementation 'io.github.shawxingkwok:android-kdatastore:1.0.0'
     // 引入刚才设置的 module
-    implementation project(':previousModuleName') // 或者 implementation 远程仓库
+    implementation project(':settings') 
+}
+```
+{{< /tab >}}
+{{< /tabs >}}
+{{< /tab >}}
+
+{{< tab "Kts" >}}
+{{< tabs "Kts">}}
+{{< tab "view-kt" >}}
+```kotlin
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach{
+    kotlinOptions.freeCompilerArgs += "-Xcontext-receivers"
+}
+
+dependencies {
+    ...
+    implementation ("io.github.shawxingkwok:android-util-view:1.0.0")
+    implementation ("io.github.shawxingkwok:android-kdatastore:1.0.0")
+    // 引入刚才设置的 module
+    implementation (project(":settings")) 
 }
 ```
 {{< /tab >}}
 
+{{< tab "view-java / compose" >}}
+```kotlin
+dependencies{
+    ...
+    implementation ("io.github.shawxingkwok:android-kdatastore:1.0.0")
+    // 引入刚才设置的 module
+    implementation (project(":settings")) 
+}
+```
+{{< /tab >}}
+{{< /tabs >}}
+{{< /tab >}}
 {{< /tabs >}}
 
 ## 类型支持
 ### 常见基本类型
 
-### Serializable
+### Java Serializable
 
 ### Kotlin serializable
 It's an official platform-neutral data conversion.
@@ -231,16 +302,13 @@ object MDataStore: KDataStore(){
 }
 ```
 
-## Nullability (可空性)
+### Nullability
 nullable 时对 default 限制为 null
 
 ## 迁移
 `KDataStore` 内置 `appContext` 供你获取其他存储仓库，如 `SharedPreferences`, `MMKV`, `DataStore` 等。
 
 ## 加密
-
-## 预启动
-Initializer
 
 ## Options
 ### scope
@@ -249,9 +317,19 @@ TODO(handlerScope, ioScope)
 ### file name
 
 ## Details
-### Reset
+
+Reset
     全局
     局部
+ 
+如果在 Application 中要调用 `Settings`, 应以异步的方式，
+```kotlin
+CoroutineScope(Dispatchers.Main.Immediate).launch{
+    Settings.xx.collect{
+        ...
+    }
+}
+```
 
 </br></br>
 {{< hint info >}}
