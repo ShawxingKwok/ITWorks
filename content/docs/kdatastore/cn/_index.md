@@ -55,7 +55,7 @@ weight: 2
 
 <tr>
     <td>写入中遇 IOException</td>
-    <td>用未写入该数据的备份文件替换。<br><br> 如用 commit, 可通过返回的 false 获悉</td>
+    <td>用未写入该数据的备份文件替换，且不再写入。<br><br> 如用 commit, 可通过返回的 false 获悉</td>
     <td rowspan="2">后续校验数据，尝试恢复，不行则删除。</td>
     <td><span style="color: green; ">记录，下次启动时从备份文件中更新</span></td>
 </tr>
@@ -95,7 +95,7 @@ weight: 2
     <td></td>
     <td> <span style="color: green; ">Parcelable</span></td>
     <td><span style="color: green; ">自定义</span><br>但需放在独立的 DataStore 中</td>
-    <td> <span style="color: green; "> enum <br> Serializable <br> KtSerializable <br> 自定义</span></td>
+    <td> <span style="color: green; "> enum <br> java Serializable <br> kt Serializable <br> 自定义 <br> 且均可空</span></td>
 </tr>
 
 <tr>
@@ -107,7 +107,6 @@ weight: 2
     <td></td>
     <td>
         <span style="color: green; "> 建模简单，调用方便 </span>
-        <br><br><span style="color: green; "> 支持单项数据的 nullability (可空性) 和 default (默认值) </span>
     </td>
 </tr>
 
@@ -152,10 +151,9 @@ weight: 2
 
 ## 配置
 
-或可直接看[源码](https://github.com/ShawxingKwok/KDataStore/archive/refs/heads/master.zip)中的 demo。
+配置相应 `build.gradle`, 或可直接看[源码](https://github.com/ShawxingKwok/KDataStore/archive/refs/heads/master.zip)中的 demo。
 
 ### 根目录 
-`build.gradle`
 {{< tabs "root plugins" >}}
 {{< tab "Groovy" >}}
 ```
@@ -180,7 +178,6 @@ plugins{
 单独分出一个 module, 常见命名为 `settings`, （如果不采纳，后续的 `settings` 命名则一并更改）
 language 选择 **kotlin** 而非 java。
 
-`build.gradle`
 {{< tabs "settings plugins" >}}
 {{< tab "Groovy" >}}
 ```
@@ -194,7 +191,6 @@ dependencies {
     implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0'
     implementation 'io.github.shawxingkwok:kt-util:1.0.0'
     implementation 'io.github.shawxingkwok:android-kdatastore:1.0.0'
-    implementation 'androidx.startup:startup-runtime:1.1.1'
 }
 ```
 {{< /tab >}}
@@ -210,13 +206,12 @@ dependencies {
     implementation ("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0")
     implementation ("io.github.shawxingkwok:kt-util:1.0.0")
     implementation ("io.github.shawxingkwok:android-kdatastore:1.0.0")
-    implementation ("androidx.startup:startup-runtime:1.1.1")
 }
 ```
 {{< /tab >}}
 {{< /tabs >}}
 
-### 调用方 `build.gradle`
+### 调用方 
 {{< tabs "caller side" >}}
 
 {{< tab "Groovy" >}}
@@ -283,27 +278,32 @@ dependencies{
 {{< /tabs >}}
 
 ## 类型支持
-### 常见基本类型
-
-### Java Serializable
+### 常见类型
+`Boolean`, `Int`, `Long`, `Float`, `Double`, `String`, `Enum`, `Serializable` 
+<img src="../typeSupport.png" width="500"></img>
 
 ### Kotlin serializable
-It's an official platform-neutral data conversion.
+Kotlin 官方出的序列化工具，速度比 `Java Serializable` 快两倍多，且支持多平台。
+基本类型，`Pair`, `Triple`, 还有常用容器类型如 `List`, `Set` 的默认实现均可视为 `Kotlin Serializable`。
+
+[//]: # (It's an official platform-neutral data conversion.)
 
 ```kotlin
 import kotlinx.serialization.Serializable
 import pers.shawxingkwok.kdatastore.KDataStore
         
 @Serializable
-data class Data(val a: Int, val b: String)
+data class User(val id: Long, val password: String)
 
-object MDataStore: KDataStore(){
-    val data by ktSerializable(Data(1, ""))
+object Settings: KDataStore("settings"){
+    val users by ktSerializable(emptyList<User>())
 }
 ```
 
-### Nullability
-nullable 时对 default 限制为 null
+### 自定义
+
+### 可空
+此时对默认值限制为 `null`，以上函数对应为 `storeNullable...()`
 
 ## 迁移
 `KDataStore` 内置 `appContext` 供你获取其他存储仓库，如 `SharedPreferences`, `MMKV`, `DataStore` 等。
