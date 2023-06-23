@@ -42,7 +42,7 @@ weight: 2
     <td>2.2</td>
     <td>3.2</td>
     <td>49(异步)</td>
-    <td><span style="color: red; ">13</span>, 文件显著增加时影响不大</td>
+    <td><span style="color: red; ">13</span>, 文件显著增加时影响不大，也开先行异步启动</td>
 </tr>
 
 <tr>
@@ -115,7 +115,9 @@ weight: 2
     <td></td>
     <td><span style="color: red; ">断电或者系统崩溃后容易丢失很多数据</span></td>
     <td></td>
-    <td><span style="color: red; "> 比较新，</span> 但基于官方的 DataStore 且代码较少, 仅 TODO 行， 即时有 Bug 也比较少。</td>
+    <td><span style="color: red; "> 比较新，</span> 但基于官方的 DataStore 且代码较少, 仅 TODO 行， 即时有 Bug 也比较少。
+        <br><br> <span style="color: red; ">建模时只能使用 Kotlin, </span> 只会 Java 的同学需稍掌握一点 Kotlin 知识。
+    </td>
 </tr>
 </table>
 
@@ -280,56 +282,76 @@ dependencies{
 ## 类型支持
 ### 常见类型
 `Boolean`, `Int`, `Long`, `Float`, `Double`, `String`, `Enum`, `Serializable` 
-<img src="../typeSupport.png" width="500"></img>
+<div style="border:1px solid black; padding-left:10px;">
+    <img src="../commonTypes.png" width="500"/>
+</div>
 
-### Kotlin serializable
+### Kt Serializable
 Kotlin 官方出的序列化工具，速度比 `Java Serializable` 快两倍多，且支持多平台。
 基本类型，`Pair`, `Triple`, 还有常用容器类型如 `List`, `Set` 的默认实现均可视为 `Kotlin Serializable`。
 
 [//]: # (It's an official platform-neutral data conversion.)
-
-```kotlin
-import kotlinx.serialization.Serializable
-import pers.shawxingkwok.kdatastore.KDataStore
-        
-@Serializable
-data class User(val id: Long, val password: String)
-
-object Settings: KDataStore("settings"){
-    val users by ktSerializable(emptyList<User>())
-}
-```
+<div style="border:1px solid black; padding-left:10px;">
+    <img src="../ktSerializable.png" width="620" alt=""/>
+</div>
 
 ### 自定义
+只需实现转换与恢复的函数即可。暂未找到比较适合自定义的例子。
+<div style="border:1px solid black; padding-left:10px;">
+    <img src="../customedType.png" />
+</div>
 
 ### 可空
-此时对默认值限制为 `null`，以上函数对应为 `storeNullable...()`
+此时对默认值限制为 `null`，以上类型都有对应。这非常实用，尤其是存储对象时。
+<div style="border:1px solid black; padding-left:10px;">
+    <img src="../nullableTypes.png" />
+</div>
 
 ## 迁移
 `KDataStore` 内置 `appContext` 供你获取其他存储仓库，如 `SharedPreferences`, `MMKV`, `DataStore` 等。
+<div style="border:1px solid black; padding-left:10px;">
+    <img src="../migration.png" alt=""/>
+</div>
 
-## 加密
+## 可选参数
+<div style="border:1px solid black; padding-left:10px;">
+    <img src="../args.png" alt=""/>
+</div>
 
-## Options
-### scope
-TODO(handlerScope, ioScope)
+### 文件名
+如果只有一个 `KDataStore`, 建议命名为 `settings` 或 `preferences`，相应的 class name(首字母大写), module name 亦是如此。
 
-### file name
+### 加密
+`KDataStore`提供了加密功能接口和一个 AES 实现。
+<div style="border:1px solid black; padding-left:10px;">
+    <img src="../cypher.png" alt=""/>
+</div>
 
-## Details
+Android 在 api 29 版本开始引入了沙盒机制，实现了数据隔离，相对已经很安全了。你们可视版本要求、信息的重要程度来选择
+是否存储在本地、是否加密、以什么协议加密。
 
-Reset
-    全局
-    局部
- 
-如果在 Application 中要调用 `Settings`, 应以异步的方式，
-```kotlin
-CoroutineScope(Dispatchers.Main.Immediate).launch{
-    Settings.xx.collect{
-        ...
-    }
-}
-```
+## 异步启动
+如果你介意这点启动时间，可
+
+## 其他细节
+### 删除/全部重置
+
+<div style="border:1px solid black; padding-left:10px;">
+    <img src="../wholeReset.png" alt=""/>
+</div>
+{{< hint warning >}}
+应放在 Settings 中所有存储的值初始化之后 
+<div style="border:1px solid black; padding-left:10px;">
+    <img src="../wrongWholeReset.png" alt=""/>
+</div>
+{{< /hint >}}
+
+### 文件是否存在
+
+### 局部重置
+<div style="border:1px solid black; padding-left:10px;">
+    <img src="../partialReset.png" alt=""/>
+</div>
 
 </br></br>
 {{< hint info >}}
