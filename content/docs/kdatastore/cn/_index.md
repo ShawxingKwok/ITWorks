@@ -3,9 +3,13 @@ title: 中文
 weight: 2
 ---
 
+{{< hint warning >}}
+这份中文版本主要为初期的宣传考虑，其他作品并不会写中文版本和 Java 扩展。
+{{< /hint >}}
+
 # KDataStore
 
-## 不同存储方案对比
+## 本地快捷存储方案对比
 
 <table>
 <tr>
@@ -19,16 +23,18 @@ weight: 2
 <tr>
     <td>机制</td>
     <td>
-        写入时先更新内存 
-        <br><br>commit 同步写入磁盘, <span style="color: red; ">但堵塞主线程 1.4 ms</span> 
-        <br/> 一般通过 apply 异步写入<br><br>不论写入结果如何，通知监听
+        同步读写
+        <br><br>
+        <span style="color:red">commit 堵塞1.4ms</span>
+        <br> apply 不堵塞，<span style="color:red">但不知道是否成功写入磁盘。</span>
+        <br><br><span style="color:red">不论是否成功写入，都更新内存，通知监听</span>
     </td>
     <td> 
         先读取到系统级别的内存
         <br><br><span style="color: green; ">同步不堵塞读写</span>
-        <br><br>每隔一段时间后台异步写入磁盘 
+        <br><br>后台定时异步写入磁盘 
     </td>
-    <td> 异步写入磁盘，成功后更新内存。<br><br>通过 Flow 异步观察。 响应时间 2.1 ms </td>
+    <td> 异步读写，写入成功后更新内存。<br><br>通过 Flow 异步观察。 响应时间 2.1 ms </td>
     <td> 
         基于 DataStore 
         <br><br> 先读取到应用级别的内存 
@@ -42,7 +48,7 @@ weight: 2
     <td>2.2</td>
     <td>3.2</td>
     <td>49(异步)</td>
-    <td><span style="color: red; ">13</span>, 文件显著增加时影响不大，也开先行异步启动</td>
+    <td><span style="color: red; ">13</span>, 文件显著增加时影响不大</td>
 </tr>
 
 <tr>
@@ -95,7 +101,7 @@ weight: 2
     <td></td>
     <td> <span style="color: green; ">Parcelable</span></td>
     <td><span style="color: green; ">自定义</span><br>但需放在独立的 DataStore 中</td>
-    <td> <span style="color: green; "> enum <br> java Serializable <br> kt Serializable <br> 自定义 <br> 且均可空</span></td>
+    <td> <span style="color: green; "> enum <br> Serializable(java/kotlin) 自定义 <br> 且均可空</span></td>
 </tr>
 
 <tr>
@@ -115,7 +121,7 @@ weight: 2
     <td></td>
     <td><span style="color: red; ">断电或者系统崩溃后容易丢失很多数据</span></td>
     <td></td>
-    <td><span style="color: red; "> 比较新，</span> 但基于官方的 DataStore 且代码较少, 仅 TODO 行， 即时有 Bug 也比较少。
+    <td><span style="color: red; "> 比较新，</span> 但仅 300 多行代码，相对稳定。
         <br><br> <span style="color: red; ">建模时只能使用 Kotlin, </span> 只会 Java 的同学需稍掌握一点 Kotlin 知识。
     </td>
 </tr>
@@ -125,28 +131,56 @@ weight: 2
 
 {{< hint warning >}}
 关于其他地方的存储方案对比分析，绝大多数都有严重错误。
-官网相对准确，但也很片面。如想探究，建议看源码并查阅 ChatGpt 分析。
+官网相对准确，但也很片面。如想探究，建议自己测试并查阅源码。
 {{< /hint >}}
 
 ## 基础用法
+用 Dark theme 举例 
+
+### UI 展示
+<video height="200" controls>
+  <source src="../effect.mov" type="video/mp4">
+</video>
+
+### 建模
+单独分出的模型模块中, 常见命名为 `settings`,（如果不采纳，后续的 `settings` 命名则一并更改）
+<div style="border:1px solid black; padding-left:10px;">
+    <img src="../model.png"  alt=""/>
+</div>
+
+### 调用
+
+在其他模块中调用 
 {{< tabs "Preview">}}
 
 {{< tab "view-kt" >}}
-<video width="720" controls>
-  <source src="../view-kt.mp4" type="video/mp4">
-</video>
+<div style="border:1px solid black; padding-left:10px;">
+    <img src="../ktTheme.png"  alt=""/>
+</div>
+<br>
+<div style="border:1px solid black; padding-left:10px;">
+    <img src="../ktRadioButton.png"  alt=""/>
+</div>
 {{< /tab >}}
 
 {{< tab "view-java" >}}
-<video width="720" controls>
-  <source src="../view-java.mp4" type="video/mp4">
-</video>
+<div style="border:1px solid black; padding-left:10px;">
+    <img src="../javaTheme.png"  alt=""/>
+</div>
+<br>
+<div style="border:1px solid black; padding-left:10px;">
+    <img src="../javaRadioButton.png"  alt=""/>
+</div>
 {{< /tab >}}
 
 {{< tab "compose" >}}
-<video width="720" controls>
-  <source src="../compose.mp4" type="video/mp4">
-</video>
+<div style="border:1px solid black; padding-left:10px;">
+    <img src="../composeTheme.png"  alt=""/>
+</div>
+<br>
+<div style="border:1px solid black; padding-left:10px;">
+    <img src="../composeRadioButton.png"  alt=""/>
+</div>
 {{< /tab >}}
 
 {{< /tabs >}}
@@ -228,7 +262,6 @@ dependencies {
     ...
     implementation 'io.github.shawxingkwok:android-util-view:1.0.0'
     implementation 'io.github.shawxingkwok:android-kdatastore:1.0.0'
-    // 引入刚才设置的 module
     implementation project(':settings') 
 }
 ```
@@ -239,7 +272,6 @@ dependencies {
 dependencies{
     ...
     implementation 'io.github.shawxingkwok:android-kdatastore:1.0.0'
-    // 引入刚才设置的 module
     implementation project(':settings') 
 }
 ```
@@ -259,7 +291,6 @@ dependencies {
     ...
     implementation ("io.github.shawxingkwok:android-util-view:1.0.0")
     implementation ("io.github.shawxingkwok:android-kdatastore:1.0.0")
-    // 引入刚才设置的 module
     implementation (project(":settings")) 
 }
 ```
@@ -270,7 +301,6 @@ dependencies {
 dependencies{
     ...
     implementation ("io.github.shawxingkwok:android-kdatastore:1.0.0")
-    // 引入刚才设置的 module
     implementation (project(":settings")) 
 }
 ```
@@ -296,7 +326,7 @@ Kotlin 官方出的序列化工具，速度比 `Java Serializable` 快两倍多�
 </div>
 
 ### 自定义
-只需实现转换与恢复的函数即可。暂未找到比较适合自定义的例子。
+只需实现和 `Serializable` 之间转换与恢复的函数即可。暂未找到比较适合自定义的例子。
 <div style="border:1px solid black; padding-left:10px;">
     <img src="../customedType.png" />
 </div>
@@ -312,6 +342,24 @@ Kotlin 官方出的序列化工具，速度比 `Java Serializable` 快两倍多�
 <div style="border:1px solid black; padding-left:10px;">
     <img src="../migration.png" alt=""/>
 </div>
+
+### Exists
+{{< tabs exists >}}
+{{< tab Kt >}}
+```
+if(Settings.exists()) 
+    ...
+```
+{{< /tab >}}
+{{< tab Java >}}
+```
+if(Settings.INSTANCE.exists())
+    ...
+```
+{{< /tab >}}
+{{< /tabs >}}
+
+如果以后需要从`KDataStore`迁移到别处，这可以帮助你判断文件是否存在。
 
 ## 可选参数
 <div style="border:1px solid black; padding-left:10px;">
@@ -330,34 +378,40 @@ Kotlin 官方出的序列化工具，速度比 `Java Serializable` 快两倍多�
 Android 在 api 29 版本开始引入了沙盒机制，实现了数据隔离，相对已经很安全了。你们可视版本要求、信息的重要程度来选择
 是否存储在本地、是否加密、以什么协议加密。
 
-## 异步启动
-如果你介意这点启动时间，可
-
 ## 其他细节
 ### 删除/全部重置
-
+{{< tabs delete >}}
+{{< tab Kt >}}
 <div style="border:1px solid black; padding-left:10px;">
-    <img src="../wholeReset.png" alt=""/>
+    <img src="../wholeResetKt.png" alt=""/>
 </div>
-{{< hint warning >}}
-应放在 Settings 中所有存储的值初始化之后 
+{{< /tab >}}
+{{< tab Java >}}
 <div style="border:1px solid black; padding-left:10px;">
-    <img src="../wrongWholeReset.png" alt=""/>
+    <img src="../wholeResetJava.png" alt=""/>
 </div>
-{{< /hint >}}
-
-### 文件是否存在
+{{< /tab >}}
+{{< /tabs >}}
+等效于“全部重置”, 可在中途使用，在下次更新值时再次生成文件。
+<br>
+警告以防止误用，并无任何异常风险。
 
 ### 局部重置
-<div style="border:1px solid black; padding-left:10px;">
-    <img src="../partialReset.png" alt=""/>
-</div>
+比如重置声明过的 `age`
+{{< tabs partial reset >}}
+{{< tab Kt >}}
+```
+Settings.age.reset()
+```
+{{< /tab >}}
+{{< tab Java >}}
+```
+Settings.getAge().reset();
+```
+{{< /tab >}}
+{{< /tabs >}}
 
-</br></br>
-{{< hint info >}}
+### 快速启动
+如果你介意这点启动时间。可先行在 `Application` 中异步启动 `Settings`, 或者第一次启动 `Settings` 的时候采用异步。
+
 ## <a href="https://github.com/ShawxingKwok/KDataStore" target="_blank">GitHub repo</a>
-{{< /hint >}}
-
-{{< hint warning >}}
-这份中文版本主要为初期的宣传考虑，其他作品并不会写中文版本和 Java 扩展。
-{{< /hint >}}

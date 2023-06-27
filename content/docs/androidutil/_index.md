@@ -3,7 +3,7 @@ title: Android Util
 weight: 2
 ---
 
-## Effect
+## Typical Effect
 {{< video src="KLog" >}}
 
 ## Setup

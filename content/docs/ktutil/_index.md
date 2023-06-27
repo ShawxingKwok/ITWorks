@@ -3,6 +3,9 @@ title: Kt Util
 weight: 1
 ---
 
+## Typical Effect
+TODO
+
 ## Setup
 ```groovy
 implementation "io.github.shawxingkwok:kt-util:1.0.0" 

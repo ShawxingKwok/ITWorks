@@ -3,7 +3,7 @@ title: Android Util-view
 weight: 3
 ---
 
-## Effect
+## Typical Effect
 {{< video src="effect" >}} 
 
 ## Setup
