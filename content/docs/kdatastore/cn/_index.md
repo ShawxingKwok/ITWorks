@@ -149,7 +149,7 @@ weight: 2
 </div>
 <br>
 
-`isDarkMode` 的数据类型为 `KDataStore.Flow`
+其中 `isDarkMode` 的数据类型为 `KDataStore.Flow`
 <div style="border:1px solid black; padding-left:10px;">
     <img src="../FlowType.png"  alt=""/>
 </div>
@@ -160,30 +160,36 @@ weight: 2
 {{< tabs "Preview">}}
 
 {{< tab "view-kt" >}}
+观察`Flow`/`LiveData`，绑定主题
 <div style="border:1px solid black; padding-left:10px;">
     <img src="../ktTheme.png"  alt=""/>
 </div>
 <br>
+更新存值
 <div style="border:1px solid black; padding-left:10px;">
     <img src="../ktRadioButton.png"  alt=""/>
 </div>
 {{< /tab >}}
 
 {{< tab "view-java" >}}
+观察`LiveData`，绑定主题
 <div style="border:1px solid black; padding-left:10px;">
     <img src="../javaTheme.png"  alt=""/>
 </div>
 <br>
+更新存值
 <div style="border:1px solid black; padding-left:10px;">
     <img src="../javaRadioButton.png"  alt=""/>
 </div>
 {{< /tab >}}
 
 {{< tab "compose" >}}
+将 `State` 和主题绑定  
 <div style="border:1px solid black; padding-left:10px;">
     <img src="../composeTheme.png"  alt=""/>
 </div>
 <br>
+更新存值
 <div style="border:1px solid black; padding-left:10px;">
     <img src="../composeRadioButton.png"  alt=""/>
 </div>
