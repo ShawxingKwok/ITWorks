@@ -22,6 +22,7 @@ $dokka.location:pers.shawxingkwok.ktutil/KReadWriteProperty///PointingToDeclarat
 $dokka.location:pers.shawxingkwok.ktutil/KReadWriteProperty/provideDelegate/#TypeParam(bounds=[kotlin.Any?])#kotlin.reflect.KProperty[*]/PointingToDeclaration/-kt-util/pers.shawxingkwok.ktutil/-k-read-write-property/provide-delegate.html
 $dokka.location:pers.shawxingkwok.ktutil/KReadWriteProperty/setValue/#TypeParam(bounds=[kotlin.Any?])#kotlin.reflect.KProperty[*]#TypeParam(bounds=[kotlin.Any?])/PointingToDeclaration/-kt-util/pers.shawxingkwok.ktutil/-k-read-write-property/set-value.html
 $dokka.location:pers.shawxingkwok.ktutil/TraceUtil///PointingToDeclaration/-kt-util/pers.shawxingkwok.ktutil/-trace-util/index.html
+$dokka.location:pers.shawxingkwok.ktutil/TraceUtil/getSimpleTrace/#kotlin.Int/PointingToDeclaration/-kt-util/pers.shawxingkwok.ktutil/-trace-util/get-simple-trace.html
 $dokka.location:pers.shawxingkwok.ktutil/TraceUtil/getTrace/#kotlin.Int/PointingToDeclaration/-kt-util/pers.shawxingkwok.ktutil/-trace-util/get-trace.html
 $dokka.location:pers.shawxingkwok.ktutil/TraceUtil/getTraces/#kotlin.Int/PointingToDeclaration/-kt-util/pers.shawxingkwok.ktutil/-trace-util/get-traces.html
 $dokka.location:pers.shawxingkwok.ktutil/TraceUtil/getTraces/#kotlin.Throwable/PointingToDeclaration/-kt-util/pers.shawxingkwok.ktutil/-trace-util/get-traces.html
