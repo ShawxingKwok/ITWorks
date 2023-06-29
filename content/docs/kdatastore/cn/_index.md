@@ -143,9 +143,15 @@ weight: 2
 </video>
 
 ### 建模
-单独分出的模型模块中, 常见命名为 `settings`,（如果不采纳，后续的 `settings` 命名则一并更改）
+单独分出一个模块, 常见命名为 `settings`。 （后续的文档均按照 `settings`）
 <div style="border:1px solid black; padding-left:10px;">
     <img src="../model.png"  alt=""/>
+</div>
+<br>
+
+`isDarkMode` 的数据类型为 `KDataStore.Flow`
+<div style="border:1px solid black; padding-left:10px;">
+    <img src="../FlowType.png"  alt=""/>
 </div>
 
 ### 调用
