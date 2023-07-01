@@ -1,6 +1,6 @@
 ---
-title: Android Util-view
-weight: 3
+title: Util-view
+weight: 2
 ---
 
 ## Typical Effect

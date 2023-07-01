@@ -1,6 +1,6 @@
 ---
-title: Android Util
-weight: 2
+title: Util
+weight: 1
 ---
 
 ## Typical Effect

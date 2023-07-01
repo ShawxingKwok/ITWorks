@@ -22,7 +22,8 @@
 </body>
 </html>
 
-This website displays all my personal open-source works which are all written in `Kotlin-jvm` at present. 
+This website displays all my personal open-source works which are all written in Kotlin and 
+licensed with Apache 2.0 at present. In my works, only 'Android.KDataStore' supports Java usage.
 
 [//]: # (Partial works display Tracer & KDataStore)
 
@@ -35,6 +36,6 @@ ability mustn't be well enough for you to engage in IT. If so, do something you 
 at. I have no offensive intention, just meaning everyone has his strengths and weaknesses, and every
 job has its threshold.
 
-At last, **I have two other halfway done wonderful works** and am waiting for some company to help make IDE plugins.
-I have sent resumes to common top internet companies, but those limited resume sizes are too small
-and they didn't give me opportunities to display.
+At last, **I have two other halfway wonderful works** and am waiting for some top company to help make IDE plugins.
+I have sent resumes to common top IT companies, but those limited resume sizes are too small and they 
+didn't give me opportunities to display.

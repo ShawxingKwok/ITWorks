@@ -1,5 +1,5 @@
 ---
-title: Ktx
+title: Kt util
 weight: 1
 ---
 
@@ -8,7 +8,7 @@ TODO
 
 ## Setup
 ```groovy
-implementation "io.github.shawxingkwok:ktx:1.0.0" 
+implementation "io.github.shawxingkwok:kt-util:1.0.0" 
 ```
 
 ## <a href="html/-kt-util/pers.shawxingkwok.ktutil/" target="_blank">Document</a>
