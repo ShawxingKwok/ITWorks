@@ -149,7 +149,7 @@ weight: 2
 </div>
 <br>
 
-其中 `isDarkMode` 的数据类型为 `KDataStore.Flow`
+其中 `isDarkMode` 的类型并非官方的 `Flow`, 而是 `KDataStore.Flow`
 <div style="border:1px solid black; padding-left:10px;">
     <img src="../FlowType.png"  alt=""/>
 </div>
@@ -163,9 +163,9 @@ weight: 2
 观察`Flow`/`LiveData`，绑定主题
 <div style="border:1px solid black; padding-left:10px;">
     <img src="../ktTheme.png"  alt=""/>
-</div>
-<br>
-更新存值
+</div> 
+
+`RadioGroup`处更新存值
 <div style="border:1px solid black; padding-left:10px;">
     <img src="../ktRadioButton.png"  alt=""/>
 </div>
@@ -176,8 +176,8 @@ weight: 2
 <div style="border:1px solid black; padding-left:10px;">
     <img src="../javaTheme.png"  alt=""/>
 </div>
-<br>
-更新存值
+
+`RadioGroup`处更新存值
 <div style="border:1px solid black; padding-left:10px;">
     <img src="../javaRadioButton.png"  alt=""/>
 </div>
@@ -188,8 +188,8 @@ weight: 2
 <div style="border:1px solid black; padding-left:10px;">
     <img src="../composeTheme.png"  alt=""/>
 </div>
-<br>
-更新存值
+
+`RadioButton`处更新存值
 <div style="border:1px solid black; padding-left:10px;">
     <img src="../composeRadioButton.png"  alt=""/>
 </div>
