@@ -238,6 +238,7 @@ dependencies {
     ...
     implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0'
     implementation 'io.github.shawxingkwok:kt-util:1.0.0'
+    implementation 'io.github.shawxingkwok:android-util-core:1.0.0'
     implementation 'io.github.shawxingkwok:android-kdatastore:1.0.0'
 }
 ```
@@ -253,6 +254,7 @@ dependencies {
     ...
     implementation ("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0")
     implementation ("io.github.shawxingkwok:kt-util:1.0.0")
+    implementation ("io.github.shawxingkwok:android-util-core:1.0.0")
     implementation ("io.github.shawxingkwok:android-kdatastore:1.0.0")
 }
 ```
@@ -350,28 +352,34 @@ Kotlin 官方出的序列化工具，速度比 `Java Serializable` 快两倍多�
 </div>
 
 ## 迁移
-`KDataStore` 内置 `appContext` 供你获取其他存储仓库，如 `SharedPreferences`, `MMKV`, `DataStore` 等。
+类比下图格式（判断存在 -> 迁移 -> 删除）从其他存储仓库迁移过来。
+
+比如取自 `SharedPreferences`
 <div style="border:1px solid black; padding-left:10px;">
     <img src="../migration.png" alt=""/>
 </div>
+<br>
 
-### Exists
+此外内置 `delete`, `exists` 两个函数帮助从 `KDataStore` 迁移到别处。
 {{< tabs exists >}}
 {{< tab Kt >}}
 ```
-if(Settings.exists()) 
+if(Settings.exists()) {
     ...
+    Settings.delete()
+}
 ```
 {{< /tab >}}
 {{< tab Java >}}
 ```
-if(Settings.INSTANCE.exists())
+if(Settings.INSTANCE.exists()){
     ...
+    Settings.INSTANCE.delete()
+}
 ```
+警告以防止误用，并无任何异常风险。
 {{< /tab >}}
 {{< /tabs >}}
-
-如果以后需要从`KDataStore`迁移到别处，这可以帮助你判断文件是否存在。
 
 ## 可选参数
 <div style="border:1px solid black; padding-left:10px;">
@@ -390,8 +398,8 @@ if(Settings.INSTANCE.exists())
 Android 在 api 29 版本开始引入了沙盒机制，实现了数据隔离，相对已经很安全了。你们可视版本要求、信息的重要程度来选择
 是否存储在本地、是否加密、以什么协议加密。
 
-## 其他细节
-### 删除/全部重置
+## 重置
+### 全部
 {{< tabs delete >}}
 {{< tab Kt >}}
 <div style="border:1px solid black; padding-left:10px;">
@@ -404,11 +412,10 @@ Android 在 api 29 版本开始引入了沙盒机制，实现了数据隔离，�
 </div>
 {{< /tab >}}
 {{< /tabs >}}
-等效于“全部重置”, 可在中途使用，在下次更新值时再次生成文件。
 <br>
 警告以防止误用，并无任何异常风险。
 
-### 局部重置
+### 局部
 比如重置声明过的 `age`
 {{< tabs partial reset >}}
 {{< tab Kt >}}
@@ -423,7 +430,7 @@ Settings.getAge().reset();
 {{< /tab >}}
 {{< /tabs >}}
 
-### 快速启动
+## 快速启动
 如果你介意这点启动时间。可先行在 `Application` 中异步启动 `Settings`, 或者第一次启动 `Settings` 的时候采用异步。
 
 ## <a href="https://github.com/ShawxingKwok/KDataStore" target="_blank">GitHub repo</a>

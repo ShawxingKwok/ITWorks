@@ -1,31 +1,5 @@
-[//]: # (<!DOCTYPE html>)
-<html>
-<head>
-  <style>
-    img {
-      width: 40px;
-      height: 40px;
-      margin-right: 5px;
-    }
-  </style>
-</head>
-<body>
-
-<a href="https://www.github.com/ShawxingKwok/" target="_blank">
-  <img src="github.png" alt="ShawxingKwok@126.com">
-</a>
-
-<a href="mailto:ShawxingKwok@126.com" target="_blank">
-  <img src="mail.png" alt="">
-</a>
-
-</body>
-</html>
-
 This website displays all my personal open-source works which are all written in Kotlin and 
 licensed with Apache 2.0 at present. In my works, only 'Android.KDataStore' supports Java usage.
-
-[//]: # (Partial works display Tracer & KDataStore)
 
 My code is probably the globally best at present for its functionality, creativity, difficulty, structure, 
 efficiency, and beauty. Wish you could learn from it！I also encourage those authorities to provide better 
@@ -38,4 +12,12 @@ job has its threshold.
 
 At last, **I have two other halfway wonderful works** and am waiting for some top company to help make IDE plugins.
 I have sent resumes to common top IT companies, but those limited resume sizes are too small and they 
-didn't give me opportunities to display.
+didn't give me opportunities to display. 
+
+Welcome to contact with me via 
+<a href="https://www.github.com/ShawxingKwok/" target="_blank">
+    <img src="github.png" alt="ShawxingKwok@126.com" width="18px">
+</a> 
+<a href="mailto:ShawxingKwok@126.com" target="_blank">
+  <img src="mail.png" alt="" width="18px">
+</a>.
