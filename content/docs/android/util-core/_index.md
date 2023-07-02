@@ -3,14 +3,18 @@ title: Util-core
 weight: 1
 ---
 
-## Typical Effect
-{{< video src="KLog" >}}
+{{< hint info >}}
+Contains only `AppContext` and `KLog` at present, 
+and would be expanded with some small useful tools in the future.
+{{< /hint >}}
 
-## Setup
+## Dependency
 ```groovy
-implementation "io.github.shawxingkwok:android-util:1.0.0" 
+"io.github.shawxingkwok:android-util-core:1.0.0" 
 ```
 
-## <a href="html/core/pers.shawxingkwok.androidutil/" target="_blank">Document</a>
+## AppContext
+
+## KLog
 
 ## <a href="https://github.com/ShawxingKwok/AndroidUtil" target="_blank">GitHub repo</a>
