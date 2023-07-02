@@ -1,4 +1,4 @@
-This website displays all my personal open-source works which are all written in Kotlin and 
+This website displays most of my personal open-source works which are all written in Kotlin and 
 licensed with Apache 2.0 at present. Note that only 'Android.KDataStore' supports Java usage.
 
 My code is probably the globally best at present for its functionality, creativity, difficulty, structure, 
@@ -14,10 +14,10 @@ At last, **I have two other halfway wonderful works** and am waiting for some to
 I have sent resumes to common top IT companies, but those limited resume sizes are too small and they 
 didn't give me opportunities to display. 
 
-Welcome to contact with me via 
+Welcome to my 
 <a href="https://www.github.com/ShawxingKwok/" target="_blank">
     <img src="github.png" alt="ShawxingKwok@126.com" width="18px">
-</a> 
+</a> or contact with me via
 <a href="mailto:ShawxingKwok@126.com" target="_blank">
   <img src="mail.png" alt="" width="18px">
 </a>.
