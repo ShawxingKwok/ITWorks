@@ -5,7 +5,7 @@ weight: 1
 
 {{< hint info >}}
 Contains only `AppContext` and `KLog` at present, 
-and would be expanded with some small useful tools in the future.
+and would be expanded with some small practical tools in the future.
 {{< /hint >}}
 
 ## Dependency
@@ -14,6 +14,7 @@ and would be expanded with some small useful tools in the future.
 ```
 
 ## AppContext
+`AppContext` is the static `applicationContext` for you to get anywhere. 
 
 ## KLog
 

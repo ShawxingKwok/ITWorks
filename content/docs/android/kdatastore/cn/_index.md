@@ -160,12 +160,16 @@ weight: 2
 {{< tabs "Preview">}}
 
 {{< tab "view-kt" >}}
-观察`Flow`/`LiveData`，绑定主题
+在 `Activity`/`BasicActivity` 中观察`Flow`/`LiveData`，绑定主题
 <div style="border:1px solid black; padding-left:10px;">
     <img src="../ktTheme.png"  alt=""/>
 </div> 
+<br>
 
-`RadioGroup`处更新存值
+对于临时任务如设置起始 `checked RadioButton` 直接取值 `Settings.isDarkMode.value` 即可，
+后续 `checked RadioButton` 会自动随用户点击变化。
+
+在 `RadioGroup` 监听中更新存值。
 <div style="border:1px solid black; padding-left:10px;">
     <img src="../ktRadioButton.png"  alt=""/>
 </div>
