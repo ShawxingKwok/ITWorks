@@ -243,7 +243,7 @@ dependencies {
     implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0'
     implementation 'io.github.shawxingkwok:kt-util:1.0.0'
     implementation 'io.github.shawxingkwok:android-util-core:1.0.0'
-    implementation 'io.github.shawxingkwok:android-kdatastore:1.0.0'
+    implementation 'io.github.shawxingkwok:kdatastore:1.0.0'
 }
 ```
 {{< /tab >}}
@@ -259,7 +259,7 @@ dependencies {
     implementation ("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0")
     implementation ("io.github.shawxingkwok:kt-util:1.0.0")
     implementation ("io.github.shawxingkwok:android-util-core:1.0.0")
-    implementation ("io.github.shawxingkwok:android-kdatastore:1.0.0")
+    implementation ("io.github.shawxingkwok:kdatastore:1.0.0")
 }
 ```
 {{< /tab >}}
@@ -279,7 +279,7 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach{
 dependencies {
     ...
     implementation 'io.github.shawxingkwok:android-util-view:1.0.0'
-    implementation 'io.github.shawxingkwok:android-kdatastore:1.0.0'
+    implementation 'io.github.shawxingkwok:kdatastore:1.0.0'
     implementation project(':settings') 
 }
 ```
@@ -289,7 +289,7 @@ dependencies {
 ```groovy
 dependencies{
     ...
-    implementation 'io.github.shawxingkwok:android-kdatastore:1.0.0'
+    implementation 'io.github.shawxingkwok:kdatastore:1.0.0'
     implementation project(':settings') 
 }
 ```
@@ -308,7 +308,7 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach{
 dependencies {
     ...
     implementation ("io.github.shawxingkwok:android-util-view:1.0.0")
-    implementation ("io.github.shawxingkwok:android-kdatastore:1.0.0")
+    implementation ("io.github.shawxingkwok:kdatastore:1.0.0")
     implementation (project(":settings")) 
 }
 ```
@@ -318,7 +318,7 @@ dependencies {
 ```kotlin
 dependencies{
     ...
-    implementation ("io.github.shawxingkwok:android-kdatastore:1.0.0")
+    implementation ("io.github.shawxingkwok:kdatastore:1.0.0")
     implementation (project(":settings")) 
 }
 ```

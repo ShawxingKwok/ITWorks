@@ -23,26 +23,40 @@ additional resource memory.
 
 # KLog
 - Practical and concise.
-img
-- Intelligently cancelled logs after released 
+- Logs are intelligently cancelled after released 
 - Little config
-- Light-weight (line number)
+- Light-weight (jar size)
 
-{{< hint info>}}
-The following is told in a progressive relationship, please read in order.
+## General
+The type of `obj` is `Any?`.
+
+{{< codeImg klog.png >}}
+
+## Other levels
+`wtf` is disabled because it's better replaced with an exception.
+{{< codeImg klog_otherLevels.png >}} 
+
+## Custom tag prefix
+{{< codeImg klog_prefix.png >}} {{< codeImg klog_prefix_.png >}}
+
+## Avoid tags too long
+Make `id`, `tagPrefix` short, and avoid the file name too long, or else the link would fail.
+{{< codeImg klog_linkFail.png>}}
+
+## Special types
+`KProperty0`, `Array` and basic type arrays are specially handled.
+{{< codeImg klog_specialTypes.png >}}
+
+{{< hint info >}} 
+All logs from this library are automatically cancelled when the app is released.
 {{< /hint >}}
 
-## Informal learning project 
-
-All logs are cancelled when the app is released. 
-
-声明 Log.wtf 比较鸡肋，应用 Exception 替代
-
-## Open source library
-Set a log object class with the abbreviated library name.("DEMO" here)
+## In open source android library
+Set a log object class. 
 ```kotlin
-internal object MLog : KLog(BuildConfig.DEBUG, "DEMO") 
+internal object MLog : KLog("LIB", BuildConfig.DEBUG) 
 ```
+Set `id` with an abbreviated all-caps library name.("LIB" here)
 {{< hint danger >}}
 Remember to build the module if there is no directory 'build', or else you probably import `BuildConfig` from another
 library.
@@ -50,20 +64,22 @@ library.
 
 compared to above logs in 'Informal learning project'
 - tag changed.
-- logs on level `VERBOSE` and `DEBUG` are undone when the library is released. 
+- logs on level `VERBOSE`, `DEBUG` and `INFO` are undone when the library is released.
 
-## App
+## In app
 1. Set an abstract log class in the basic/common module with the abbreviated application name. 
 ("FB" here)
     ```kotlin
-    abstract class FBLog(onDebug: Boolean, id: String) : KLog(onDebug, "$id-FB")
+    abstract class FBLog(id: String, onDebug: Boolean) : KLog("$id-FB", onDebug)
     ```
 
 2. Set an **internal** log class in each submodule. Here supposes in the `Database` module. 
     ```kotlin
-    internal object MLog : FBLog(BuildConfig.DEBUG, "DB")
+    internal object MLog : FBLog("DB", BuildConfig.DEBUG)
     ```
 
 3. Use as below
+
+## Custom
 
 # <a href="https://github.com/ShawxingKwok/AndroidUtil" target="_blank">GitHub repo</a>
