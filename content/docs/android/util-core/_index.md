@@ -15,71 +15,85 @@ and would be expanded with some small practical tools in the future.
 
 # AppContext
 It is the static `applicationContext` for you to get anywhere. In this way, your 
-`Database`, `DAO`, `SharedPreferences`,`DataStore` and some other tools can be easy
-singleton object classes, of which the profit is much more important than the 
-additional resource memory. 
+`Database`, `DAO`, `SharedPreferences`, `DataStore` and some other tools could be static, 
+of which the profit is much more considerable than the additional resource memory. 
 
 {{< codeImg appcontext.png >}}
 
 # KLog
-- Practical and concise.
-- Logs are intelligently cancelled after released 
-- Little config
-- Light-weight (jar size)
+- Tag is global and has a link.
+- Logs are intelligently cancelled after released. 
+- Light-weight. (jar size)
 
-## General
-The type of `obj` is `Any?`.
+## Direct
+`obj`'s type is `Any?` and is printed out with its `toString`.
 
 {{< codeImg klog.png >}}
 
 ## Other levels
-`wtf` is disabled because it's better replaced with an exception.
-{{< codeImg klog_otherLevels.png >}} 
+{{< codeImg klog_otherLevels.png >}}
+`KLog.wtf` is not provided. In my opinion, you'd better throw an error if fatal or `KLog.e` if not.
 
-## Custom tag prefix
+## More args
+### Tag prefix
 {{< codeImg klog_prefix.png >}} {{< codeImg klog_prefix_.png >}}
+
+### Throwable
+This is assignable only in `KLog.e`.
+{{< codeImg klog_tr.png >}}
 
 ## Avoid tags too long
 Make `id`, `tagPrefix` short, and avoid the file name too long, or else the link would fail.
 {{< codeImg klog_linkFail.png>}}
 
 ## Special types
-`KProperty0`, `Array` and basic type arrays are specially handled.
+Useful `KProperty0`, and common `Array`, basic type arrays are specially handled, since their `toString` 
+don't tell values. 
 {{< codeImg klog_specialTypes.png >}}
 
-{{< hint info >}} 
+## Automatic cancel
+{{< codeImg klog_src.png >}}
+
+Logs on level `V`, `D` and `I` are cancelled when not `onDebug`. 
+
 All logs from this library are automatically cancelled when the app is released.
-{{< /hint >}}
 
 ## In open source android library
-Set a log object class. 
-```kotlin
-internal object MLog : KLog("LIB", BuildConfig.DEBUG) 
-```
-Set `id` with an abbreviated all-caps library name.("LIB" here)
+Set an **internal** log object class. 
+{{< codeImg mlog.png >}}
+
+`id` should be an abbreviated all-caps library name for being easily distinguished from other tags.
 {{< hint danger >}}
 Remember to build the module if there is no directory 'build', or else you probably import `BuildConfig` from another
 library.
 {{< /hint >}}
 
-compared to above logs in 'Informal learning project'
-- tag changed.
-- logs on level `VERBOSE`, `DEBUG` and `INFO` are undone when the library is released.
+Effect
+{{< codeImg mlog_.png >}}
 
-## In app
-1. Set an abstract log class in the basic/common module with the abbreviated application name. 
-("FB" here)
-    ```kotlin
-    abstract class FBLog(id: String, onDebug: Boolean) : KLog("$id-FB", onDebug)
-    ```
+## In each app submodule
+Set a log class extended from `KLog.InApp`. Here supposes in the `database` module.
+{{< codeImg mlog_app.png >}}
 
-2. Set an **internal** log class in each submodule. Here supposes in the `Database` module. 
-    ```kotlin
-    internal object MLog : FBLog("DB", BuildConfig.DEBUG)
-    ```
+Effect 
+{{< codeImg mlog_app_.png >}}
 
-3. Use as below
+{{< hint info >}}
+`tag~:APP` in the logcat could exclude logs from foreign libraries. 
+{{< /hint >}}
 
-## Custom
+## Extend
+Source code.
+{{< codeImg klog_expand_src.png >}}
+
+Extend as this.
+{{< codeImg klog_expand_sample.png >}}
+
+{{< hint danger >}}
+`Thread.stackTrace` in `log` is easily disturbed. Never call `log` indirectly like `super...` or set defaults for 
+your function parameters.
+{{< /hint >}}
+
+Or you could reference my concise `fun log`, `KLog` and design yourself.
 
 # <a href="https://github.com/ShawxingKwok/AndroidUtil" target="_blank">GitHub repo</a>
