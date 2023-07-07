@@ -3,10 +3,7 @@ title: Util-view
 weight: 2
 ---
 
-## Typical Effect
-{{< video src="effect" >}} 
-
-## Setup
+# Setup
 Add this part directly, rather than insert messily.
 {{< tabs >}}
 {{< tab "Groovy" >}}
@@ -45,6 +42,10 @@ dependencies {
 {{< /tab >}}
 {{< /tabs >}}
 
-## <a href="html/view/pers.shawxingkwok.androidutil.view/" target="_blank">Document</a>
+# Flow.collectOnResume
 
-## <a href="https://github.com/ShawxingKwok/AndroidUtil" target="_blank">GitHub repo</a>
+# KFragment
+
+# KRecyclerViewAdapter
+
+# <a href="https://github.com/ShawxingKwok/AndroidUtil-View" target="_blank"> GitHub repo </a>

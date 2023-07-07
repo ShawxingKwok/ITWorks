@@ -23,10 +23,10 @@ of which the profit is much more considerable than the additional resource memor
 # KLog
 - Tag is global and has a link.
 - Logs are intelligently cancelled after released. 
-- Light-weight. (jar size)
+- Light-weight. (2kb in jar)
 
 ## Direct
-`obj`'s type is `Any?` and is printed out with its `toString`.
+`obj`'s type is `Any?` and printed out with its `toString`.
 
 {{< codeImg klog.png >}}
 
@@ -35,7 +35,7 @@ of which the profit is much more considerable than the additional resource memor
 `KLog.wtf` is not provided. In my opinion, you'd better throw an error if fatal or `KLog.e` if not.
 
 ## More args
-### Tag prefix
+### Tag prefix 
 {{< codeImg klog_prefix.png >}} {{< codeImg klog_prefix_.png >}}
 
 ### Throwable
@@ -47,7 +47,7 @@ Make `id`, `tagPrefix` short, and avoid the file name too long, or else the link
 {{< codeImg klog_linkFail.png>}}
 
 ## Special types
-Useful `KProperty0`, and common `Array`, basic type arrays are specially handled, since their `toString` 
+Useful `KProperty0`, common `Array`, and basic type arrays are specially handled, since their `toString` 
 don't tell values. 
 {{< codeImg klog_specialTypes.png >}}
 
@@ -60,7 +60,7 @@ All logs from this library are automatically cancelled when the app is released.
 
 ## In open source android library
 Set an **internal** log object class. 
-{{< codeImg mlog.png >}}
+{{< codeImg mlog_lib_class.png >}}
 
 `id` should be an abbreviated all-caps library name for being easily distinguished from other tags.
 {{< hint danger >}}
@@ -69,10 +69,11 @@ library.
 {{< /hint >}}
 
 Effect
-{{< codeImg mlog_.png >}}
+{{< codeImg mlog_lib.png >}}
+{{< codeImg mlog_lib_.png >}}
 
 ## In each app submodule
-Set a log class extended from `KLog.InApp`. Here supposes in the `database` module.
+Set a log class extended from `KLog.InApp`. Here sets `id` "DB", supposing in the `database` module.
 {{< codeImg mlog_app.png >}}
 
 Effect 
@@ -83,17 +84,17 @@ Effect
 {{< /hint >}}
 
 ## Extend
-Source code.
+Source code
 {{< codeImg klog_expand_src.png >}}
 
 Extend as this.
 {{< codeImg klog_expand_sample.png >}}
 
 {{< hint danger >}}
-`Thread.stackTrace` in `log` is easily disturbed. Never call `log` indirectly like `super...` or set defaults for 
-your function parameters.
+`Thread.stackTrace` in `log` is easily disturbed. Never call `log` indirectly like `super...` 
+or set defaults for your function parameters.
 {{< /hint >}}
 
 Or you could reference my concise `fun log`, `KLog` and design yourself.
 
-# <a href="https://github.com/ShawxingKwok/AndroidUtil" target="_blank">GitHub repo</a>
+# <a href="https://github.com/ShawxingKwok/AndroidUtil-Core" target="_blank"> GitHub repo </a>
