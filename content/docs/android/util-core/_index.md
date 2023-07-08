@@ -25,6 +25,10 @@ of which the profit is much more considerable than the additional resource memor
 - Logs are intelligently cancelled after released. 
 - Light-weight. (2kb in jar)
 
+## Modify logcat view
+Extend tag first. As for others, it's my personal preferences.
+{{< video src=logcat >}} 
+
 ## Direct
 `obj`'s type is `Any?` and printed out with its `toString`.
 

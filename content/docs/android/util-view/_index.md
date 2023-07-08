@@ -17,7 +17,6 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach{
 }
 
 dependencies {
-    implementation 'io.github.shawxingkwok:kt-util:1.0.0'
     implementation 'io.github.shawxingkwok:android-util-view:1.0.0'
 }
 //endregion
@@ -34,7 +33,6 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach 
 }
 
 dependencies {
-    implementation("io.github.shawxingkwok:kt-util:1.0.0")
     implementation("io.github.shawxingkwok:android-util-view:1.0.0")
 }
 //endregion
@@ -43,6 +41,33 @@ dependencies {
 {{< /tabs >}}
 
 # Flow.collectOnResume
+Is used in `Fragment.onCreateView` or `Fragment.onViewCreated` to 
+collect `flow` with `collector` every `Fragment.onResume`.
+
+Switch from
+```kotlin
+override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    super.onViewCreated(view, savedInstanceState)
+
+    viewLifecycleOwner.lifecycleScope.launch {
+        repeatOnLifecycle(Lifecycle.State.RESUMED) {
+            flow.collect {
+                ...
+            }
+        }
+    }
+}
+```
+to
+```kotlin
+override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    super.onViewCreated(view, savedInstanceState)
+
+    flow.collectOnResume{
+        ...
+    }
+}
+```
 
 # KFragment
 
