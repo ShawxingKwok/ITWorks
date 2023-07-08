@@ -10,8 +10,6 @@ Add this part directly, rather than insert messily.
 
 ```groovy
 //region shawxingkwok: android-util-view
-android.lintOptions.disable 'NonConstantResourceId'
-
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach{
     kotlinOptions.freeCompilerArgs += "-Xcontext-receivers"
 }
@@ -26,8 +24,6 @@ dependencies {
 
 ```kotlin
 //region shawxingkwok: android-util-view
-android.lintOptions.disable("NonConstantResourceId")
-
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
     kotlinOptions.freeCompilerArgs += "-Xcontext-receivers"
 }
@@ -70,7 +66,21 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 ```
 
 # KFragment
+## ViewBinding
+{{< codeImg kfragment_binding.png >}}
+
+{{< hint info>}}
+You may have seen other libraries realized only via a generic parameter, which is, however, unsafe or 
+time-consuming.
+```kotlin
+abstrac class VBFragment<VB: ViewBinding> : Fragment()
+```
+{{< /hint >}}
+
+## withView
 
 # KRecyclerViewAdapter
+
+# KClass\<out ViewBinding>.inflate
 
 # <a href="https://github.com/ShawxingKwok/AndroidUtil-View" target="_blank"> GitHub repo </a>
