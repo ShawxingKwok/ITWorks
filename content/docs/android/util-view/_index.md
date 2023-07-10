@@ -123,8 +123,8 @@ Here is allowed to set `Listeners` on `view` with `adapterPosition` to get `data
 take this step in `arrange` which costs ignorable more memories.
 
 ## payloads 
-This function is made `final` since the background calculation is efficient enough. As it is inherently 
-uncommon, just skip if you aren't familiar with it. 
+As this function is inherently uncommon, just skip if you aren't familiar with it
+which is made `final` since the background calculation is efficient enough. 
 {{< codeImg recyclerview_payloads.png >}}
 
 # More 
