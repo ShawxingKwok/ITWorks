@@ -39,9 +39,9 @@ weight = 1
 [[menu.after]]
 identifier = "my-after-menu"
 name = "My After Menu"
-url = "https://shawxingkwok.github.io/TracerTutorial/"
+url = "#"
 weight = 2
-pre = "<img src='/github.png' alt='Menu Icon' style='height: 20px; width: auto; vertical-align: middle; margin-right: 5px;' />"
+pre = "<img src='/static/github.png' alt='Menu Icon' style='height: 20px; width: auto; vertical-align: middle; margin-right: 5px;' />"
 
 #
 [[menu.after]]
