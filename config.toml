@@ -44,10 +44,10 @@ weight = 2
 pre = "<img src='/static/github.png' alt='Menu Icon' style='height: 20px; width: auto; vertical-align: middle; margin-right: 5px;' />"
 
 #
-[[menu.after]]
-name = "Email"
-url = "https://shawxingkwok.github.io/TracerTutorial/"
-weight = 3
+#[[menu.after]]
+#name = "Email"
+#url = "https://shawxingkwok.github.io/TracerTutorial/"
+#weight = 3
 
 [params]
 BookRepo = 'https://github.com/ShawxingKwok/ITWorks'
