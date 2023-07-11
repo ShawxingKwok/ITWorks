@@ -99,16 +99,16 @@ var x by withView{ ... }
 <br>
 {{< codeImg recyclerview_fragment.png >}}
 
-The `layoutManager` is required. But I prefer putting it in the `xml`.
+The `layoutManager` is required. But I prefer putting it in `xml`.
 {{< codeImg recyclerview_layoutManger.png >}}
 
 `KRecyclerViewAdapter` is not bound to `KFragment` but usable in general `Activity`/`Fragment`. 
 And you could replace `withView`, `collectOnResume`, and `onClick`.
 
 ## update
-{{< codeImg recyclerview_update_src.png >}}
-<br>
 {{< codeImg recyclerview_update_notify.png >}}
+<br>
+{{< codeImg recyclerview_update_src.png >}}
 
 These functions `notify...`  are replaced with `update` now.
 {{< hint info >}}
@@ -122,14 +122,14 @@ In case you need to process `ViewHolder` after its automatic creation regardless
 Here is allowed to set `Listeners` on `view` with `adapterPosition` to get `data`, which is, however, unclear. Just
 take this step in `arrange` which costs ignorable more memories.
 
-## payloads 
-As this function is inherently uncommon, just skip if you aren't familiar with it
-which is made `final` since the background calculation is efficient enough. 
-{{< codeImg recyclerview_payloads.png >}}
+## final functions 
+{{< codeImg recyclerview_final.png >}}
+
+These functions are made `final` in `KRecyclerViewAdapter`.
 
 # More 
 ## On the way
-1. `KRecyclerViewAdapter`: sticky header 
-2. `KFragment`: delegates data stored in the hidden `viewModel` with observation. 
+- `KRecyclerViewAdapter`: sticky header
+- `KFragment`: delegates data stored in the hidden `viewModel` with observation. 
 
 ## <a href="https://github.com/ShawxingKwok/AndroidUtil-View" target="_blank"> GitHub repo with demo</a>

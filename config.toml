@@ -31,9 +31,19 @@ tag = "tags"
 [menu]
 
 [[menu.after]]
-#name = "Tracer"
+name = "About"
+url = "https://shawxingkwok.github.io/TracerTutorial/"
+weight = 1
+#
+[[menu.after]]
+name = "Github"
+url = "https://shawxingkwok.github.io/TracerTutorial/"
+weight = 2
+#
+#[[menu.after]]
+#name = "Email"
 #url = "https://shawxingkwok.github.io/TracerTutorial/"
-#weight = 10
+#weight = 3
 
 [params]
 BookRepo = 'https://github.com/ShawxingKwok/ITWorks'
