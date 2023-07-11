@@ -1,3 +1,11 @@
+---
+menu:
+  after:
+    name: About
+    weight: 1
+title: About
+---
+
 This website displays most of my personal open-source works which are all written in Kotlin and
 licensed with Apache 2.0 at present. Note that only 'Android.KDataStore' considers well `Java` supports.
 

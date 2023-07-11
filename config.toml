@@ -31,22 +31,13 @@ tag = "tags"
 [menu]
 
 [[menu.after]]
-name = "About"
-url = "https://shawxingkwok.github.io/TracerTutorial/"
-weight = 1
-#
-
-[[menu.after]]
-identifier = "my-after-menu"
-name = "My After Menu"
-url = "#"
+name = "Github"
+url = "https://github.com/ShawxingKwok"
 weight = 2
-pre = "<img src='/static/github.png' alt='Menu Icon' style='height: 20px; width: auto; vertical-align: middle; margin-right: 5px;' />"
 
-#
 [[menu.after]]
 name = "Email"
-url = "https://shawxingkwok.github.io/TracerTutorial/"
+url = "mailto:ShawxingKwok@126.com"
 weight = 3
 
 [params]
