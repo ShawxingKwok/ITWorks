@@ -6,10 +6,12 @@ menu:
 title: License
 ---
 
+{{< hint info >}}
 This license applies to all the works on this website.
+{{< /hint >}}
 
-Apache License
-Version 2.0, January 2004
+Apache License  
+Version 2.0, January 2004  
 http://www.apache.org/licenses/
 
 TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION

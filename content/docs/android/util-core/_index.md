@@ -95,10 +95,23 @@ Extend as this.
 {{< codeImg klog_expand_sample.png >}}
 
 {{< hint danger >}}
-`Thread.stackTrace` in `log` is easily disturbed. Never call `log` indirectly like `super...` 
+`stackTrace` in `log` is easily disturbed. Never call `log` indirectly like `super...` 
 or set defaults for your function parameters.
 {{< /hint >}}
 
 Or you could reference my concise `fun log`, `KLog` and design yourself.
+
+## Specify position when `inline`
+`stackTrace` is disturbed in `inline` functions or `crossinline` blocks.
+Specify `tagPrefix` with `fileName` in these cases.
+
+{{< codeImg klog_test_inline.png >}}
+<br>
+{{< codeImg klog_test_start.png >}}
+<br>
+Log out
+{{< codeImg klog_test_console.png >}} 
+
+One day the authority would fix this `stackTrace` problem, so I keep the wrong position here.
 
 # <a href="https://github.com/ShawxingKwok/AndroidUtil-Core" target="_blank"> GitHub repo </a>
