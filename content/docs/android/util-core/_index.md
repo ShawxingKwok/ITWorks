@@ -112,6 +112,6 @@ Specify `tagPrefix` with `fileName` in these cases.
 Log out
 {{< codeImg klog_test_console.png >}} 
 
-One day the authority would fix this `stackTrace` problem, so I keep the wrong position here.
+One day the authority would fix this `stackTrace` problem, so I keep the wrong position.
 
 # <a href="https://github.com/ShawxingKwok/AndroidUtil-Core" target="_blank"> GitHub repo </a>

@@ -160,31 +160,22 @@ weight: 2
 {{< tabs "Preview">}}
 
 {{< tab "view-kt" >}}
-在 `Activity`/`BasicActivity` 中观察`Flow`/`LiveData`，绑定主题
+1. 在 `Activity`/`BasicActivity` 中观察`Flow`/`LiveData`，绑定主题。  
+2. `checked RadioButton` 会随用户点击自动变化，根据 `isDarkMOde.value` 设置起始状态即可，不用绑定。  
+3. 在 `RadioGroup` 监听中更新存值。  
 <div style="border:1px solid black; padding-left:10px;">
-    <img src="../ktTheme.png"  alt=""/>
+    <img src="../kt_basic_usage.png"  alt=""/>
 </div> 
 <br>
 
-对于临时任务如设置起始 `checked RadioButton` 直接取值 `Settings.isDarkMode.value` 即可，
-后续 `checked RadioButton` 会自动随用户点击变化。
-
-在 `RadioGroup` 监听中更新存值。
-<div style="border:1px solid black; padding-left:10px;">
-    <img src="../ktRadioButton.png"  alt=""/>
-</div>
 {{< /tab >}}
 
 {{< tab "view-java" >}}
-观察`LiveData`，绑定主题
-<div style="border:1px solid black; padding-left:10px;">
-    <img src="../javaTheme.png"  alt=""/>
-</div>
+1. 在 `Activity`/`BasicActivity` 中观察 `LiveData`，绑定主题。
+2. `checked RadioButton` 会随用户点击自动变化，根据 `isDarkMode().getValue()` 设置起始状态即可，不用绑定。
+3. 在 `RadioGroup` 监听中更新存值。  
+{{< codeImg "../java_basic_usage.png" >}}
 
-`RadioGroup`处更新存值
-<div style="border:1px solid black; padding-left:10px;">
-    <img src="../javaRadioButton.png"  alt=""/>
-</div>
 {{< /tab >}}
 
 {{< tab "compose" >}}
