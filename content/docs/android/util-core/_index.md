@@ -8,11 +8,10 @@ Contains only `AppContext` and `KLog` at present,
 and would be expanded with some small practical tools in the future.
 {{< /hint >}}
 
-# Dependency
-```groovy
-"io.github.shawxingkwok:android-util-core:1.0.0" 
-```
-
+# Setup
+Repository: `mavenCentral()`  
+Dependency: `"io.github.shawxingkwok:android-util-core:1.0.0"`
+  
 # AppContext
 It is the static `applicationContext` for you to get anywhere. In this way, your 
 `Database`, `DAO`, `SharedPreferences`, `DataStore` and some other tools could be static, 
@@ -36,7 +35,7 @@ Extend tag first. As for others, it's my personal preferences.
 
 ## Other levels
 {{< codeImg klog_otherLevels.png >}}
-`KLog.wtf` is not provided. In my opinion, you'd better throw an error if fatal or `KLog.e` if not.
+`KLog.wtf` is not provided. In my opinion, you'd better throw an error if fatal or use `KLog.e` if not.
 
 ## More args
 ### Tag prefix 
@@ -101,17 +100,15 @@ or set defaults for your function parameters.
 
 Or you could reference my concise `fun log`, `KLog` and design yourself.
 
-## Specify position when `inline`
-`stackTrace` is disturbed in `inline` functions or `crossinline` blocks.
-Specify `tagPrefix` with `fileName` in these cases.
-
+## Provide position when `inline`
+`stackTrace` is disturbed in `inline` functions and `crossinline` blocks.
+Specify `tagPrefix` with `fileName` in these cases. 
+This problem also exists in links from other log libraries, and would be fixed by the kotlin standard library.
 {{< codeImg klog_test_inline.png >}}
 <br>
 {{< codeImg klog_test_start.png >}}
 <br>
 Log out
 {{< codeImg klog_test_console.png >}} 
-
-One day the authority would fix this `stackTrace` problem, so I keep the wrong position link.
 
 # <a href="https://github.com/ShawxingKwok/AndroidUtil-Core" target="_blank"> GitHub repo </a>
