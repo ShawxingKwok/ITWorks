@@ -7,6 +7,10 @@ weight: 2
 这份中文版本和 `Java` 扩展主要用作初期宣传，其他作品并不会有。
 {{< /hint >}}
 
+{{< hint warning >}}
+在支持 `IOS` 之后会移到 `Multiplatform mobile` 分组中。
+{{< /hint >}}
+
 # KDataStore
 
 ## 本地快捷存储方案对比
@@ -74,10 +78,16 @@ weight: 2
 
 <tr>
     <td>多进程共享</td>
-    <td>自行封装入 ContentResolver</td>
+    <td>自行封装</td>
     <td> <span style="color: green; ">支持</span> </td>
-    <td>处于 alpha 阶段</td>
-    <td>DataStore 正式支持之后</td>
+    <td rowspan="2">处于 alpha 阶段</td>
+    <td rowspan="2">DataStore 正式支持之后</td>
+</tr>
+
+<tr>
+    <td>多平台</td>
+    <td><span style="color: red; ">不支持</span></td>
+    <td> <span style="color: red; ">不支持</span> </td>
 </tr>
 
 <tr>
@@ -85,7 +95,7 @@ weight: 2
     <td>自行封装</td>
     <td><span style="color: green; ">支持</span></td>
     <td>自行封装</td>
-    <td> <span style="color: green; ">支持</span> </td>
+    <td> <span style="color: green; ">需引入其他加密库</span> </td>
 </tr>
 
 <tr>
@@ -101,7 +111,7 @@ weight: 2
     <td></td>
     <td> <span style="color: green; ">Parcelable</span></td>
     <td><span style="color: green; ">自定义</span><br>但需放在独立的 DataStore 中</td>
-    <td> <span style="color: green; "> enum <br> Serializable(java/kotlin) 自定义 <br> 且均可空</span></td>
+    <td> <span style="color: green; ">Kt Serializable (包括常见存储类型）<br><br>自定义</span></td>
 </tr>
 
 <tr>
@@ -112,7 +122,7 @@ weight: 2
     </td>
     <td></td>
     <td>
-        <span style="color: green; "> 建模简单，调用方便 </span>
+        <span style="color: green; "> 建模简单，调用方便 <br><br> 体积小，jar on Android side 仅 8 kb </span>
     </td>
 </tr>
 
@@ -121,7 +131,7 @@ weight: 2
     <td></td>
     <td><span style="color: red; ">断电或者系统崩溃后容易丢失很多数据</span></td>
     <td></td>
-    <td><span style="color: red; "> 比较新，</span> 但仅 300 多行代码，相对稳定。
+    <td><span style="color: red; "> 比较新 </span> 
         <br><br> <span style="color: red; ">建模时只能使用 Kotlin, </span> 只会 Java 的同学需稍掌握一点 Kotlin 知识。
     </td>
 </tr>
@@ -166,8 +176,10 @@ weight: 2
 <div style="border:1px solid black; padding-left:10px;">
     <img src="../kt_basic_usage.png"  alt=""/>
 </div> 
-<br>
-
+{{< hint info >}}
+在 `Fragment` 中观察 `Flow` 时建议采用 
+{{< newTab collectOnResume "https://shawxingkwok.github.io/ITWorks/docs/android/util-view/#flowcollectonresume" >}}
+{{< /hint >}}
 {{< /tab >}}
 
 {{< tab "view-java" >}}
@@ -194,7 +206,7 @@ weight: 2
 
 ## 配置
 
-配置相应 `build.gradle`, 或可直接看[源码](https://github.com/ShawxingKwok/KDataStore/archive/refs/heads/master.zip)中的 demo。
+配置相应 `build.gradle`, 或可直接看[源码](#)中的 demo。
 
 ### 根目录 
 {{< tabs "root plugins" >}}
@@ -319,15 +331,10 @@ dependencies{
 {{< /tabs >}}
 
 ## 类型支持
-### 常见类型
-`Boolean`, `Int`, `Long`, `Float`, `Double`, `String`, `Enum`, `Serializable` 
-<div style="border:1px solid black; padding-left:10px;">
-    <img src="../commonTypes.png" width="500"/>
-</div>
 
-### Kt Serializable
-Kotlin 官方出的序列化工具，速度比 `Java Serializable` 快两倍多，且支持多平台。
-基本类型，`Pair`, `Triple`, 还有常用容器类型如 `List`, `Set` 的默认实现均可视为 `Kotlin Serializable`。
+### {{< newTab "Kt Serializable" "https://github.com/Kotlin/kotlinx.serialization/blob/master/docs/basic-serialization.md" >}}
+Kotlin 官方出的序列化工具，速度比 `Java Serializable` 快两倍多。
+基本类型，`Pair`, `Triple`, `IntArray`, 还有 `List`, `Set` 的默认实现均可视为 `Kotlin Serializable`。
 
 [//]: # (It's an official platform-neutral data conversion.)
 <div style="border:1px solid black; padding-left:10px;">
