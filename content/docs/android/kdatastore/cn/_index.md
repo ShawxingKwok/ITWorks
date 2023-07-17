@@ -11,9 +11,7 @@ weight: 2
 在支持 `IOS` 之后会移到 `Multiplatform mobile` 分组中。
 {{< /hint >}}
 
-# KDataStore
-
-## 本地快捷存储方案对比
+# 本地快捷存储方案对比
 
 <table>
 <tr>
@@ -144,15 +142,15 @@ weight: 2
 官网相对准确，但也很片面。如想探究，建议自己测试并查阅源码。
 {{< /hint >}}
 
-## 基础用法
+# 基础用法
 用 Dark theme 举例 
 
-### UI 展示
+## UI 展示
 <video height="200" controls>
   <source src="../effect.mov" type="video/mp4">
 </video>
 
-### 建模
+## 建模
 单独分出一个 `Android` 模块, 常见命名为 `settings`。 （后续的文档均按照 `settings`）
 {{< codeImg "../model.png" >}}
 <br> 
@@ -165,7 +163,7 @@ weight: 2
 其中的 `liveData` 为 `Android` 专供，在后续的其他平台上并不支持。
 {{< /hint >}}
 
-### 调用
+## 调用
 
 在其他模块中调用 
 {{< tabs "Preview">}}
@@ -199,11 +197,11 @@ weight: 2
 
 {{< /tabs >}}
 
-## 配置
+# 配置
 
 配置相应 `build.gradle`, 或可见[源码](#release)中的 demo。
 
-### 根目录 
+## 根目录 
 {{< tabs "root plugins" >}}
 {{< tab "Groovy" >}}
 ```
@@ -224,7 +222,7 @@ plugins{
 {{< /tab >}}
 {{< /tabs >}}
 
-### 模型模块
+## 模型模块
 单独分出一个 module, 常见命名为 `settings`, （如果不采纳，后续的 `settings` 命名则一并更改）
 language 选择 **kotlin** 而非 java。
 
@@ -263,7 +261,7 @@ dependencies {
 {{< /tab >}}
 {{< /tabs >}}
 
-### 调用方 
+## 调用方 
 {{< tabs "caller side" >}}
 
 {{< tab "Groovy" >}}
@@ -325,7 +323,7 @@ dependencies{
 {{< /tab >}}
 {{< /tabs >}}
 
-## 类型支持
+# 类型支持
 
 `Kt Serializable` 为 Kotlin 官方出的序列化工具，用法类似 `Java Serializable`, 但多平台，且速度快两倍多。 
 被 `Serializable` 标记的 `class`, 
@@ -338,7 +336,7 @@ dependencies{
 - `Nullable` 时默认值被限制为 `null`。
 - 自定义时需实现与 `Kt Serializable` 之间的相互转换。
 
-## 迁移
+# 迁移
 类比下图格式（判断存在 -> 迁移 -> 删除）从其他存储仓库迁移过来。
 
 比如取自 `SharedPreferences`
@@ -368,15 +366,15 @@ if(Settings.INSTANCE.exists()){
 {{< /tab >}}
 {{< /tabs >}}
 
-## 可选参数
+# 可选参数
 <div style="border:1px solid black; padding-left:10px;">
     <img src="../args.png" alt=""/>
 </div>
 
-### 文件名
+## 文件名
 如果只有一个 `KDataStore`, 建议命名为 `settings` 或 `preferences`，相应的 class name(首字母大写), module name 亦是如此。
 
-### 加密
+## 加密
 `KDataStore`提供了加密功能接口和一个 AES 实现。
 <div style="border:1px solid black; padding-left:10px;">
     <img src="../cypher.png" alt=""/>
@@ -385,8 +383,8 @@ if(Settings.INSTANCE.exists()){
 Android 在 api 29 版本开始引入了沙盒机制，实现了数据隔离，相对已经很安全了。你们可视版本要求、信息的重要程度来选择
 是否存储在本地、是否加密、以什么协议加密。
 
-## 重置
-### 全部
+# 重置
+## 全部
 {{< tabs delete >}}
 {{< tab Kt >}}
 <div style="border:1px solid black; padding-left:10px;">
@@ -402,7 +400,7 @@ Android 在 api 29 版本开始引入了沙盒机制，实现了数据隔离，�
 <br>
 警告以防止误用，并无任何异常风险。
 
-### 局部
+## 局部
 比如重置声明过的 `age`
 {{< tabs partial reset >}}
 {{< tab Kt >}}
@@ -417,7 +415,7 @@ Settings.getAge().reset();
 {{< /tab >}}
 {{< /tabs >}}
 
-## 快速启动
+# 快速启动
 如果你介意这点启动时间。可先行在 `Application` 中异步启动 `Settings`, 或者第一次启动 `Settings` 的时候采用异步。
 
-## <a href="https://github.com/ShawxingKwok/KDataStore" target="_blank">GitHub repo</a>
+# <a href="https://github.com/ShawxingKwok/KDataStore" target="_blank">GitHub 仓库</a>
