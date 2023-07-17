@@ -137,7 +137,7 @@ weight: 2
 </tr>
 </table>
 
-以上测试结果采用 30 份 7(key length) * 20(value length) 的 String 数据，机型魅族18s。代码在[源码](https://github.com/ShawxingKwok/KDataStore/archive/refs/heads/master.zip)中。
+以上测试结果采用 30 份 7(key length) * 20(value length) 的 String 数据，机型魅族18s。代码在[源码](https://github.com/ShawxingKwok/KDataStore/archive/refs/heads/master.zip)中 api 的 androidTest。
 
 {{< hint warning >}}
 关于其他地方的存储方案对比分析，绝大多数都有严重错误。
@@ -153,16 +153,17 @@ weight: 2
 </video>
 
 ### 建模
-单独分出一个模块, 常见命名为 `settings`。 （后续的文档均按照 `settings`）
-<div style="border:1px solid black; padding-left:10px;">
-    <img src="../model.png"  alt=""/>
-</div>
-<br>
+单独分出一个 `Android` 模块, 常见命名为 `settings`。 （后续的文档均按照 `settings`）
+{{< codeImg "../model.png" >}}
+<br> 
 
-其中 `isDarkMode` 的类型并非官方的 `Flow`, 而是 `KDataStore.Flow`
-<div style="border:1px solid black; padding-left:10px;">
-    <img src="../FlowType.png"  alt=""/>
-</div>
+`KDSFlow` 源码
+{{< codeImg "../kdsFlowExpect.png" >}}
+{{< codeImg "../kdsFlowActual.png" >}}
+
+{{< hint warning >}}
+其中的 `liveData` 为 `Android` 专供，在后续的其他平台上并不支持。
+{{< /hint >}}
 
 ### 调用
 
@@ -173,9 +174,7 @@ weight: 2
 1. 在 `Activity`/`BasicActivity` 中观察`Flow`/`LiveData`，绑定主题。  
 2. `checked RadioButton` 会随用户点击自动变化，根据 `isDarkMOde.value` 设置起始状态即可，不用绑定。  
 3. 在 `RadioGroup` 监听中更新存值。  
-<div style="border:1px solid black; padding-left:10px;">
-    <img src="../kt_basic_usage.png"  alt=""/>
-</div> 
+{{< codeImg "../kt_basic_usage.png" >}}
 {{< hint info >}}
 在 `Fragment` 中观察 `Flow` 时建议采用 
 {{< newTab collectOnResume "https://shawxingkwok.github.io/ITWorks/docs/android/util-view/#flowcollectonresume" >}}
@@ -192,21 +191,17 @@ weight: 2
 
 {{< tab "compose" >}}
 将 `State` 和主题绑定  
-<div style="border:1px solid black; padding-left:10px;">
-    <img src="../composeTheme.png"  alt=""/>
-</div>
+{{< codeImg "../composeTheme.png" >}}
 
 `RadioButton`处更新存值
-<div style="border:1px solid black; padding-left:10px;">
-    <img src="../composeRadioButton.png"  alt=""/>
-</div>
+{{< codeImg "../composeRadioButton.png" >}}
 {{< /tab >}}
 
 {{< /tabs >}}
 
 ## 配置
 
-配置相应 `build.gradle`, 或可直接看[源码](#)中的 demo。
+配置相应 `build.gradle`, 或可见[源码](#release)中的 demo。
 
 ### 根目录 
 {{< tabs "root plugins" >}}
@@ -332,26 +327,16 @@ dependencies{
 
 ## 类型支持
 
-### {{< newTab "Kt Serializable" "https://github.com/Kotlin/kotlinx.serialization/blob/master/docs/basic-serialization.md" >}}
-Kotlin 官方出的序列化工具，速度比 `Java Serializable` 快两倍多。
-基本类型，`Pair`, `Triple`, `IntArray`, 还有 `List`, `Set` 的默认实现均可视为 `Kotlin Serializable`。
+`Kt Serializable` 为 Kotlin 官方出的序列化工具，用法类似 `Java Serializable`, 但多平台，且速度快两倍多。 
+被 `Serializable` 标记的 `class`, 
+基本类型，`Pair`, `IntArray`, 还有 `List`, `Set` 的默认实现均可视为 `Kt Serializable`,
+详见 {{< newTab "kotlinx.serialization" "https://github.com/Kotlin/kotlinx.serialization/blob/master/docs/basic-serialization.md" >}}。 
 
 [//]: # (It's an official platform-neutral data conversion.)
-<div style="border:1px solid black; padding-left:10px;">
-    <img src="../ktSerializable.png" width="620" alt=""/>
-</div>
-
-### 自定义
-只需实现和 `Serializable` 之间转换与恢复的函数即可。暂未找到比较适合自定义的例子。
-<div style="border:1px solid black; padding-left:10px;">
-    <img src="../customedType.png" />
-</div>
-
-### 可空
-此时对默认值限制为 `null`，以上类型都有对应。这非常实用，尤其是存储对象时。
-<div style="border:1px solid black; padding-left:10px;">
-    <img src="../nullableTypes.png" />
-</div>
+{{< codeImg "../types.png" >}}
+- `Not nullable` 时需声明默认值。
+- `Nullable` 时默认值被限制为 `null`。
+- 自定义时需实现与 `Kt Serializable` 之间的相互转换。
 
 ## 迁移
 类比下图格式（判断存在 -> 迁移 -> 删除）从其他存储仓库迁移过来。

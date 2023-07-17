@@ -291,7 +291,7 @@ Kotlin 官方出的序列化工具，速度比 `Java Serializable` 快两倍多�
 
 [//]: # (It's an official platform-neutral data conversion.)
 <div style="border:1px solid black; padding-left:10px;">
-    <img src="../ktSerializable.png" width="620" alt=""/>
+    <img src="../storeUsers.png" width="620" alt=""/>
 </div>
 
 ### 自定义
