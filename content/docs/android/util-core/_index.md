@@ -18,10 +18,20 @@ dependenceis{
 
 # AppContext
 It is the static `applicationContext` for you to get anywhere. In this way, your 
-`Database`, `DAO`, `SharedPreferences`, `DataStore` and some other tools could be static, 
+`Database`, `DAO`, `NetService` and some other tools could be static, 
 of which the profit is much more considerable than the additional resource memory. 
 
 {{< codeImg appcontext.png >}}
+
+# Companion extension trick
+Declare static `AppDatabase.INSTANCE` and `retrofit` based on `AppContext` first, then `DAO` and `Service`
+could be created concisely.
+{{< codeImg trick_dao.png >}}
+<br>
+{{< codeImg trick_netservice.png >}}
+<br>
+Call them easily. 
+{{< codeImg trick_call.png >}}
 
 # KLog
 - Tag is global and has a link.

@@ -27,8 +27,8 @@ weight: 2
     <td>
         同步读写
         <br><br>
-        <span style="color:red">commit 堵塞当前线程</span>
-        <br> apply 不堵塞，<span style="color:red">但不知道是否成功写入磁盘。</span>
+        <span style="color:red"> <code>commit</code> 堵塞当前线程</span>
+        <br> <code>apply</code> 不堵塞，<span style="color:red">但不知道是否成功写入磁盘。</span>
         <br><br><span style="color:red">不论是否成功写入，都更新内存，通知监听</span>
     </td>
     <td> 
@@ -46,11 +46,11 @@ weight: 2
 </tr>
     
 <tr>
-    <td>性能(ms)</td>
-    <td>启动: 2.1 <br> commit: 2.4 </td>
-    <td>启动: 2.6</td>
-    <td>响应: 8</td>
-    <td><span style="color: red; ">启动: 18</span> <br> 文件显著增加时影响不大</td>
+    <td>性能</td>
+    <td>启动: 2.1ms <br> <code>commit</code>: 2.4ms </td>
+    <td>启动: 2.6ms</td>
+    <td>响应: 8.0ms</td>
+    <td><span style="color: red; ">启动: 18.1ms</span> <br> 文件显著增加时影响不大</td>
 </tr>
 
 <tr>
@@ -394,4 +394,4 @@ Settings.isDarkMode().reset();
 # 快速启动
 如果你介意这点启动时间(**5～30 ms**), 可先行在 `Application` 中异步调用 `Settings`。 
 
-# <a href="https://github.com/ShawxingKwok/KDataStore" target="_blank">GitHub 仓库</a>  
+# <a href="https://github.com/ShawxingKwok/KDataStore" target="_blank">GitHub 仓库</a>
