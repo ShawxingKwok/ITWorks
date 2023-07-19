@@ -9,9 +9,13 @@ and would be expanded with some small practical tools in the future.
 {{< /hint >}}
 
 # Setup
-Repository: `mavenCentral()`  
-Dependency: `"io.github.shawxingkwok:android-util-core:1.0.0"`
-  
+```
+dependenceis{
+    ...
+    implementation ("io.github.shawxingkwok:android-util-core:1.0.0")
+}
+```
+
 # AppContext
 It is the static `applicationContext` for you to get anywhere. In this way, your 
 `Database`, `DAO`, `SharedPreferences`, `DataStore` and some other tools could be static, 

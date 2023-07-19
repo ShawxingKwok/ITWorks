@@ -27,7 +27,7 @@ weight: 2
     <td>
         同步读写
         <br><br>
-        <span style="color:red">commit 堵塞1.4ms</span>
+        <span style="color:red">commit 堵塞当前线程</span>
         <br> apply 不堵塞，<span style="color:red">但不知道是否成功写入磁盘。</span>
         <br><br><span style="color:red">不论是否成功写入，都更新内存，通知监听</span>
     </td>
@@ -36,7 +36,7 @@ weight: 2
         <br><br><span style="color: green; ">同步不堵塞读写</span>
         <br><br>后台定时异步写入磁盘 
     </td>
-    <td> 异步读写，写入成功后更新内存。<br><br>通过 Flow 异步观察。 响应时间 2.1 ms </td>
+    <td> 异步读写，写入成功后更新内存。<br><br>通过 Flow 异步观察。</td>
     <td> 
         基于 DataStore 
         <br><br> 先读取到应用级别的内存 
@@ -46,11 +46,11 @@ weight: 2
 </tr>
     
 <tr>
-    <td>启动时间(ms)</td>
-    <td>2.2</td>
-    <td>3.2</td>
-    <td>49(异步)</td>
-    <td><span style="color: red; ">13</span>, 文件显著增加时影响不大</td>
+    <td>性能(ms)</td>
+    <td>启动: 2.1 <br> commit: 2.4 </td>
+    <td>启动: 2.6</td>
+    <td>响应: 8</td>
+    <td><span style="color: red; ">启动: 18</span> <br> 文件显著增加时影响不大</td>
 </tr>
 
 <tr>
@@ -75,7 +75,7 @@ weight: 2
 </tr>
 
 <tr>
-    <td>多进程共享</td>
+    <td>多进程</td>
     <td>自行封装</td>
     <td> <span style="color: green; ">支持</span> </td>
     <td rowspan="2">处于 alpha 阶段</td>
@@ -155,7 +155,7 @@ weight: 2
 {{< codeImg "../model.png" >}}
 <br> 
 
-`KDSFlow` 源码
+关于 `KDSFlow` 
 {{< codeImg "../kdsFlowExpect.png" >}}
 {{< codeImg "../kdsFlowActual.png" >}}
 
@@ -175,7 +175,7 @@ weight: 2
 {{< codeImg "../kt_basic_usage.png" >}}
 {{< hint info >}}
 在 `Fragment` 中观察 `Flow` 时建议采用 
-{{< newTab collectOnResume "https://shawxingkwok.github.io/ITWorks/docs/android/util-view/#flowcollectonresume" >}}
+{{< newTab collectOnResume "https://shawxingkwok.github.io/ITWorks/docs/android/util-view/#flowcollectonresume" >}}。
 {{< /hint >}}
 {{< /tab >}}
 
@@ -236,7 +236,7 @@ plugins {
 
 dependencies {
     ...
-    implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1'
     implementation 'io.github.shawxingkwok:kt-util:1.0.0'
     implementation 'io.github.shawxingkwok:android-util-core:1.0.0'
     implementation 'io.github.shawxingkwok:kdatastore:1.0.0'
@@ -252,7 +252,7 @@ plugins {
 
 dependencies {
     ...
-    implementation ("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0")
+    implementation ("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
     implementation ("io.github.shawxingkwok:kt-util:1.0.0")
     implementation ("io.github.shawxingkwok:android-util-core:1.0.0")
     implementation ("io.github.shawxingkwok:kdatastore:1.0.0")
@@ -276,7 +276,7 @@ dependencies {
     ...
     implementation 'io.github.shawxingkwok:android-util-view:1.0.0'
     implementation 'io.github.shawxingkwok:kdatastore:1.0.0'
-    implementation project(':settings') 
+    implementation project(':settings')
 }
 ```
 {{< /tab >}}
@@ -303,8 +303,8 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach{
 
 dependencies {
     ...
-    implementation ("io.github.shawxingkwok:android-util-view:1.0.0")
-    implementation ("io.github.shawxingkwok:kdatastore:1.0.0")
+    implementation ("io.github.implementation ("io.github.shawxingkwok:kdatastore:1.0.0")shawxingkwok:android-util-view:1.0.0")
+    
     implementation (project(":settings")) 
 }
 ```
@@ -327,7 +327,7 @@ dependencies{
 
 `Kt Serializable` 为 Kotlin 官方出的序列化工具，用法类似 `Java Serializable`, 但多平台，且速度快两倍多。 
 被 `Serializable` 标记的 `class`, 
-基本类型，`Pair`, `IntArray`, 还有 `List`, `Set` 的默认实现均可视为 `Kt Serializable`,
+基本类型，`enum`, `Pair`, `IntArray`, `List` 的默认实现等等均可视为 `Kt Serializable`,
 详见 {{< newTab "kotlinx.serialization" "https://github.com/Kotlin/kotlinx.serialization/blob/master/docs/basic-serialization.md" >}}。 
 
 [//]: # (It's an official platform-neutral data conversion.)
@@ -340,82 +340,58 @@ dependencies{
 类比下图格式（判断存在 -> 迁移 -> 删除）从其他存储仓库迁移过来。
 
 比如取自 `SharedPreferences`
-<div style="border:1px solid black; padding-left:10px;">
-    <img src="../migration.png" alt=""/>
-</div>
+{{< codeImg "../migration.png" >}}
 <br>
 
-此外内置 `delete`, `exists` 两个函数帮助从 `KDataStore` 迁移到别处。
-{{< tabs exists >}}
+此外内置 `delete`, `exist` 两个函数辅助从 `KDataStore` 迁移到别处。
+{{< tabs exist >}}
+
 {{< tab Kt >}}
-```
-if(Settings.exists()) {
-    ...
-    Settings.delete()
-}
-```
+{{< codeImg "../delete_exist_kt.png" >}}
 {{< /tab >}}
 {{< tab Java >}}
-```
-if(Settings.INSTANCE.exists()){
-    ...
-    Settings.INSTANCE.delete()
-}
-```
-警告以防止误用，并无任何异常风险。
+{{< codeImg "../delete_exist_java.png" >}}
 {{< /tab >}}
 {{< /tabs >}}
+警告以防止误用，并无任何异常风险。
 
 # 可选参数
-<div style="border:1px solid black; padding-left:10px;">
-    <img src="../args.png" alt=""/>
-</div>
+{{< codeImg "../args.png" >}}
 
-## 文件名
-如果只有一个 `KDataStore`, 建议命名为 `settings` 或 `preferences`，相应的 class name(首字母大写), module name 亦是如此。
+加密部分需引入其他加密库，自制 cipher。 
+{{< codeImg "../cipher.png" >}}
 
-## 加密
-`KDataStore`提供了加密功能接口和一个 AES 实现。
-<div style="border:1px solid black; padding-left:10px;">
-    <img src="../cypher.png" alt=""/>
-</div>
-
-Android 在 api 29 版本开始引入了沙盒机制，实现了数据隔离，相对已经很安全了。你们可视版本要求、信息的重要程度来选择
-是否存储在本地、是否加密、以什么协议加密。
+{{< hint info >}}
+Android 在 api 29 版本开始引入了沙盒机制，实现了数据隔离，相对已经很安全了。
+{{< /hint >}}
 
 # 重置
 ## 全部
-{{< tabs delete >}}
+{{< tabs wholeReset >}}
 {{< tab Kt >}}
-<div style="border:1px solid black; padding-left:10px;">
-    <img src="../wholeResetKt.png" alt=""/>
-</div>
+{{< codeImg "../wholeResetKt.png" >}}
 {{< /tab >}}
 {{< tab Java >}}
-<div style="border:1px solid black; padding-left:10px;">
-    <img src="../wholeResetJava.png" alt=""/>
-</div>
+{{< codeImg "../wholeResetJava.png" >}}
 {{< /tab >}}
 {{< /tabs >}}
-<br>
-警告以防止误用，并无任何异常风险。
 
 ## 局部
-比如重置声明过的 `age`
-{{< tabs partial reset >}}
+比如重置声明过的 `isDarkMode`
+{{< tabs partialReset >}}
 {{< tab Kt >}}
 ```
-Settings.age.reset()
+Settings.isDarkMode.reset()
 ```
 {{< /tab >}}
 {{< tab Java >}}
 ```
-Settings.getAge().reset();
+Settings.isDarkMode().reset();
 ```
 {{< /tab >}}
-{{< /tabs >}}
+{{< /tabs >}} 
 
 # 快速启动
-如果你介意这点启动时间。可先行在 `Application` 中异步启动 `Settings`, 或者第一次启动 `Settings` 的时候采用异步。
+如果你介意这点启动时间(**5～30 ms**), 可先行在 `Application` 中异步调用 `Settings`。 
 
-# <a href="https://github.com/ShawxingKwok/KDataStore" target="_blank">GitHub 仓库</a>
+# <a href="https://github.com/ShawxingKwok/KDataStore" target="_blank">GitHub 仓库</a>  
