@@ -2,64 +2,37 @@
 title: Setup
 weight: 2
 ---
-Download a  
-<a href="common.zip" download>Common</a> / <a href="android.zip" download>Android</a> 
-sample or configure your `build.gradle`/`build.gradle.kts` as below.
+{{< hint warning >}}
+Requires the kotlin plugin of version `1.8.0` or later.  
+{{< /hint >}}
 
-# Ksp plugin
-{{< tabs "Ksp plugin" >}}
-{{< tab "Groovy" >}} 
-```
-plugins{
-    ...
-    // Assuming your kotlin version is `1.7.21`, here uses the latest ksp plugin version beginning 
-    // with `1.7.21` ('1.7.21-1.0.8').  
-    id 'com.google.devtools.ksp' version '1.7.21-1.0.8'
-}
-```
-{{< /tab >}}
-{{< tab "Kotlin" >}} 
-```kotlin
-plugins{
-    // Assuming your kotlin version is `1.7.21`, here uses the latest ksp plugin version beginning 
-    // with `1.7.21` ('1.7.21-1.0.8').  
-    id("com.google.devtools.ksp") version "1.7.21-1.0.8"
-}
-```
-{{< /tab >}}
-{{< /tabs >}}
+See module **sample** in the <a href="#" download>github repo</a> or configure your `build.gradle`/`build.gradle.kts` as below.
 
-# Source sets
-Skip this step if your ksp plugin version is `1.8.0-1.0.9` or higher.  
-This part may be different for other ksp plugins.
-(See [ksp quickstart](https://kotlinlang.org/docs/ksp-quickstart.html#make-ide-aware-of-generated-code))
-```groovy
-// Omissible if your ksp plugin version is '1.8.0-1.0.9' or higher. 
-kotlin.sourceSets.configureEach {
-    kotlin.srcDir("$buildDir/generated/ksp/$name/kotlin/")
-}
-```
+1. repository:  `mavenCentral()`
 
-# Tracer
-Add this part directly, rather than insert messily.
+2. plugin
+    ```kotlin
+    plugins{
+        // keep the prefix same with your kotlin version.
+        id("com.google.devtools.ksp") version "1.8.0-1.0.9"
+    }
+    ```
+
+3. add this part directly, rather than insert messily.
 {{< tabs "Tracer" >}}
 {{< tab "Groovy" >}}
 ```groovy
 //region tracer
 // options
-ksp{
-//    arg("tracer.internal", "")
-}
+// ksp.arg("tracer.internal", "")
 
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
     kotlinOptions.freeCompilerArgs += '-Xcontext-receivers'
 }
 
 dependencies {
-    // Keep this version latest with the prefix not higher than your kotlin version.
-    ksp 'io.github.apollokwok:tracer-common-compiler:1.7.20-1.2.0'
-    // Keep this version latest but not higher than the version above.
-    implementation 'io.github.apollokwok:tracer-common-annotations:1.7.20-1.2.0'
+    implementation 'io.github.shawxingkwok:tracer-annotations:1.0.0'
+    ksp 'io.github.shawxingkwok:tracer-compiler:1.0.0'
 }
 //endregion 
 ```
@@ -68,19 +41,15 @@ dependencies {
 ```kotlin
 //region tracer
 // options
-ksp{
-//    arg("tracer.internal", "")
-}
+// ksp.arg("tracer.internal", "")
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
     kotlinOptions.freeCompilerArgs += "-Xcontext-receivers"
 }
 
 dependencies {
-    // Keep this version latest with the prefix not higher than your kotlin version.
-    ksp("io.github.apollokwok:tracer-common-compiler:1.7.20-1.2.0")
-    // Keep this version latest but not higher than the version above.
-    implementation("io.github.apollokwok:tracer-common-annotations:1.7.20-1.2.0")
+    implementation ("io.github.shawxingkwok:tracer-annotations:1.0.0")
+    ksp ("io.github.shawxingkwok:tracer-compiler:1.0.0")
 }
 //endregion 
 ```

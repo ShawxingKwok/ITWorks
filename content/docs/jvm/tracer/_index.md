@@ -4,21 +4,12 @@ weight: 1
 bookCollapseSection: true
 ---
 
-# Dependency Injection by Tracer
+As a tool with `Kotlin-JVM`, `KSP` and little configuration, `Tracer` generates extensional properties 
+oriented to interior traceable elements, which realizes **dependency injection** in a novel way. 
 
-With `Kotlin-JVM`, `KSP` and little configuration, `Tracer` generates extensional properties
-oriented to interior traceable elements, which realizes dependency injection in a novel way. 
-
-# Usage Preview
 <image src="singleBedroomHouse.png" width=300></image>
 
 {{< tabs >}}
 {{< tab "General" >}} <image src=general.png ></image> {{< /tab >}}
 {{< tab "Tracer" >}} {{< video src="usagePreview" >}} {{< /tab >}}
 {{< /tabs >}}
-
-# Effect on Common Projects
-<image src="car.png" ></image>
-{{< video src="commonEffect" >}}
-
-# Effect on Android Projects

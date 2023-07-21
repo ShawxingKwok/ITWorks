@@ -10,7 +10,10 @@ public/internal elements. You probably have seen this model in the home page.
 <img src=../../singleBedroomHouse.png width=300/>
 <br>
 {{< tabs >}}
-{{< tab "Build" >}} {{< video src="build" >}} {{< /tab >}}
+{{< tab "Build" >}}
+Annotate the source class. Next build via the gradle tool.
+{{< video src="build" >}} 
+{{< /tab >}}
 {{< tab "Model" >}} 
 Model with positions and the tracer interface. 
 {{< video src="model" >}} 

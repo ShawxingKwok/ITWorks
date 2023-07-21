@@ -1,4 +1,4 @@
-baseURL = "https://apollokwok.github.io/ITWorks/"
+baseURL = "https://shawxingkwok.github.io/ITWorks/"
 languageCode = "en-us"
 title = "ITWorks"
 theme = ["hugo-video", "hugo-book"]
@@ -29,7 +29,6 @@ endLevel = 11
 tag = "tags"
 
 [menu]
-
 [[menu.after]]
 name = "Github"
 url = "https://github.com/ShawxingKwok"
