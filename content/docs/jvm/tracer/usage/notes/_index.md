@@ -7,11 +7,11 @@ weight: 4
 Few generated types fail code inspection, mostly because of the imperfect official type. For 
 the example below  
 
-<img src=inspection.png width=470 />
+{{< rimImg src=inspection.png width=470 >}}
 
 Therefore, I cast them in generated code.    
 
-<img src=_inspection.png width=400 />
+{{< rimImg src=_inspection.png width=400 >}}
 
 However, some types are incorrectly inferred and error shows even cast, whereas I 
 forget those examples unfortunately. Use another source type or annotate them with `Tracer.Omit`. 
@@ -39,10 +39,6 @@ Class `A•A` is imported as ``` `A•A` ``` because of special symbols which, h
 hard to adapt. At present, `Tracer` doesn't support this import style in the 
 generated code. 
 
----
-
-<img src="aaImport.png" width="100"/>
-
----
-
-<img src="_aaImport.png" width="150"/>
+{{< rimImg src="aaImport.png" width="100" >}}  
+<br>
+{{< rimImg src="_aaImport.png" width="150" >}}

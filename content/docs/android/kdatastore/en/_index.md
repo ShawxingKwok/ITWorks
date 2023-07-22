@@ -135,7 +135,8 @@ After supporting `IOS`, it will be moved to the `Multiplatform mobile` group.
 </tr>
 </table>
 
-The above test results are based on 30 sets of String data with a length of 7 (key length) * 20 (value length), using the Meizu 18s model. The code is in the [source code](https://github.com/ShawxingKwok/KDataStore/archive/refs/heads/master.zip) in the api's androidTest.
+The above test results are based on 30 sets of String data with a length of 7 (key length) * 20 (value length), using the Meizu 18s model. 
+Source code is in {{< repo KDataStore KDataStore >}}.benchmark. 
 
 {{< hint warning >}}
 Regarding the comparison and analysis of storage solutions in other places, most of them have serious errors.

@@ -6,7 +6,7 @@ weight: 2
 Requires the kotlin plugin of version `1.8.0` or later.  
 {{< /hint >}}
 
-See module **sample** in the <a href="#" download>github repo</a> or configure your `build.gradle`/`build.gradle.kts` as below.
+See module **sample** on {{< repo Tracer Github >}} or configure your `build.gradle`/`build.gradle.kts` as below.
 
 1. repository:  `mavenCentral()`
 

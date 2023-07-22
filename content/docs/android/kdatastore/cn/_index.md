@@ -135,7 +135,8 @@ weight: 2
 </tr>
 </table>
 
-以上测试结果采用 30 份 7(key length) * 20(value length) 的 String 数据，机型魅族18s。代码在[源码](https://github.com/ShawxingKwok/KDataStore/archive/refs/heads/master.zip)中 api 的 androidTest。
+以上测试结果采用 30 份 7(key length) * 20(value length) 的 String 数据，机型魅族18s, 
+源码见 {{< repo KDataStore KDataStore >}}.benchmark。
 
 {{< hint warning >}}
 关于其他地方的存储方案对比分析，绝大多数都有严重错误。
@@ -175,7 +176,7 @@ weight: 2
 {{< codeImg "../kt_basic_usage.png" >}}
 {{< hint info >}}
 在 `Fragment` 中观察 `Flow` 时建议采用 
-{{< newTab collectOnResume "https://shawxingkwok.github.io/ITWorks/docs/android/util-view/#flowcollectonresume" >}}。
+{{< newTab collectOnResume "/ITWorks/docs/android/util-view/#flowcollectonresume" >}}。
 {{< /hint >}}
 {{< /tab >}}
 
@@ -199,7 +200,7 @@ weight: 2
 
 # 配置
 
-配置相应 `build.gradle`, 或可见[源码](#release)中的 demo。
+配置相应 `build.gradle`, 或可见 {{< repo KDataStore Github >}} 上的 demo。
 
 ## 根目录 
 {{< tabs "root plugins" >}}
@@ -325,10 +326,9 @@ dependencies{
 
 # 类型支持
 
-`Kt Serializable` 为 Kotlin 官方出的序列化工具，用法类似 `Java Serializable`, 但多平台，且速度快两倍多。 
-被 `Serializable` 标记的 `class`, 
-基本类型，`enum`, `Pair`, `IntArray`, `List` 的默认实现等等均可视为 `Kt Serializable`,
-详见 {{< newTab "kotlinx.serialization" "https://github.com/Kotlin/kotlinx.serialization/blob/master/docs/basic-serialization.md" >}}。 
+{{< newTab "kotlinx.serialization" "https://github.com/Kotlin/kotlinx.serialization/blob/master/docs/basic-serialization.md" >}}
+用法类似 `Java Serializable`, 但多平台，且速度快两倍多。 
+被 `Serializable` 标记的 `class`, 基本类型，`enum`, `Pair`, `IntArray`, `List` 的默认实现等等均可视为 `Serializable`。
 
 [//]: # (It's an official platform-neutral data conversion.)
 {{< codeImg "../types.png" >}}
@@ -394,4 +394,4 @@ Settings.isDarkMode().reset();
 # 快速启动
 如果你介意这点启动时间(**5～30 ms**), 可先行在 `Application` 中异步调用 `Settings`。 
 
-# <a href="https://github.com/ShawxingKwok/KDataStore" target="_blank">GitHub 仓库</a>
+# <a href="https://github.com/ShawxingKwok/KDataStore" target="_blank">GitHub repo with demo</a>

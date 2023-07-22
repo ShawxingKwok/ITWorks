@@ -116,7 +116,7 @@ These functions `notify...`  are replaced with `update` now.
 {{< /hint >}}
 
 ## onHoldersCreated
-In case you need to process `ViewHolder` after its automatic creation regardless of `position`.
+In case you need to make some fixed processing of  `ViewHolder` after its automatic creation regardless of `position`.
 {{< codeImg recyclerview_onHoldersCreated.png >}}
 
 Here is allowed to set `Listeners` on `view` with `adapterPosition` to get `data`, which is, however, unclear. Just

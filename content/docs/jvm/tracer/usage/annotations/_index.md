@@ -21,7 +21,6 @@ Model with positions and the tracer interface.
 {{< tab "Rebuild" >}} {{< video src="rebuild" >}} {{< /tab >}}
 {{< tab "Inject" >}} {{< video src="inject" >}} {{< /tab >}}
 {{< /tabs >}}
-<br>
 
 # Nodes
 Now we add one bedroom and its some inner objects as below. As nodes grow on root or other nodes, 
@@ -32,23 +31,20 @@ Now we add one bedroom and its some inner objects as below. As nodes grow on roo
 <br><br>
 
 {{< video src="_nodes" >}}
-<br><br>
+<br>
 
 # Tip
-`Tracer.Tip` represents [trace end](https://shawxingkwok.github.io/TracerTutorial/docs/usage/details/#trace-ends), 
-meaning elements of annotated classes wouldn't be traced insides.
+`Tracer.Tip` represents the trace end in which elements wouldn't be traced.
 
 {{< video src="tip" >}}
 {{<hint info >}}
 Context and the tracer interface are needless in a simple test.
 {{< /hint >}}
-<br>
 
 # Omit
 Properties and super types with `@Tracer.Omit` would be omitted, which is generally used 
 with some unsupported new syntaxes, like `T & Any` before `ksp 1.8.0-1.0.9`(exclusive), 
-and `context receiver`. Super type trace rules are later explained on page 
-[Details](https://shawxingkwok.github.io/TracerTutorial/docs/usage/details/#partial-traceable-super-types). 
+and `context receiver`. Super type trace rules are later explained on page 'Details'.  
 <br> 
 {{<video src="omit" >}}  
 {{<hint info >}}

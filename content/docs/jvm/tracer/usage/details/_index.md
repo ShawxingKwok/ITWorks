@@ -4,31 +4,25 @@ weight: 3
 ---
 
 # Suggested code order
-<img src="order.png" width="650"/>  
-
----
+{{< rimImg src="order.png" width="650" >}}  
 
 # Lazy
 Use `lazy` when you need to construct some objects based on common injected elements.   
-<img src="lazy.png" width="620"/>
-
----
+{{< rimImg src="lazy.png" width="620" >}}
 
 # Override style
-<img src="override style.png" width="350"/>  
+{{< rimImg src="override style.png" width="350" >}}
 
 - Put it at the bottom to look better.
 - Use `get() =` instead of `=` to avoid `null` when [passing args](#pass-args).
----
 
 # Pass args
-<img src="pass args.png" width="480"/>
+{{< rimImg src="pass args.png" width="480" >}}
 
 <p align="center">↓</p>
 
-<img src="_pass args.png" width="620"/>  
+{{< rimImg src="_pass args.png" width="620" >}}  
 
----
 # Tracer interface conversion
 {{< video src=conversion >}}
 This would be needless in the expected new syntax.
@@ -51,12 +45,9 @@ Makes all generated code internal, which is commonly used in submodules.
   {{< video src="internal" >}}
 
 # Partial traceable super types
-  <img src=superTypes.png width="600"/>
+{{< rimImg src=superTypes.png width="600" >}}
 
-  ---
-
-  <img src=_superTypes.png />
-  <br>
+{{< rimImg src=_superTypes.png >}}
 
 # Trace ends    
 Elements or their type classes with features below are considered as trace ends, meaning 
@@ -71,21 +62,17 @@ and avoid being exploring too insides.
   - Generic
   - Abstract / open  
   
-<img src="trace ends.png" />  
+{{< rimImg src="trace ends.png" >}}  
 
----
 No `_Int` appears.  
-<img src="_trace ends.png" width=680 />  
+{{< rimImg src="_trace ends.png" width=680 >}}  
 
 # Type alias
 Alias types are always converted to its actual types.
 
----
-<img src="alias.png" width=300 />
+{{< rimImg src="alias.png" width=300 >}}
 
----
-
-<img src="_alias.png" width="680"/>
+{{< rimImg src="_alias.png" width="680" >}}
 &nbsp;&nbsp;
 
 [//]: # (## Var)
@@ -104,7 +91,6 @@ Alias types are always converted to its actual types.
 
 [//]: # (```)
 
-[//]: # ()
 [//]: # (Generated code)
 
 [//]: # (```)
@@ -117,7 +103,6 @@ Alias types are always converted to its actual types.
 
 [//]: # (```)
 
-[//]: # ()
 [//]: # (Injection sample)
 
 [//]: # (```kotlin )
@@ -136,7 +121,6 @@ Alias types are always converted to its actual types.
 
 [//]: # (```  )
 
-[//]: # ()
 [//]: # ({{<hint info >}})
 
 [//]: # (Expected reference after official support.)

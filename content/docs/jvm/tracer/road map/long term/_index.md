@@ -20,7 +20,7 @@ highlighted color.
 When you input code in a big project, too many tracer property name hints appear at present.
 (Only one in this example because this sample project is small)
 
-<img src=hints.png width="600"/>
+{{< rimImg src=hints.png width="600" >}}
 
 <p align="center">↓</p>  
 

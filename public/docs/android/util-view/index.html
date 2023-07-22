@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Setup # Groovy tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach{ kotlinOptions.freeCompilerArgs &#43;= &#34;-Xcontext-receivers&#34; } dependencies { implementation &#39;io.github.shawxingkwok:android-util-view:1.0.0&#39; } Kotlin tasks.withType&lt;org.jetbrains.kotlin.gradle.tasks.KotlinCompile&gt;().configureEach { kotlinOptions.freeCompilerArgs &#43;= &#34;-Xcontext-receivers&#34; } dependencies { implementation(&#34;io.github.shawxingkwok:android-util-view:1.0.0&#34;) } Functions # Flow.collectOnResume # Is used in Fragment.onCreateView or Fragment.onViewCreated to collect flow with collector every Fragment.onResume.
+Switch from
+override fun onViewCreated(view: View, savedInstanceState: Bundle?) { super.onViewCreated(view, savedInstanceState) viewLifecycleOwner.lifecycleScope.launch { repeatOnLifecycle(Lifecycle.State.RESUMED) { flow.collect { ... } } } } to
+override fun onViewCreated(view: View, savedInstanceState: Bundle?">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Util-view" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://shawxingkwok.github.io/ITWorks/docs/android/util-view/" />
+<title>Util-view | ITWorks</title>
+<link rel="manifest" href="/ITWorks/manifest.json">
+<link rel="icon" href="/ITWorks/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/ITWorks/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
+  <script defer src="/ITWorks/flexsearch.min.js"></script>
+  <script defer src="/ITWorks/en.search.min.bf6233f1ea84f163320ef57973942ccc8414475133bfcf9cdefd1f66dffffeaf.js" integrity="sha256-v2Iz8eqE8WMyDvV5c5QszIQUR1Ezv8&#43;c3v0fZt///q8=" crossorigin="anonymous"></script>
+<link rel="alternate" type="application/rss+xml" href="https://shawxingkwok.github.io/ITWorks/docs/android/util-view/index.xml" title="ITWorks" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/ITWorks/"><span>ITWorks</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>Multiplatform</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/ITWorks/docs/multiplatform/kt-util/" class="">Kt util</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>Jvm</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f25bd71e28f95a08738fe572911bbd65" class="toggle"  />
+    <label for="section-f25bd71e28f95a08738fe572911bbd65" class="flex justify-between">
+      <a href="/ITWorks/docs/jvm/tracer/" class="">Tracer</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/ITWorks/docs/jvm/tracer/setup/" class="">Setup</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>Usage</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/ITWorks/docs/jvm/tracer/usage/annotations/" class="">Annotations</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/ITWorks/docs/jvm/tracer/usage/naming-rules/" class="">Naming rules</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/ITWorks/docs/jvm/tracer/usage/details/" class="">Details</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/ITWorks/docs/jvm/tracer/usage/notes/" class="">Notes</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/ITWorks/docs/jvm/tracer/usage/demo/" class="">Demo</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-df9c64161b156bfffd3c37819ba87474" class="toggle"  />
+    <label for="section-df9c64161b156bfffd3c37819ba87474" class="flex justify-between">
+      <a href="/ITWorks/docs/jvm/tracer/road-map/" class="">Road map</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/ITWorks/docs/jvm/tracer/road-map/short-term/" class="">Short term</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/ITWorks/docs/jvm/tracer/road-map/long-term/" class="">Long term</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/ITWorks/docs/jvm/tracer/road-map/new-syntax/" class="">New syntax</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>Extensions</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/ITWorks/docs/jvm/tracer/extensions/android/" class="">Android</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>Android</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/ITWorks/docs/android/util-core/" class="">Util-core</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/ITWorks/docs/android/util-view/" class="active">Util-view</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-48404a5524d1704bcb4add35c067ddd2" class="toggle"  />
+    <label for="section-48404a5524d1704bcb4add35c067ddd2" class="flex justify-between">
+      <a role="button" class="">KDataStore</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/ITWorks/docs/android/kdatastore/en/" class="">English</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/ITWorks/docs/android/kdatastore/cn/" class="">中文</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+<br>
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/ITWorks/post/about/"  >
+        About
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://github.com/ShawxingKwok"  target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="mailto:ShawxingKwok@126.com"  target="_blank" rel="noopener">
+        Email
+      </a>
+  </li>
+  
+  <li>
+    <a href="/ITWorks/post/license/"  >
+        License
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/ITWorks/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Util-view</strong>
+
+  <label for="toc-control">
+    
+    <img src="/ITWorks/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#setup">Setup</a></li>
+    <li><a href="#functions">Functions</a>
+      <ul>
+        <li><a href="#flowcollectonresume">Flow.collectOnResume</a></li>
+        <li><a href="#viewonclick">View.onClick</a></li>
+        <li><a href="#kclassout-viewbindinginflate">KClass&lt;out ViewBinding&gt;.inflate</a></li>
+      </ul>
+    </li>
+    <li><a href="#kfragment">KFragment</a>
+      <ul>
+        <li><a href="#viewbinding">ViewBinding</a></li>
+        <li><a href="#withview">withView</a></li>
+      </ul>
+    </li>
+    <li><a href="#krecyclerviewadapter">KRecyclerViewAdapter</a>
+      <ul>
+        <li><a href="#core-usage">Core usage</a></li>
+        <li><a href="#update">update</a></li>
+        <li><a href="#onholderscreated">onHoldersCreated</a></li>
+        <li><a href="#final-functions">final functions</a></li>
+      </ul>
+    </li>
+    <li><a href="#more">More</a>
+      <ul>
+        <li><a href="#on-the-way">On the way</a></li>
+        <li><a href="#a-hrefhttpsgithubcomshawxingkwokandroidutil-view-target_blank-github-repo-with-demoa"><a href="https://github.com/ShawxingKwok/AndroidUtil-View" target="_blank"> GitHub repo with demo</a></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="setup">
+  Setup
+  <a class="anchor" href="#setup">#</a>
+</h1>
+
+
+
+
+<div class="book-tabs"><input type="radio" class="toggle" name="tabs-%!s(&lt;nil&gt;)" id="tabs-%!s(&lt;nil&gt;)-0" checked="checked" />
+  <label for="tabs-%!s(&lt;nil&gt;)-0">Groovy</label>
+  <div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="line"><span class="cl"><span class="n">tasks</span><span class="o">.</span><span class="na">withType</span><span class="o">(</span><span class="n">org</span><span class="o">.</span><span class="na">jetbrains</span><span class="o">.</span><span class="na">kotlin</span><span class="o">.</span><span class="na">gradle</span><span class="o">.</span><span class="na">tasks</span><span class="o">.</span><span class="na">KotlinCompile</span><span class="o">).</span><span class="na">configureEach</span><span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">kotlinOptions</span><span class="o">.</span><span class="na">freeCompilerArgs</span> <span class="o">+=</span> <span class="s2">&#34;-Xcontext-receivers&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">dependencies</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">implementation</span> <span class="s1">&#39;io.github.shawxingkwok:android-util-view:1.0.0&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div></div><input type="radio" class="toggle" name="tabs-%!s(&lt;nil&gt;)" id="tabs-%!s(&lt;nil&gt;)-1"  />
+  <label for="tabs-%!s(&lt;nil&gt;)-1">Kotlin</label>
+  <div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="n">tasks</span><span class="p">.</span><span class="n">withType</span><span class="p">&lt;</span><span class="n">org</span><span class="p">.</span><span class="n">jetbrains</span><span class="p">.</span><span class="n">kotlin</span><span class="p">.</span><span class="n">gradle</span><span class="p">.</span><span class="n">tasks</span><span class="p">.</span><span class="n">KotlinCompile</span><span class="p">&gt;().</span><span class="n">configureEach</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">kotlinOptions</span><span class="p">.</span><span class="n">freeCompilerArgs</span> <span class="o">+=</span> <span class="s2">&#34;-Xcontext-receivers&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">dependencies</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">implementation</span><span class="p">(</span><span class="s2">&#34;io.github.shawxingkwok:android-util-view:1.0.0&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></div></div>
+
+<h1 id="functions">
+  Functions
+  <a class="anchor" href="#functions">#</a>
+</h1>
+<h2 id="flowcollectonresume">
+  Flow.collectOnResume
+  <a class="anchor" href="#flowcollectonresume">#</a>
+</h2>
+<p>Is used in <code>Fragment.onCreateView</code> or <code>Fragment.onViewCreated</code> to
+collect <code>flow</code> with <code>collector</code> every <code>Fragment.onResume</code>.</p>
+<p>Switch from</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">override</span> <span class="k">fun</span> <span class="nf">onViewCreated</span><span class="p">(</span><span class="n">view</span><span class="p">:</span> <span class="n">View</span><span class="p">,</span> <span class="n">savedInstanceState</span><span class="p">:</span> <span class="n">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">super</span><span class="p">.</span><span class="n">onViewCreated</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">savedInstanceState</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">viewLifecycleOwner</span><span class="p">.</span><span class="n">lifecycleScope</span><span class="p">.</span><span class="n">launch</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">repeatOnLifecycle</span><span class="p">(</span><span class="nc">Lifecycle</span><span class="p">.</span><span class="nc">State</span><span class="p">.</span><span class="n">RESUMED</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">flow</span><span class="p">.</span><span class="n">collect</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="o">..</span><span class="p">.</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>to</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">override</span> <span class="k">fun</span> <span class="nf">onViewCreated</span><span class="p">(</span><span class="n">view</span><span class="p">:</span> <span class="n">View</span><span class="p">,</span> <span class="n">savedInstanceState</span><span class="p">:</span> <span class="n">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">super</span><span class="p">.</span><span class="n">onViewCreated</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">savedInstanceState</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">flow</span><span class="p">.</span><span class="n">collectOnResume</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="o">..</span><span class="p">.</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="viewonclick">
+  View.onClick
+  <a class="anchor" href="#viewonclick">#</a>
+</h2>
+<p>Sets a <code>View.OnClickListener</code> with a more precise <code>View</code>.
+<div style="border:1px solid black; padding-left:10px; padding-top:10px; padding-right:10px;">
+    <img src=onClick.png alt="" />
+</div></p>
+<h2 id="kclassout-viewbindinginflate">
+  KClass&lt;out ViewBinding&gt;.inflate
+  <a class="anchor" href="#kclassout-viewbindinginflate">#</a>
+</h2>
+<p>Returns a <code>viewBinding</code> via reflection, which helps you design view utils.
+<div style="border:1px solid black; padding-left:10px; padding-top:10px; padding-right:10px;">
+    <img src=inflate.png alt="" />
+</div></p>
+<div style="border:1px solid black; padding-left:10px; padding-top:10px; padding-right:10px;">
+    <img src=inflate1.png alt="" />
+</div>
+<h1 id="kfragment">
+  KFragment
+  <a class="anchor" href="#kfragment">#</a>
+</h1>
+<h2 id="viewbinding">
+  ViewBinding
+  <a class="anchor" href="#viewbinding">#</a>
+</h2>
+<div style="border:1px solid black; padding-left:10px; padding-top:10px; padding-right:10px;">
+    <img src=kfragment_binding.png alt="" />
+</div>
+<blockquote class="book-hint info">
+  <p>You may have seen other libraries realized only via a generic parameter, which is, however, unsafe or
+time-consuming.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="n">abstrac</span> <span class="k">class</span> <span class="nc">VBFragment</span><span class="p">&lt;</span><span class="n">VB</span><span class="p">:</span> <span class="n">ViewBinding</span><span class="p">&gt;</span> <span class="p">:</span> <span class="n">Fragment</span><span class="p">()</span>
+</span></span></code></pre></div>
+</blockquote>
+
+<h2 id="withview">
+  withView
+  <a class="anchor" href="#withview">#</a>
+</h2>
+<p>Delegates a value alive between inclusive <code>onViewCreated</code> and exclusive <code>onDestroyView</code>.</p>
+<p>Usage sample:</p>
+<pre tabindex="0"><code>val adapter by withView{ Adapter() }
+var x by withView{ ... }
+</code></pre><h1 id="krecyclerviewadapter">
+  KRecyclerViewAdapter
+  <a class="anchor" href="#krecyclerviewadapter">#</a>
+</h1>
+<h2 id="core-usage">
+  Core usage
+  <a class="anchor" href="#core-usage">#</a>
+</h2>
+<p>
+
+
+
+
+<video  height="500" controls>
+    <source src="recyclerview.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+<div style="border:1px solid black; padding-left:10px; padding-top:10px; padding-right:10px;">
+    <img src=recyclerview_adapter.png alt="" />
+</div>
+<br>
+<div style="border:1px solid black; padding-left:10px; padding-top:10px; padding-right:10px;">
+    <img src=recyclerview_fragment.png alt="" />
+</div></p>
+<p>The <code>layoutManager</code> is required. But I prefer putting it in <code>xml</code>.
+<div style="border:1px solid black; padding-left:10px; padding-top:10px; padding-right:10px;">
+    <img src=recyclerview_layoutManger.png alt="" />
+</div></p>
+<p><code>KRecyclerViewAdapter</code> is not bound to <code>KFragment</code> but usable in general <code>Activity</code>/<code>Fragment</code>.
+And you could replace <code>withView</code>, <code>collectOnResume</code>, and <code>onClick</code>.</p>
+<h2 id="update">
+  update
+  <a class="anchor" href="#update">#</a>
+</h2>
+<p><div style="border:1px solid black; padding-left:10px; padding-top:10px; padding-right:10px;">
+    <img src=recyclerview_update_notify.png alt="" />
+</div>
+<br>
+<div style="border:1px solid black; padding-left:10px; padding-top:10px; padding-right:10px;">
+    <img src=recyclerview_update_src.png alt="" />
+</div></p>
+<p>These functions <code>notify...</code>  are replaced with <code>update</code> now.
+<blockquote class="book-hint info">
+  <code>update</code> may be called too frequently, which makes some previous <code>onFinish</code> omitted.
+</blockquote>
+</p>
+<h2 id="onholderscreated">
+  onHoldersCreated
+  <a class="anchor" href="#onholderscreated">#</a>
+</h2>
+<p>In case you need to process <code>ViewHolder</code> after its automatic creation regardless of <code>position</code>.
+<div style="border:1px solid black; padding-left:10px; padding-top:10px; padding-right:10px;">
+    <img src=recyclerview_onHoldersCreated.png alt="" />
+</div></p>
+<p>Here is allowed to set <code>Listeners</code> on <code>view</code> with <code>adapterPosition</code> to get <code>data</code>, which is, however, unclear. Just
+take this step in <code>arrange</code> which costs ignorable more memories.</p>
+<h2 id="final-functions">
+  final functions
+  <a class="anchor" href="#final-functions">#</a>
+</h2>
+<div style="border:1px solid black; padding-left:10px; padding-top:10px; padding-right:10px;">
+    <img src=recyclerview_final.png alt="" />
+</div>
+<p>These functions are made <code>final</code> in <code>KRecyclerViewAdapter</code>.</p>
+<h1 id="more">
+  More
+  <a class="anchor" href="#more">#</a>
+</h1>
+<h2 id="on-the-way">
+  On the way
+  <a class="anchor" href="#on-the-way">#</a>
+</h2>
+<ul>
+<li><code>KRecyclerViewAdapter</code>: sticky header</li>
+<li><code>KFragment</code>: delegates data stored in the hidden <code>viewModel</code> with observation.</li>
+</ul>
+<h2 id="a-hrefhttpsgithubcomshawxingkwokandroidutil-view-target_blank-github-repo-with-demoa">
+  <a href="https://github.com/ShawxingKwok/AndroidUtil-View" target="_blank"> GitHub repo with demo</a>
+  <a class="anchor" href="#a-hrefhttpsgithubcomshawxingkwokandroidutil-view-target_blank-github-repo-with-demoa">#</a>
+</h2>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/ShawxingKwok/ITWorks/blob/main/content/docs/android/util-view/_index.md" target="_blank" rel="noopener">
+      <img src="/ITWorks/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#setup">Setup</a></li>
+    <li><a href="#functions">Functions</a>
+      <ul>
+        <li><a href="#flowcollectonresume">Flow.collectOnResume</a></li>
+        <li><a href="#viewonclick">View.onClick</a></li>
+        <li><a href="#kclassout-viewbindinginflate">KClass&lt;out ViewBinding&gt;.inflate</a></li>
+      </ul>
+    </li>
+    <li><a href="#kfragment">KFragment</a>
+      <ul>
+        <li><a href="#viewbinding">ViewBinding</a></li>
+        <li><a href="#withview">withView</a></li>
+      </ul>
+    </li>
+    <li><a href="#krecyclerviewadapter">KRecyclerViewAdapter</a>
+      <ul>
+        <li><a href="#core-usage">Core usage</a></li>
+        <li><a href="#update">update</a></li>
+        <li><a href="#onholderscreated">onHoldersCreated</a></li>
+        <li><a href="#final-functions">final functions</a></li>
+      </ul>
+    </li>
+    <li><a href="#more">More</a>
+      <ul>
+        <li><a href="#on-the-way">On the way</a></li>
+        <li><a href="#a-hrefhttpsgithubcomshawxingkwokandroidutil-view-target_blank-github-repo-with-demoa"><a href="https://github.com/ShawxingKwok/AndroidUtil-View" target="_blank"> GitHub repo with demo</a></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

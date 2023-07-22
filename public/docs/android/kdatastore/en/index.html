@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="This Chinese version and the Java extension are mainly used for initial promotion and will not have any other works. After supporting IOS, it will be moved to the Multiplatform mobile group. Comparison of Local Storage Solutions # SharedPreferences MMKV DataStore KDataStore Mechanism Synchronous read and write commit blocks the current thread apply does not block, but it is uncertain whether the write is successful. Regardless of whether the write is successful or not, the memory is updated and the listener is notified.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="English" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://shawxingkwok.github.io/ITWorks/docs/android/kdatastore/en/" />
+<title>English | ITWorks</title>
+<link rel="manifest" href="/ITWorks/manifest.json">
+<link rel="icon" href="/ITWorks/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/ITWorks/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
+  <script defer src="/ITWorks/flexsearch.min.js"></script>
+  <script defer src="/ITWorks/en.search.min.bf6233f1ea84f163320ef57973942ccc8414475133bfcf9cdefd1f66dffffeaf.js" integrity="sha256-v2Iz8eqE8WMyDvV5c5QszIQUR1Ezv8&#43;c3v0fZt///q8=" crossorigin="anonymous"></script>
+<link rel="alternate" type="application/rss+xml" href="https://shawxingkwok.github.io/ITWorks/docs/android/kdatastore/en/index.xml" title="ITWorks" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/ITWorks/"><span>ITWorks</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>Multiplatform</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/ITWorks/docs/multiplatform/kt-util/" class="">Kt util</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>Jvm</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f25bd71e28f95a08738fe572911bbd65" class="toggle"  />
+    <label for="section-f25bd71e28f95a08738fe572911bbd65" class="flex justify-between">
+      <a href="/ITWorks/docs/jvm/tracer/" class="">Tracer</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/ITWorks/docs/jvm/tracer/setup/" class="">Setup</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>Usage</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/ITWorks/docs/jvm/tracer/usage/annotations/" class="">Annotations</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/ITWorks/docs/jvm/tracer/usage/naming-rules/" class="">Naming rules</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/ITWorks/docs/jvm/tracer/usage/details/" class="">Details</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/ITWorks/docs/jvm/tracer/usage/notes/" class="">Notes</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/ITWorks/docs/jvm/tracer/usage/demo/" class="">Demo</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-df9c64161b156bfffd3c37819ba87474" class="toggle"  />
+    <label for="section-df9c64161b156bfffd3c37819ba87474" class="flex justify-between">
+      <a href="/ITWorks/docs/jvm/tracer/road-map/" class="">Road map</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/ITWorks/docs/jvm/tracer/road-map/short-term/" class="">Short term</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/ITWorks/docs/jvm/tracer/road-map/long-term/" class="">Long term</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/ITWorks/docs/jvm/tracer/road-map/new-syntax/" class="">New syntax</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>Extensions</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/ITWorks/docs/jvm/tracer/extensions/android/" class="">Android</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>Android</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/ITWorks/docs/android/util-core/" class="">Util-core</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/ITWorks/docs/android/util-view/" class="">Util-view</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-48404a5524d1704bcb4add35c067ddd2" class="toggle" checked />
+    <label for="section-48404a5524d1704bcb4add35c067ddd2" class="flex justify-between">
+      <a role="button" class="">KDataStore</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/ITWorks/docs/android/kdatastore/en/" class="active">English</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/ITWorks/docs/android/kdatastore/cn/" class="">中文</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+<br>
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/ITWorks/post/about/"  >
+        About
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://github.com/ShawxingKwok"  target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="mailto:ShawxingKwok@126.com"  target="_blank" rel="noopener">
+        Email
+      </a>
+  </li>
+  
+  <li>
+    <a href="/ITWorks/post/license/"  >
+        License
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/ITWorks/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>English</strong>
+
+  <label for="toc-control">
+    
+    <img src="/ITWorks/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#comparison-of-local-storage-solutions">Comparison of Local Storage Solutions</a></li>
+    <li><a href="#basic-usage">Basic Usage</a>
+      <ul>
+        <li><a href="#ui-display">UI Display</a></li>
+        <li><a href="#modeling">Modeling</a></li>
+        <li><a href="#invocation">Invocation</a></li>
+      </ul>
+    </li>
+    <li><a href="#configuration">Configuration</a>
+      <ul>
+        <li><a href="#root-directory">Root directory</a></li>
+        <li><a href="#model-module">Model module</a></li>
+        <li><a href="#caller-side">Caller side</a></li>
+      </ul>
+    </li>
+    <li><a href="#type-support">Type Support</a></li>
+    <li><a href="#migration">Migration</a></li>
+    <li><a href="#optional-parameters">Optional Parameters</a></li>
+    <li><a href="#reset">Reset</a>
+      <ul>
+        <li><a href="#all">All</a></li>
+        <li><a href="#partial">Partial</a></li>
+      </ul>
+    </li>
+    <li><a href="#quick-initialization">Quick initialization</a></li>
+    <li><a href="#a-hrefhttpsgithubcomshawxingkwokkdatastore-target_blankgithub-repoa"><a href="https://github.com/ShawxingKwok/KDataStore" target="_blank">GitHub Repo</a></a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><blockquote class="book-hint warning">
+  This Chinese version and the <code>Java</code> extension are mainly used for initial promotion and will not have any other works.
+</blockquote>
+
+<blockquote class="book-hint warning">
+  After supporting <code>IOS</code>, it will be moved to the <code>Multiplatform mobile</code> group.
+</blockquote>
+
+<h1 id="comparison-of-local-storage-solutions">
+  Comparison of Local Storage Solutions
+  <a class="anchor" href="#comparison-of-local-storage-solutions">#</a>
+</h1>
+<table>
+<tr>
+    <th></th>
+    <th>SharedPreferences</th>
+    <th>MMKV</th>
+    <th>DataStore</th>
+    <th>KDataStore</th>
+</tr>
+<tr>
+    <td>Mechanism</td>
+    <td>
+        Synchronous read and write
+        <br><br>
+        <span style="color:red"> <code>commit</code> blocks the current thread</span>
+        <br> <code>apply</code> does not block, <span style="color:red">but it is uncertain whether the write is successful.</span>
+        <br><br><span style="color:red">Regardless of whether the write is successful or not, the memory is updated and the listener is notified.</span>
+    </td>
+    <td> 
+        Read from system-level memory first
+        <br><br><span style="color: green; ">Synchronous and non-blocking read and write</span>
+        <br><br>Asynchronously write to disk in the background 
+    </td>
+    <td> Asynchronous read and write, update memory after successful write.<br><br>Asynchronously observe through Flow.</td>
+    <td> 
+        Based on DataStore 
+        <br><br> Read from application-level memory first 
+        <br><br> <span style="color: green; ">Synchronous and non-blocking read and write</span>
+        <br><br>Asynchronously write to disk, including backup files, when data is updated. 
+    </td>
+</tr>
+<tr>
+    <td>Performance (ms)</td>
+    <td>Startup: 2.1 <br> commit: 2.4 </td>
+    <td>Startup: 2.6</td>
+    <td>Response: 8</td>
+    <td><span style="color: red; ">Startup: 18</span> <br> Little impact when file size significantly increases</td>
+</tr>
+<tr>
+    <td>IOException during reading</td>
+    <td>Returns default value</td>
+    <td>Returns default value</td>
+    <td rowspan="3">Handled by catching</td>
+    <td><span style="color: green; ">Retrieve from backup file</span></td>
+</tr>
+<tr>
+    <td>IOException during writing</td>
+    <td>Replaces with the backup file that has not been written, and no longer writes.<br><br> If using commit, can be determined by the returned false</td>
+    <td rowspan="2">Subsequently verifies the data, attempts to recover, and deletes if unsuccessful.</td>
+    <td><span style="color: green; ">Records and updates from the backup file on the next startup</span></td>
+</tr>
+<tr>
+    <td>Corruption Exception</td>
+    <td> <span style="color: red; ">Replaces with an empty file</span> </td>
+    <td> <span style="color: green; ">Processes by copying data from the backup file</span> </td>
+</tr>
+<tr>
+    <td>Multi-process</td>
+    <td>Self-encapsulated</td>
+    <td> <span style="color: green; ">Supported</span> </td>
+    <td rowspan="2">In alpha stage</td>
+    <td rowspan="2">After DataStore is officially supported</td>
+</tr>
+<tr>
+    <td>Multi-platform</td>
+    <td><span style="color: red; ">Not supported</span></td>
+    <td> <span style="color: red; ">Not supported</span> </td>
+</tr>
+<tr>
+    <td>Encryption</td>
+    <td>Self-encapsulated</td>
+    <td><span style="color: green; ">Supported</span></td>
+    <td>Self-encapsulated</td>
+    <td> <span style="color: green; ">Requires importing other encryption libraries</span> </td>
+</tr>
+<tr>
+    <td>Type safety</td>
+    <td>No</td>
+    <td>No</td>
+    <td><span style="color: green; ">Yes</span></td>
+    <td><span style="color: green; ">Yes</span></td>
+</tr>
+<tr>
+    <td>Support for types other than common basic types, String, Set&lt;String&gt;</td>
+    <td></td>
+    <td> <span style="color: green; ">Parcelable</span></td>
+    <td><span style="color: green; ">Custom</span><br>But needs to be placed in an independent DataStore</td>
+    <td> <span style="color: green; ">Kt Serializable (including common storage types)<br><br>Custom</span></td>
+</tr>
+<tr>
+    <td>Additional advantages</td>
+    <td></td>
+    <td> 
+        <span style="color: green; ">Data updated until ANR is not lost</span> 
+    </td>
+    <td></td>
+    <td>
+        <span style="color: green; ">Simple modeling, convenient to call <br><br> Small size, jar on Android side is only 8 kb </span>
+    </td>
+</tr>
+<tr>
+    <td>Additional disadvantages</td>
+    <td></td>
+    <td><span style="color: red; ">Easy to lose a lot of data after power failure or system crash</span></td>
+    <td></td>
+    <td><span style="color: red; ">Relatively new</span> 
+        <br><br> <span style="color: red; ">Modeling can only be done using Kotlin, </span> Java-only developers need to have some knowledge of Kotlin.
+    </td>
+</tr>
+</table>
+<p>The above test results are based on 30 sets of String data with a length of 7 (key length) * 20 (value length), using the Meizu 18s model. The code is in the <a href="https://github.com/ShawxingKwok/KDataStore/archive/refs/heads/master.zip">source code</a> in the api&rsquo;s androidTest.</p>
+<blockquote class="book-hint warning">
+  Regarding the comparison and analysis of storage solutions in other places, most of them have serious errors.
+The official website is relatively accurate, but also very one-sided. If you want to explore, it is recommended to test and consult the source code yourself.
+</blockquote>
+
+<h1 id="basic-usage">
+  Basic Usage
+  <a class="anchor" href="#basic-usage">#</a>
+</h1>
+<p>Using Dark theme as an example</p>
+<h2 id="ui-display">
+  UI Display
+  <a class="anchor" href="#ui-display">#</a>
+</h2>
+<video height="200" controls>
+  <source src="../effect.mov" type="video/mp4">
+</video>
+<h2 id="modeling">
+  Modeling
+  <a class="anchor" href="#modeling">#</a>
+</h2>
+<p>Separate a <code>Android</code> module, commonly named <code>settings</code>. (Subsequent documents will follow the <code>settings</code> naming convention)
+<div style="border:1px solid black; padding-left:10px; padding-top:10px; padding-right:10px;">
+    <img src=../model.png alt="" />
+</div>
+<br></p>
+<p>About <code>KDSFlow</code>
+<div style="border:1px solid black; padding-left:10px; padding-top:10px; padding-right:10px;">
+    <img src=../kdsFlowExpect.png alt="" />
+</div>
+<div style="border:1px solid black; padding-left:10px; padding-top:10px; padding-right:10px;">
+    <img src=../kdsFlowActual.png alt="" />
+</div></p>
+<blockquote class="book-hint warning">
+  The <code>liveData</code> mentioned here is exclusive to Android and is not supported on other platforms.
+</blockquote>
+
+<h2 id="invocation">
+  Invocation
+  <a class="anchor" href="#invocation">#</a>
+</h2>
+<p>Calling from other modules
+
+
+
+
+<div class="book-tabs"><input type="radio" class="toggle" name="tabs-Preview" id="tabs-Preview-0" checked="checked" />
+  <label for="tabs-Preview-0">view-kt</label>
+  <div class="book-tabs-content markdown-inner"><ol>
+<li>Observe <code>Flow</code>/<code>LiveData</code> in <code>Activity</code>/<code>BasicActivity</code> and bind the theme.</li>
+<li>The <code>checked RadioButton</code> will automatically change according to the user&rsquo;s click, and the initial state can be set based on <code>isDarkMode.value</code>, no need to bind.</li>
+<li>Update the stored value in the <code>RadioGroup</code> listener.
+<div style="border:1px solid black; padding-left:10px; padding-top:10px; padding-right:10px;">
+    <img src=../kt_basic_usage.png alt="" />
+</div>
+<blockquote class="book-hint info">
+</li>
+</ol>
+<p>When observing <code>Flow</code> in a <code>Fragment</code>, it is recommended to use
+<a href="https://shawxingkwok.github.io/ITWorks/docs/android/util-view/#flowcollectonresume" target="_blank">collectOnResume</a>.</p>
+</blockquote>
+</div><input type="radio" class="toggle" name="tabs-Preview" id="tabs-Preview-1"  />
+  <label for="tabs-Preview-1">view-java</label>
+  <div class="book-tabs-content markdown-inner"><ol>
+<li>Observe <code>LiveData</code> in <code>Activity</code>/<code>BasicActivity</code> and bind the theme.</li>
+<li>The <code>checked RadioButton</code> will automatically change according to the user&rsquo;s click, and the initial state can be set based on <code>isDarkMode().getValue()</code>, no need to bind.</li>
+<li>Update the stored value in the <code>RadioGroup</code> listener.
+<div style="border:1px solid black; padding-left:10px; padding-top:10px; padding-right:10px;">
+    <img src=../java_basic_usage.png alt="" />
+</div>
+</li>
+</ol>
+</div><input type="radio" class="toggle" name="tabs-Preview" id="tabs-Preview-2"  />
+  <label for="tabs-Preview-2">compose</label>
+  <div class="book-tabs-content markdown-inner"><p>Bind <code>State</code> with the theme</p>
+<div style="border:1px solid black; padding-left:10px; padding-top:10px; padding-right:10px;">
+    <img src=../composeTheme.png alt="" />
+</div>
+<p>Update the stored value at the <code>RadioButton</code></p>
+<div style="border:1px solid black; padding-left:10px; padding-top:10px; padding-right:10px;">
+    <img src=../composeRadioButton.png alt="" />
+</div>
+</div></div>
+</p>
+<h1 id="configuration">
+  Configuration
+  <a class="anchor" href="#configuration">#</a>
+</h1>
+<p>Configure the corresponding <code>build.gradle</code>, or refer to the demo in the <a href="#release">source code</a>.</p>
+<h2 id="root-directory">
+  Root directory
+  <a class="anchor" href="#root-directory">#</a>
+</h2>
+
+
+
+
+<div class="book-tabs"><input type="radio" class="toggle" name="tabs-root plugins" id="tabs-root plugins-0" checked="checked" />
+  <label for="tabs-root plugins-0">Groovy</label>
+  <div class="book-tabs-content markdown-inner"><pre tabindex="0"><code>plugins{
+    ...
+    id &#39;org.jetbrains.kotlin.plugin.serialization&#39; version &#34;$version_kt&#34; apply false
+}
+</code></pre></div><input type="radio" class="toggle" name="tabs-root plugins" id="tabs-root plugins-1"  />
+  <label for="tabs-root plugins-1">Kts</label>
+  <div class="book-tabs-content markdown-inner"><pre tabindex="0"><code>plugins{
+    ...
+    id (&#34;org.jetbrains.kotlin.plugin.serialization&#34;) version &#34;$version_kt&#34; apply false
+}
+</code></pre></div></div>
+
+<h2 id="model-module">
+  Model module
+  <a class="anchor" href="#model-module">#</a>
+</h2>
+<p>Separate a module, commonly named <code>settings</code>, (if not adopted, the naming of subsequent <code>settings</code> will be changed accordingly)
+Choose <strong>kotlin</strong> as the language instead of java.</p>
+
+
+
+
+<div class="book-tabs"><input type="radio" class="toggle" name="tabs-settings plugins" id="tabs-settings plugins-0" checked="checked" />
+  <label for="tabs-settings plugins-0">Groovy</label>
+  <div class="book-tabs-content markdown-inner"><pre tabindex="0"><code>plugins {
+    ...
+    id &#39;kotlinx-serialization&#39;
+}
+
+dependencies {
+    ...
+    implementation &#39;org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1&#39;
+    implementation &#39;io.github.shawxingkwok:kt-util:1.0.0&#39;
+    implementation &#39;io.github.shawxingkwok:android-util-core:1.0.0&#39;
+    implementation &#39;io.github.shawxingkwok:kdatastore:1.0.0&#39;
+}
+</code></pre></div><input type="radio" class="toggle" name="tabs-settings plugins" id="tabs-settings plugins-1"  />
+  <label for="tabs-settings plugins-1">Kts</label>
+  <div class="book-tabs-content markdown-inner"><pre tabindex="0"><code>plugins {
+    ...
+    id (&#34;kotlinx-serialization&#34;)
+}
+
+dependencies {
+    ...
+    implementation (&#34;org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1&#34;)
+    implementation (&#34;io.github.shawxingkwok:kt-util:1.0.0&#34;)
+    implementation (&#34;io.github.shawxingkwok:android-util-core:1.0.0&#34;)
+    implementation (&#34;io.github.shawxingkwok:kdatastore:1.0.0&#34;)
+}
+</code></pre></div></div>
+
+<h2 id="caller-side">
+  Caller side
+  <a class="anchor" href="#caller-side">#</a>
+</h2>
+
+
+
+
+<div class="book-tabs"><input type="radio" class="toggle" name="tabs-caller side" id="tabs-caller side-0" checked="checked" />
+  <label for="tabs-caller side-0">Groovy</label>
+  <div class="book-tabs-content markdown-inner"><div class="book-tabs"><input type="radio" class="toggle" name="tabs-Groovy" id="tabs-Groovy-0" checked="checked" />
+  <label for="tabs-Groovy-0">view-kt</label>
+  <div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="line"><span class="cl"><span class="n">tasks</span><span class="o">.</span><span class="na">withType</span><span class="o">(</span><span class="n">org</span><span class="o">.</span><span class="na">jetbrains</span><span class="o">.</span><span class="na">kotlin</span><span class="o">.</span><span class="na">gradle</span><span class="o">.</span><span class="na">tasks</span><span class="o">.</span><span class="na">KotlinCompile</span><span class="o">).</span><span class="na">configureEach</span><span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">kotlinOptions</span><span class="o">.</span><span class="na">freeCompilerArgs</span> <span class="o">+=</span> <span class="s2">&#34;-Xcontext-receivers&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">dependencies</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="o">...</span>
+</span></span><span class="line"><span class="cl">    <span class="n">implementation</span> <span class="s1">&#39;io.github.shawxingkwok:android-util-view:1.0.0&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">implementation</span> <span class="s1">&#39;io.github.shawxingkwok:kdatastore:1.0.0&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">implementation</span> <span class="nf">project</span><span class="o">(</span><span class="s1">&#39;:settings&#39;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div></div><input type="radio" class="toggle" name="tabs-Groovy" id="tabs-Groovy-1"  />
+  <label for="tabs-Groovy-1">view-java / compose</label>
+  <div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="line"><span class="cl"><span class="n">dependencies</span><span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="o">...</span>
+</span></span><span class="line"><span class="cl">    <span class="n">implementation</span> <span class="s1">&#39;io.github.shawxingkwok:kdatastore:1.0.0&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">implementation</span> <span class="nf">project</span><span class="o">(</span><span class="s1">&#39;:settings&#39;</span><span class="o">)</span> 
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div></div></div>
+</div><input type="radio" class="toggle" name="tabs-caller side" id="tabs-caller side-1"  />
+  <label for="tabs-caller side-1">Kts</label>
+  <div class="book-tabs-content markdown-inner"><div class="book-tabs"><input type="radio" class="toggle" name="tabs-Kts" id="tabs-Kts-0" checked="checked" />
+  <label for="tabs-Kts-0">view-kt</label>
+  <div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="n">tasks</span><span class="p">.</span><span class="n">withType</span><span class="p">&lt;</span><span class="n">org</span><span class="p">.</span><span class="n">jetbrains</span><span class="p">.</span><span class="n">kotlin</span><span class="p">.</span><span class="n">gradle</span><span class="p">.</span><span class="n">tasks</span><span class="p">.</span><span class="n">KotlinCompile</span><span class="p">&gt;().</span><span class="n">configureEach</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">kotlinOptions</span><span class="p">.</span><span class="n">freeCompilerArgs</span> <span class="o">+=</span> <span class="s2">&#34;-Xcontext-receivers&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">dependencies</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="o">..</span><span class="p">.</span>
+</span></span><span class="line"><span class="cl">    <span class="n">implementation</span> <span class="p">(</span><span class="s2">&#34;io.github.implementation (&#34;</span><span class="n">io</span><span class="p">.</span><span class="n">github</span><span class="p">.</span><span class="n">shawxingkwok</span><span class="p">:</span><span class="n">kdatastore</span><span class="p">:</span><span class="m">1.0</span><span class="p">.</span><span class="m">0</span><span class="s2">&#34;)shawxingkwok:android-util-view:1.0.0&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">implementation</span> <span class="p">(</span><span class="n">project</span><span class="p">(</span><span class="s2">&#34;:settings&#34;</span><span class="p">))</span> 
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></div><input type="radio" class="toggle" name="tabs-Kts" id="tabs-Kts-1"  />
+  <label for="tabs-Kts-1">view-java / compose</label>
+  <div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="n">dependencies</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="o">..</span><span class="p">.</span>
+</span></span><span class="line"><span class="cl">    <span class="n">implementation</span> <span class="p">(</span><span class="s2">&#34;io.github.shawxingkwok:kdatastore:1.0.0&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">implementation</span> <span class="p">(</span><span class="n">project</span><span class="p">(</span><span class="s2">&#34;:settings&#34;</span><span class="p">))</span> 
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></div></div>
+</div></div>
+
+<h1 id="type-support">
+  Type Support
+  <a class="anchor" href="#type-support">#</a>
+</h1>
+<p><code>Kt Serializable</code> is a serialization tool officially released by Kotlin. Its usage is similar to <code>Java Serializable</code>, but it is multi-platform and more than twice as fast.
+Classes marked with <code>Serializable</code>,
+basic types, <code>enum</code>, <code>Pair</code>, <code>IntArray</code>, default implementations of <code>List</code>, etc. can be considered as <code>Kt Serializable</code>,
+see <a href="https://github.com/Kotlin/kotlinx.serialization/blob/master/docs/basic-serialization.md" target="_blank">kotlinx.serialization</a> for details.</p>
+<div style="border:1px solid black; padding-left:10px; padding-top:10px; padding-right:10px;">
+    <img src=../types.png alt="" />
+</div>
+<ul>
+<li>When <code>Not nullable</code>, default value needs to be declared.</li>
+<li>When <code>Nullable</code>, default value is limited to <code>null</code>.</li>
+<li>For custom types, mutual conversion between <code>Kt Serializable</code> is required.</li>
+</ul>
+<h1 id="migration">
+  Migration
+  <a class="anchor" href="#migration">#</a>
+</h1>
+<p>Migrate from other storage repositories in the format shown in the figure (check existence -&gt; migrate -&gt; delete).</p>
+<p>For example, taken from <code>SharedPreferences</code>
+<div style="border:1px solid black; padding-left:10px; padding-top:10px; padding-right:10px;">
+    <img src=../migration.png alt="" />
+</div>
+<br></p>
+<p>In addition, the built-in <code>delete</code> and <code>exist</code> functions assist in migrating from <code>KDataStore</code> to elsewhere.
+
+
+
+
+<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exist" id="tabs-exist-0" checked="checked" />
+  <label for="tabs-exist-0">Kt</label>
+  <div class="book-tabs-content markdown-inner"><div style="border:1px solid black; padding-left:10px; padding-top:10px; padding-right:10px;">
+    <img src=../delete_exist_kt.png alt="" />
+</div>
+</div><input type="radio" class="toggle" name="tabs-exist" id="tabs-exist-1"  />
+  <label for="tabs-exist-1">Java</label>
+  <div class="book-tabs-content markdown-inner"><div style="border:1px solid black; padding-left:10px; padding-top:10px; padding-right:10px;">
+    <img src=../delete_exist_java.png alt="" />
+</div>
+</div></div>
+
+The warning is to prevent misuse, and there is no risk of any exceptions.</p>
+<h1 id="optional-parameters">
+  Optional Parameters
+  <a class="anchor" href="#optional-parameters">#</a>
+</h1>
+<div style="border:1px solid black; padding-left:10px; padding-top:10px; padding-right:10px;">
+    <img src=../args.png alt="" />
+</div>
+<p>For encryption, other encryption libraries need to be imported and a custom cipher needs to be created.
+<div style="border:1px solid black; padding-left:10px; padding-top:10px; padding-right:10px;">
+    <img src=../cipher.png alt="" />
+</div></p>
+<blockquote class="book-hint info">
+  Starting from API 29, Android introduced a sandbox mechanism, which achieved data isolation and is relatively secure.
+</blockquote>
+
+<h1 id="reset">
+  Reset
+  <a class="anchor" href="#reset">#</a>
+</h1>
+<h2 id="all">
+  All
+  <a class="anchor" href="#all">#</a>
+</h2>
+
+
+
+
+<div class="book-tabs"><input type="radio" class="toggle" name="tabs-wholeReset" id="tabs-wholeReset-0" checked="checked" />
+  <label for="tabs-wholeReset-0">Kt</label>
+  <div class="book-tabs-content markdown-inner"><div style="border:1px solid black; padding-left:10px; padding-top:10px; padding-right:10px;">
+    <img src=../wholeResetKt.png alt="" />
+</div>
+</div><input type="radio" class="toggle" name="tabs-wholeReset" id="tabs-wholeReset-1"  />
+  <label for="tabs-wholeReset-1">Java</label>
+  <div class="book-tabs-content markdown-inner"><div style="border:1px solid black; padding-left:10px; padding-top:10px; padding-right:10px;">
+    <img src=../wholeResetJava.png alt="" />
+</div>
+</div></div>
+
+<h2 id="partial">
+  Partial
+  <a class="anchor" href="#partial">#</a>
+</h2>
+<p>For example, reset the declared <code>isDarkMode</code>
+
+
+
+
+<div class="book-tabs"><input type="radio" class="toggle" name="tabs-partialReset" id="tabs-partialReset-0" checked="checked" />
+  <label for="tabs-partialReset-0">Kt</label>
+  <div class="book-tabs-content markdown-inner"><pre tabindex="0"><code>Settings.isDarkMode.reset()
+</code></pre></div><input type="radio" class="toggle" name="tabs-partialReset" id="tabs-partialReset-1"  />
+  <label for="tabs-partialReset-1">Java</label>
+  <div class="book-tabs-content markdown-inner"><pre tabindex="0"><code>Settings.isDarkMode().reset();
+</code></pre></div></div>
+</p>
+<h1 id="quick-initialization">
+  Quick initialization
+  <a class="anchor" href="#quick-initialization">#</a>
+</h1>
+<p>Call <code>Settings</code> in <code>Application</code> first asynchronously if you are concerned about its startup
+time (<strong>5-30 ms</strong>).</p>
+<h1 id="a-hrefhttpsgithubcomshawxingkwokkdatastore-target_blankgithub-repoa">
+  <a href="https://github.com/ShawxingKwok/KDataStore" target="_blank">GitHub Repo</a>
+  <a class="anchor" href="#a-hrefhttpsgithubcomshawxingkwokkdatastore-target_blankgithub-repoa">#</a>
+</h1>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/ShawxingKwok/ITWorks/blob/main/content/docs/android/kdatastore/en/_index.md" target="_blank" rel="noopener">
+      <img src="/ITWorks/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#comparison-of-local-storage-solutions">Comparison of Local Storage Solutions</a></li>
+    <li><a href="#basic-usage">Basic Usage</a>
+      <ul>
+        <li><a href="#ui-display">UI Display</a></li>
+        <li><a href="#modeling">Modeling</a></li>
+        <li><a href="#invocation">Invocation</a></li>
+      </ul>
+    </li>
+    <li><a href="#configuration">Configuration</a>
+      <ul>
+        <li><a href="#root-directory">Root directory</a></li>
+        <li><a href="#model-module">Model module</a></li>
+        <li><a href="#caller-side">Caller side</a></li>
+      </ul>
+    </li>
+    <li><a href="#type-support">Type Support</a></li>
+    <li><a href="#migration">Migration</a></li>
+    <li><a href="#optional-parameters">Optional Parameters</a></li>
+    <li><a href="#reset">Reset</a>
+      <ul>
+        <li><a href="#all">All</a></li>
+        <li><a href="#partial">Partial</a></li>
+      </ul>
+    </li>
+    <li><a href="#quick-initialization">Quick initialization</a></li>
+    <li><a href="#a-hrefhttpsgithubcomshawxingkwokkdatastore-target_blankgithub-repoa"><a href="https://github.com/ShawxingKwok/KDataStore" target="_blank">GitHub Repo</a></a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
