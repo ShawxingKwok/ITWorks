@@ -32,18 +32,18 @@ Skip if you are using `Compose`. Learn the common tracer part first if you are n
 # Setup
 Add the dependency below common tracer.
 {{< tabs "Setup" >}}
-{{< tab "Groovy" >}} 
+{{< tab "Groovy" >}}
 ```groovy
 // Keep this version latest with the prefix not higher than your kotlin version.
 // Never put this above 'tracer-common-compiler'
-ksp 'io.github.apollokwok:tracer-android-traditional-compiler:1.7.20-1.0.1'
+ksp 'io.github.shawxingkwok:tracer-android-view-compiler:1.7.20-1.0.1'
 ```
 {{< /tab >}}
 {{< tab "Kotlin" >}} 
 ```kotlin
 // Keep this version latest with the prefix not higher than your kotlin version.
 // Never put this above 'tracer-common-compiler'
-ksp("io.github.apollokwok:tracer-android-traditional-compiler:1.7.20-1.0.0")
+ksp("io.github.shawxingkwok:tracer-android-view-compiler:1.7.20-1.0.0")
 ```
 {{< /tab >}}
 {{< /tabs >}}
@@ -60,5 +60,5 @@ Connects with `activity`/`parentFragment`'s interior elements with automatic
 I suggest to annotate your subclass of `ViewModel` with `Tracer.Tip` to avoid tracing insides. 
 
 <br>
-{{< button href="https://github.com/ApolloKwok/TracerAndroidTraditional" >}}Github repo{{< /button >}}
+{{< button href="https://github.com/ShawXingKwok/Tracer-AndroidView" >}}Github repo{{< /button >}}
 <br><br>

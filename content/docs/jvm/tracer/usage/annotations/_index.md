@@ -35,7 +35,7 @@ Now we add one bedroom and its some inner objects as below. As nodes grow on roo
 <br><br>
 
 # Tip
-`Tracer.Tip` represents [trace end](https://apollokwok.github.io/TracerTutorial/docs/usage/details/#trace-ends), 
+`Tracer.Tip` represents [trace end](https://shawxingkwok.github.io/TracerTutorial/docs/usage/details/#trace-ends), 
 meaning elements of annotated classes wouldn't be traced insides.
 
 {{< video src="tip" >}}
@@ -48,7 +48,7 @@ Context and the tracer interface are needless in a simple test.
 Properties and super types with `@Tracer.Omit` would be omitted, which is generally used 
 with some unsupported new syntaxes, like `T & Any` before `ksp 1.8.0-1.0.9`(exclusive), 
 and `context receiver`. Super type trace rules are later explained on page 
-[Details](https://apollokwok.github.io/TracerTutorial/docs/usage/details/#partial-traceable-super-types). 
+[Details](https://shawxingkwok.github.io/TracerTutorial/docs/usage/details/#partial-traceable-super-types). 
 <br> 
 {{<video src="omit" >}}  
 {{<hint info >}}
