@@ -2,9 +2,6 @@
 title: Setup
 weight: 2
 ---
-{{< hint warning >}}
-Requires the kotlin plugin of version `1.8.0` or later.  
-{{< /hint >}}
 
 See module **sample** on {{< repo Tracer Github >}} or configure your `build.gradle`/`build.gradle.kts` as below.
 
@@ -13,7 +10,9 @@ See module **sample** on {{< repo Tracer Github >}} or configure your `build.gra
 2. plugin
     ```kotlin
     plugins{
+        // Minimum version: kt `1.8.0`, ksp `1.8.0-1.0.9`.  
         // keep the prefix same with your kotlin version.
+        // here supposes your kotlin plugin is at '1.8.0'
         id("com.google.devtools.ksp") version "1.8.0-1.0.9"
     }
     ```

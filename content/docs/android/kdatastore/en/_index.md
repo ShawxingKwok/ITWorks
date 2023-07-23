@@ -4,14 +4,14 @@ weight: 1
 ---
 
 {{< hint warning >}}
-This Chinese version and the `Java` extension are mainly used for initial promotion and will not have any other works.
+`Java` support may be not available in my other works. 
 {{< /hint >}}
 
 {{< hint warning >}}
-After supporting `IOS`, it will be moved to the `Multiplatform mobile` group.
+This page will be moved to `Multiplatform mobile` group after `IOS` support.
 {{< /hint >}}
 
-# Comparison of Local Storage Solutions
+# Local Storage Solutions Comparison
 
 <table>
 <tr>
@@ -23,77 +23,76 @@ After supporting `IOS`, it will be moved to the `Multiplatform mobile` group.
 </tr>
 
 <tr>
-    <td>Mechanism</td>
+    <td>Features</td>
     <td>
-        Synchronous read and write
-        <br><br>
         <span style="color:red"> <code>commit</code> blocks the current thread</span>
-        <br> <code>apply</code> does not block, <span style="color:red">but it is uncertain whether the write is successful.</span>
-        <br><br><span style="color:red">Regardless of whether the write is successful or not, the memory is updated and the listener is notified.</span>
+        <br><br> 
+        <code>apply</code> does not block, <span style="color:red">but it is uncertain whether data is
+         successfully written or not.</span>
     </td>
     <td> 
-        Read from system-level memory first
-        <br><br><span style="color: green; ">Synchronous and non-blocking read and write</span>
-        <br><br>Asynchronously write to disk in the background 
+         Read data into system-level memory at first.
+        <br><br><span style="color: green; ">Synchronous non-blocking read and write</span>
+        <br><br>Background timed asynchronous write to disk 
     </td>
-    <td> Asynchronous read and write, update memory after successful write.<br><br>Asynchronously observe through Flow.</td>
+    <td> Asynchronous read and write, update memory after successful write.<br><br>Observe asynchronously via <code>Flow</code>.</td>
     <td> 
         Based on DataStore 
-        <br><br> Read from application-level memory first 
-        <br><br> <span style="color: green; ">Synchronous and non-blocking read and write</span>
-        <br><br>Asynchronously write to disk, including backup files, when data is updated. 
+        <br><br> First read into application-level memory 
+        <br><br> <span style="color: green; ">Synchronously non-blocking read and write
+        <br><br>Update memory first, then write to disk asynchronously background, including backup files.</span>
     </td>
 </tr>
 
 <tr>
-    <td>Performance (ms)</td>
-    <td>Startup: 2.1 <br> commit: 2.4 </td>
-    <td>Startup: 2.6</td>
-    <td>Response: 8</td>
-    <td><span style="color: red; ">Startup: 18</span> <br> Little impact when file size significantly increases</td>
+    <td>Performance</td>
+    <td>Startup: 2.1ms <br> <code>commit</code>: 2.4ms </td>
+    <td>Startup: 2.6ms</td>
+    <td>Response: 8.0ms</td>
+    <td><span style="color: red; ">Startup: 18.1ms</span> <br> little affected when file size increases significantly</td>
 </tr>
 
 <tr>
-    <td>IOException during reading</td>
-    <td>Returns default value</td>
-    <td>Returns default value</td>
-    <td rowspan="3">Handled by catching</td>
-    <td><span style="color: green; ">Retrieve from backup file</span></td>
+    <td>IOException during read</td>
+    <td>Return default value</td>
+    <td>Return default value</td>
+    <td rowspan="3">Catch manually</td>
+    <td><span style="color: green; ">Get from backup file</span></td>
 </tr>
 
 <tr>
-    <td>IOException during writing</td>
-    <td>Replaces with the backup file that has not been written, and no longer writes.<br><br> If using commit, can be determined by the returned false</td>
-    <td rowspan="2">Subsequently verifies the data, attempts to recover, and deletes if unsuccessful.</td>
-    <td><span style="color: green; ">Records and updates from the backup file on the next startup</span></td>
+    <td>IOException during write</td>
+    <td>Replace with the backup file without the data, and do not write again.<br><br> Returns false if via <code>commit</code></td>
+    <td rowspan="2">Check data later, try to restore, delete if unsuccessful.</td>
+    <td><span style="color: green; ">Record at once. Update from backup file at next startup</span></td>
 </tr>
 
 <tr>
-    <td>Corruption Exception</td>
-    <td> <span style="color: red; ">Replaces with an empty file</span> </td>
-    <td> <span style="color: green; ">Processes by copying data from the backup file</span> </td>
+    <td> Corruption<br>Exception </td>
+    <td> <span style="color: red; ">Replace with an empty file</span> </td>
+    <td> <span style="color: green; ">Copy backup file data</span> </td>
 </tr>
 
 <tr>
-    <td>Multi-process</td>
-    <td>Self-encapsulated</td>
+    <td>Multiprocess</td>
+    <td>Manual encapsulation</td>
     <td> <span style="color: green; ">Supported</span> </td>
-    <td rowspan="2">In alpha stage</td>
-    <td rowspan="2">After DataStore is officially supported</td>
+    <td rowspan="2">In the alpha stage</td>
+    <td rowspan="2">After DataStore officially supports</td>
 </tr>
 
 <tr>
-    <td>Multi-platform</td>
+    <td>Multiplatform</td>
     <td><span style="color: red; ">Not supported</span></td>
     <td> <span style="color: red; ">Not supported</span> </td>
 </tr>
 
 <tr>
-    <td>Encryption</td>
-    <td>Self-encapsulated</td>
+    <td>Crypto</td>
+    <td>Manual encapsulation</td>
     <td><span style="color: green; ">Supported</span></td>
-    <td>Self-encapsulated</td>
-    <td> <span style="color: green; ">Requires importing other encryption libraries</span> </td>
+    <td>Manual encapsulation</td>
+    <td> <span style="color: green; ">Requires introducing other crypto libraries</span> </td>
 </tr>
 
 <tr>
@@ -105,94 +104,95 @@ After supporting `IOS`, it will be moved to the `Multiplatform mobile` group.
 </tr>
 
 <tr>
-    <td>Support for types other than common basic types, String, Set&lt;String&gt;</td>
+    <td>Support for types other than common basic types, String, and Set&lt;String&gt;</td>
     <td></td>
     <td> <span style="color: green; ">Parcelable</span></td>
-    <td><span style="color: green; ">Custom</span><br>But needs to be placed in an independent DataStore</td>
-    <td> <span style="color: green; ">Kt Serializable (including common storage types)<br><br>Custom</span></td>
+    <td><span style="color: green; ">Customizable</span><br>However, it needs to be placed in an independent DataStore</td>
+    <td> <span style="color: green; ">Kt Serializable (including common storage types）<br><br>Customizable</span></td>
 </tr>
 
 <tr>
     <td>Additional advantages</td>
     <td></td>
     <td> 
-        <span style="color: green; ">Data updated until ANR is not lost</span> 
+        <span style="color: green; ">Data updated before ANR will not be lost</span> 
     </td>
     <td></td>
     <td>
-        <span style="color: green; ">Simple modeling, convenient to call <br><br> Small size, jar on Android side is only 8 kb </span>
+        <span style="color: green; "> Simple modeling, easy calling <br><br> Small size, jar on Android side is only 8 kb </span>
     </td>
 </tr>
 
 <tr>
     <td>Additional disadvantages</td>
     <td></td>
-    <td><span style="color: red; ">Easy to lose a lot of data after power failure or system crash</span></td>
+    <td><span style="color: red; ">After a power outage or system crash, a lot of data is likely to be lost</span></td>
     <td></td>
-    <td><span style="color: red; ">Relatively new</span> 
-        <br><br> <span style="color: red; ">Modeling can only be done using Kotlin, </span> Java-only developers need to have some knowledge of Kotlin.
+    <td><span style="color: red; "> Quite new </span> 
+        <br><br> <span style="color: red; ">Modeling requires Kotlin.</span> Java is only supported on caller side.  
     </td>
 </tr>
 </table>
 
-The above test results are based on 30 sets of String data with a length of 7 (key length) * 20 (value length), using the Meizu 18s model. 
-Source code is in {{< repo KDataStore KDataStore >}}.benchmark. 
+The above test results use 30 sets of String data on Meizu 18s,
+Source code is in {{< repo KDataStore KDataStore >}}.benchmark.
 
 {{< hint warning >}}
-Regarding the comparison and analysis of storage solutions in other places, most of them have serious errors.
-The official website is relatively accurate, but also very one-sided. If you want to explore, it is recommended to test and consult the source code yourself.
+Regarding the storage scheme comparison analysis in other places, the vast majority of them have serious errors.
+The official website is relatively accurate, but very one-sided. If you want to explore, I recommend to test and view the source code.
 {{< /hint >}}
 
 # Basic Usage
-Using Dark theme as an example
+Taking `dark theme` as an example
 
 ## UI Display
 <video height="200" controls>
   <source src="../effect.mov" type="video/mp4">
 </video>
 
-## Modeling
-Separate a `Android` module, commonly named `settings`. (Subsequent documents will follow the `settings` naming convention)
+## Model
+Set an independent `Android` module, commonly named `settings`. (The following documents are all based on `settings`)
 {{< codeImg "../model.png" >}}
 <br>
 
 About `KDSFlow`
 {{< codeImg "../kdsFlowExpect.png" >}}
+
 {{< codeImg "../kdsFlowActual.png" >}}
 
 {{< hint warning >}}
-The `liveData` mentioned here is exclusive to Android and is not supported on other platforms.
+The `liveData` is only for `Android` and not supported on other platforms in the future.
 {{< /hint >}}
 
-## Invocation
+## Call
 
-Calling from other modules
+Call in other modules
 {{< tabs "Preview">}}
 
 {{< tab "view-kt" >}}
-1. Observe `Flow`/`LiveData` in `Activity`/`BasicActivity` and bind the theme.
-2. The `checked RadioButton` will automatically change according to the user's click, and the initial state can be set based on `isDarkMode.value`, no need to bind.
+1. Observe `Flow`/`LiveData` in `Activity`/`BasicActivity` and bind the `theme`.
+2. Checked `RadioButton` will change automatically as the user clicks, just set the initial state according to `isDarkMode.value`, no need to bind.
 3. Update the stored value in the `RadioGroup` listener.  
-   {{< codeImg "../kt_basic_usage.png" >}}
-   {{< hint info >}}
-   When observing `Flow` in a `Fragment`, it is recommended to use
-   {{< newTab collectOnResume "https://shawxingkwok.github.io/ITWorks/docs/android/util-view/#flowcollectonresume" >}}.
-   {{< /hint >}}
-   {{< /tab >}}
+{{< codeImg "../kt_basic_usage.png" >}}
+
+{{< hint info >}}
+{{< newTab collectOnResume "/ITWorks/docs/android/util-view/#flowcollectonresume" >}} is recommended to observe `Flow` in `Fragment`.
+{{< /hint >}}
+{{< /tab >}}
 
 {{< tab "view-java" >}}
-1. Observe `LiveData` in `Activity`/`BasicActivity` and bind the theme.
-2. The `checked RadioButton` will automatically change according to the user's click, and the initial state can be set based on `isDarkMode().getValue()`, no need to bind.
+1. Observe `LiveData` in `Activity`/`BasicActivity` and bind the `theme`.
+2. Checked `RadioButton` will change automatically as the user clicks, just set the initial state according to `isDarkMode().getValue()`, no need to bind.
 3. Update the stored value in the `RadioGroup` listener.  
    {{< codeImg "../java_basic_usage.png" >}}
 
 {{< /tab >}}
 
 {{< tab "compose" >}}
-Bind `State` with the theme  
+Bind `state` and `theme`  
 {{< codeImg "../composeTheme.png" >}}
 
-Update the stored value at the `RadioButton`  
+Update stored value at `RadioButton`
 {{< codeImg "../composeRadioButton.png" >}}
 {{< /tab >}}
 
@@ -200,9 +200,9 @@ Update the stored value at the `RadioButton`
 
 # Configuration
 
-Configure the corresponding `build.gradle`, or refer to the demo in the [source code](#release).
+Configure the corresponding `build.gradle`, or reference the demo in {{< repo KDataStore Github >}}.
 
-## Root directory
+## Root Directory
 {{< tabs "root plugins" >}}
 {{< tab "Groovy" >}}
 ```
@@ -224,9 +224,7 @@ plugins{
 {{< /tabs >}}
 
 ## Model module
-Separate a module, commonly named `settings`, (if not adopted, the naming of subsequent `settings` will be changed accordingly)
-Choose **kotlin** as the language instead of java.
-
+Suppose it's named `settings`.
 {{< tabs "settings plugins" >}}
 {{< tab "Groovy" >}}
 ```
@@ -240,7 +238,7 @@ dependencies {
     implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1'
     implementation 'io.github.shawxingkwok:kt-util:1.0.0'
     implementation 'io.github.shawxingkwok:android-util-core:1.0.0'
-    implementation 'io.github.shawxingkwok:kdatastore:1.0.0'
+    api 'io.github.shawxingkwok:kdatastore:1.0.0'
 }
 ```
 {{< /tab >}}
@@ -256,13 +254,13 @@ dependencies {
     implementation ("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
     implementation ("io.github.shawxingkwok:kt-util:1.0.0")
     implementation ("io.github.shawxingkwok:android-util-core:1.0.0")
-    implementation ("io.github.shawxingkwok:kdatastore:1.0.0")
+    api ("io.github.shawxingkwok:kdatastore:1.0.0")
 }
 ```
 {{< /tab >}}
 {{< /tabs >}}
 
-## Caller side
+## Caller Side
 {{< tabs "caller side" >}}
 
 {{< tab "Groovy" >}}
@@ -276,7 +274,6 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach{
 dependencies {
     ...
     implementation 'io.github.shawxingkwok:android-util-view:1.0.0'
-    implementation 'io.github.shawxingkwok:kdatastore:1.0.0'
     implementation project(':settings')
 }
 ```
@@ -286,7 +283,6 @@ dependencies {
 ```groovy
 dependencies{
     ...
-    implementation 'io.github.shawxingkwok:kdatastore:1.0.0'
     implementation project(':settings') 
 }
 ```
@@ -304,8 +300,7 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach{
 
 dependencies {
     ...
-    implementation ("io.github.implementation ("io.github.shawxingkwok:kdatastore:1.0.0")shawxingkwok:android-util-view:1.0.0")
-    
+    implementation ("io.github.shawxingkwok:android-util-view:1.0.0")
     implementation (project(":settings")) 
 }
 ```
@@ -315,7 +310,6 @@ dependencies {
 ```kotlin
 dependencies{
     ...
-    implementation ("io.github.shawxingkwok:kdatastore:1.0.0")
     implementation (project(":settings")) 
 }
 ```
@@ -326,24 +320,24 @@ dependencies{
 
 # Type Support
 
-`Kt Serializable` is a serialization tool officially released by Kotlin. Its usage is similar to `Java Serializable`, but it is multi-platform and more than twice as fast.
-Classes marked with `Serializable`,
-basic types, `enum`, `Pair`, `IntArray`, default implementations of `List`, etc. can be considered as `Kt Serializable`,
-see {{< newTab "kotlinx.serialization" "https://github.com/Kotlin/kotlinx.serialization/blob/master/docs/basic-serialization.md" >}} for details.
+{{< newTab "kotlinx.serialization" "https://github.com/Kotlin/kotlinx.serialization/blob/master/docs/basic-serialization.md" >}}
+usage is similar to `Java Serializable`, but multiplatform and more than twice as fast.
+Classes annotated with `Serializable`, basic types, `enum`, `Pair`, `IntArray`, `List`'s default implementation and some others 
+can be considered as `Serializable`.
 
+[//]: # (It's an official platform-neutral data conversion.)
 {{< codeImg "../types.png" >}}
-- When `Not nullable`, default value needs to be declared.
-- When `Nullable`, default value is limited to `null`.
-- For custom types, mutual conversion between `Kt Serializable` is required.
+- When `not nullable`, a default value must be declared.
+- When `nullable`, the default value is restricted to `null`.
 
 # Migration
-Migrate from other storage repositories in the format shown in the figure (check existence -> migrate -> delete).
+Migrate from other storage repositories with this format (judge existence -> migrate -> delete).
 
-For example, taken from `SharedPreferences`
+Take the example of `SharedPreferences`.
 {{< codeImg "../migration.png" >}}
 <br>
 
-In addition, the built-in `delete` and `exist` functions assist in migrating from `KDataStore` to elsewhere.
+Additionally, there are two built-in functions `delete` and `exist` that assist in migrating from `KDataStore` to other places.
 {{< tabs exist >}}
 
 {{< tab Kt >}}
@@ -353,16 +347,16 @@ In addition, the built-in `delete` and `exist` functions assist in migrating fro
 {{< codeImg "../delete_exist_java.png" >}}
 {{< /tab >}}
 {{< /tabs >}}
-The warning is to prevent misuse, and there is no risk of any exceptions.
+Warning is for preventing misuse. There are no exception risks.
 
-# Optional Parameters
+# Optional arguments
 {{< codeImg "../args.png" >}}
 
-For encryption, other encryption libraries need to be imported and a custom cipher needs to be created.
+For the crypto part, you need to introduce other crypto libraries and implement this `Cipher`.
 {{< codeImg "../cipher.png" >}}
 
 {{< hint info >}}
-Starting from API 29, Android introduced a sandbox mechanism, which achieved data isolation and is relatively secure.
+Since Android API 29, a sandbox mechanism has been introduced, which provides data isolation, making it relatively safe.
 {{< /hint >}}
 
 # Reset
@@ -377,7 +371,7 @@ Starting from API 29, Android introduced a sandbox mechanism, which achieved dat
 {{< /tabs >}}
 
 ## Partial
-For example, reset the declared `isDarkMode`
+Take the example of `isDarkMode`.
 {{< tabs partialReset >}}
 {{< tab Kt >}}
 ```
@@ -391,8 +385,6 @@ Settings.isDarkMode().reset();
 {{< /tab >}}
 {{< /tabs >}}
 
-# Quick initialization
-Call `Settings` in `Application` first asynchronously if you are concerned about its startup 
-time (**5-30 ms**).
-
-# <a href="https://github.com/ShawxingKwok/KDataStore" target="_blank">GitHub Repo</a>
+# Quick Start
+Call `Settings` in `Application` first asynchronously if you mind the startup time (**5～30 ms**).
+# <a href="https://github.com/ShawxingKwok/KDataStore" target="_blank">GitHub repo with demo</a>

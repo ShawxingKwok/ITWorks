@@ -4,7 +4,7 @@ weight: 2
 ---
 
 {{< hint warning >}}
-这份中文版本和 `Java` 扩展主要用作初期宣传，其他作品并不会有。
+这份中文版本和 `Java` 支持主要用作初期宣传，在其他作品中并没有考虑。
 {{< /hint >}}
 
 {{< hint warning >}}
@@ -23,25 +23,23 @@ weight: 2
 </tr>
 
 <tr>
-    <td>机制</td>
+    <td>特点</td>
     <td>
-        同步读写
-        <br><br>
         <span style="color:red"> <code>commit</code> 堵塞当前线程</span>
         <br> <code>apply</code> 不堵塞，<span style="color:red">但不知道是否成功写入磁盘。</span>
-        <br><br><span style="color:red">不论是否成功写入，都更新内存，通知监听</span>
+        <br><br><span style="color:red">不论是否成功写入，都更新内存</span>
     </td>
     <td> 
-        先读取到系统级别的内存
+        先把数据读取到系统级别的内存
         <br><br><span style="color: green; ">同步不堵塞读写</span>
         <br><br>后台定时异步写入磁盘 
     </td>
-    <td> 异步读写，写入成功后更新内存。<br><br>通过 Flow 异步观察。</td>
+    <td> 异步读写，写入成功后更新内存。<br><br>通过 <code>Flow</code> 异步观察。</td>
     <td> 
         基于 DataStore 
         <br><br> 先读取到应用级别的内存 
-        <br><br> <span style="color: green; ">同步不堵塞读写</span>
-        <br><br>数据更新时异步写入磁盘，包括备份文件。 
+        <br><br> <span style="color: green; ">同步不堵塞读写
+        <br><br>先更新内存，后异步写入磁盘，包括备份文件。</span>
     </td>
 </tr>
     
@@ -130,12 +128,12 @@ weight: 2
     <td><span style="color: red; ">断电或者系统崩溃后容易丢失很多数据</span></td>
     <td></td>
     <td><span style="color: red; "> 比较新 </span> 
-        <br><br> <span style="color: red; ">建模时只能使用 Kotlin, </span> 只会 Java 的同学需稍掌握一点 Kotlin 知识。
+        <br><br> <span style="color: red; ">建模时只能使用 Kotlin, </span> 调用时可以使用 Java。
     </td>
 </tr>
 </table>
 
-以上测试结果采用 30 份 7(key length) * 20(value length) 的 String 数据，机型魅族18s, 
+以上测试结果采用 30 份 String 数据，机型魅族18s, 
 源码见 {{< repo KDataStore KDataStore >}}.benchmark。
 
 {{< hint warning >}}
@@ -144,7 +142,7 @@ weight: 2
 {{< /hint >}}
 
 # 基础用法
-用 Dark theme 举例 
+用 `dark theme` 举例 
 
 ## UI 展示
 <video height="200" controls>
@@ -158,6 +156,7 @@ weight: 2
 
 关于 `KDSFlow` 
 {{< codeImg "../kdsFlowExpect.png" >}}
+
 {{< codeImg "../kdsFlowActual.png" >}}
 
 {{< hint warning >}}
@@ -171,9 +170,10 @@ weight: 2
 
 {{< tab "view-kt" >}}
 1. 在 `Activity`/`BasicActivity` 中观察`Flow`/`LiveData`，绑定主题。  
-2. `checked RadioButton` 会随用户点击自动变化，根据 `isDarkMOde.value` 设置起始状态即可，不用绑定。  
-3. 在 `RadioGroup` 监听中更新存值。  
-{{< codeImg "../kt_basic_usage.png" >}}
+2. 选中的 `RadioButton` 会随用户点击自动变化，根据 `isDarkMOde.value` 设置起始状态即可，不用绑定。  
+3. 在 `RadioGroup` 监听中更新存值。
+{{< codeImg "../kt_basic_usage.png" >}}    
+
 {{< hint info >}}
 在 `Fragment` 中观察 `Flow` 时建议采用 
 {{< newTab collectOnResume "/ITWorks/docs/android/util-view/#flowcollectonresume" >}}。
@@ -182,20 +182,18 @@ weight: 2
 
 {{< tab "view-java" >}}
 1. 在 `Activity`/`BasicActivity` 中观察 `LiveData`，绑定主题。
-2. `checked RadioButton` 会随用户点击自动变化，根据 `isDarkMode().getValue()` 设置起始状态即可，不用绑定。
-3. 在 `RadioGroup` 监听中更新存值。  
+2. 选中的 `RadioButton` 会随用户点击自动变化，根据 `isDarkMode().getValue()` 设置起始状态即可，不用绑定。
+3. 在 `RadioGroup` 监听中更新存值。
 {{< codeImg "../java_basic_usage.png" >}}
-
 {{< /tab >}}
 
 {{< tab "compose" >}}
-将 `State` 和主题绑定  
+将 `state` 和主题绑定  
 {{< codeImg "../composeTheme.png" >}}
 
 `RadioButton`处更新存值
 {{< codeImg "../composeRadioButton.png" >}}
 {{< /tab >}}
-
 {{< /tabs >}}
 
 # 配置
@@ -224,9 +222,7 @@ plugins{
 {{< /tabs >}}
 
 ## 模型模块
-单独分出一个 module, 常见命名为 `settings`, （如果不采纳，后续的 `settings` 命名则一并更改）
-language 选择 **kotlin** 而非 java。
-
+假设命名为 `settings`
 {{< tabs "settings plugins" >}}
 {{< tab "Groovy" >}}
 ```
@@ -240,7 +236,7 @@ dependencies {
     implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1'
     implementation 'io.github.shawxingkwok:kt-util:1.0.0'
     implementation 'io.github.shawxingkwok:android-util-core:1.0.0'
-    implementation 'io.github.shawxingkwok:kdatastore:1.0.0'
+    api 'io.github.shawxingkwok:kdatastore:1.0.0'
 }
 ```
 {{< /tab >}}
@@ -256,7 +252,7 @@ dependencies {
     implementation ("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
     implementation ("io.github.shawxingkwok:kt-util:1.0.0")
     implementation ("io.github.shawxingkwok:android-util-core:1.0.0")
-    implementation ("io.github.shawxingkwok:kdatastore:1.0.0")
+    api ("io.github.shawxingkwok:kdatastore:1.0.0")
 }
 ```
 {{< /tab >}}
@@ -276,7 +272,6 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach{
 dependencies {
     ...
     implementation 'io.github.shawxingkwok:android-util-view:1.0.0'
-    implementation 'io.github.shawxingkwok:kdatastore:1.0.0'
     implementation project(':settings')
 }
 ```
@@ -286,7 +281,6 @@ dependencies {
 ```groovy
 dependencies{
     ...
-    implementation 'io.github.shawxingkwok:kdatastore:1.0.0'
     implementation project(':settings') 
 }
 ```
@@ -304,8 +298,7 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach{
 
 dependencies {
     ...
-    implementation ("io.github.implementation ("io.github.shawxingkwok:kdatastore:1.0.0")shawxingkwok:android-util-view:1.0.0")
-    
+    implementation ("shawxingkwok:android-util-view:1.0.0")
     implementation (project(":settings")) 
 }
 ```
@@ -315,7 +308,6 @@ dependencies {
 ```kotlin
 dependencies{
     ...
-    implementation ("io.github.shawxingkwok:kdatastore:1.0.0")
     implementation (project(":settings")) 
 }
 ```
@@ -334,7 +326,7 @@ dependencies{
 {{< codeImg "../types.png" >}}
 - `Not nullable` 时需声明默认值。
 - `Nullable` 时默认值被限制为 `null`。
-- 自定义时需实现与 `Kt Serializable` 之间的相互转换。
+- 自定义时需实现与 `Kt Serializable` 之间的相互转换。(`convert`/`recover`)
 
 # 迁移
 类比下图格式（判断存在 -> 迁移 -> 删除）从其他存储仓库迁移过来。
