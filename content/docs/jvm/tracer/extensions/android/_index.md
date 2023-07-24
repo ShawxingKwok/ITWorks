@@ -14,7 +14,7 @@ are familiar with tracer core part and interested.
 {{< /hint >}}
 
 # Setup
-Add this dependency **below** tracer.
+Add this dependency below {{< newTab "tracer-compiler" "../../setup" >}}.
 ```kotlin
 // Never put this above 'tracer-compiler'
 ksp ("io.github.shawxingkwok:tracer-android-view-compiler:1.0.0")
