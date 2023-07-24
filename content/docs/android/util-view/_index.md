@@ -99,7 +99,7 @@ var x by withView{ ... }
 <br>
 {{< codeImg recyclerview_fragment.png >}}
 
-The `layoutManager` is required. But I prefer putting it in `xml`.
+The `layoutManager` is required. But I prefer to putting it in `xml`.
 {{< codeImg recyclerview_layoutManger.png >}}
 
 `KRecyclerViewAdapter` is not bound to `KFragment` but usable in general `Activity`/`Fragment`. 
