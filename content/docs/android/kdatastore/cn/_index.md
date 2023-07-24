@@ -61,7 +61,8 @@ weight: 2
 
 <tr>
     <td>写入中遇 IOException</td>
-    <td>用未写入该数据的备份文件替换，且不再写入。<br><br> 如用 commit, 可通过返回的 false 获悉</td>
+    <td>用未写入该数据的备份文件替换，<span style="color: red">且不再写入该数据。</span>
+    <br><br> 如用 <code>commit</code>, 可通过返回的 <code>false</code> 获悉</td>
     <td rowspan="2">后续校验数据，尝试恢复，不行则删除。</td>
     <td><span style="color: green; ">记录，下次启动时从备份文件中更新</span></td>
 </tr>
@@ -150,7 +151,10 @@ weight: 2
 </video>
 
 ## 建模
-单独分出一个 `Android` 模块, 常见命名为 `settings`。 （后续的文档均按照 `settings`）
+单独分出一个 `Android` 模块, 常见命名为 `settings`。
+{{< hint info >}}
+后续文档中的命名均参考 `settings`
+{{< /hint >}}
 {{< codeImg "../model.png" >}}
 <br> 
 
@@ -329,7 +333,7 @@ dependencies{
 - 自定义时需实现与 `Kt Serializable` 之间的相互转换。(`convert`/`recover`)
 
 # 迁移
-类比下图格式（判断存在 -> 迁移 -> 删除）从其他存储仓库迁移过来。
+类比下图格式（判断存在 -> 迁移 -> 删除）从其他存储仓库迁移过来。`AppContext` 取自已经引入的库 `android-util-core`。
 
 比如取自 `SharedPreferences`
 {{< codeImg "../migration.png" >}}
@@ -350,11 +354,11 @@ dependencies{
 # 可选参数
 {{< codeImg "../args.png" >}}
 
-加密部分需引入其他加密库，自制 cipher。 
 {{< codeImg "../cipher.png" >}}
+加密部分需引入其他加密库，自制 `cipher`。
 
 {{< hint info >}}
-Android 在 api 29 版本开始引入了沙盒机制，实现了数据隔离，相对已经很安全了。
+Android 在 api 29 版本引入了沙盒机制，实现了数据隔离，脱离加密也相对安全。
 {{< /hint >}}
 
 # 重置

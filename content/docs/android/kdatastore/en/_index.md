@@ -56,13 +56,14 @@ This page will be moved to `Multiplatform mobile` group after `IOS` support.
     <td>IOException during read</td>
     <td>Return default value</td>
     <td>Return default value</td>
-    <td rowspan="3">Catch manually</td>
+    <td rowspan="3">Manual catch</td>
     <td><span style="color: green; ">Get from backup file</span></td>
 </tr>
 
 <tr>
     <td>IOException during write</td>
-    <td>Replace with the backup file without the data, and do not write again.<br><br> Returns false if via <code>commit</code></td>
+    <td>Replace with the backup file without the data, and <span style="color: red; ">do not write again.</span>
+    <br><br> Return <code>false</code> if via <code>commit</code></td>
     <td rowspan="2">Check data later, try to restore, delete if unsuccessful.</td>
     <td><span style="color: green; ">Record at once. Update from backup file at next startup</span></td>
 </tr>
@@ -104,18 +105,18 @@ This page will be moved to `Multiplatform mobile` group after `IOS` support.
 </tr>
 
 <tr>
-    <td>Support for types other than common basic types, String, and Set&lt;String&gt;</td>
+    <td>Support for types other than common basic types, <code>String</code>, and <code>Set&lt;String&gt;</code></td>
     <td></td>
     <td> <span style="color: green; ">Parcelable</span></td>
-    <td><span style="color: green; ">Customizable</span><br>However, it needs to be placed in an independent DataStore</td>
-    <td> <span style="color: green; ">Kt Serializable (including common storage types）<br><br>Customizable</span></td>
+    <td><span style="color: green; ">Customizable</span><br>However, it needs to be placed in an independent <code>DataStore</code></td>
+    <td> <span style="color: green; ">Kt<code>Serializable</code> (including common storage types）<br><br>Customizable</span></td>
 </tr>
 
 <tr>
     <td>Additional advantages</td>
     <td></td>
     <td> 
-        <span style="color: green; ">Data updated before ANR will not be lost</span> 
+        <span style="color: green; ">Data updated before <code>ANR</code> will not be lost</span> 
     </td>
     <td></td>
     <td>
@@ -151,7 +152,10 @@ Taking `dark theme` as an example
 </video>
 
 ## Model
-Set an independent `Android` module, commonly named `settings`. (The following documents are all based on `settings`)
+Set an independent `Android` module, commonly named `settings`.
+{{< hint info >}}
+All namings in the following documents refer to `settings`.
+{{< /hint >}}
 {{< codeImg "../model.png" >}}
 <br>
 
@@ -171,7 +175,8 @@ Call in other modules
 
 {{< tab "view-kt" >}}
 1. Observe `Flow`/`LiveData` in `Activity`/`BasicActivity` and bind the `theme`.
-2. Checked `RadioButton` will change automatically as the user clicks, just set the initial state according to `isDarkMode.value`, no need to bind.
+2. Checked `RadioButton` will change with the user's click. Just set the initial state according to 
+`isDarkMode.value` rather than bind.
 3. Update the stored value in the `RadioGroup` listener.  
 {{< codeImg "../kt_basic_usage.png" >}}
 
@@ -182,7 +187,8 @@ Call in other modules
 
 {{< tab "view-java" >}}
 1. Observe `LiveData` in `Activity`/`BasicActivity` and bind the `theme`.
-2. Checked `RadioButton` will change automatically as the user clicks, just set the initial state according to `isDarkMode().getValue()`, no need to bind.
+2. Checked `RadioButton` will change with the user's click. Just set the initial state according to
+   `isDarkMode.value` rather than bind.
 3. Update the stored value in the `RadioGroup` listener.  
    {{< codeImg "../java_basic_usage.png" >}}
 
@@ -331,7 +337,8 @@ can be considered as `Serializable`.
 - When `nullable`, the default value is restricted to `null`.
 
 # Migration
-Migrate from other storage repositories with this format (judge existence -> migrate -> delete).
+Migrate from other storage repositories with this format (judge existence -> migrate -> delete). 
+`AppContext` is from introduced library `android-util-core`.
 
 Take the example of `SharedPreferences`.
 {{< codeImg "../migration.png" >}}
@@ -352,11 +359,12 @@ Warning is for preventing misuse. There are no exception risks.
 # Optional arguments
 {{< codeImg "../args.png" >}}
 
-For the crypto part, you need to introduce other crypto libraries and implement this `Cipher`.
 {{< codeImg "../cipher.png" >}}
 
+`cipher` implementation needs other crypto libraries. 
+
 {{< hint info >}}
-Since Android API 29, a sandbox mechanism has been introduced, which provides data isolation, making it relatively safe.
+Data isolation was introduced in Android API 29, making it relatively safe without crypto.
 {{< /hint >}}
 
 # Reset
@@ -386,5 +394,5 @@ Settings.isDarkMode().reset();
 {{< /tabs >}}
 
 # Quick Start
-Call `Settings` in `Application` first asynchronously if you mind the startup time (**5～30 ms**).
+Call `Settings` in `Application` asynchronously if you mind the startup time (**5～30 ms**).
 # <a href="https://github.com/ShawxingKwok/KDataStore" target="_blank">GitHub repo with demo</a>
