@@ -4,7 +4,7 @@ weight: 1
 ---
 
 {{< hint warning >}}
-`Java` support is not considered in my other works. 
+`Java` support is for the initial promotion and not considered in my other works. 
 {{< /hint >}}
 
 {{< hint warning >}}
@@ -69,9 +69,9 @@ This page will be moved to `Multiplatform mobile` group after `IOS` support.
 </tr>
 
 <tr>
-    <td> Corruption<br>Exception </td>
+    <td> Corruption Exception </td>
     <td> <span style="color: red; ">Replace with an empty file</span> </td>
-    <td> <span style="color: green; ">Copy backup file data</span> </td>
+    <td> <span style="color: green; ">Copy backup file</span> </td>
 </tr>
 
 <tr>

@@ -68,9 +68,9 @@ weight: 2
 </tr>
 
 <tr>
-    <td> Corruption<br>Exception </td>
+    <td> Corruption Exception </td>
     <td> <span style="color: red; ">用空文件替换</span> </td>
-    <td> <span style="color: green; ">通过复制备份文件数据处理</span> </td>
+    <td> <span style="color: green; ">复制备份文件</span> </td>
 </tr>
 
 <tr>
