@@ -44,7 +44,7 @@ weight: 2
 </tr>
     
 <tr>
-    <td>性能</td>
+    <td>耗时部分</td>
     <td>启动: 2.1ms <br> <code>commit</code>: 2.4ms </td>
     <td>启动: 2.6ms</td>
     <td>响应: 8.0ms</td>

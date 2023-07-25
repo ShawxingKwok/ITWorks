@@ -122,7 +122,7 @@ In case you need to make some fixed processing of  `ViewHolder` after its automa
 Here is allowed to set `Listeners` on `view` with `adapterPosition` to get `data`, which is, however, unclear. Just
 take this step in `arrange` which costs ignorable more memories.
 
-## final functions 
+## Final functions 
 {{< codeImg recyclerview_final.png >}}
 
 These functions are made `final` in `KRecyclerViewAdapter`.

@@ -45,7 +45,7 @@ This page will be moved to `Multiplatform mobile` group after `IOS` support.
 </tr>
 
 <tr>
-    <td>Performance</td>
+    <td>Time-consuming part</td>
     <td>Startup: 2.1ms <br> <code>commit</code>: 2.4ms </td>
     <td>Startup: 2.6ms</td>
     <td>Response: 8.0ms</td>
@@ -135,7 +135,7 @@ This page will be moved to `Multiplatform mobile` group after `IOS` support.
 </tr>
 </table>
 
-The above test results use 30 sets of String data on Meizu 18s,
+The above test results use 30 sets of String data on Meizu 18s.
 Source code is in {{< repo KDataStore KDataStore >}}.benchmark.
 
 {{< hint warning >}}
@@ -144,7 +144,7 @@ The official website is relatively accurate, but very one-sided. If you want to 
 {{< /hint >}}
 
 # Basic Usage
-Taking `dark theme` as an example
+Taking the example of `dark theme`.
 
 ## UI Display
 <video height="200" controls>
