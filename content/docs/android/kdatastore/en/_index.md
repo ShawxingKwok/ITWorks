@@ -4,7 +4,7 @@ weight: 1
 ---
 
 {{< hint warning >}}
-`Java` support may be not available in my other works. 
+`Java` support is not considered in my other works. 
 {{< /hint >}}
 
 {{< hint warning >}}
