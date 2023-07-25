@@ -165,7 +165,7 @@ About `KDSFlow`
 {{< codeImg "../kdsFlowActual.png" >}}
 
 {{< hint warning >}}
-The `liveData` is only for `Android` and not supported on other platforms in the future.
+The `liveData` is only for `Android` and not supported on future `IOS`.
 {{< /hint >}}
 
 ## Call

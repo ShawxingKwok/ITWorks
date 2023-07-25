@@ -164,7 +164,7 @@ weight: 2
 {{< codeImg "../kdsFlowActual.png" >}}
 
 {{< hint warning >}}
-其中的 `liveData` 为 `Android` 专供，在后续的其他平台上并不支持。
+其中的 `liveData` 为 `Android` 专供，在后续的 `IOS` 平台上并不支持。
 {{< /hint >}}
 
 ## 调用

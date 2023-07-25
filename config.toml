@@ -32,12 +32,12 @@ tag = "tags"
 [[menu.after]]
 name = "Github"
 url = "https://github.com/ShawxingKwok"
-weight = 2
+weight = 3
 
 [[menu.after]]
 name = "Email"
 url = "mailto:ShawxingKwok@126.com"
-weight = 3
+weight = 4
 
 [params]
 BookRepo = 'https://github.com/ShawxingKwok/ITWorks'

@@ -2,7 +2,7 @@
 menu:
   after:
     name: License
-    weight: 4
+    weight: 5
 title: License
 ---
 
