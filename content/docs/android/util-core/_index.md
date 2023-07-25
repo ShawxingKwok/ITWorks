@@ -25,7 +25,7 @@ Source code
 {{< codeImg appcontext.png >}}
 
 # Companion extension trick
-Declare static `retrofit` and `AppDatabase.INSTANCE` based on `AppContext` first, then `DAO` and `Service`
+Declare static `AppDatabase.INSTANCE` based on `AppContext` and `retrofit` first, then `DAO` and `Service`
 could be created concisely.
 {{< codeImg trick_dao.png >}}
 <br>
