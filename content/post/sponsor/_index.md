@@ -6,6 +6,6 @@ menu:
 title: Sponsor
 ---
 
-Thank your taste! Other payment methods would be supported in the near future.
+Other payment methods would be supported in the near future. Thank your taste!
 
 <img src="alipay.jpg" width="300"/>
