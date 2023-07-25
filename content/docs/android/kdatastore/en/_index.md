@@ -354,7 +354,7 @@ Additionally, there are two built-in functions `delete` and `exist` that assist 
 {{< codeImg "../delete_exist_java.png" >}}
 {{< /tab >}}
 {{< /tabs >}}
-Warning is for preventing misuse. There are no exception risks.
+Warning is for preventing misuse rather than exception risks.
 
 # Optional arguments
 {{< codeImg "../args.png" >}}

@@ -349,7 +349,7 @@ dependencies{
 {{< codeImg "../delete_exist_java.png" >}}
 {{< /tab >}}
 {{< /tabs >}}
-警告以防止误用，并无任何异常风险。
+警告以防止误用，并无异常风险。
 
 # 可选参数
 {{< codeImg "../args.png" >}}
