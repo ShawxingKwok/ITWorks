@@ -98,12 +98,11 @@ var x by withView{ ... }
 {{< codeImg recyclerview_adapter.png >}}
 <br>
 {{< codeImg recyclerview_fragment.png >}}
+`KRecyclerViewAdapter` is not bound to `KFragment` but usable in general `Activity`/`Fragment`.
+And you could replace `withView`, `collectOnResume`, and `onClick` in above display.
 
-I prefer putting the required `layoutManager` in `xml`.
 {{< codeImg recyclerview_layoutManger.png >}}
-
-`KRecyclerViewAdapter` is not bound to `KFragment` but usable in general `Activity`/`Fragment`. 
-And you could replace `withView`, `collectOnResume`, and `onClick` in this display.
+I prefer putting the required `layoutManager` in `xml`.
 
 ## update
 {{< codeImg recyclerview_update_notify.png >}}
