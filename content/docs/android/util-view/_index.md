@@ -103,7 +103,7 @@ I prefer putting the required `layoutManager` in `xml`.
 {{< codeImg recyclerview_layoutManger.png >}}
 
 `KRecyclerViewAdapter` is not bound to `KFragment` but usable in general `Activity`/`Fragment`. 
-And you could replace `withView`, `collectOnResume`, and `onClick`.
+And you could replace `withView`, `collectOnResume`, and `onClick` in this display.
 
 ## update
 {{< codeImg recyclerview_update_notify.png >}}
