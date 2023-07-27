@@ -136,6 +136,5 @@ These functions are made `final` in `KRecyclerViewAdapter`.
 # More 
 ## On the way
 - `KRecyclerViewAdapter`: sticky header
-- `KFragment`: delegates data stored in the hidden `viewModel` with observation. 
 
 ## <a href="https://github.com/ShawxingKwok/AndroidUtil-View" target="_blank"> GitHub repo with demo</a>
