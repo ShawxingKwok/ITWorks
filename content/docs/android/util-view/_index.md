@@ -72,6 +72,10 @@ Returns a `viewBinding` via reflection, which helps you design view utils.
 {{< codeImg inflate1.png >}}
 
 # KFragment
+{{< hint info >}}
+There are also similar `KDialogFramgent` and `KBottomDialogFragment`.
+{{< /hint >}}
+
 ## ViewBinding
 {{< codeImg kfragment_binding.png >}}
 
