@@ -65,35 +65,12 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 Sets a `View.OnClickListener` with a more precise `View`.
 {{< codeImg onClick.png >}}
 
-## KClass\<out ViewBinding>.inflate
-Returns a `viewBinding` via reflection, which helps you design view utils.
-{{< codeImg inflate.png >}}
-
-{{< codeImg inflate1.png >}}
-
-# KFragment
-{{< hint info >}}
-There are also similar `KDialogFramgent` and `KBottomDialogFragment`.
-{{< /hint >}}
-
-## ViewBinding
-{{< codeImg kfragment_binding.png >}}
-
-{{< hint info>}}
-You may have seen other libraries realized only via a generic parameter, which is, however, unsafe or 
-time-consuming.
-```kotlin
-abstrac class VBFragment<VB: ViewBinding> : Fragment()
-```
-{{< /hint >}}
- 
 ## withView
-Delegates a value alive between inclusive `onViewCreated` and exclusive `onDestroyView`.
+Delegates a value alive with `Fragment.view`.
 
 Usage sample:
 ```
-val adapter by withView{ Adapter() }
-var x by withView{ ... }
+val/var adapter by withView{ Adapter() }
 ```
 
 # KRecyclerViewAdapter
