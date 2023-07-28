@@ -126,6 +126,6 @@ These functions are made `final` in `KRecyclerViewAdapter`.
 
 # More 
 ## On the way
-- `KRecyclerViewAdapter`: sticky header
+- `KRecyclerViewAdapter`: sticky header, drag
 
 ## <a href="https://github.com/ShawxingKwok/AndroidUtil-View" target="_blank"> GitHub repo with demo</a>
