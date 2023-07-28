@@ -67,11 +67,13 @@ Sets a `View.OnClickListener` with a more precise `View`.
 
 ## withView
 Delegates a value in `ComponentActivity`/`Fragment`.   
-When in `ComponentActivity`, it's alive after `onCreate`.  
+
+When in `ComponentActivity`, it's built after `onCreate` or when you call it in `onCreate`.  
+
 When in `Fragment`, it is built after `onStart` or when you call it before `onStart`,  
 and destroyed when `onDestroyView`.
 
-Usage sample:
+Usage sample in `ComponentActivity`/`Fragment`:
 ```kotlin
 val adapter by withView{ 
     Adapter().also{ binding.recyclerview.adaper = it } 
@@ -118,7 +120,7 @@ Here is allowed to set `Listeners` on `view` with `adapterPosition` to get `data
 take this step in `arrange` which costs ignorable more memories.
 
 ## Final functions 
-{{< codeImg recyclerview_final.png >}}
+{{< codeImg recyclerview_finalFunctions.png >}}
 
 These functions are made `final` in `KRecyclerViewAdapter`.
 
