@@ -86,7 +86,7 @@ var x by withView{ ... }
 
 # KRecyclerViewAdapter
 ## Core usage
-{{< mp4 src=recyclerview height=500 >}}
+{{< mp4 src=recyclerview width=250 >}} 
 
 {{< codeImg msg.png >}}
 
