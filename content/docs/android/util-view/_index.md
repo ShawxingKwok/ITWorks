@@ -94,10 +94,12 @@ var x by withView{ ... }
 <br>
 {{< codeImg recyclerview_fragment.png >}}
 
+`MainViewModel` with the simulated initial data is not displayed.
+
+The function `binding` is from {{< newTab "another library" "https://dylancaicoding.github.io/ViewBindingKTX/#/en/" >}}.
+
 `KRecyclerViewAdapter` is not bound to `KFragment` but usable in general `Activity`/`Fragment`.
 And you could replace `withView`, `collectOnResume`, and `onClick` in above display.
-
-The function `binding` is from {{< newTab "another library" "https://dylancaicoding.github.io/ViewBindingKTX/#/en/" >}}. 
 
 As for the required `layoutManager`, I prefer putting it in `xml`.
 {{< codeImg recyclerview_layoutManger.png >}}
