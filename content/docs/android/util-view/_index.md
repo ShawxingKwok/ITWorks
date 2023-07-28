@@ -66,11 +66,20 @@ Sets a `View.OnClickListener` with a more precise `View`.
 {{< codeImg onClick.png >}}
 
 ## withView
-Delegates a value alive with `Fragment.view`.
+Delegates a value in `ComponentActivity`/`Fragment`.   
+When in `ComponentActivity`, it's alive after `onCreate`.  
+When in `Fragment`, it is built after `onStart` or when you call it before `onStart`,  
+and destroyed when `onDestroyView`.
 
 Usage sample:
+```kotlin
+val adapter by withView{ 
+    Adapter().also{ binding.recyclerview.adaper = it } 
+}
 ```
-val/var adapter by withView{ Adapter() }
+It could be also `mutable`. 
+```kotlin
+var x by withView{ ... }
 ```
 
 # KRecyclerViewAdapter
