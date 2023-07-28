@@ -82,11 +82,14 @@ val/var adapter by withView{ Adapter() }
 {{< codeImg recyclerview_adapter.png >}}
 <br>
 {{< codeImg recyclerview_fragment.png >}}
+
 `KRecyclerViewAdapter` is not bound to `KFragment` but usable in general `Activity`/`Fragment`.
 And you could replace `withView`, `collectOnResume`, and `onClick` in above display.
 
+The function `binding` is from {{< newTab "another library" "https://dylancaicoding.github.io/ViewBindingKTX/#/en/" >}}. 
+
+As for the required `layoutManager`, I prefer putting it in `xml`.
 {{< codeImg recyclerview_layoutManger.png >}}
-I prefer putting the required `layoutManager` in `xml`.
 
 ## update
 {{< codeImg recyclerview_update_notify.png >}}
