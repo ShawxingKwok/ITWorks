@@ -4,7 +4,7 @@ weight: 1
 ---
 
 {{< hint warning >}}
-Tracer annotations package is changed to `pers.shawxingkwok.tracer` which is different from that in videos.  
+Tracer annotations package is `pers.shawxingkwok.tracer` rather than that in videos.  
 {{< /hint >}}
 
 # Root
