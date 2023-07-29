@@ -337,16 +337,7 @@ can be considered as `Serializable`.
 
 {{< hint warning >}}
 Edit in a stored object would not trigger the disk update.
-```kotlin
-@Serializable
-class X(var i: Int)
-
-object Settings : KDataStore("settings"){
-    val x by store(X(0))
-}
-
-x.value.i++
-```
+{{< codeImg "../note_update.png" >}}
 {{< /hint >}}
 
 # Migration

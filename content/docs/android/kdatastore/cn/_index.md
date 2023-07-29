@@ -333,16 +333,7 @@ dependencies{
 
 {{< hint warning >}}
 在对象的内部修改并不会触发磁盘更新。
-```kotlin
-@Serializable
-class X(var i: Int)
-
-object Settings : KDataStore("settings"){
-    val x by store(X(0))
-}
-
-x.value.i++
-```
+{{< codeImg "../note_update.png" >}}
 {{< /hint >}}
 
 # 迁移
