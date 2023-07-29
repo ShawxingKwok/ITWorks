@@ -2,7 +2,7 @@
 menu:
   after:
     name: Sponsor
-    weight: 1
+    weight: 3
 title: Sponsor
 ---
 
