@@ -37,7 +37,7 @@ This page will be moved to `Multiplatform mobile` group after `IOS` support.
     </td>
     <td> Asynchronous read and write, update memory after successful write.<br><br>Observe asynchronously via <code>Flow</code>.</td>
     <td> 
-        Based on DataStore 
+        Based on <code>DataStore</code> 
         <br><br> First read into application-level memory 
         <br><br> <span style="color: green; ">Synchronously non-blocking read and write
         <br><br>Update memory first, then write to disk asynchronously background, including backup files.</span>
