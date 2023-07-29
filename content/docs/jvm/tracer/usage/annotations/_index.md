@@ -3,6 +3,10 @@ title: Annotations
 weight: 1
 ---
 
+{{< hint warning >}}
+Tracer annotations package is changed to `pers.shawxingkwok.tracer` which is different from that in videos.  
+{{< /hint >}}
+
 # Root
 Each class with `@Tracer.Root` is considered as the trace start point, followed by its interior
 public/internal elements. You probably have seen this model in the home page. 

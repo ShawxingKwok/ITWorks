@@ -11,7 +11,7 @@ weight: 2
 在支持 `IOS` 之后会移到 `Multiplatform mobile` 分组中。
 {{< /hint >}}
 
-# 本地快捷存储方案对比
+# 安卓本地快捷存储方案对比
 
 <table>
 <tr>

@@ -3,6 +3,8 @@ title: New syntax
 weight: 3
 ---
 
+I expect `Jetbrains` would add these new syntaxes to `Kotlin` one day. 
+
 # Automatic config
 ```kotlin
 @Tracer.Root
