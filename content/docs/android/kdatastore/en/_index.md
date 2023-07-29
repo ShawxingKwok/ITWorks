@@ -331,10 +331,23 @@ usage is similar to `Java Serializable`, but multiplatform and more than twice a
 Classes annotated with `Serializable`, basic types, `enum`, `Pair`, `IntArray`, `List`'s default implementation and some others 
 can be considered as `Serializable`.
 
-[//]: # (It's an official platform-neutral data conversion.)
 {{< codeImg "../types.png" >}}
 - When `not nullable`, a default value must be declared.
 - When `nullable`, the default value is restricted to `null`.
+
+{{< hint warning >}}
+Edit in a stored object would not trigger the disk update.
+```kotlin
+@Serializable
+class X(var i: Int)
+
+object Settings : KDataStore("settings"){
+    val x by store(X(0))
+}
+
+x.value.i++
+```
+{{< /hint >}}
 
 # Migration
 Migrate from other storage repositories with this format (judge existence -> migrate -> delete). 

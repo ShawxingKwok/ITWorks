@@ -326,11 +326,24 @@ dependencies{
 用法类似 `Java Serializable`, 但多平台，且速度快两倍多。 
 被 `Serializable` 标记的 `class`, 基本类型，`enum`, `Pair`, `IntArray`, `List` 的默认实现等等均可视为 `Serializable`。
 
-[//]: # (It's an official platform-neutral data conversion.)
 {{< codeImg "../types.png" >}}
 - `Not nullable` 时需声明默认值。
 - `Nullable` 时默认值被限制为 `null`。
 - 自定义时需实现与 `Kt Serializable` 之间的相互转换。(`convert`/`recover`)
+
+{{< hint warning >}}
+在对象的内部修改并不会触发磁盘更新。
+```kotlin
+@Serializable
+class X(var i: Int)
+
+object Settings : KDataStore("settings"){
+    val x by store(X(0))
+}
+
+x.value.i++
+```
+{{< /hint >}}
 
 # 迁移
 类比下图格式（判断存在 -> 迁移 -> 删除）从其他存储仓库迁移过来。`AppContext` 取自已经引入的库 `android-util-core`。
