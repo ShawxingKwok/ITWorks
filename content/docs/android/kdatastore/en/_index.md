@@ -16,9 +16,9 @@ This page will be moved to `Multiplatform mobile` group after `IOS` support.
 <table>
 <tr>
     <th></th>
-    <th>SharedPreferences</th>
-    <th>MMKV</th>
-    <th>DataStore</th>
+    <th><a href="https://developer.android.com/training/data-storage/shared-preferences" target="_blank">SharedPreferences</a></th>
+    <th><a href="https://github.com/Tencent/MMKV#readme" target="_blank">MMKV</a></th>
+    <th><a href="https://developer.android.com/topic/libraries/architecture/datastore" target="_blank">DataStore</a></th>
     <th>KDataStore</th>
 </tr>
 
@@ -206,7 +206,7 @@ Update stored value at `RadioButton`
 
 # Configuration
 
-Configure the corresponding `build.gradle`, or reference the demo in {{< repo KDataStore Github >}}.
+Configure `build.gradle`, or reference the demo in {{< repo KDataStore Github >}}.
 
 ## Root Directory
 {{< tabs "root plugins" >}}

@@ -16,9 +16,9 @@ weight: 2
 <table>
 <tr>
     <th></th>
-    <th>SharedPreferences</th>
-    <th>MMKV</th>
-    <th>DataStore</th>
+    <th><a href="https://developer.android.com/training/data-storage/shared-preferences?hl=zh-cn" target="_blank">SharedPreferences</a></th>
+    <th><a href="https://github.com/Tencent/MMKV/blob/master/README_CN.md" target="_blank">MMKV</a></th>
+    <th><a href="https://developer.android.com/topic/libraries/architecture/datastore?hl=zh-cn" target="_blank">DataStore</a></th>
     <th>KDataStore</th>
 </tr>
 
@@ -202,7 +202,7 @@ weight: 2
 
 # 配置
 
-配置相应 `build.gradle`, 或可见 {{< repo KDataStore Github >}} 上的 demo。
+配置 `build.gradle`, 或参考 {{< repo KDataStore Github >}} 上的 demo。
 
 ## 根目录 
 {{< tabs "root plugins" >}}
