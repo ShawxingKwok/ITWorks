@@ -38,7 +38,7 @@ weight: 2
     <td> 
         基于 DataStore 
         <br><br> 先读取到应用级别的内存 
-        <br><br> <span style="color: green; ">同步不堵塞读写
+        <br><br> <span style="color: green; ">同步不堵塞读写, 建模简单，调用方便  
         <br><br>先更新内存，后异步写入磁盘，包括备份文件。</span>
     </td>
 </tr>
@@ -119,7 +119,7 @@ weight: 2
     </td>
     <td></td>
     <td>
-        <span style="color: green; "> 建模简单，调用方便 <br><br> 体积小，jar on Android side 仅 8 kb </span>
+        <span style="color: green; "> 体积小，jar on Android side 仅 8 kb </span>
     </td>
 </tr>
 

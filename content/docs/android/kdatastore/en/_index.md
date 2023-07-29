@@ -35,11 +35,11 @@ This page will be moved to `Multiplatform mobile` group after `IOS` support.
         <br><br><span style="color: green; ">Synchronously non-blocking read and write</span>
         <br><br>Background timed asynchronous write to disk 
     </td>
-    <td> Asynchronous read and write, update memory after successful write.<br><br>Observe asynchronously via <code>Flow</code>.</td>
+    <td> Asynchronous read and write, update memory after successful write. Observe asynchronously via <code>Flow</code>.</td>
     <td> 
         Based on <code>DataStore</code> 
         <br><br> First read into application-level memory 
-        <br><br> <span style="color: green; ">Synchronously non-blocking read and write
+        <br><br> <span style="color: green; ">Synchronously non-blocking read and write, simple modeling, easy calling 
         <br><br>Update memory first, then write to disk asynchronously background, including backup files.</span>
     </td>
 </tr>
@@ -120,7 +120,7 @@ This page will be moved to `Multiplatform mobile` group after `IOS` support.
     </td>
     <td></td>
     <td>
-        <span style="color: green; "> Simple modeling, easy calling <br><br> Small size, jar on Android side is only 8 kb </span>
+        <span style="color: green; "> Small size, jar on Android side is only 8 kb </span>
     </td>
 </tr>
 
