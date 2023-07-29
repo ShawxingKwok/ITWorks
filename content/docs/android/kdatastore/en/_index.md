@@ -32,7 +32,7 @@ This page will be moved to `Multiplatform mobile` group after `IOS` support.
     </td>
     <td> 
          Read data into system-level memory at first.
-        <br><br><span style="color: green; ">Synchronous non-blocking read and write</span>
+        <br><br><span style="color: green; ">Synchronously non-blocking read and write</span>
         <br><br>Background timed asynchronous write to disk 
     </td>
     <td> Asynchronous read and write, update memory after successful write.<br><br>Observe asynchronously via <code>Flow</code>.</td>
