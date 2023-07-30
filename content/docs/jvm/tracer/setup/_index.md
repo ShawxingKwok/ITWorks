@@ -3,7 +3,7 @@ title: Setup
 weight: 2
 ---
 
-See module **sample** on {{< repo Tracer Github >}} or configure your `build.gradle`/`build.gradle.kts` as below.
+Configure with `gradle` as below.
 
 1. repository:  `mavenCentral()`
 
