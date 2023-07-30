@@ -162,11 +162,8 @@ All namings in the following documents refer to `settings`.
 About `KDSFlow`
 {{< codeImg "../kdsFlowExpect.png" >}}
 
+`actual KDSFlow` on Android
 {{< codeImg "../kdsFlowActual.png" >}}
-
-{{< hint warning >}}
-The `liveData` is only for `Android` and not supported on future `IOS`.
-{{< /hint >}}
 
 ## Call
 

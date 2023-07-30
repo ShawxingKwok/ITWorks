@@ -161,11 +161,8 @@ weight: 2
 关于 `KDSFlow` 
 {{< codeImg "../kdsFlowExpect.png" >}}
 
+安卓上的 `actual KDSFlow` 实现
 {{< codeImg "../kdsFlowActual.png" >}}
-
-{{< hint warning >}}
-其中的 `liveData` 为 `Android` 专供，在后续的 `IOS` 平台上并不支持。
-{{< /hint >}}
 
 ## 调用
 
