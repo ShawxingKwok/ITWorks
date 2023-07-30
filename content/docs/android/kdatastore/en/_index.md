@@ -361,7 +361,7 @@ Warning is for preventing misuse rather than exception risks.
 
 # Optional arguments
 {{< codeImg "../args.png" >}}
-
+<br>
 {{< codeImg "../cipher.png" >}}
 
 `cipher` implementation needs other crypto libraries. 
