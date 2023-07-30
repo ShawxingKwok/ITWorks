@@ -199,7 +199,8 @@ weight: 2
 
 # 配置
 
-配置 `build.gradle`, 或参考 {{< repo KDataStore Github >}} 上的 demo。
+配置 `build.gradle`/`build.gradle.ktx` 如下, 或参考 {{< repo KDataStore Github >}} 上的 demo
+(其中有使用 {{< newTab "version catalog" "https://developer.android.com/build/migrate-to-catalogs" >}})。
 
 ## 根目录 
 {{< tabs "root plugins" >}}
@@ -212,7 +213,7 @@ plugins{
 ```
 {{< /tab >}}
 
-{{< tab "Kts" >}}
+{{< tab "Kotlin" >}}
 ```
 plugins{
     ...
@@ -242,7 +243,7 @@ dependencies {
 }
 ```
 {{< /tab >}}
-{{< tab "Kts" >}}
+{{< tab "Kotlin" >}}
 ```
 plugins {
     ...
@@ -290,8 +291,8 @@ dependencies{
 {{< /tabs >}}
 {{< /tab >}}
 
-{{< tab "Kts" >}}
-{{< tabs "Kts">}}
+{{< tab "Kotlin" >}}
+{{< tabs "Kotlin">}}
 {{< tab "view-kt" >}}
 ```kotlin
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach{

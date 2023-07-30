@@ -203,7 +203,8 @@ Update stored value at `RadioButton`
 
 # Configuration
 
-Configure `build.gradle`, or reference the demo in {{< repo KDataStore Github >}}.
+Configure `build.gradle`/`build.gradle.ktx` as below, or reference the demo in {{< repo KDataStore Github >}}
+which uses {{< newTab "version catalog" "https://developer.android.com/build/migrate-to-catalogs" >}}.
 
 ## Root Directory
 {{< tabs "root plugins" >}}
@@ -216,7 +217,7 @@ plugins{
 ```
 {{< /tab >}}
 
-{{< tab "Kts" >}}
+{{< tab "Kotlin" >}}
 ```
 plugins{
     ...
@@ -246,7 +247,7 @@ dependencies {
 }
 ```
 {{< /tab >}}
-{{< tab "Kts" >}}
+{{< tab "Kotlin" >}}
 ```
 plugins {
     ...
@@ -294,8 +295,8 @@ dependencies{
 {{< /tabs >}}
 {{< /tab >}}
 
-{{< tab "Kts" >}}
-{{< tabs "Kts">}}
+{{< tab "Kotlin" >}}
+{{< tabs "Kotlin">}}
 {{< tab "view-kt" >}}
 ```kotlin
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach{
