@@ -13,6 +13,7 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach{
 }
 
 dependencies {
+    implementation "io.github.shawxingkwok:kt-util:1.0.0"
     implementation 'io.github.shawxingkwok:android-util-view:1.0.0'
 }
 ```
