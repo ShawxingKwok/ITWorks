@@ -56,6 +56,5 @@ Source code
 `i` with `context receiver` is omitted in generated code. 
 {{< codeImg _omit.png >}}
 {{<hint info >}}
-`abstract class` makes inside abstract properties and functions needless to implement, which eases 
-the test.
+`Tracer interfaces` are not essential to implement in simple tests. 
 {{< /hint >}}
