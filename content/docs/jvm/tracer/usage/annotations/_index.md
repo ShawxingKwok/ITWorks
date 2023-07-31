@@ -47,10 +47,14 @@ Context and the tracer interface are needless in a simple test.
 
 # Omit
 Properties and super types with `@Tracer.Omit` would be omitted, which is generally used 
-with some unsupported new syntaxes, like `T & Any` before `ksp 1.8.0-1.0.9`(exclusive), 
-and `context receiver`. Super type trace rules are later explained on page 'Details'.  
+with some unsupported new syntaxes, like `context receiver`. 
+Super type trace rules are later explained on page 'Details'.  
 <br> 
-{{<video src="omit" >}}  
+Source code
+{{< codeImg omit.png >}}
+<br>
+`i` with `context receiver` is omitted in generated code. 
+{{< codeImg _omit.png >}}
 {{<hint info >}}
 `abstract class` makes inside abstract properties and functions needless to implement, which eases 
 the test.

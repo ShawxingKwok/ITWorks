@@ -27,10 +27,6 @@ Use `lazy` when you need to construct some objects based on common injected elem
 {{< video src=conversion >}}
 This would be needless in the expected new syntax.
 
-# Compatibility with KSP
-`Tracer` is compatible with `ksp 1.7.0-1.0.6` at least. Although mostly it works well with `ksp`,
-you'd better try to make your `ksp plugin` in a high stable version to avoid bugs. 
-
 # Elements built times display
 {{< video src="builtTimes" >}}
 <br>
