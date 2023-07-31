@@ -367,7 +367,8 @@ Warning is for preventing misuse rather than exception risks.
 `cipher` implementation needs other crypto libraries. 
 
 {{< hint info >}}
-Data isolation was introduced in Android API 29, making it relatively safe without crypto.
+Data isolation was introduced in Android API 29, making it relatively safe without crypto which
+increases the startup time by about half.
 {{< /hint >}}
 
 # Reset
