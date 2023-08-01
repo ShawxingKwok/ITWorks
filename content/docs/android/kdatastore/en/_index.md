@@ -3,12 +3,20 @@ title: English
 weight: 1
 ---
 
+`KDataStore` is a local persistent storage solution that I personally developed based on Android Jetpack's {{< newTab DataStore "https://developer.android.com/topic/libraries/architecture/datastore?hl=zh-cn" >}}.
+The main optimizations include:
+- Generating `key` through delegation.
+- Using `MutableStateFlow` for real-time observation, synchronous reading and writing, and asynchronous writing to disk.
+- Backing up data for exceptions.
+
+For more information, see the <a href="https://github.com/ShawxingKwok/KDataStore" target="_blank">GitHub repository</a> (includes demo).
+
 {{< hint warning >}}
 `Java` support is for the initial promotion and not considered in my other works. 
 {{< /hint >}}
 
 {{< hint warning >}}
-This page will be moved to `Multiplatform` group after `IOS` support.
+This page will be moved to `Multiplatform` after `IOS` support.
 {{< /hint >}}
 
 # Local Android Storage Solutions Comparison
