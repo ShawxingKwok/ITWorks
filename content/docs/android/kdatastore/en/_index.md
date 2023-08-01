@@ -8,7 +8,7 @@ weight: 1
 {{< /hint >}}
 
 {{< hint warning >}}
-This page will be moved to `Multiplatform mobile` group after `IOS` support.
+This page will be moved to `Multiplatform` group after `IOS` support.
 {{< /hint >}}
 
 # Local Android Storage Solutions Comparison

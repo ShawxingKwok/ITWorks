@@ -69,14 +69,16 @@ Sets a `View.OnClickListener` with a more precise `View`.
 ## withView
 Delegates a value in `ComponentActivity`/`Fragment`.   
 
-When in `ComponentActivity`, it's built after `onCreate` or when you call it in `onCreate`.  
+When in `ComponentActivity`, it's initialized after `onCreate` or when you call its `getter` before that.  
 
-When in `Fragment`, it is built after `onStart` or when you call it before `onStart`,  
+When in `Fragment`, it is initialized after `onStart` or when you call its `getter` before that, 
 and destroyed when `onDestroyView`.
 
-Take the example of declaring a nested view in `ComponentActivity`/`Fragment ViewBinding`:
+Usage sample:
 ```kotlin
-val recyclerView by withView{ binding.content.recyclerView }
+class MainFragment : Fragment(){
+    val adapter by withView{ MyAdapter(requireContext()) }
+}
 ```
 It could be also `mutable`. 
 ```kotlin

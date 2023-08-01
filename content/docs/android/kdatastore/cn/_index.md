@@ -8,8 +8,10 @@ weight: 2
 {{< /hint >}}
 
 {{< hint warning >}}
-在支持 `IOS` 之后会移到 `Multiplatform mobile` 分组中。
+在支持 `IOS` 之后会移到 `Multiplatform` 分组中。
 {{< /hint >}}
+
+[//]: # (`KDataStore` 是安卓中的 )
 
 # 安卓本地快捷存储方案对比
 
