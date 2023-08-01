@@ -24,6 +24,9 @@ of which the profit is much more considerable than the additional resource memor
 Source code
 {{< codeImg appcontext.png >}}
 
+It's based on {{< newTab startup "https://developer.android.com/topic/libraries/app-startup" >}}.
+However, if your `android library` also uses it,      
+
 # Companion extension trick
 Declare static `AppDatabase.INSTANCE` based on `AppContext` and `retrofit` first, then `DAO` and `Service`
 could be created concisely.
