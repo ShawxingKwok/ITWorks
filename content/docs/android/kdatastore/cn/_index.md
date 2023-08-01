@@ -34,17 +34,17 @@ weight: 2
     <td>性能</td>
     <td>
         启动: 2.1ms 
-        <br><br> <span style="color:green">读取：可忽略</span>
+        <br><br> 读取：耗时可忽略
         <br><br> <span style="color:red"><code>commit</code>写入: 堵塞2.4ms</span> 
-        <br><br> <code>apply</code>写入: 即时更新内存，<span style="color:red">但不知道是否成功异步写入磁盘。</span> </td>
+        <br><br> <code>apply</code>写入: 耗时可忽略，<span style="color:red">但不知道是否成功异步写入磁盘。</span> </td>
     <td>
         启动: 2.6ms 
-        <br><br><span style="color:green">读写：可忽略</span>
+        <br><br>读写：耗时可忽略
     </td>
     <td>都通过异步，故只测<span style="color:red">响应: 8.0ms</span> </td>
     <td><span style="color: red; ">
         启动: 10.1ms</span> <br> 文件显著增加时影响不大，亦可先行在 <code>Application</code>中异步启动来解决。
-        <br><br><span style="color:green">读写：可忽略</span>
+        <br><br>读写：耗时可忽略
     </td>
 </tr>
 
