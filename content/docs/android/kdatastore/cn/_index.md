@@ -4,7 +4,7 @@ weight: 2
 ---
 
 `KDataStore` 是我个人做的一个本地持久性存储解决方案，基于 Android Jetpack 中的 {{< newTab DataStore "https://developer.android.com/topic/libraries/architecture/datastore?hl=zh-cn" >}}，
-改为委托生成 `key`, 通过 `MutbaleStateFlow` 处理， 并备份文件以处理异常。
+通过委托生成 `key`, 采用 `MutbaleStateFlow` 即时读写、观察，延后写入磁盘并备份文件以处理异常，还有其他等等优化。
 
 详见 <a href="https://github.com/ShawxingKwok/KDataStore" target="_blank">GitHub 仓库</a>(含demo)。
 
