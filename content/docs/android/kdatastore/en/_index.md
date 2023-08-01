@@ -224,7 +224,6 @@ plugins{
 {{< /tabs >}}
 
 ## Model module
-Suppose it's named `settings`.
 {{< tabs "settings plugins" >}}
 {{< tab "Groovy" >}}
 ```
@@ -239,7 +238,7 @@ dependencies {
     implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1'
     implementation 'io.github.shawxingkwok:kt-util:1.0.0'
     implementation 'io.github.shawxingkwok:android-util-core:1.0.0'
-    api 'io.github.shawxingkwok:kdatastore:1.0.0'
+    implementation 'io.github.shawxingkwok:kdatastore:1.0.0'
 }
 ```
 {{< /tab >}}
@@ -255,7 +254,7 @@ dependencies {
     implementation ("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
     implementation ("io.github.shawxingkwok:kt-util:1.0.0")
     implementation ("io.github.shawxingkwok:android-util-core:1.0.0")
-    api ("io.github.shawxingkwok:kdatastore:1.0.0")
+    implementation ("io.github.shawxingkwok:kdatastore:1.0.0")
 }
 ```
 {{< /tab >}}
@@ -275,7 +274,8 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach{
 dependencies {
     ...
     implementation 'io.github.shawxingkwok:android-util-view:1.0.0'
-    implementation project(':settings')
+    implementation 'io.github.shawxingkwok:kdatastore:1.0.0'
+    implementation project(':modelModuleName') // or remote library
 }
 ```
 {{< /tab >}}
@@ -284,7 +284,8 @@ dependencies {
 ```groovy
 dependencies{
     ...
-    implementation project(':settings') 
+   implementation 'io.github.shawxingkwok:kdatastore:1.0.0'
+   implementation project(':modelModuleName') // or remote library
 }
 ```
 {{< /tab >}}
@@ -301,8 +302,9 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach{
 
 dependencies {
     ...
+    implementation ("io.github.shawxingkwok:kdatastore:1.0.0")
     implementation ("io.github.shawxingkwok:android-util-view:1.0.0")
-    implementation (project(":settings")) 
+    implementation (project(":modelModuleName")) // or remote library
 }
 ```
 {{< /tab >}}
@@ -311,7 +313,8 @@ dependencies {
 ```kotlin
 dependencies{
     ...
-    implementation (project(":settings")) 
+    implementation ("io.github.shawxingkwok:kdatastore:1.0.0")
+    implementation (project(":modelModuleName")) // or remote library
 }
 ```
 {{< /tab >}}
