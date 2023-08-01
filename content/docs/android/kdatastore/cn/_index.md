@@ -326,7 +326,7 @@ dependencies{
 被 `Serializable` 标记的 `class`, 基本类型，`enum`, `Pair`, `IntArray`, `List` 的默认实现等等均可视为 `Serializable`。
 
 {{< codeImg "../types.png" >}}
-- `Not nullable` 时需声明默认值。
+- `Non-null` 时需声明默认值。
 - `Nullable` 时默认值被限制为 `null`。
 - 自定义时需实现与 `Kt Serializable` 之间的相互转换。(`convert`/`recover`)
 

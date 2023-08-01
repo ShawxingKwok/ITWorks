@@ -331,7 +331,7 @@ Classes annotated with `Serializable`, basic types, `enum`, `Pair`, `IntArray`, 
 can be considered as `Serializable`.
 
 {{< codeImg "../types.png" >}}
-- When `not nullable`, a default value must be declared.
+- When `non-null`, a default value must be declared.
 - When `nullable`, the default value is restricted to `null`.
 
 {{< hint warning >}}
