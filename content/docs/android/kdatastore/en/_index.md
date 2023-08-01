@@ -31,33 +31,37 @@ This page will be moved to `Multiplatform` after `IOS` support.
 </tr>
 
 <tr>
-    <td>Features</td>
+    <td>Performance</td>
     <td>
-        <span style="color:red"> <code>commit</code> blocks the current thread</span>
-        <br><br> 
-        <code>apply</code> does not block, <span style="color:red">but it is uncertain whether data is
-         successfully written or not.</span>
+        Startup: 2.1ms
+        <br><br> Reading: Negligible time consumption
+        <br><br> <span style="color:red"><code>commit</code> writing: Blocking 2.4ms</span>
+        <br><br> <code>apply</code> writing: Negligible time consumption, <span style="color:red">but unsure if the data has been successfully written to disk asynchronously.</span> </td>
+    <td>
+        Startup: 2.6ms
+        <br><br>Reading and writing: Negligible time consumption
     </td>
-    <td> 
-         Read data into system-level memory at first.
-        <br><br><span style="color: green; ">Synchronously non-blocking read and write</span>
-        <br><br>Background timed asynchronous write to disk 
-    </td>
-    <td> Asynchronous read and write, update memory after successful write. Observe asynchronously via <code>Flow</code>.</td>
-    <td> 
-        Based on <code>DataStore</code> 
-        <br><br> First read into application-level memory 
-        <br><br> <span style="color: green; ">Synchronously non-blocking read and write, simple modeling, easy calling 
-        <br><br>Update memory first, then write to disk asynchronously background, including backup files.</span>
+    <td>All are performed asynchronously, so only <span style="color:red">response time: 8.0ms</span> is measured</td>
+    <td><span style="color: red;">
+        Startup: 10.1ms</span> <br> The impact is not significant when the file size increases substantially, and it can also be resolved by asynchronously starting in the <code>Application</code>.
+        <br><br>Reading and writing: Negligible time consumption
     </td>
 </tr>
 
 <tr>
-    <td>Time-consuming part</td>
-    <td>Startup: 2.1ms <br> <code>commit</code>: 2.4ms </td>
-    <td>Startup: 2.6ms</td>
-    <td>Response: 8.0ms</td>
-    <td><span style="color: red; ">Startup: 18.1ms</span> <br> little affected when file size increases significantly</td>
+    <td>Type safety</td>
+    <td>No</td>
+    <td>No</td>
+    <td><span style="color: green; ">Yes</span></td>
+    <td><span style="color: green; ">Yes</span></td>
+</tr>
+
+<tr>
+    <td>Support for types other than common basic types, <code>String</code>, and <code>Set&lt;String&gt;</code></td>
+    <td></td>
+    <td> <span style="color: green; ">Parcelable</span></td>
+    <td><span style="color: green; ">Customizable</span><br>However, it needs to be placed in an independent <code>DataStore</code></td>
+    <td> <span style="color: green; ">Kt<code>Serializable</code> (including common storage types）<br><br>Customizable</span></td>
 </tr>
 
 <tr>
@@ -102,22 +106,6 @@ This page will be moved to `Multiplatform` after `IOS` support.
     <td><span style="color: green; ">Supported</span></td>
     <td>Manual encapsulation</td>
     <td> <span style="color: green; ">Requires introducing other crypto libraries</span> </td>
-</tr>
-
-<tr>
-    <td>Type safety</td>
-    <td>No</td>
-    <td>No</td>
-    <td><span style="color: green; ">Yes</span></td>
-    <td><span style="color: green; ">Yes</span></td>
-</tr>
-
-<tr>
-    <td>Support for types other than common basic types, <code>String</code>, and <code>Set&lt;String&gt;</code></td>
-    <td></td>
-    <td> <span style="color: green; ">Parcelable</span></td>
-    <td><span style="color: green; ">Customizable</span><br>However, it needs to be placed in an independent <code>DataStore</code></td>
-    <td> <span style="color: green; ">Kt<code>Serializable</code> (including common storage types）<br><br>Customizable</span></td>
 </tr>
 
 <tr>
