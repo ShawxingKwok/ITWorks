@@ -392,7 +392,3 @@ Settings.isDarkMode().reset();
 ```
 {{< /tab >}}
 {{< /tabs >}}
-
-# Quick Start
-Call `Settings` in `Application` asynchronously if you mind the startup time (**5～30 ms**).
-# <a href="https://github.com/ShawxingKwok/KDataStore" target="_blank">GitHub repo with demo</a>
