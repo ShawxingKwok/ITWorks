@@ -41,7 +41,7 @@ weight: 2
         启动: 2.6ms 
         <br><br>读写：耗时可忽略
     </td>
-    <td>都通过异步，故只测<span style="color:red">响应: 8.0ms</span> </td>
+    <td>都通过异步，故只测了<span style="color:red">响应: 8.0ms</span> </td>
     <td><span style="color: red; ">
         启动: 10.1ms</span> <br> 文件显著增加时影响不大，亦可先行在 <code>Application</code>中异步启动来解决。
         <br><br>读写：耗时可忽略

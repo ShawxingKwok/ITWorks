@@ -34,17 +34,17 @@ This page will be moved to `Multiplatform` after `IOS` support.
     <td>Performance</td>
     <td>
         Startup: 2.1ms
-        <br><br> Reading: Negligible time consumption
-        <br><br> <span style="color:red"><code>commit</code> writing: Blocking 2.4ms</span>
-        <br><br> <code>apply</code> writing: Negligible time consumption, <span style="color:red">but unsure if the data has been successfully written to disk asynchronously.</span> </td>
+        <br><br> Reading: negligible time consumption. 
+        <br><br> <span style="color:red">Writing with <code>commit</code>: blocking for 2.4ms</span>
+        <br><br> Writing time consumption with <code>apply</code>: negligible, <span style="color:red">but unsure if the data has been successfully written to disk asynchronously.</span> </td>
     <td>
         Startup: 2.6ms
-        <br><br>Reading and writing: Negligible time consumption
+        <br><br>Reading and writing: negligible time consumption
     </td>
-    <td>All are performed asynchronously, so only <span style="color:red">response time: 8.0ms</span> is measured</td>
+    <td>All are performed asynchronously, so only <span style="color:red">response time consumption is measured: 8.0ms</span></td>
     <td><span style="color: red;">
-        Startup: 10.1ms</span> <br> The impact is not significant when the file size increases substantially, and it can also be resolved by asynchronously starting in the <code>Application</code>.
-        <br><br>Reading and writing: Negligible time consumption
+        Startup: 10.1ms</span> <br> The impact is not significant when the file size increases substantially, and it can also be resolved by being asynchronously launched in the <code>Application</code>.
+        <br><br>Reading and writing: negligible time consumption
     </td>
 </tr>
 
