@@ -74,11 +74,9 @@ When in `ComponentActivity`, it's built after `onCreate` or when you call it in 
 When in `Fragment`, it is built after `onStart` or when you call it before `onStart`,  
 and destroyed when `onDestroyView`.
 
-Usage sample in `ComponentActivity`/`Fragment`:
+Take the example of declaring a nested view in `ComponentActivity`/`Fragment ViewBinding`:
 ```kotlin
-val adapter by withView{ 
-    Adapter().also{ binding.recyclerview.adaper = it } 
-}
+val recyclerView by withView{ binding.content.recyclerView }
 ```
 It could be also `mutable`. 
 ```kotlin
@@ -88,6 +86,9 @@ var x by withView{ ... }
 # KRecyclerViewAdapter
 ## Core usage
 {{< mp4 src=recyclerview width=250 >}} 
+{{< hint info >}}
+The reply which appears one second later is out of simulation rather than bad performance.
+{{< /hint >}}
 
 {{< codeImg msg.png >}}
 
@@ -101,9 +102,6 @@ The function `binding` is from {{< newTab "another library" "https://dylancaicod
 
 `KRecyclerViewAdapter` is not bound to `KFragment` but usable in general `Activity`/`Fragment`.
 And you could replace `withView`, `collectOnResume`, and `onClick` in above display.
-
-As for the required `layoutManager`, I prefer putting it in `xml`.
-{{< codeImg recyclerview_layoutManger.png >}}
 
 ## update
 {{< codeImg recyclerview_update_notify.png >}}
