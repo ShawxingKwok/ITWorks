@@ -90,8 +90,8 @@ This page will be moved to `Multiplatform` after `IOS` support.
     <td>Multiprocess</td>
     <td>Manual encapsulation</td>
     <td> <span style="color: green; ">Supported</span> </td>
-    <td rowspan="2">In the alpha stage</td>
-    <td rowspan="2">After DataStore officially supports</td>
+    <td rowspan="2">In <code>1.1.0-alpha</code>stage</td>
+    <td rowspan="2">After <code>DataStore 1.1.0</code> releases</td>
 </tr>
 
 <tr>
