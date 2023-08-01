@@ -26,7 +26,8 @@ Source code
 
 {{< hint warning >}}
 `Initializer` is from {{< newTab androidx.startup "https://developer.android.com/topic/libraries/app-startup" >}}.
-If your `android library` also uses it to do some pre-start tasks, design your `Initialzier` as below. 
+If your `android library` also uses it to do some pre-start tasks, design your `Initialzier` as below to 
+avoid `AppContext NullPointerException`.
 
 {{< codeImg someInitializer.png >}}
 {{< /hint >}}
