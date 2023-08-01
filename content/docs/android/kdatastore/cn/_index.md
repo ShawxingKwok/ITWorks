@@ -3,15 +3,18 @@ title: 中文
 weight: 2
 ---
 
+`KDataStore` 是我个人做的一个本地持久性存储解决方案，基于 Android Jetpack 中的 {{< newTab DataStore "https://developer.android.com/topic/libraries/architecture/datastore?hl=zh-cn" >}}，
+改为委托生成 `key`, 通过 `MutbaleStateFlow` 处理， 并备份文件以处理异常。
+
+详见 <a href="https://github.com/ShawxingKwok/KDataStore" target="_blank">GitHub 仓库</a>(含demo)。
+
 {{< hint warning >}}
-这份中文版本和 `Java` 支持主要用作初期宣传，在其他作品中并没有考虑。
+这份中文版本和 `Java` 支持主要用作初期宣传，在大多数作品中并没有考虑。
 {{< /hint >}}
 
 {{< hint warning >}}
 在支持 `IOS` 之后会移到 `Multiplatform` 分组中。
 {{< /hint >}}
-
-[//]: # (`KDataStore` 是安卓中的 )
 
 # 安卓本地快捷存储方案对比
 
@@ -25,32 +28,38 @@ weight: 2
 </tr>
 
 <tr>
-    <td>特点</td>
+    <td>性能</td>
     <td>
-        <span style="color:red"> <code>commit</code> 堵塞当前线程</span>
-        <br> <code>apply</code> 不堵塞，<span style="color:red">但不知道是否成功写入磁盘。</span>
-        <br><br><span style="color:red">不论是否成功写入，都更新内存</span>
+        启动: 2.1ms 
+        <br><br> <span style="color:green">读取：可忽略</span>
+        <br><br> <span style="color:red"><code>commit</code>写入: 堵塞2.4ms</span> 
+        <br><br> <code>apply</code>写入: 即时更新内存，<span style="color:red">但不知道是否成功异步写入磁盘。</span> </td>
+    <td>
+        启动: 2.6ms 
+        <br><br><span style="color:green">读写：可忽略</span>
     </td>
-    <td> 
-        先把数据读取到系统级别的内存
-        <br><br><span style="color: green; ">同步不堵塞读写</span>
-        <br><br>后台定时异步写入磁盘 
-    </td>
-    <td> 异步读写，写入成功后更新内存。<br><br>通过 <code>Flow</code> 异步观察。</td>
-    <td> 
-        基于 DataStore 
-        <br><br> 先读取到应用级别的内存 
-        <br><br> <span style="color: green; ">同步不堵塞读写, 建模简单，调用方便  
-        <br><br>先更新内存，后异步写入磁盘，包括备份文件。</span>
+    <td>都通过异步，故只测<span style="color:red">响应: 8.0ms</span> </td>
+    <td><span style="color: red; ">
+        启动: 10.1ms</span> <br> 文件显著增加时影响不大，亦可先行在 <code>Application</code>中异步启动来解决。
+        <br><br><span style="color:green">读写：可忽略</span>
     </td>
 </tr>
-    
+
+
 <tr>
-    <td>耗时部分</td>
-    <td>启动: 2.1ms <br> <code>commit</code>: 2.4ms </td>
-    <td>启动: 2.6ms</td>
-    <td>响应: 8.0ms</td>
-    <td><span style="color: red; ">启动: 18.1ms</span> <br> 文件显著增加时影响不大</td>
+    <td>类型安全</td>
+    <td>否</td>
+    <td>否</td>
+    <td><span style="color: green; ">是</span></td>
+    <td><span style="color: green; ">是</span></td>
+</tr>
+
+<tr>
+    <td>除常见基本类型, String, Set&lt;String&gt; 外的类型支持</td>
+    <td></td>
+    <td> <span style="color: green; ">Parcelable</span></td>
+    <td><span style="color: green; ">自定义</span><br>但需放在独立的 DataStore 中</td>
+    <td> <span style="color: green; ">Kt Serializable (包括常见存储类型）<br><br>自定义</span></td>
 </tr>
 
 <tr>
@@ -79,8 +88,8 @@ weight: 2
     <td>多进程</td>
     <td>自行封装</td>
     <td> <span style="color: green; ">支持</span> </td>
-    <td rowspan="2">处于 alpha 阶段</td>
-    <td rowspan="2">DataStore 正式支持之后</td>
+    <td rowspan="2">处于 <code>1.1.0-alpha</code> 阶段</td>
+    <td rowspan="2">在 <code>DataStore 1.1.0</code> 发布之后</td>
 </tr>
 
 <tr>
@@ -98,26 +107,10 @@ weight: 2
 </tr>
 
 <tr>
-    <td>类型安全</td>
-    <td>否</td>
-    <td>否</td>
-    <td><span style="color: green; ">是</span></td>
-    <td><span style="color: green; ">是</span></td>
-</tr>
-
-<tr>
-    <td>除常见基本类型, String, Set&lt;String&gt; 外的类型支持</td>
-    <td></td>
-    <td> <span style="color: green; ">Parcelable</span></td>
-    <td><span style="color: green; ">自定义</span><br>但需放在独立的 DataStore 中</td>
-    <td> <span style="color: green; ">Kt Serializable (包括常见存储类型）<br><br>自定义</span></td>
-</tr>
-
-<tr>
     <td>额外优点</td>
     <td></td>
     <td> 
-        <span style="color: green; ">ANR前一刻更新的数据不会丢失</span> 
+        <span style="color: green; ">后台定时异步写入磁盘，ANR前一刻更新的数据不会丢失</span> 
     </td>
     <td></td>
     <td>
@@ -226,7 +219,6 @@ plugins{
 {{< /tabs >}}
 
 ## 模型模块
-假设命名为 `settings`
 {{< tabs "settings plugins" >}}
 {{< tab "Groovy" >}}
 ```
@@ -241,7 +233,7 @@ dependencies {
     implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1'
     implementation 'io.github.shawxingkwok:kt-util:1.0.0'
     implementation 'io.github.shawxingkwok:android-util-core:1.0.0'
-    api 'io.github.shawxingkwok:kdatastore:1.0.0'
+    implementation 'io.github.shawxingkwok:kdatastore:1.0.0'
 }
 ```
 {{< /tab >}}
@@ -257,7 +249,7 @@ dependencies {
     implementation ("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
     implementation ("io.github.shawxingkwok:kt-util:1.0.0")
     implementation ("io.github.shawxingkwok:android-util-core:1.0.0")
-    api ("io.github.shawxingkwok:kdatastore:1.0.0")
+    implementation ("io.github.shawxingkwok:kdatastore:1.0.0")
 }
 ```
 {{< /tab >}}
@@ -277,7 +269,8 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach{
 dependencies {
     ...
     implementation 'io.github.shawxingkwok:android-util-view:1.0.0'
-    implementation project(':settings')
+    implementation 'io.github.shawxingkwok:kdatastore:1.0.0'
+    implementation project(':本地模型模块名称') // 或远程仓库
 }
 ```
 {{< /tab >}}
@@ -286,7 +279,8 @@ dependencies {
 ```groovy
 dependencies{
     ...
-    implementation project(':settings') 
+    implementation 'io.github.shawxingkwok:kdatastore:1.0.0'
+    implementation project(':本地模型模块名称') // 或远程仓库
 }
 ```
 {{< /tab >}}
@@ -304,7 +298,7 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach{
 dependencies {
     ...
     implementation ("shawxingkwok:android-util-view:1.0.0")
-    implementation (project(":settings")) 
+    implementation (project(":本地模型模块名称")) // 或远程仓库
 }
 ```
 {{< /tab >}}
@@ -313,7 +307,8 @@ dependencies {
 ```kotlin
 dependencies{
     ...
-    implementation (project(":settings")) 
+    implementation ("shawxingkwok:android-util-view:1.0.0")
+    implementation (project(":本地模型模块名称")) // 或远程仓库
 }
 ```
 {{< /tab >}}
@@ -390,9 +385,4 @@ Settings.isDarkMode.reset()
 Settings.isDarkMode().reset();
 ```
 {{< /tab >}}
-{{< /tabs >}} 
-
-# 快速启动
-如果你介意这点启动时间(**5～30 ms**), 可先行在 `Application` 中异步调用 `Settings`。 
-
-# <a href="https://github.com/ShawxingKwok/KDataStore" target="_blank">GitHub repo with demo</a>
+{{< /tabs >}}
