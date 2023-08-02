@@ -41,7 +41,7 @@ weight: 2
         启动: 2.6ms 
         <br><br>读写：耗时可忽略
     </td>
-    <td>都通过异步，故只测了<span style="color:red">响应: 8.0ms</span> </td>
+    <td>都通过异步，故只测<span style="color:red">响应: 8.0ms</span> </td>
     <td><span style="color: red; ">
         启动: 10.1ms</span> <br> 文件显著增加时影响不大，亦可先行在 <code>Application</code>中异步启动来解决。
         <br><br>读写：耗时可忽略
@@ -358,7 +358,7 @@ dependencies{
 {{< codeImg "../args.png" >}}
 
 {{< codeImg "../cipher.png" >}}
-加密部分需引入其他加密库，自制 `cipher`。
+加密部分需从 `Java` 标准库或其他库中自选加密协议，实现 `cipher`。
 
 {{< hint info >}}
 加密会将启动时间提升一半左右。Android 在 api 29 版本引入了沙盒机制，实现了数据隔离，脱离加密也相对安全。

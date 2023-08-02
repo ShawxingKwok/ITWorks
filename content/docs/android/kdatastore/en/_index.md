@@ -363,7 +363,8 @@ Warning is for preventing misuse rather than exception risks.
 <br>
 {{< codeImg "../cipher.png" >}}
 
-`cipher` implementation needs other crypto libraries. 
+For the `cipher` part, you need to choose a crypto protocol from `Java` standard library, 
+or other libraries to make a `cipher`.
 
 {{< hint info >}}
 Data isolation was introduced in Android API 29, making it relatively safe without crypto which
