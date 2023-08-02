@@ -45,7 +45,7 @@ This page will be moved to `Multiplatform` after `IOS` support.
     <td>All are performed asynchronously, so only <span style="color:red">response time consumption is measured: 8.0ms</span></td>
     <td><span style="color: red;">
         Startup: 10.1ms</span> <br> This impact is not significant when the file size increases substantially, and it can be also resolved by call the <code>KDataStore subclass </code>asynchronously in the <code>Application</code>.
-        <br><br>Reading and writing: negligible time consumption
+        <br><br>Reading and writing time consumption is negligible. 
     </td>
 </tr>
 
@@ -66,25 +66,18 @@ This page will be moved to `Multiplatform` after `IOS` support.
 </tr>
 
 <tr>
-    <td>IOException during read</td>
-    <td>Return default value</td>
-    <td>Return default value</td>
-    <td rowspan="3">Manual catch</td>
-    <td><span style="color: green; ">Get from backup file</span></td>
+    <td>Exception during read</td>
+    <td colspan="2"> <span style="color:red">Returns a empty <code>HashMap</code>, which means returning defaults for all</span></td>
+    <td rowspan="2">Manual catch</td>
+    <td><span style="color: green; ">Gets from backup file</span></td>
 </tr>
 
 <tr>
     <td>IOException during write</td>
-    <td>Replace with the backup file without the data, and <span style="color: red; ">do not write again.</span>
-    <br><br> Return <code>false</code> if via <code>commit</code></td>
-    <td rowspan="2">Check data later, try to restore, delete if unsuccessful.</td>
-    <td><span style="color: green; ">Record at once. Update from backup file at next startup</span></td>
-</tr>
-
-<tr>
-    <td> Corruption Exception </td>
-    <td> <span style="color: red; ">Replace with an empty file</span> </td>
-    <td> <span style="color: green; ">Copy backup file</span> </td>
+    <td>Replaces with the backup file without the data, and <span style="color: red; ">do not write again.</span>
+    <br><br> Returns <code>false</code> if via <code>commit</code></td>
+    <td>Checks data later, try to restore, delete if unsuccessful.</td>
+    <td><span style="color: green; ">Records at once. Update from backup file at next startup</span></td>
 </tr>
 
 <tr>
@@ -123,7 +116,7 @@ This page will be moved to `Multiplatform` after `IOS` support.
 
 <tr>
     <td>Additional disadvantages</td>
-    <td></td>
+    <td><span style="color:red">Individual characters may be stored incorrectly when storing Strings.</span></td>
     <td><span style="color: red; ">After a power outage or system crash, a lot of data is likely to be lost</span></td>
     <td></td>
     <td><span style="color: red; "> Quite new </span> 
