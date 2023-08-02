@@ -134,7 +134,7 @@ This page will be moved to `Multiplatform` after `IOS` support.
 The test results above are based on 30 sets of String data of Meizu 18s. Source code is in {{< repo KDataStore KDataStore >}}.benchmark.
 
 {{< hint warning >}}
-There are serious errors in most storage scheme comparison analysis from other information sources. 
+There are serious errors in most storage scheme comparison analysises from other information sources. 
 The official website is relatively accurate, but very one-sided. 
 If you want to explore further, I recommend you test it yourself and view the source code for deep exploration.
 {{< /hint >}}
