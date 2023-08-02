@@ -6,7 +6,7 @@ menu:
 title: Sponsor
 ---
 
-Other payment methods would be supported in the near future. 
+Other mainstream payment methods would be supported in the near future. 
 
 <img src="alipay.PNG" width="300" style="margin-right:50px"/> 
 <img src="wechatpay.PNG" width="300"/>
