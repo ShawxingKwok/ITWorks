@@ -153,6 +153,9 @@ weight: 2
 {{< hint info >}}
 后续文档中的命名均参考 `settings`
 {{< /hint >}}
+{{< hint info >}}
+如果不考虑从 `Java` 文件中调用，下图中的 `@JvmStatic` 则是不需要的。  
+{{< /hint >}}
 {{< codeImg "../model.png" >}}
 <br> 
 
