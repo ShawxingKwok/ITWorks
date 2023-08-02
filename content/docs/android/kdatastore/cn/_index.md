@@ -66,32 +66,25 @@ weight: 2
 </tr>
 
 <tr>
-    <td>读取中遇 IOException</td>
-    <td>返回默认值</td>
-    <td>返回默认值</td>
-    <td rowspan="3">自行 catch 处理</td>
-    <td><span style="color: green; ">从备份文件中取</span></td>
+    <td>读取异常</td>
+    <td colspan="2"><span style="color:red">返回空的 HashMap, 即全部采用默认值</span></td>
+    <td rowspan="2">自行 catch 处理</td>
+    <td><span style="color: green; ">启用备份文件</span></td>
 </tr>
 
 <tr>
     <td>写入中遇 IOException</td>
     <td>用未写入该数据的备份文件替换，<span style="color: red">且不再写入该数据。</span>
     <br><br> 如用 <code>commit</code>, 可通过返回的 <code>false</code> 获悉</td>
-    <td rowspan="2">后续校验数据，尝试恢复，不行则删除。</td>
+    <td>后续校验数据，尝试恢复，不行则删除。</td>
     <td><span style="color: green; ">记录，下次启动时从备份文件中更新</span></td>
-</tr>
-
-<tr>
-    <td> Corruption Exception </td>
-    <td> <span style="color: red; ">用空文件替换</span> </td>
-    <td> <span style="color: green; ">复制备份文件</span> </td>
 </tr>
 
 <tr>
     <td>多进程</td>
     <td>自行封装</td>
     <td> <span style="color: green; ">支持</span> </td>
-    <td rowspan="2">处于 <code>1.1.0-alpha</code> 阶段</td>
+    <td>处于 <code>1.1.0-alpha</code> 阶段</td>
     <td rowspan="2">在 <code>DataStore 1.1.0</code> 发布之后</td>
 </tr>
 
