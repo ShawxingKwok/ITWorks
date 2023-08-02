@@ -106,7 +106,7 @@ weight: 2
     <td>自行封装</td>
     <td><span style="color: green; ">支持</span></td>
     <td>自行封装</td>
-    <td> <span style="color: green; ">需引入其他加密库</span> </td>
+    <td> <span style="color: green; ">需自选加密协议，实现 <code>cipher</code> </span> </td>
 </tr>
 
 <tr>
