@@ -66,14 +66,14 @@ This page will be moved to `Multiplatform` after `IOS` support.
 </tr>
 
 <tr>
-    <td>Exception during read</td>
+    <td>Exception during reading</td>
     <td colspan="2"> <span style="color:red">Returns a empty <code>HashMap</code>, which means returning defaults for all</span></td>
     <td rowspan="2">Manual catch</td>
     <td><span style="color: green; ">Gets from backup file</span></td>
 </tr>
 
 <tr>
-    <td>IOException during write</td>
+    <td>IOException during writing</td>
     <td>Replaces with the backup file without the data, and <span style="color: red; ">do not write again.</span>
     <br><br> Returns <code>false</code> if via <code>commit</code></td>
     <td>Checks data later, try to restore, delete if unsuccessful.</td>
