@@ -117,7 +117,7 @@ weight: 2
 
 <tr>
     <td>额外缺点</td>
-    <td><span style="color: red; ">存储 <code>String</code> 时可能存错个别字符。</span></td>
+    <td></td>
     <td><span style="color: red; ">断电或者系统崩溃后容易丢失很多数据</span></td>
     <td></td>
     <td><span style="color: red; "> 比较新 </span> 

@@ -116,7 +116,7 @@ This page will be moved to `Multiplatform` after `IOS` support.
 
 <tr>
     <td>Additional disadvantages</td>
-    <td><span style="color:red">Individual characters may be stored incorrectly when storing Strings.</span></td>
+    <td></td>
     <td><span style="color: red; ">After a power outage or system crash, a lot of data is likely to be lost</span></td>
     <td></td>
     <td><span style="color: red; "> Quite new </span> 
