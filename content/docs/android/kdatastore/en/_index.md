@@ -3,13 +3,13 @@ title: English
 weight: 1
 ---
 
-`KDataStore` is a local persistent storage solution that I personally developed based on Android Jetpack's {{< newTab DataStore "https://developer.android.com/topic/libraries/architecture/datastore?hl=zh-cn" >}}.
-The main optimizations include:
+`KDataStore` is my personal **local persistent Android storage solution** that developed based on Android Jetpack's {{< newTab DataStore "https://developer.android.com/topic/libraries/architecture/datastore?hl=zh-cn" >}}.
+The emphasis of optimizations is as follows:
 - Generating `key` through delegation.
-- Using `MutableStateFlow` for real-time observation, synchronous reading and writing, and asynchronous writing to disk.
-- Backing up data for exceptions.
+- `MutableStateFlow` is adopted for real-time observation, synchronous reading and writing with memory, and asynchronous writing to disk.
+- Backing up data to handle exceptions.
 
-For more information, see the <a href="https://github.com/ShawxingKwok/KDataStore" target="_blank">GitHub repository</a> (includes demo).
+See the <a href="https://github.com/ShawxingKwok/KDataStore" target="_blank">GitHub repository</a> (includes demo) for more information.
 
 {{< hint warning >}}
 `Java` support is for the initial promotion and not considered in my other works. 
@@ -19,7 +19,7 @@ For more information, see the <a href="https://github.com/ShawxingKwok/KDataStor
 This page will be moved to `Multiplatform` after `IOS` support.
 {{< /hint >}}
 
-# Local Android Storage Solutions Comparison
+# Comparison
 
 <table>
 <tr>
@@ -36,7 +36,7 @@ This page will be moved to `Multiplatform` after `IOS` support.
         Startup: 2.1ms
         <br><br> Reading: negligible time consumption. 
         <br><br> <span style="color:red">Writing with <code>commit</code>: blocking for 2.4ms</span>
-        <br><br> Writing time consumption with <code>apply</code>: negligible, <span style="color:red">but unsure if the data has been successfully written to disk asynchronously.</span> </td>
+        <br><br> Writing time consumption with <code>apply</code>is negligible, <span style="color:red">but it is unsure if the data has been successfully written to disk asynchronously.</span> </td>
     <td>
         Startup: 2.6ms
         <br><br>Reading and writing: negligible time consumption
@@ -131,12 +131,12 @@ This page will be moved to `Multiplatform` after `IOS` support.
 </tr>
 </table>
 
-The above test results use 30 sets of String data on Meizu 18s.
-Source code is in {{< repo KDataStore KDataStore >}}.benchmark.
+The test results above are based on 30 sets of String data of Meizu 18s. Source code is in {{< repo KDataStore KDataStore >}}.benchmark.
 
 {{< hint warning >}}
-Regarding the storage scheme comparison analysis in other places, the vast majority of them have serious errors.
-The official website is relatively accurate, but very one-sided. If you want to explore, I recommend to test and view the source code.
+There are serious errors in most storage scheme comparison analysis from other information sources. 
+The official website is relatively accurate, but very one-sided. 
+If you want to explore further, I recommend you test it yourself and view the source code for deep exploration.
 {{< /hint >}}
 
 # Basic Usage
