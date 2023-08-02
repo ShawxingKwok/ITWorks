@@ -3,6 +3,7 @@ title: 中文
 weight: 2
 ---
 
+# 简介
 `KDataStore` 是我个人做的一个本地持久性存储解决方案，基于 Android Jetpack 中的 {{< newTab DataStore "https://developer.android.com/topic/libraries/architecture/datastore?hl=zh-cn" >}}。
 主要有以下优化：
 - 通过委托生成 `key`。 
@@ -84,7 +85,7 @@ weight: 2
     <td>多进程</td>
     <td>自行封装</td>
     <td> <span style="color: green; ">支持</span> </td>
-    <td>处于 <code>1.1.0-alpha</code> 阶段</td>
+    <td rowspan="2">处于 <code>1.1.0-alpha</code> 阶段</td>
     <td rowspan="2">在 <code>DataStore 1.1.0</code> 发布之后</td>
 </tr>
 
