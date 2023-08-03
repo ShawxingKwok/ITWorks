@@ -17,14 +17,14 @@ dependenceis{
 ```
 
 # AppContext trick
-`applicationContext` could be static. In this way, your `Database`, `DAO`, `NetService` and some other tools could be 
-also static, of which the profit is much more considerable than the additional resource memory. 
-
-In your basic module:
+Design as below in your basic module:
 {{< codeImg appContext.png >}}
 <br>
-Declare your application name which may need to begin with the package name. 
+Don't forget to declare your application name which may need to begin with the package name. 
 {{< codeImg appInManifest.png >}}
+
+In this way, your `Database`, `DAO`, `NetService` and some other tools could be
+also static, of which the profit is much more considerable than the additional resource memory.
 
 # Companion extension trick
 Declare static `AppDatabase.INSTANCE` based on `AppContext` and `retrofit` first, then `DAO` and `Service`
@@ -57,7 +57,9 @@ Extend the displayed tag length first. As for others, it's my personal preferenc
 
 ## More args
 ### Tag prefix 
-{{< codeImg klog_prefix.png >}} {{< codeImg klog_prefix_.png >}}
+{{< codeImg klog_prefix.png >}} 
+<br>
+{{< codeImg klog_prefix_.png >}}
 
 ### Throwable
 This is assignable only in `KLog.e`.
@@ -76,16 +78,16 @@ don't tell values.
 Set an **internal** log object class. 
 {{< codeImg mlog_lib_class.png >}}
 
-`id` should be an abbreviated all-caps library name for being easily distinguished from other tags.
+`id` should be an abbreviated or short all-caps library name for being easily distinguished from other tags.
 {{< hint danger >}}
 Remember to build the module if there is no directory 'build', or else you probably import `BuildConfig` from another
 library.
 {{< /hint >}}
 
 Effect
-{{< codeImg mlog_lib.png >}}
+{{< codeImg mlog_lib_effect_code.png >}}
 <br>
-{{< codeImg mlog_lib_.png >}}
+{{< codeImg mlog_lib_effect_console.png >}}
 
 ## In each app submodule
 Set a log class extended from `KLog.InApp`. Here sets `id` "DB", supposing in the `database` module.
@@ -100,10 +102,10 @@ Effect
 
 ## Extend
 Source code
-{{< codeImg klog_expand_src.png >}}
+{{< codeImg klog_extend_src.png >}}
 
-Extend as this.
-{{< codeImg klog_expand_sample.png >}}
+Take the example of overriding functions on level `E`.   
+{{< codeImg klog_extend_sample.png >}}
 
 {{< hint danger >}}
 `stackTrace` in `log` is easily disturbed. Never call `log` indirectly like `super...` 
