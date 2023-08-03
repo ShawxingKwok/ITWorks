@@ -37,12 +37,13 @@ Call them easily.
 {{< codeImg trick_call.png >}}
 
 # KLog
+## Advantages
 - Tag is global and has a link.
 - Logs on level `V`, `D` and `I` are cancelled after the current module releases.
 - Light-weight. (2kb in jar)
 
 ## Modify logcat view
-Extend tag first. As for others, it's my personal preferences.
+Extend the displayed tag length first. As for others, it's my personal preferences.
 {{< video src=logcat >}} 
 
 ## Direct
