@@ -6,6 +6,7 @@ weight: 2
 # 简介
 `KDataStore` 是我个人做的一个**安卓本地快捷持久性存储解决方案**，基于 Jetpack 中的 {{< newTab DataStore "https://developer.android.com/topic/libraries/architecture/datastore?hl=zh-cn" >}}。
 主要有以下优化：
+- 单例模式
 - 通过委托生成 `key`。 
 - 采用 `MutbaleStateFlow` 即时观察、同步读写、异步写入磁盘。
 - 备份数据以处理异常。
@@ -77,7 +78,7 @@ weight: 2
     <td>写入中遇 IOException</td>
     <td>用未写入该数据的备份文件替换，<span style="color: red">且不再写入该数据。</span>
     <br><br> 如用 <code>commit</code>, 可通过返回的 <code>false</code> 获悉</td>
-    <td>后续校验数据，尝试恢复，不行则删除。</td>
+    <td><span style="color:red">仅 <code>catch</code> 不处理</span></td>
     <td><span style="color: green; ">记录，下次启动时从备份文件中更新</span></td>
 </tr>
 
