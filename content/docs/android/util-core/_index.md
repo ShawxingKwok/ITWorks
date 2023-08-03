@@ -74,9 +74,7 @@ don't tell values.
 ## Automatic cancel
 {{< codeImg klog_src.png >}}
 
-Logs on level `V`, `D` and `I` are cancelled when not `onDebug`. 
-
-All logs from this library are automatically cancelled when the app is released.
+Logs on level `V`, `D` and `I` are cancelled when not `onDebug`.
 
 ## In open source android library
 Set an **internal** log object class. 
@@ -90,6 +88,7 @@ library.
 
 Effect
 {{< codeImg mlog_lib.png >}}
+<br>
 {{< codeImg mlog_lib_.png >}}
 
 ## In each app submodule
