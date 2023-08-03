@@ -317,8 +317,10 @@ dependencies{
 {{< /tab >}}
 {{< /tabs >}}
 
-如果该调用模块使用了 {{< newTab startup-runtime "https://developer.android.com/topic/libraries/app-startup?hl=zh-cn" >}}, 
+{{< hint warning >}}
+如果该调用模块使用了 {{< newTab startup-runtime "https://developer.android.com/topic/libraries/app-startup?hl=zh-cn" >}},
 要注意在 `dependencies` 中包含 `KDataStoreInitializer::class.java`。
+{{< /hint >}}
 
 # 类型支持
 
