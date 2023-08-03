@@ -317,6 +317,8 @@ dependencies{
 {{< /tab >}}
 {{< /tabs >}}
 
+如果你使用了
+
 # 类型支持
 
 {{< newTab "kotlinx.serialization" "https://github.com/Kotlin/kotlinx.serialization/blob/master/docs/basic-serialization.md" >}}
