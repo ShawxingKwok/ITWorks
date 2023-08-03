@@ -38,7 +38,7 @@ Call them easily.
 
 # KLog
 - Tag is global and has a link.
-- Logs are intelligently cancelled after released. 
+- Logs on level `V`, `D` and `I` are cancelled after the current module releases.
 - Light-weight. (2kb in jar)
 
 ## Modify logcat view
@@ -70,11 +70,6 @@ Make `id`, `tagPrefix` short, and avoid the file name too long, or else the link
 Useful `KProperty0`, common `Array`, and basic type arrays are specially handled, since their `toString` 
 don't tell values. 
 {{< codeImg klog_specialTypes.png >}}
-
-## Automatic cancel
-{{< codeImg klog_src.png >}}
-
-Logs on level `V`, `D` and `I` are cancelled when not `onDebug`.
 
 ## In open source android library
 Set an **internal** log object class. 
