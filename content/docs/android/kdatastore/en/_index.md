@@ -317,6 +317,11 @@ dependencies{
 {{< /tab >}}
 {{< /tabs >}}
 
+{{< hint warning >}}
+Include `KDataStoreInitializer::class.java` in `dependencies`, in case this caller module introduced 
+{{< newTab startup-runtime "https://developer.android.com/topic/libraries/app-startup?hl=zh-cn" >}}.
+{{< /hint >}}
+
 # Type Support
 
 {{< newTab "kotlinx.serialization" "https://github.com/Kotlin/kotlinx.serialization/blob/master/docs/basic-serialization.md" >}}
