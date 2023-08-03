@@ -4,5 +4,5 @@ menu:
     name: About
     weight: 1
 title: About
-url: "../../../"
+url: "https://shawxingkwok.github.io/ITWorks/"
 ---
