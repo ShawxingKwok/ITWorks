@@ -66,25 +66,6 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 Sets a `View.OnClickListener` with a more precise `View`.
 {{< codeImg onClick.png >}}
 
-## withView
-Delegates a value in `ComponentActivity`/`Fragment`.   
-
-When in `ComponentActivity`, it's initialized after `onCreate` or when you call its `getter` before that.  
-
-When in `Fragment`, it is initialized after `onStart` or when you call its `getter` before that, 
-and destroyed when `onDestroyView`.
-
-Usage sample:
-```kotlin
-class MainFragment : Fragment(){
-    val adapter by withView{ MyAdapter(requireContext()) }
-}
-```
-It could be also `mutable`. 
-```kotlin
-var x by withView{ ... }
-```
-
 # KRecyclerViewAdapter
 ## Core usage
 {{< mp4 src=recyclerview width=250 >}} 
@@ -100,7 +81,8 @@ The reply which appears one second later is out of simulation rather than bad pe
 
 `MainViewModel` with the simulated initial data is not displayed.
 
-The function `binding` is from {{< newTab "another library" "https://dylancaicoding.github.io/ViewBindingKTX/#/en/" >}}.
+The function `binding` is from {{< newTab "another library" "https://dylancaicoding.github.io/ViewBindingKTX/#/en/" >}}, 
+and `lazyFast` is from my {{< newTab "kt-util" "../../multiplatform/kt-util/html/-kt-util/pers.shawxingkwok.ktutil/lazy-fast.html" >}}. 
 
 `KRecyclerViewAdapter` is not bound to `KFragment` but usable in general `Activity`/`Fragment`.
 And you could replace `withView`, `collectOnResume`, and `onClick` in above display.
@@ -110,7 +92,7 @@ And you could replace `withView`, `collectOnResume`, and `onClick` in above disp
 <br>
 {{< codeImg recyclerview_update_src.png >}}
 
-These functions `notify...`  are replaced with `update` now.
+These functions `notify...` are replaced with `update` now.
 {{< hint info >}}
 `update` may be called too frequently, which makes some previous `onFinish` omitted.
 {{< /hint >}}
