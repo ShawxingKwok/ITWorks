@@ -4,8 +4,7 @@ weight: 1
 ---
 
 {{< hint info >}}
-Contains only `AppContext` and `KLog` at present, 
-and would be expanded with some small practical tools in the future.
+Contains only `KLog` at present, and would be expanded with some small practical tools in the future.
 {{< /hint >}}
 
 # Setup
