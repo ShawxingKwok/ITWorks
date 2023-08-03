@@ -23,6 +23,7 @@ also static, of which the profit is much more considerable than the additional r
 In your basic module:
 {{< codeImg appContext.png >}}
 <br>
+Declare your application name which may need to begin with the package name. 
 {{< codeImg appInManifest.png >}}
 
 # Companion extension trick
