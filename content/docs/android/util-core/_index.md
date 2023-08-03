@@ -16,21 +16,14 @@ dependenceis{
 }
 ```
 
-# AppContext
-It is the static `applicationContext` for you to get anywhere. In this way, your 
-`Database`, `DAO`, `NetService` and some other tools could be static, 
-of which the profit is much more considerable than the additional resource memory. 
+# AppContext trick
+`applicationContext` could be static. In this way, your `Database`, `DAO`, `NetService` and some other tools could be 
+also static, of which the profit is much more considerable than the additional resource memory. 
 
-Source code
-{{< codeImg appcontext.png >}}
-
-{{< hint warning >}}
-`Initializer` is from {{< newTab androidx.startup "https://developer.android.com/topic/libraries/app-startup" >}}.
-If your `android library` also uses it to do some pre-start tasks, design your `Initialzier` as below to 
-avoid `AppContext NullPointerException`.
-
-{{< codeImg someInitializer.png >}}
-{{< /hint >}}
+In your basic module:
+{{< codeImg appContext.png >}}
+<br>
+{{< codeImg appInManifest.png >}}
 
 # Companion extension trick
 Declare static `AppDatabase.INSTANCE` based on `AppContext` and `retrofit` first, then `DAO` and `Service`
