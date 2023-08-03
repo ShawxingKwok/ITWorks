@@ -100,7 +100,7 @@ This page will be moved to `Multiplatform` after `IOS` support.
     <td>Manual encapsulation</td>
     <td><span style="color: green; ">Supported</span></td>
     <td>Manual encapsulation</td>
-    <td> <span style="color: green; ">You need to choose a crypto protocol and make a <code>cipher</code>.</span> </td>
+    <td> <span style="color: green; ">You need to choose a crypto protocol and customize a <code>cipher</code>.</span> </td>
 </tr>
 
 <tr>
