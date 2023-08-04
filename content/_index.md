@@ -14,4 +14,5 @@ At last, **I have two other halfway wonderful works** and am waiting for some to
 I have sent resumes to common top IT companies, but those limited resume sizes are too small and they
 didn't give me opportunities to display.
 
-Welcome to visit my {{< newTab "GitHub profile" "https://www.github.com/ShawxingKwok/" >}}, or contact with me via {{< newTab email "mailto:ShawxingKwok@126.com">}}.
+Welcome to visit my {{< newTab "GitHub profile" "https://www.github.com/ShawxingKwok/" >}},
+or contact with me via {{< newTab email "mailto:ShawxingKwok@126.com">}}.
