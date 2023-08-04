@@ -40,17 +40,12 @@
       {{- partial "docs/title" .Page -}}
     </a>
   {{ else if .Page.Content }}
-  {{if eq .Page.RelPermalink "/ITWorks/docs/jvm/tracer/extensions/android/"}}
-    <a href="{{ .Page.RelPermalink }}" class="{{ if $current }}active{{ end }}" >
+  {{if eq .Page.RelPermalink "/ITWorks/docs/jvm/tracer/extensions/android/github/"}}
+    <a href="https://github.com/ShawxingKwok/Tracer" class="{{ if $current }}active{{ end }}" target="_blank">
       {{- partial "docs/title" .Page -}} 
     
     </a>
-    <li>
-      <a href="https://github.com/ShawxingKwok/Tracer"  target="_blank" rel="noopener">
-        Github repo
-      
-      </a>
-    </li>
+  
     {{ else }}
     <a href="{{ .Page.RelPermalink }}" class="{{ if $current }}active{{ end }}">
       {{- partial "docs/title" .Page -}} 
