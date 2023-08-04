@@ -31,8 +31,8 @@
   {{ if .Page.Params.BookCollapseSection }}
     <input type="checkbox" id="section-{{ md5 .Page }}" class="toggle" {{ if or $current $ancestor }}checked{{ end }} />
     <label for="section-{{ md5 .Page }}" class="flex justify-between">
-      <a {{ if .Page.Content }}href="{{ .Page.RelPermalink }}"{{ else }}role="button"{{ end }} class="{{ if $current }}active{{ end }}">
-        {{- partial "docs/title" .Page -}}
+      <a {{ if .Page.Content }}href="{{ .Page.RelPermalink }}"{{ else }}role="button"{{ end }} class="{{ if $current }}active{{ end }}" {{if .Page.Params.Target}}target="_blank"  22{{ end }}>
+        {{- partial "docs/title" .Page -}} 
       </a>
     </label>
   {{ else if .Page.Params.BookHref }}
@@ -40,9 +40,16 @@
       {{- partial "docs/title" .Page -}}
     </a>
   {{ else if .Page.Content }}
-    <a href="{{ .Page.RelPermalink }}" class="{{ if $current }}active{{ end }}">
-      {{- partial "docs/title" .Page -}}
+  {{if eq .Page.RelPermalink "/ITWorks/docs/jvm/tracer/extensions/android/"}}
+    <a href="{{ .Page.RelPermalink }}" class="{{ if $current }}active{{ end }}" target="_blank">
+      {{- partial "docs/title" .Page -}} 
+    
     </a>
+    {{ else }}
+    <a href="{{ .Page.RelPermalink }}" class="{{ if $current }}active{{ end }}">
+      {{- partial "docs/title" .Page -}} 
+    </a>
+    {{end}}
   {{ else }}
     <span>{{- partial "docs/title" .Page -}}</span>
   {{ end }}
