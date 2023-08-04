@@ -4,12 +4,16 @@ weight: 1
 bookCollapseSection: true
 ---
 
+# Abstract
 With `Kotlin-JVM`, `KSP` and little configuration, `Tracer` generates extensional properties 
 oriented to interior traceable elements, which realizes **dependency injection** in a novel way. 
 
-- Easy
+# Main advantages
+- Little-config
+- Powerful: generic types and variances are supported  
 - Fast(without cache and reflection)
 
+# Model sample
 <image src="singleBedroomHouse.png" width=300></image>
 
 {{< tabs >}}
