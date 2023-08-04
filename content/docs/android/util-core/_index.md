@@ -38,7 +38,7 @@ Call them easily.
 # KLog
 ## Advantages
 - Tag is global and has a link.
-- Logs on level `V`, `D` and `I` are cancelled after the current module releases.
+- Logs on level `V` and `D` are cancelled after the current module releases.
 - Light-weight. (2kb in jar)
 
 ## Modify logcat view
