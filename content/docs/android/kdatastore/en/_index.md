@@ -35,17 +35,17 @@ This page will be moved to `Multiplatform` after `IOS` support.
 <tr>
     <td>Performance</td>
     <td>
-        Startup: 2.1ms
+        Startup: 2.5ms
         <br><br> Reading: negligible time consumption. 
-        <br><br> <span style="color:red">Writing with <code>commit</code>: blocking for 2.4ms</span>
+        <br><br> <span style="color:red">Writing with <code>commit</code>: blocking for 2.3ms</span>
         <br><br> Writing time consumption with <code>apply</code>is negligible, <span style="color:red">but it is unsure if the data has been successfully written to disk asynchronously.</span> </td>
     <td>
-        Startup: 2.6ms
+        Startup: 2.3ms
         <br><br>Reading and writing: negligible time consumption
     </td>
-    <td>All are performed asynchronously, so only <span style="color:red">response time consumption is measured: 8.0ms</span></td>
+    <td>All are performed asynchronously, so only <span style="color:red">response time consumption is measured: 8.6ms</span></td>
     <td><span style="color: red;">
-        Startup: 10.1ms</span> <br> This impact is not significant when the file size increases substantially, and it can be also resolved by call the <code>KDataStore subclass </code>asynchronously in the <code>Application</code>.
+        Startup: 13.5ms</span> <br> This impact is not significant when the file size increases substantially, and it can be also resolved by call the <code>KDataStore subclass </code>asynchronously in the <code>Application</code>.
         <br><br>Reading and writing time consumption is negligible. 
     </td>
 </tr>
