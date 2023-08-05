@@ -13,7 +13,7 @@ My code is probably the globally best at present for its functionality, creativi
 efficiency, and beauty. Wish you could learn from it！I also encourage those authorities to provide better
 tutorials with embedded short videos instead of all voluminous words.
 
-In addition, if you are familiar with IT, feel hard to learn Kotlin and love Java or Go more, your logic
+In addition, if you are familiar with IT but feel hard to learn Kotlin and love Java or Go more, your logic
 ability mustn't be well enough for you to engage in IT. If so, do something you love and must excel
 at. I have no offensive intention, just meaning everyone has his strengths and weaknesses, and every
 job has its threshold.
