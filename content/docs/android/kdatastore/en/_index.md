@@ -111,7 +111,7 @@ This page will be moved to `Multiplatform` after `IOS` support.
     </td>
     <td></td>
     <td>
-        <span style="color: green; "> Small size, jar on Android side is only 8 kb </span>
+        <span style="color: green; "> Small size, jar on Android side is only 12.6 kb </span>
     </td>
 </tr>
 

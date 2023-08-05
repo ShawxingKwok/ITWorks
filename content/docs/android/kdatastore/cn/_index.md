@@ -112,7 +112,7 @@ weight: 2
     </td>
     <td></td>
     <td>
-        <span style="color: green; "> 体积小，jar on Android side 仅 8 kb </span>
+        <span style="color: green; "> 体积小，jar on Android side 仅 12.6 kb </span>
     </td>
 </tr>
 
