@@ -173,7 +173,7 @@ weight: 2
 
 {{< hint info >}}
 在 `Fragment` 中观察 `Flow` 时建议采用 
-{{< newTab collectOnResume "/ITWorks/docs/android/util-view/#flowcollectonresume" >}}。
+{{< newTab collectOnResume "/ITWorks/docs/android/util-view/#flowcollectonresume" >}}。其配置工作在下文有包括。
 {{< /hint >}}
 {{< /tab >}}
 

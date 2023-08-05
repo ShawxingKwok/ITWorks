@@ -169,7 +169,8 @@ Call in other modules
 {{< codeImg "../kt_basic_usage.png" >}}
 
 {{< hint info >}}
-{{< newTab collectOnResume "/ITWorks/docs/android/util-view/#flowcollectonresume" >}} is recommended to observe `Flow` in `Fragment`.
+{{< newTab collectOnResume "/ITWorks/docs/android/util-view/#flowcollectonresume" >}} is recommended to observe `Flow` in `Fragment`, 
+of which the `setup` is included in the following.
 {{< /hint >}}
 {{< /tab >}}
 
