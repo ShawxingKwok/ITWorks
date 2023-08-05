@@ -340,7 +340,7 @@ Edit in a stored object would not trigger the disk update.
 Migrate from other storage repositories with this format (judge existence -> migrate -> delete) in which `appContext` 
 is from `KDataStore`.
 
-Take the example of `SharedPreferences`.
+Take the example of migrating from `SharedPreferences`.
 {{< codeImg "../migration.png" >}}
 <br>
 
