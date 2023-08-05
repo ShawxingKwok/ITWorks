@@ -232,7 +232,6 @@ dependencies {
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1' 
     implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1'
     implementation 'io.github.shawxingkwok:kt-util:1.0.0'
-    implementation 'io.github.shawxingkwok:android-util-core:1.0.0'
     implementation 'io.github.shawxingkwok:kdatastore:1.0.0'
 }
 ```
@@ -248,7 +247,6 @@ dependencies {
     ...
     implementation ("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
     implementation ("io.github.shawxingkwok:kt-util:1.0.0")
-    implementation ("io.github.shawxingkwok:android-util-core:1.0.0")
     implementation ("io.github.shawxingkwok:kdatastore:1.0.0")
 }
 ```
@@ -339,8 +337,8 @@ Edit in a stored object would not trigger the disk update.
 {{< /hint >}}
 
 # Migration
-Migrate from other storage repositories with this format (judge existence -> migrate -> delete). 
-`AppContext` is from introduced library `android-util-core`.
+Migrate from other storage repositories with this format (judge existence -> migrate -> delete) in which `appContext` 
+is from `KDataStore`.
 
 Take the example of `SharedPreferences`.
 {{< codeImg "../migration.png" >}}
