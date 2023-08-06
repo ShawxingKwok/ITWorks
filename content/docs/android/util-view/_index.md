@@ -82,7 +82,7 @@ The reply which appears one second later is out of simulation rather than bad pe
 `MainViewModel` with the simulated initial data is not displayed.
 
 The function `binding` is from {{< newTab "another library" "https://dylancaicoding.github.io/ViewBindingKTX/#/en/" >}}, 
-and `lazyFast` is from my {{< newTab "kt-util" "../../multiplatform/kt-util/html/-kt-util/pers.shawxingkwok.ktutil/lazy-fast.html" >}}. 
+and `fastLazy` is from my {{< newTab "kt-util" "../../multiplatform/kt-util/html/-kt-util/pers.shawxingkwok.ktutil/fast-lazy.html" >}}. 
 
 `KRecyclerViewAdapter` is not bound to `KFragment` but usable in general `Activity`/`Fragment`.
 And you could replace `withView`, `collectOnResume`, and `onClick` in above display.
