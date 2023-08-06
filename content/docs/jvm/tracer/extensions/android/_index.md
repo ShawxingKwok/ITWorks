@@ -8,8 +8,7 @@ Skip if you are using `Compose`.
 {{< /hint >}}
 
 {{< hint info >}}
-Since the static {{< newTab AppContext "/ITWorks/docs/android/util-core/#appcontext">}} is
-already provided, `dependency injection` is not so needful on Android now. Use this tracer extension if you 
+Since the static `applicationContext` could be {{< newTab provided "/ITWorks/docs/android/util-core/#appcontext-trick">}}, `dependency injection` is not so needful on Android now. Use this tracer extension if you 
 are familiar with tracer and interested.  
 {{< /hint >}}
 
