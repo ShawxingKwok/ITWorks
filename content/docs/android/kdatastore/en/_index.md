@@ -367,7 +367,7 @@ or other libraries to customize it.
 
 {{< hint info >}}
 Data isolation was introduced in Android API 29, making it relatively safe without crypto which
-increases the startup time by about half.
+approximately doubles the startup time.
 {{< /hint >}}
 
 # Reset
