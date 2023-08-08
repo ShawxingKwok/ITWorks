@@ -84,7 +84,6 @@ The reply which appears one second later is out of simulation rather than bad pe
 The function `binding` is from {{< newTab "another library" "https://dylancaicoding.github.io/ViewBindingKTX/#/en/" >}}, 
 and `fastLazy` is from my {{< newTab "kt-util" "../../multiplatform/kt-util/html/-kt-util/pers.shawxingkwok.ktutil/fast-lazy.html" >}}. 
 
-`KRecyclerViewAdapter` is not bound to `KFragment` but is usable in general `Activity`/`Fragment`.
 And you could replace `fastLazy`, `collectOnResume`, and `onClick` in the above display.
 
 ## update
