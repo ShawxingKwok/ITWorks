@@ -81,10 +81,9 @@ The reply which appears one second later is out of simulation rather than bad pe
 
 `MainViewModel` with the simulated initial data is not displayed.
 
-The function `binding` is from {{< newTab "another library" "https://dylancaicoding.github.io/ViewBindingKTX/#/en/" >}}, 
-and `fastLazy` is from my {{< newTab "kt-util" "../../multiplatform/kt-util/html/-kt-util/pers.shawxingkwok.ktutil/fast-lazy.html" >}}. 
-
-And you could replace `fastLazy`, `collectOnResume`, and `onClick` in the above display.
+Those functions
+{{< newTab "binding" "https://dylancaicoding.github.io/ViewBindingKTX/#/en/" >}}, {{< newTab "fastLazy" "../../multiplatform/kt-util/html/-kt-util/pers.shawxingkwok.ktutil/fast-lazy.html" >}}, `collectOnResume` and `onClick` 
+are independent with `KRecyclerViewAdapter`.
 
 ## update
 {{< codeImg recyclerview_update_notify.png >}}
