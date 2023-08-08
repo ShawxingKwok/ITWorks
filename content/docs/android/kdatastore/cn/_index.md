@@ -146,7 +146,7 @@ weight: 2
 ## 建模
 单独分出一个 `Android` 模块, 常见命名为 `settings`。
 {{< hint info >}}
-后续文档中的命名均参考 `settings`
+后续文档中的命名均参考 `settings`。
 {{< /hint >}}
 {{< hint info >}}
 如果不考虑从 `Java` 文件中调用，下图中的 `@JvmStatic` 则是不需要的。  
