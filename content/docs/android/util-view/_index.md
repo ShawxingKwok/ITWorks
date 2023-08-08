@@ -85,7 +85,7 @@ The function `binding` is from {{< newTab "another library" "https://dylancaicod
 and `fastLazy` is from my {{< newTab "kt-util" "../../multiplatform/kt-util/html/-kt-util/pers.shawxingkwok.ktutil/fast-lazy.html" >}}. 
 
 `KRecyclerViewAdapter` is not bound to `KFragment` but is usable in general `Activity`/`Fragment`.
-And you could replace `withView`, `collectOnResume`, and `onClick` in the above display.
+And you could replace `fastLazy`, `collectOnResume`, and `onClick` in the above display.
 
 ## update
 {{< codeImg recyclerview_update_notify.png >}}
