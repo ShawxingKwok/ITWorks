@@ -11,7 +11,7 @@ The emphasis on optimizations is as follows:
 - Adapting `MutableStateFlow` for real-time observation, synchronous reading and writing with memory, and asynchronous writing to disk.
 - Backing up data to handle exceptions.
 
-See the <a href="https://github.com/ShawxingKwok/KDataStore" target="_blank">GitHub repository</a> (includes demo) for detailed information.
+See the <a href="https://github.com/ShawxingKwok/KDataStore" target="_blank">GitHub repository</a> (includes demo) for more information.
 
 {{< hint warning >}}
 `Java` support is for the initial promotion and not considered in my other works. 
