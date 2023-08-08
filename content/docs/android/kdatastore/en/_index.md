@@ -4,7 +4,7 @@ weight: 1
 ---
 
 # Abstract
-`KDataStore` is my personal **local persistent Android storage solution** that developed based on Jetpack's {{< newTab DataStore "https://developer.android.com/topic/libraries/architecture/datastore?hl=zh-cn" >}}.
+`KDataStore` is my personal **local persistent Android storage solution** that developed based on Jetpack's {{< newTab DataStore "https://developer.android.com/topic/libraries/architecture/datastore" >}}.
 The emphasis on optimizations is as follows:
 - Singleton mode.
 - Generating `key` through delegation.
