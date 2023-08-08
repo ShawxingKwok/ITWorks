@@ -85,23 +85,6 @@ Those functions
 {{< newTab "binding" "https://dylancaicoding.github.io/ViewBindingKTX/#/en/" >}}, {{< newTab "fastLazy" "../../multiplatform/kt-util/html/-kt-util/pers.shawxingkwok.ktutil/fast-lazy.html" >}}, `collectOnResume` and `onClick` 
 are independent with `KRecyclerViewAdapter`.
 
-## update
-{{< codeImg recyclerview_update_notify.png >}}
-<br>
-{{< codeImg recyclerview_update_src.png >}}
-
-These functions `notify...` are replaced with `update` now.
-{{< hint info >}}
-`update` may be called too frequently, which makes some previous `onFinish` omitted.
-{{< /hint >}}
-
-## onHoldersCreated
-In case you need to make some fixed processing of  `ViewHolder` after its automatic creation regardless of `position`.
-{{< codeImg recyclerview_onHoldersCreated.png >}}
-
-Here is allowed to set `Listeners` on `view` with `adapterPosition` to get `data`, which is, however, unclear. Just
-take this step in `arrange` which costs ignorable more memories.
-
 # More 
 ## On the way
 - `KRecyclerViewAdapter`: sticky header, drag
