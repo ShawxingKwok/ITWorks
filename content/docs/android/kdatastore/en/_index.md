@@ -4,7 +4,7 @@ weight: 1
 ---
 
 # Abstract
-`KDataStore` is my personal **local persistent Android storage solution** that developed based on Jetpack's {{< newTab DataStore "https://developer.android.com/topic/libraries/architecture/datastore" >}}.
+`KDataStore` is my **local persistent Android storage solution** based on Jetpack's {{< newTab DataStore "https://developer.android.com/topic/libraries/architecture/datastore" >}}.
 The emphasis on optimizations is as follows:
 - Singleton mode.
 - Generating `key` through delegation.
@@ -345,7 +345,7 @@ Take the example of migrating from `SharedPreferences`.
 {{< codeImg "../migration.png" >}}
 <br>
 
-Additionally, there are two built-in functions `delete` and `exist` that assist in migrating from `KDataStore` to other places.
+Additionally, there are two built-in functions, `delete` and `exist`, that assist in migrating from `KDataStore` to other places.
 {{< tabs exist >}}
 
 {{< tab Kt >}}
