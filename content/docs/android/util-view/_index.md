@@ -66,12 +66,13 @@ Sets a `View.OnClickListener` with a more precise `View`.
 {{< codeImg onClick.png >}}
 
 # KRecyclerViewAdapter
-## Core usage
+## UI effect
 {{< mp4 src=recyclerview width=250 >}} 
 {{< hint info >}}
 The reply which appears one second later is out of simulation rather than bad performance.
 {{< /hint >}}
 
+## Core usage
 {{< codeImg msg.png >}}
 
 {{< codeImg recyclerview_adapter.png >}}
