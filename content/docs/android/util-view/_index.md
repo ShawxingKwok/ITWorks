@@ -82,7 +82,7 @@ The reply which appears one second later is out of simulation rather than bad pe
 `MainViewModel` with the simulated initial data is not displayed.
 
 Those functions
-{{< newTab "binding" "https://dylancaicoding.github.io/ViewBindingKTX/#/en/" >}}, {{< newTab "fastLazy" "../../multiplatform/kt-util/html/-kt-util/pers.shawxingkwok.ktutil/fast-lazy.html" >}}, `collectOnResume` and `onClick` 
+{{< newTab "binding" "https://dylancaicoding.github.io/ViewBindingKTX/#/en/" >}}, {{< newTab "fastLazy" "../../multiplatform/kt-util/html/-kt-util/pers.shawxingkwok.ktutil/fast-lazy.html" >}}, [collectOnResume](#flowcollectonresume) and [onClick](#viewonclick) 
 are independent with `KRecyclerViewAdapter`.
 
 # More 
