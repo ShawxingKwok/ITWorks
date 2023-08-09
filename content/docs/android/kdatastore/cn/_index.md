@@ -93,7 +93,7 @@ weight: 2
 <tr>
     <td>多平台</td>
     <td><span style="color: red; ">不支持</span></td>
-    <td> <span style="color: red; ">不支持</span> </td>
+    <td> <span style="color: green; ">支持</span> </td>
 </tr>
 
 <tr>

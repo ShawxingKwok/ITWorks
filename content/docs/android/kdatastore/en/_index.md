@@ -92,7 +92,7 @@ This page will be moved to `Multiplatform` after `IOS` support.
 <tr>
     <td>Multiplatform</td>
     <td><span style="color: red; ">Not supported</span></td>
-    <td> <span style="color: red; ">Not supported</span> </td>
+    <td> <span style="color: green; ">Supported</span> </td>
 </tr>
 
 <tr>
