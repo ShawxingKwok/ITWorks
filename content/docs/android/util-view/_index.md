@@ -72,7 +72,7 @@ Sets a `View.OnClickListener` with a more precise `View`.
 The reply which appears one second later is out of simulation rather than bad performance.
 {{< /hint >}}
 
-## Core usage
+## Usage
 {{< codeImg msg.png >}}
 
 {{< codeImg recyclerview_adapter.png >}}
