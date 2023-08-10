@@ -14,7 +14,7 @@ weight: 2
 详见 <a href="https://github.com/ShawxingKwok/KDataStore" target="_blank">GitHub 仓库</a>(含demo)。
 
 {{< hint warning >}}
-这份中文版本和 `Java` 支持主要用作初期宣传，在大多数作品中并没有考虑。
+这份中文版本和 `Java` 支持主要用作初期宣传，在其他作品中并没有考虑。
 {{< /hint >}}
 
 {{< hint warning >}}
