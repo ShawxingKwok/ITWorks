@@ -28,3 +28,5 @@ weight: 1
 
 - Ksp is aware of `context receiver` -> properties with `context receiver` won't be traced, and you 
   needn't annotate them with `Tracer.Omit` 
+
+- An IDE plugin for solving the renaming problem of changing objects positions. 
