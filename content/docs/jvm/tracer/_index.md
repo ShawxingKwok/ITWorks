@@ -11,7 +11,7 @@ oriented to interior traceable elements, which realizes **dependency injection**
 # Main advantages
 - Little-config
 - Powerful: generic types and variances are supported  
-- Fast: no cache or reflection
+- Fast: no cache or runtime reflection
 
 # Model sample
 <image src="singleBedroomHouse.png" width=300></image>
