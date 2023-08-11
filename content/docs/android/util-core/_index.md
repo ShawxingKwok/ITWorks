@@ -36,7 +36,7 @@ Call them easily.
 {{< codeImg trick_call.png >}}
 
 # KLog
-## Advantages
+## Main advantages
 - Tag is global and has a link.
 - Logs on level `V` and `D` are cancelled after the current module releases.
 - Light-weight. (2kb in jar)
