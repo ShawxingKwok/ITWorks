@@ -10,7 +10,7 @@ oriented to interior traceable elements, which realizes **dependency injection**
 
 # Main advantages
 - Little-config
-- Powerful: generic types and variances are supported  
+- Powerful: generic types and variances are parsable  
 - Fast: no cache or runtime reflection
 
 # Model sample
