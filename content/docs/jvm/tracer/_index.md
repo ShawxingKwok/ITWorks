@@ -20,6 +20,7 @@ oriented to interior traceable elements, which realizes **dependency injection**
 {{< tab "General" >}} <image src=general.png ></image> {{< /tab >}}
 {{< tab "Tracer" >}} 
 {{< video src="usagePreview" >}}
+
 > The renaming problem could be solved by an IDE plugin that has not come out yet.
 {{< /tab >}}
 {{< /tabs >}}
