@@ -4,8 +4,9 @@ weight: 2
 ---
 
 # 简介
-`KDataStore` 是我个人做的一个**安卓本地快捷持久性存储解决方案**，基于 Jetpack 中的 {{< newTab DataStore "https://developer.android.com/topic/libraries/architecture/datastore?hl=zh-cn" >}}。
-主要有以下优化：
+鉴于我所知道的安卓本地快捷存储方案如 `SharedPreference`、`MMKV`、`DataStore` 都有明显的缺点，在安全、
+性能、类型支持、用法简易方便程度之间都未能做到好的兼顾。个人基于 {{< newTab DataStore "https://developer.android.com/topic/libraries/architecture/datastore?hl=zh-cn" >}}，
+做了一个新的方案 `KDataStore`, 主要有以下优化：
 - 单例模式
 - 通过委托生成 `key`。 
 - 采用 `MutbaleStateFlow` 即时观察、同步读写、异步写入磁盘。
