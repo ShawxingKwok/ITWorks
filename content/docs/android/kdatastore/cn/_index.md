@@ -24,7 +24,7 @@ weight: 2
 在支持 `IOS` 之后会移到 `Multiplatform` 分组中。
 {{< /hint >}}
 
-# 对比
+# 竞品对比
 
 <table>
 <tr>
@@ -139,12 +139,12 @@ weight: 2
 {{< /hint >}}
 
 # 基础用法
-用 `dark theme` 举例 
 
-## UI 展示
 <video height="200" controls>
   <source src="../effect.mov" type="video/mp4">
 </video>
+
+以切换主题的场景为例，使用 `KDataStore` 存储 `Boolean` 值代表当前主题。
 
 ## 建模
 单独分出一个 `Android` 模块, 常见命名为 `settings`。

@@ -21,7 +21,7 @@ See the <a href="https://github.com/ShawxingKwok/KDataStore" target="_blank">Git
 This page will be moved to `Multiplatform` after `IOS` support.
 {{< /hint >}}
 
-# Comparison
+# Competitor comparison
 
 <table>
 <tr>
@@ -135,12 +135,12 @@ If you want to explore further, I recommend you test it yourself and view the so
 {{< /hint >}}
 
 # Basic Usage
-Taking the example of `dark theme`.
 
-## UI Display
 <video height="200" controls>
   <source src="../effect.mov" type="video/mp4">
 </video>
+
+Take the example of switching `darkTheme` with the stored `Boolean`. 
 
 ## Model
 Set an independent `Android` module, commonly named `settings`.
