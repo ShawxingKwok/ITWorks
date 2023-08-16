@@ -5,7 +5,7 @@ weight: 2
 
 # 简介
 鉴于我所知道的安卓本地快捷存储方案如 `SharedPreferences`、`MMKV`、`DataStore` 都有明显的缺点，未能兼顾好安全、
-性能、类型支持、和用法简易方便的程度，个人基于 {{< newTab DataStore "https://developer.android.com/topic/libraries/architecture/datastore?hl=zh-cn" >}}，
+性能、类型支持、和用法简易方便的程度，个人基于 {{< newTab DataStore "https://developer.android.com/topic/libraries/architecture/datastore?hl=zh-cn" >}}
 做了一个新的方案 `KDataStore`。 
 
 主要有以下优化：
