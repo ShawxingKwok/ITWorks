@@ -28,7 +28,7 @@ Connects with `activity`/`parentFragment`'s interior elements with automatic
 Generated code
 {{< codeImg childFragmentTracer.png >}}
 
-For the example of public `SharedViewModel` in `MainActivity`, I suggest to annotate the subclass of `ViewModel` 
+For the example of public `SharedViewModel` in `MainActivity`, I suggest annotating the subclass of `ViewModel` 
 with `Tracer.Tip` to avoid tracing insides. 
 
 # <a href="https://github.com/ShawxingKwok/Tracer-AndroidView" target="_blank"> GitHub repo with demo</a>
