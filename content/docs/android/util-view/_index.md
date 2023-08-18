@@ -75,7 +75,8 @@ The reply which appears one second later is out of simulation rather than bad pe
 ## Usage
 {{< codeImg msg.png >}}
 
-{{< codeImg recyclerview_adapter.png >}}
+{{< codeImg recyclerview_adapter1.png >}}
+{{< codeImg recyclerview_adapter2.png >}}
 <br>
 {{< codeImg recyclerview_fragment.png >}}
 
