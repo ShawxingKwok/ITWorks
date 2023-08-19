@@ -13,3 +13,10 @@ title: New
 - Navigation helper on Android 
 
 # Updates 
+## Kt util
+### `1.0.1`
+Remove the super interfaces `ReadOnlyProperty` from `KReadOnlyProperty`, 
+and `ReadWriteProperty` from `KReadWriteProperty`.
+
+When `KReadOnlyProperty` is cast to `ReadOnlyProperty`, its function `provideDelegate`
+would not work, and neither `onDelegate`. 

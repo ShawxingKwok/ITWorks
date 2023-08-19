@@ -5,7 +5,7 @@ weight: 1
 
 # Setup
 Repository: `mavenCentral()`  
-Dependency: `"io.github.shawxingkwok:kt-util:1.0.0"`
+Dependency: `"io.github.shawxingkwok:kt-util:1.0.1"`
 
 # <a href="html/-kt-util/pers.shawxingkwok.ktutil/" target="_blank"> Document </a>
 
