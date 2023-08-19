@@ -18,5 +18,5 @@ title: New
 Remove the super interfaces `ReadOnlyProperty` from `KReadOnlyProperty`, 
 and `ReadWriteProperty` from `KReadWriteProperty`.
 
-When `KReadOnlyProperty` is cast to `ReadOnlyProperty`, its function `provideDelegate`
+When `KReadOnlyProperty` was cast to `ReadOnlyProperty`, its function `provideDelegate`
 would not work, and neither `onDelegate`. 
