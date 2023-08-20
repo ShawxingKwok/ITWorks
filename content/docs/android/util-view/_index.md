@@ -8,24 +8,36 @@ weight: 2
 {{< tab "Groovy" >}}
 
 ```groovy
+android{
+    buildFeatures {
+        viewBinding true
+    }
+}
+
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach{
     kotlinOptions.freeCompilerArgs += "-Xcontext-receivers"
 }
 
 dependencies {
-    implementation 'io.github.shawxingkwok:android-util-view:1.0.0'
+    implementation 'io.github.shawxingkwok:android-util-view:1.0.1'
 }
 ```
 {{< /tab >}}
 {{< tab "Kotlin" >}}
 
 ```kotlin
+android{
+    buildFeatures {
+        viewBinding = true
+    }
+}
+
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
     kotlinOptions.freeCompilerArgs += "-Xcontext-receivers"
 }
 
 dependencies {
-    implementation("io.github.shawxingkwok:android-util-view:1.0.0")
+    implementation("io.github.shawxingkwok:android-util-view:1.0.1")
 }
 ```
 {{< /tab >}}
@@ -66,23 +78,18 @@ Sets a `View.OnClickListener` with a more precise `View`.
 {{< codeImg onClick.png >}}
 
 # KRecyclerViewAdapter
-## UI effect
-{{< mp4 src=recyclerview width=250 >}} 
-{{< hint info >}}
-The reply which appears one second later is out of simulation rather than bad performance.
-{{< /hint >}}
+## UI 
+<img src="recyclerview_ui.png" width="200" alt="">
 
 ## Usage
-{{< codeImg msg.png >}}
+{{< codeImg recyclerview_dataclass.png >}}
 
 {{< codeImg recyclerview_adapter1.png >}}
 {{< codeImg recyclerview_adapter2.png >}}
 <br>
 {{< codeImg recyclerview_fragment.png >}}
 
-Layout resources and `MainViewModel` with the simulated initial data are not displayed.
-
-Those functions
+> Layout resources are not displayed. Those functions
 {{< newTab "binding" "https://dylancaicoding.github.io/ViewBindingKTX/#/en/" >}}, {{< newTab "fastLazy" "../../multiplatform/kt-util/html/-kt-util/pers.shawxingkwok.ktutil/fast-lazy.html" >}}, [collectOnResume](#flowcollectonresume) and [onClick](#viewonclick) 
 are independent with `KRecyclerViewAdapter`.
 
