@@ -95,6 +95,6 @@ are independent with `KRecyclerViewAdapter`.
 
 # More 
 ## On the way
-- `KRecyclerViewAdapter`: sticky header, drag
+- `KRecyclerViewAdapter`: sticky header, drag and swipe like Compose 
 
 ## <a href="https://github.com/ShawxingKwok/AndroidUtil-View" target="_blank"> GitHub repo with demo</a>
