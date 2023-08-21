@@ -267,7 +267,7 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach{
 
 dependencies {
     ...
-    implementation 'io.github.shawxingkwok:android-util-view:1.0.0'
+    implementation 'io.github.shawxingkwok:android-util-view:1.0.2'
     implementation 'io.github.shawxingkwok:kdatastore:1.0.0'
     implementation project(':modelModuleName') // or remote library
 }
@@ -297,7 +297,7 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach{
 dependencies {
     ...
     implementation ("io.github.shawxingkwok:kdatastore:1.0.0")
-    implementation ("io.github.shawxingkwok:android-util-view:1.0.0")
+    implementation ("io.github.shawxingkwok:android-util-view:1.0.2")
     implementation (project(":modelModuleName")) // or remote library
 }
 ```
