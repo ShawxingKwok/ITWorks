@@ -232,7 +232,7 @@ dependencies {
     ...
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1' 
     implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1'
-    implementation 'io.github.shawxingkwok:kt-util:1.0.1'
+    implementation 'io.github.shawxingkwok:kt-util:1.0.2'
     implementation 'io.github.shawxingkwok:kdatastore:1.0.0'
 }
 ```
@@ -247,7 +247,7 @@ plugins {
 dependencies {
     ...
     implementation ("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
-    implementation ("io.github.shawxingkwok:kt-util:1.0.1")
+    implementation ("io.github.shawxingkwok:kt-util:1.0.2")
     implementation ("io.github.shawxingkwok:kdatastore:1.0.0")
 }
 ```
