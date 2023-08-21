@@ -21,4 +21,4 @@ When `KReadOnlyProperty` was cast to `ReadOnlyProperty`, its function `provideDe
 would not work, and neither `onDelegate`. 
 
 ### `1.0.2`
-Solves an internal bug in `fastLazy`. 
+Solves a bug in `fastLazy`. 
