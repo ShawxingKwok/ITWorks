@@ -94,7 +94,7 @@ Sets a `View.OnClickListener` with a more precise `View`.
 are independent with `KRecyclerViewAdapter`.
 
 # More 
-## On the way
+## Future functionalities
 - `KRecyclerViewAdapter`: sticky header, drag and swipe like Compose 
 
 ## <a href="https://github.com/ShawxingKwok/AndroidUtil-View" target="_blank"> GitHub repo with demo</a>
