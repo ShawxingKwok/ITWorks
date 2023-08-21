@@ -6,6 +6,7 @@ menu:
 title: New
 ---
 
+Works below are on the way
 - MVB: a new architecture on Android view.
 - Ksp util
 - Copy plugin: generate source code with optional replacements, which is useful when 
