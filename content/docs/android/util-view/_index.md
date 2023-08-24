@@ -78,7 +78,7 @@ Sets a `View.OnClickListener` with a more precise `View`.
 {{< codeImg onClick.png >}}
 
 # KRecyclerViewAdapter
-Take the example of this contact page.
+Take the example of this contact page.<br>
 <img src="recyclerview_ui.png" width="200" alt="">
 
 {{< codeImg recyclerview_dataclass.png >}}
