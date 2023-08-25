@@ -88,9 +88,8 @@ Take the example of this contact page.<br>
 <br>
 {{< codeImg recyclerview_fragment.png >}}
 
-> Layout resources are not displayed. Those functions
-{{< newTab "binding" "https://dylancaicoding.github.io/ViewBindingKTX/#/en/" >}}, {{< newTab "fastLazy" "../../multiplatform/kt-util/html/-kt-util/pers.shawxingkwok.ktutil/fast-lazy.html" >}}, [collectOnResume](#flowcollectonresume) and [onClick](#viewonclick) 
-are independent with `KRecyclerViewAdapter`.
+> Layout resources are not displayed. The function `binding(FragmentMainBinding::bind)` is  
+from {{< newTab "another library" "https://dylancaicoding.github.io/ViewBindingKTX/#/en/" >}} and independent with `KRecyclerViewAdapter`.
 
 # More 
 ## Future functionalities
