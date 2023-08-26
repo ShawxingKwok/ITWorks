@@ -10,6 +10,7 @@ The emphasis on optimizations is as follows:
 - Generating `key` through delegation.
 - Adapting `MutableStateFlow` for real-time observation, synchronous reading and writing with memory, and asynchronous writing to disk.
 - Backing up data to handle exceptions.
+- Optimizing type support.
 
 See the <a href="https://github.com/ShawxingKwok/KDataStore" target="_blank">GitHub repository</a> (includes demo) for more information.
 
