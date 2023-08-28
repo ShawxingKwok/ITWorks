@@ -93,8 +93,8 @@ from {{< newTab "another library" "https://dylancaicoding.github.io/ViewBindingK
 
 # Release notes
 ## 1.0.5 
-1. Add an open function 'onUpdated' to `KRecyclerViewAdapter`.
-2. Make 
+1. Added an open function `onUpdated()` to `KRecyclerViewAdapter`.
+2. Made the inside asynchronous calculation synchronous because the source data and later actions may not correspond.   
 
 # More 
 ## Future functionalities
