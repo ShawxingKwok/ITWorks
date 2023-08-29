@@ -44,9 +44,9 @@ dependencies {
 {{< /tabs >}}
 
 # Functions
-## Flow.collectOnResume
+## Flow.collectOnResumed 
 Is used in `Fragment.onCreateView` or `Fragment.onViewCreated` to 
-collect `flow` with `collector` every `Fragment.onResume`.
+collect `flow` with `collector` after every `Fragment.onResume`.
 
 Switch from
 ```kotlin
@@ -67,11 +67,16 @@ to
 override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
 
-    flow.collectOnResume{
+    flow.collectOnResumed{
         ...
     }
 }
 ```
+
+## Flow.collectOnStarted
+{{< hint info >}}
+This is similar to [Flow.collectOnResumed](#flowcollectonresumed).
+{{< /hint >}}
 
 ## View.onClick
 Sets a `View.OnClickListener` with a more precise `View`.
@@ -95,6 +100,10 @@ from {{< newTab "another library" "https://dylancaicoding.github.io/ViewBindingK
 ## 1.0.5 
 1. Added an open function `onUpdated()` to `KRecyclerViewAdapter`.
 2. Made the inside asynchronous calculation synchronous because the source data and later actions may not correspond.   
+
+## 1.0.6
+1. Deprecate the function `collectOnResume`, rename it with [collectOnResumed](#flowcollectonresumed).  
+2. Added a function [collectOnStarted](#flowcollectonstarted). 
 
 # More 
 ## Future functionalities
