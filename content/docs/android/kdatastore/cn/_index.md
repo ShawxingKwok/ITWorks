@@ -271,7 +271,7 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach{
 
 dependencies {
     ...
-    implementation 'io.github.shawxingkwok:android-util-view:1.0.5'
+    implementation 'io.github.shawxingkwok:android-util-view:1.0.6'
     implementation 'io.github.shawxingkwok:kdatastore:1.0.0'
     implementation project(':本地模型模块名称') // 或远程仓库
 }
@@ -300,7 +300,7 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach{
 
 dependencies {
     ...
-    implementation ("shawxingkwok:android-util-view:1.0.5")
+    implementation ("shawxingkwok:android-util-view:1.0.6")
     implementation ("io.github.shawxingkwok:kdatastore:1.0.0")
     implementation (project(":本地模型模块名称")) // 或远程仓库
 }

@@ -11,7 +11,7 @@ Contains only `KLog` at present, and would be expanded with some small practical
 ```
 dependenceis{
     ...
-    implementation ("io.github.shawxingkwok:android-util-core:1.0.0")
+    implementation ("io.github.shawxingkwok:android-util-core:1.0.1")
 }
 ```
 

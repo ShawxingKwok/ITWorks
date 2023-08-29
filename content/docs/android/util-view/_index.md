@@ -19,7 +19,7 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach{
 }
 
 dependencies {
-    implementation 'io.github.shawxingkwok:android-util-view:1.0.5'
+    implementation 'io.github.shawxingkwok:android-util-view:1.0.6'
 }
 ```
 {{< /tab >}}
@@ -37,7 +37,7 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach 
 }
 
 dependencies {
-    implementation("io.github.shawxingkwok:android-util-view:1.0.5")
+    implementation("io.github.shawxingkwok:android-util-view:1.0.6")
 }
 ```
 {{< /tab >}}
