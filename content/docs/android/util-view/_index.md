@@ -87,7 +87,7 @@ Take the example of this contact page.<br>
 <img src="recyclerview_ui.png" width="200" alt="">
 
 {{< codeImg recyclerview_dataclass.png >}}
-
+<br>
 {{< codeImg recyclerview_adapter1.png >}}
 {{< codeImg recyclerview_adapter2.png >}}
 <br>
@@ -95,15 +95,6 @@ Take the example of this contact page.<br>
 
 > Layout resources are not displayed. The function `binding(FragmentMainBinding::bind)` is  
 from {{< newTab "another library" "https://dylancaicoding.github.io/ViewBindingKTX/#/en/" >}} and independent with `KRecyclerViewAdapter`.
-
-# Release notes
-## 1.0.5 
-1. Added an open function `onUpdated()` to `KRecyclerViewAdapter`.
-2. Made the inside asynchronous calculation synchronous because the source data and later actions may not correspond.   
-
-## 1.0.6
-1. Deprecate the function `collectOnResume`, rename it with [collectOnResumed](#flowcollectonresumed).  
-2. Added a function [collectOnStarted](#flowcollectonstarted). 
 
 # More 
 ## Future functionalities
