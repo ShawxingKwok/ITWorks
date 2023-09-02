@@ -23,7 +23,7 @@ This is the abbreviation of `remember`, meaning remembering the value across the
 {{< codeImg rmb.png >}}
 
 {{< hint info >}}
-Their getters are `synchronized`. 
+The initialization of `val` property is `synchronized`. 
 {{< /hint >}}
 
 ## save
