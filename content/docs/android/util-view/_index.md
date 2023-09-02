@@ -83,18 +83,29 @@ Sets a `View.OnClickListener` with a more precise `View`.
 {{< codeImg onClick.png >}}
 
 # KRecyclerViewAdapter
+## Common cases
 Take the example of this contact page.<br>
-<img src="recyclerview_ui.png" width="200" alt="">
+<img src="recyclerview/ui.png" width="200" alt="">
 
-{{< codeImg recyclerview_dataclass.png >}}
+{{< codeImg "recyclerview/dataclass.png" >}}
 <br>
-{{< codeImg recyclerview_adapter1.png >}}
-{{< codeImg recyclerview_adapter2.png >}}
+{{< codeImg "recyclerview/adapter1.png" >}}
+{{< codeImg "recyclerview/adapter2.png" >}}
 <br>
-{{< codeImg recyclerview_fragment.png >}}
+{{< codeImg "recyclerview/fragment.png" >}}
 
 > Layout resources are not displayed. The function `binding(FragmentMainBinding::bind)` is  
 from {{< newTab "another library" "https://dylancaicoding.github.io/ViewBindingKTX/#/en/" >}} and independent with `KRecyclerViewAdapter`.
+
+## Partially update with oldContentId 
+This is only used in some special cases like items are massive or source data vary quite frequently. 
+
+Take the example of this implementation for the stopwatch page. The whole implementation is on 
+{{< newTab "MVB.Android" "/ITWorks/docs/multiplatform/mvb/android/#format" >}}. 
+{{< codeImg "recyclerview/contentId.png" >}}
+
+Source code of `HolderBinder`
+{{< codeImg "recyclerview/contentIdSrc.png" >}}
 
 # More 
 ## Future functionalities
