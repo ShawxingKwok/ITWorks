@@ -142,6 +142,6 @@ Bind variable data source to `view`.
 {{< codeImg stopwatchBridge1.png >}}
 {{< codeImg stopwatchBridge2.png >}}
 
-### Actions
+### Fixed listeners
 I suggest putting fixed listeners here or below.
 {{< codeImg stopwatchSetFixedListeners.png >}}
