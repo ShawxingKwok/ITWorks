@@ -97,7 +97,7 @@ Take the example of this contact page.<br>
 > Layout resources are not displayed. The function `binding(FragmentMainBinding::bind)` is  
 from {{< newTab "another library" "https://dylancaicoding.github.io/ViewBindingKTX/#/en/" >}} and independent with `KRecyclerViewAdapter`.
 
-## Partially update with oldContentId 
+## Partial update with `oldContentId` 
 This is only used in some special cases like items are massive or source data vary quite frequently. 
 
 Take the example of this implementation for the stopwatch page. The whole implementation is on 
