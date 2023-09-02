@@ -4,7 +4,7 @@ weight: 1
 ---
 
 # Abstract
-`MVB` is a new architecture standing for `Model-View-Bridge`. It has only an Android version at present, 
+`MVB` is a new architecture standing for `Model-View-Bridge`. It has only an Android implementation at present, 
 but the pattern is applicable to every platform that supports Kotlin. The UI part uses the traditional `View` without 
 `DataBinding`, and the Kt part abandons `ViewModel` and `outState`, resulting in much less code, looser coupling and 
 clearer logic.
