@@ -5,13 +5,13 @@ weight: 1
 {{< hint danger>}} UNFINISED {{< /hint >}} 
 
 # Abstract
-`MVB` is a new architecture standing for `Model-View-Bridge`. It has only an Android implementation at present, 
+`MVB` is my new architecture standing for `Model-View-Bridge`. It has only an Android implementation at present, 
 but the pattern is applicable to every platform that supports Kotlin. The UI part uses the traditional `View` without 
 `DataBinding`, and the Kt part abandons `ViewModel` and `outState`, resulting in much less code, looser coupling and 
 clearer logic.
 
 Other points:
-- Compose is the most concise declarative UI framework, and also the most flexible in terms of custom views. However, 
+- `Compose` is the most concise declarative UI framework, and also the most flexible in terms of custom views. However, 
 its recombination mechanism inevitably reconstructs massive objects, resulting in its low upper performance limit.
 
 - Regarding `navigation parameters` for `Activity` / `Fragment`, I have a proposal on 
@@ -116,6 +116,10 @@ are active between every `onStart` and `onStop`, which is generally used for lin
 {{< codeImg observe.png >}}
 
 `LiveData` is also observable. However, I strongly suggest using `Flow` instead though it takes some time to learn.    
+
+## mvbScope
+This is `viewModelScope` of `MVBViewModel` hidden in `ComponentActivity` / `Fragment`.
+{{< codeImg mvbScope.png >}}
 
 ## Format  
 Take the example of simulating the stopwatch page in the IOS clock with concise code. 
