@@ -5,7 +5,7 @@ weight: 1
 
 # Abstract
 这是一种新架构，全称为 `Model-View-Bridge`。当前仅有安卓版本，但模式适用于每个支持 Kotlin 的平台。UI 部分采用传统的 `View`，
-Kt 部分弃用了 `ViewModel`, `saveState`。关于常用的且写法稍复杂的 `RecyclerView Adapter`, 我已封装简化成 {{< newTab "KRecyclerViewAdapter" "/ITWorks/docs/android/util-view/#krecyclerviewadapter" >}}，
+Kt 部分弃用了 `ViewModel`, `outState`, `。关于常用的且写法稍复杂的 `RecyclerView Adapter`, 我已封装简化成 {{< newTab "KRecyclerViewAdapter" "/ITWorks/docs/android/util-view/#krecyclerviewadapter" >}}，
 可像 `Compose` 一样排列子项。至此，`MVB` 中除去自定义 `View` 的地方并不比 `Compose` 差。
 
 `Compose` 是 Declarative UI mode 中最简洁的写法，自定义 View 时也最强大，但重组机制不可避免地重复构造了大量对象，
