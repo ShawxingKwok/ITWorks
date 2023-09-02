@@ -2,6 +2,7 @@
 title: Android
 weight: 1
 ---
+{{< hint danger>}} UNFINISED {{< /hint >}} 
 
 # Abstract
 `MVB` is a new architecture standing for `Model-View-Bridge`. It has only an Android implementation at present, 
