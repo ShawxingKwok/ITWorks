@@ -98,17 +98,17 @@ Take the example of this contact page.<br>
 from {{< newTab "another library" "https://dylancaicoding.github.io/ViewBindingKTX/#/en/" >}} and independent with `KRecyclerViewAdapter`.
 
 ## Partial update with `oldContentId` 
-This is only used in some special cases like items are massive or source data vary quite frequently. 
+This is only used in some special cases like items are massive or source data vary quite frequently like this stopwatch 
+example.
 
-Take the example of this implementation for the stopwatch page. The whole implementation is on 
-{{< newTab "MVB.Android" "/ITWorks/docs/multiplatform/mvb/android/#format" >}}. 
-{{< codeImg "recyclerview/contentId.png" >}}
+<video height="400" controls>
+  <source src="recyclerview/stopwatch.mov" type="video/mp4">
+</video>
 
-Source code of `HolderBinder`
-{{< codeImg "recyclerview/contentIdSrc.png" >}}
+{{< codeImg "recyclerview/stopwatchAdapter.png" >}}
 
 # More 
 ## Future functionalities
-- `KRecyclerViewAdapter`: drag, swipe and set stickHeader like Compose. 
+- `KRecyclerViewAdapter`: drag, swipe and set stickHeader like `Compose`. 
 
 ## <a href="https://github.com/ShawxingKwok/AndroidUtil-View" target="_blank"> GitHub repo with demo</a>
