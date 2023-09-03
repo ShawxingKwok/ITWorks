@@ -152,3 +152,6 @@ Some syntax sugar functions are from other libraries and independent with `MVB`,
 {{< newTab onClick "/ITWorks/docs/android/util-view/#viewonclick" >}}, 
 and {{< newTab updateIf "/ITWorks/docs/multiplatform/kt-util/html/-kt-util/pers.shawxingkwok.ktutil/update-if.html" >}}.
 {{< /hint >}}
+
+# New UI pattern proposal 
+
