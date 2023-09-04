@@ -31,7 +31,7 @@ source code.
 <img src=firstButton.png width=300 />  
 
 # Independent components
-Components can't be constrained with each other, but multi-select-editable. Components another file are seen as 
+Components can't be constrained with each other, but multi-select-editable. Components from another file are seen as 
 a single component.
 <img src=multi-select.png width=200/>  
 
