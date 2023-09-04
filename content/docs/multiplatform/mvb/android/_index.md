@@ -2,8 +2,6 @@
 title: Android
 weight: 1
 ---
-{{< hint danger>}} UNFINISED {{< /hint >}} 
-
 # Abstract
 `MVB` is my new architecture standing for `Model-View-Bridge`. It has only an Android implementation at present, 
 but the pattern is applicable to every platform that supports Kotlin. The UI part uses the traditional `View` without 
@@ -21,10 +19,7 @@ its recombination mechanism inevitably reconstructs massive objects, resulting i
 {{< newTab "KRecyclerViewAdapter" "/ITWorks/docs/android/util-view/#krecyclerviewadapter" >}} arranges sub-items as Compose. 
 Therefore, MVB does not fall short compared to Compose apart from custom views. 
 
-- As for the UI part, I have a new pattern that requires official assistance to design visual operation interfaces. 
-The goal is to make view source code from the UI department directly usable by Android developers, including visually 
-designed animations, of which the details are introduced at last. If this could be implemented, it could reduce most code 
-as well as negotiations between UI personnel and developers, which is revolutionary without doubt.
+- As for the UI part, I have a {{< newTab "new design pattern proposal" "../proposal" >}}. 
 
 # Setup
 {{< tabs >}}
@@ -152,6 +147,3 @@ Some syntax sugar functions are from other libraries and independent with `MVB`,
 {{< newTab onClick "/ITWorks/docs/android/util-view/#viewonclick" >}}, 
 and {{< newTab updateIf "/ITWorks/docs/multiplatform/kt-util/html/-kt-util/pers.shawxingkwok.ktutil/update-if.html" >}}.
 {{< /hint >}}
-
-# New UI pattern proposal 
-
