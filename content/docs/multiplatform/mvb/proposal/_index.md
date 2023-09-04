@@ -31,8 +31,8 @@ source code.
 <img src=firstButton.png width=300 />  
 
 # Independent components
-Components can't be constrained with each other unless they are from other files and referenced in this panel,
-which means they become a single component. However, you could select them and edit together.  
+Components can't be constrained with each other, but multi-select-editable. Components another file are seen as 
+a single component.
 <img src=multi-select.png width=200/>  
 
 # New attributes panel
