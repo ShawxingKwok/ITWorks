@@ -7,6 +7,7 @@ weight: 2
 UNFINISHED
 {{< /hint >}}
 
+# Abstract
 The implementation requires official assistance to design visual operation interfaces.
 The goal is to make view source code from the UI department directly usable by IT developers, including visually
 designed animations. If this could be implemented, it could reduce most code
