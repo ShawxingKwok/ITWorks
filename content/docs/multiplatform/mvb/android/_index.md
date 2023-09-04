@@ -84,7 +84,7 @@ The initialization of `val` property is `synchronized`.
 {{< /hint >}}
 
 ## save
-Similar to `rmb`, the values are alive across the device rotation, and furthermore restorable from the process death. 
+Similar to `rmb`, the values are alive across the device rotation, but furthermore restorable from the process death. 
 Saved value types should follow {{< newTab Parcelize "https://developer.android.com/kotlin/parcelize" >}} rules.
 {{< codeImg save.png >}}
 
