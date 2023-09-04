@@ -142,7 +142,7 @@ I suggest putting fixed listeners here or below.
 {{< codeImg stopwatchSetFixedListeners.png >}}
 
 {{< hint info >}}
-Some syntax sugar functions are from other libraries and independent with `MVB`, e.g. 
+Some functions from other libraries are independent with `MVB`, e.g. 
 {{< newTab "binding(XxBinding::bind)" "https://dylancaicoding.github.io/ViewBindingKTX/#/en/" >}}, 
 {{< newTab onClick "/ITWorks/docs/android/util-view/#viewonclick" >}}, 
 and {{< newTab updateIf "/ITWorks/docs/multiplatform/kt-util/html/-kt-util/pers.shawxingkwok.ktutil/update-if.html" >}}.
