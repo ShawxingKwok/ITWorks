@@ -39,7 +39,7 @@ a single component.
 The right-side attributes panel is replaced with source code of the selected component exception positions.  
 From   
 <img src=buttonAttributes.png width=200/>  
-to   
+to another format like  
 <img src=buttonXml.png width=300/>  
 There popups a progressbar when you type some attributes needing visual modifications like rotation and alpha.
 
