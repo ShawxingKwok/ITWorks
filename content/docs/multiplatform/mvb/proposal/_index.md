@@ -40,5 +40,6 @@ to manual code like
 There popups a progressbar when you type some attributes needing visual modifications like rotation and alpha.
 
 # Custom shapes and animations
-These are designed as in `PhotoShop` and `Figma`, but bound-able to foreign Kotlin data. It sounds difficult but doable 
-for a qualified official team. Even if it's not realized, this proposal is significant enough to beat other patterns. 
+These are designed as in `PhotoShop` and `Figma`, but embeddable in mainstream systems and bound-able with foreign Kotlin 
+data. It sounds difficult but doable for a qualified official team. Even if it's not realized, this proposal is 
+significant enough to beat other patterns. 
