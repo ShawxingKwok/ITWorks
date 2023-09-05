@@ -3,10 +3,6 @@ title: New UI design proposal
 weight: 2
 ---
 
-{{< hint danger >}}
-UNFINISHED
-{{< /hint >}}
-
 # Abstract
 The implementation requires official assistance to design visual operation interfaces.
 The goal is to make view source code from the UI department directly usable by IT developers, including visually
