@@ -77,31 +77,56 @@ dependencies {
 {{< /tabs >}}
 
 # Usage
+{{< hint info >}}
+Examples are all with `Fragment`, but also applicable with `ComponentActivity` which is one superclass of `AppCompatActivity`.  
+{{< /hint >}}
+
 ## rmb
 This is the abbreviation of `remember`, meaning remembering the value across the device rotation in 
 `ComponentActivity` / `Fragment`. 
 {{< codeImg rmb.png >}}
-
+<p style="text-align:center;">↓</p>
+{{< codeImg rmb_.png >}}
 {{< hint info >}}
-The initialization of `val` property is `synchronized`. 
+Initialization of the property declared with `val` is `synchronized`. 
 {{< /hint >}}
 
 ## save
 The values are not only alive across the device rotation, but also restorable from the process death. 
-Saved value types should follow {{< newTab Parcelize "https://developer.android.com/kotlin/parcelize" >}} rules.
-{{< codeImg save.png >}}
+Directly saved value types should follow {{< newTab Parcelize "https://developer.android.com/kotlin/parcelize" >}} rules.
 
-Or you could append `transform` after `delegator` with the converted values following {{< newTab Parcelize "https://developer.android.com/kotlin/parcelize" >}} rules.
-{{< codeImg transform.png >}}
+{{< tabs "save" >}} 
 
-Inner parcelable components couldn't be distinguished unless they are put in `Array`. Pass the arg of 
-`KClass<out Parcelable>` in these cases.
-{{< codeImg parcelableComponent.png >}}
+{{< tab `Parcelable` >}}
+{{<codeImg saveParcelable.png >}}
+<p style="text-align:center;">↓</p>
+{{<codeImg saveParcelable_.png >}}
+{{< /tab >}}
 
-`MutableStateFlow`, `MutableShardFlow`, and `MutableLiveData` are so common that I made some shortcut functions for 
-them.
-<br>Take the example of `saveMutableStateFlow`. 
-{{< codeImg saveMutableStateFlow.png >}} 
+{{< tab `Flow<Parcelable>` >}}
+{{<codeImg saveFlow.png >}}
+<p style="text-align:center;">↓</p>
+{{<codeImg saveFlow_.png >}}
+{{< /tab >}}
+
+{{< tab `LiveData<Parcelable>` >}}
+{{<codeImg saveLiveData.png >}}
+<p style="text-align:center;">↓</p>
+{{<codeImg saveLiveData_.png >}}
+{{< /tab >}}
+
+{{< /tabs >}}
+
+{{< hint info >}}
+Rules below are same to `saveMutableStateFlow`, `saveMutableSharedFlow`, `saveMutableLiveData`, and not limited with 
+`val` / `var`.
+{{< /hint >}}
+You could also save values with any type by appending `transform` after `save` with the converted values following 
+{{< newTab Parcelize "https://developer.android.com/kotlin/parcelize" >}} rules.
+{{< codeImg saveWithTransform.png >}}
+
+Sometimes you need to pass the arg of `KClass<out Parcelable>`. 
+{{< codeImg saveWithParcelableComponent.png >}}
 
 {{< hint info >}}
 You could reference the short source code to customize functions to save values of which the types are common but not 
