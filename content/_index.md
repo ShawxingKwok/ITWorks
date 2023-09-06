@@ -11,8 +11,5 @@ at. I have no offensive intention, just meaning everyone has his strengths and w
 job has its threshold.
 
 At last, **I have some great proposals and one halfway wonderful work** which need some top company to help complete.
-I have sent resumes to common top IT companies, but those limited resume sizes are too small and they
-didn't give me opportunities to display.
-
 Welcome to visit my {{< newTab "GitHub profile" "https://www.github.com/ShawxingKwok/" >}},
 or contact with me via {{< newTab email "mailto:ShawxingKwok@126.com">}}.
