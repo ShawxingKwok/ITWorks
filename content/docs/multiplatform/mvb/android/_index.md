@@ -21,6 +21,9 @@ Therefore, MVB does not fall short compared to Compose apart from custom views.
 
 - As for the UI part, I have a {{< newTab "new design pattern proposal" "../proposal" >}}. 
 
+Overall, I suggest using the traditional `View` with `MVB` rather than `Compose` at present, and transiting to the other 
+imperative UI mode with that proposal implementation.
+
 # Setup
 {{< tabs >}}
 {{< tab "Groovy" >}}
