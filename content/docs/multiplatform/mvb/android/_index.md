@@ -147,3 +147,5 @@ Some functions from other libraries are independent with `MVB`, e.g.
 {{< newTab onClick "/ITWorks/docs/android/util-view/#viewonclick" >}}, 
 and {{< newTab updateIf "/ITWorks/docs/multiplatform/kt-util/html/-kt-util/pers.shawxingkwok.ktutil/update-if.html" >}}.
 {{< /hint >}}
+
+# <a href="https://github.com/ShawxingKwok/MVB" target="_blank"> GitHub repo with demo</a>
