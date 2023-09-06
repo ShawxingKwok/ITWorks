@@ -129,8 +129,8 @@ Sometimes you need to pass the arg of `KClass<out Parcelable>`.
 {{< codeImg saveWithParcelableComponent.png >}}
 
 {{< hint info >}}
-You could reference the short source code to customize functions to save values of which the types are common but not 
-directly savable.
+You could reference the short source code of `saveMutable...` to customize functions to save values of which the types 
+are common but not directly savable.
 {{< /hint >}}
 
 ## observe
