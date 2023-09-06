@@ -133,7 +133,7 @@ Declare components and enable them in `Activity.onCreate` / `Fragment.onViewCrea
 {{< codeImg stopwatchFragment.png >}}
 
 ### Bridge
-Bind variable data source to `view`. 
+Declare variable data source via `rmb` and `save`, and link them to `view`. 
 {{< codeImg stopwatchBridge1.png >}}
 {{< codeImg stopwatchBridge2.png >}}
 
