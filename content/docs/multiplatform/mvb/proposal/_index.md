@@ -6,8 +6,9 @@ weight: 2
 # Abstract
 The implementation requires official assistance to design visual operation interfaces.
 The goal is to make view source code from the UI department directly usable by IT developers, including visually
-designed animations, which corresponding to a new imperative multiplatform UI system. If this could be implemented, it 
-could reduce most code as well as negotiations between UI and IT developers, which is revolutionary without doubt.
+designed animations, which corresponding to a new imperative multiplatform UI system with Kotlin. If this could be 
+implemented, it could reduce most code as well as negotiations between UI and IT developers, which is revolutionary 
+without doubt.
 {{< hint info >}}
 Many expected effects are explained with abstract words. Hope you to be patient.
 {{< /hint >}}
