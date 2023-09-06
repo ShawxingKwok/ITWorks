@@ -21,7 +21,7 @@ Besides, the distances are directly editable with mouse or keyboard in the panel
 removed.  
 <img src=firstTextView.png width=300/>  
 
-# Relative position is displayed but actually excluded
+# Relative positions are displayed but actually excluded
 Now I add a `button` at the top-right area near the added `TextView`. It's also linked to top and right borders by 
 default. And the relative distance tagged with my red line should be also displayed, but excluded in the background 
 source code.   
