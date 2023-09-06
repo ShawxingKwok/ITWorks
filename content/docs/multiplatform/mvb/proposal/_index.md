@@ -6,8 +6,8 @@ weight: 2
 # Abstract
 The implementation requires official assistance to design visual operation interfaces.
 The goal is to make view source code from the UI department directly usable by IT developers, including visually
-designed animations. If this could be implemented, it could reduce most code
-as well as negotiations between UI and IT developers, which is revolutionary without doubt.
+designed animations, which corresponding to a new imperative multiplatform UI system. If this could be implemented, it 
+could reduce most code as well as negotiations between UI and IT developers, which is revolutionary without doubt.
 {{< hint info >}}
 Many expected effects are explained with abstract words. Hope you to be patient.
 {{< /hint >}}
@@ -20,7 +20,7 @@ Besides, the distances are directly editable with mouse or keyboard in the panel
 removed.  
 <img src=firstTextView.png width=300/>  
 
-# Relative distance is displayed but actually excluded
+# Relative position is displayed but actually excluded
 Now I add a `button` at the top-right area near the added `TextView`. It's also linked to top and right borders by 
 default. And the relative distance tagged with my red line should be also displayed, but excluded in the background 
 source code.   
