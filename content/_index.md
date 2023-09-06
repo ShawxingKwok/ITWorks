@@ -1,7 +1,7 @@
 This website displays most of my personal open-source works. Note that I center on **Kotlin**,
 and only `Android.KDataStore` considers `Java` supports.
 
-My code is probably the globally best at present for its functionality, creativity, difficulty, structure,
+My code is probably the globally best at present for its functionality, creativity, concision, difficulty, structure,
 efficiency, and beauty. Wish you could learn from it！I also encourage those authorities to provide better
 tutorials with embedded short videos instead of all voluminous words.
 
