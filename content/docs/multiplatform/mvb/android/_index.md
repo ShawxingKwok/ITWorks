@@ -82,8 +82,8 @@ Examples are all with `Fragment`, but also applicable with `ComponentActivity` w
 {{< /hint >}}
 
 ## rmb
-This is the abbreviation of `remember`, meaning remembering the value across the device rotation in 
-`ComponentActivity` / `Fragment`. 
+This is the abbreviation of `remember`, meaning the value is alive across the configuration change (e.g. rotation) 
+in`ComponentActivity` / `Fragment`. 
 {{< codeImg rmb.png >}}
 <p style="text-align:center;">↓</p>
 {{< codeImg rmb_.png >}}
