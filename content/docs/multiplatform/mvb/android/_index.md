@@ -92,24 +92,27 @@ Initialization of the property declared with `val` is `synchronized`.
 {{< /hint >}}
 
 ## save
+### Direct
 The values are not only alive across the device rotation, but also restorable from the process death. 
+{{< hint warning >}}
 Directly saved value types should follow {{< newTab Parcelize "https://developer.android.com/kotlin/parcelize" >}} rules.
-
+{{< /hint >}}
+Switch from the traditional way as below. 
 {{< tabs "save" >}} 
 
-{{< tab `Parcelable` >}}
+{{< tab `Common` >}}
 {{<codeImg saveParcelable.png >}}
 <p style="text-align:center;">↓</p>
 {{<codeImg saveParcelable_.png >}}
 {{< /tab >}}
 
-{{< tab `Flow<Parcelable>` >}}
+{{< tab `Flow` >}}
 {{<codeImg saveFlow.png >}}
 <p style="text-align:center;">↓</p>
 {{<codeImg saveFlow_.png >}}
 {{< /tab >}}
 
-{{< tab `LiveData<Parcelable>` >}}
+{{< tab `LiveData` >}}
 {{<codeImg saveLiveData.png >}}
 <p style="text-align:center;">↓</p>
 {{<codeImg saveLiveData_.png >}}
@@ -118,14 +121,20 @@ Directly saved value types should follow {{< newTab Parcelize "https://developer
 {{< /tabs >}}
 
 {{< hint info >}}
+I strongly suggest using `Flow` instead of `LiveData` though it takes some time to learn.
+{{< /hint >}}
+{{< hint info >}}
 Rules below are same to `saveMutableStateFlow`, `saveMutableSharedFlow`, `saveMutableLiveData`, and not limited with 
 `val` / `var`.
 {{< /hint >}}
+
+### Transform
 You could also save values with any type by appending `transform` after `save` with the converted values following 
 {{< newTab Parcelize "https://developer.android.com/kotlin/parcelize" >}} rules.
 {{< codeImg saveWithTransform.png >}}
 
-Sometimes you need to pass the arg of `KClass<out Parcelable>`. 
+### Parcelable component
+Sometimes you need to pass `KClass<out Parcelable>` as the parcelable component. 
 {{< codeImg saveWithParcelableComponent.png >}}
 
 {{< hint info >}}
@@ -137,8 +146,8 @@ are common but not directly savable.
 The delegated values via `rmb` / `save` are easily observable if it's `Flow` / `LiveData`. The latter observe lambdas 
 are active between every `onStart` and `onStop`, which is generally used for linking `value` to `UI state`.
 {{< codeImg observe.png >}}
-
-`LiveData` is also observable. However, I strongly suggest using `Flow` instead though it takes some time to learn.    
+<p style="text-align:center;">↓</p>
+{{< codeImg observe_.png >}}
 
 ## mvbScope
 This is `viewModelScope` of `MVBViewModel` hidden in `ComponentActivity` / `Fragment`.
