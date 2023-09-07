@@ -7,7 +7,7 @@ weight: 2
 The implementation requires official assistance to design visual operation interfaces.
 The goal is to make view source code from designers directly usable by developers, including visually
 designed animations, which corresponding to a new imperative multiplatform UI system with Kotlin that could be optimized 
-by {{< newTab `MVB` "../android" >}}.. If this could be implemented, it could reduce most code as well as negotiations 
+by {{< newTab `MVB` "../android" >}}. If this could be implemented, it could reduce most code as well as negotiations 
 between designers and developers, which is revolutionary without doubt.
 {{< hint info >}}
 The Figma plugin `relay` does a similar work but outputs `Compose`. 
