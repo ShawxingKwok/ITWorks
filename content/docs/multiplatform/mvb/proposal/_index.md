@@ -44,7 +44,7 @@ The right-side attributes panel is replaced with source code of the selected com
 From   
 <img src=buttonAttributes.png width=200/>  
 to manual code like    
-<img src=buttonXml.png width=300/>  
+<img src=buttonXml.png width=250/>  
 There popups a progressbar when you type some attributes needing visual modifications like rotation and alpha.
 
 # Custom shapes and animations
