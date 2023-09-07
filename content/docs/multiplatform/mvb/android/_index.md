@@ -121,7 +121,7 @@ Switch from the traditional way as below.
 {{< /tabs >}}
 
 {{< hint info >}}
-I strongly suggest using `Flow` instead of `LiveData` though it takes some time to learn.
+I strongly suggest using `Flow` instead of `LiveData`, though it takes some time to learn.
 {{< /hint >}}
 {{< hint info >}}
 Rules below are same to `saveMutableStateFlow`, `saveMutableSharedFlow`, `saveMutableLiveData`, and not limited with 
