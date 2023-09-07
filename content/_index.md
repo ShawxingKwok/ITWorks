@@ -1,5 +1,5 @@
-This website displays most of my personal open-source works. Note that I center on **Kotlin**,
-and only `Android.KDataStore` considers `Java` supports.
+This website displays most of my personal open-source works in which {{< newTab `MVB` "/ITWorks/docs/multiplatform/mvb/android/" >}}
+is the representative. Note that I center on **Kotlin**, and only `Android.KDataStore` considers `Java` supports.
 
 My code is probably the globally best at present for its functionality, creativity, concision, difficulty, structure,
 efficiency, and beauty. Wish you could learn from it！I also encourage those authorities to provide better
@@ -10,6 +10,6 @@ ability mustn't be well enough for you to engage in IT. If so, do something you 
 at. I have no offensive intention, just meaning everyone has his strengths and weaknesses, and every
 job has its threshold.
 
-At last, **I have some great proposals and one halfway wonderful work** (the latter is not displayed) which need some top 
+At last, **I have some great proposals and one halfway wonderful work** (the latter is not displayed) which need some top
 company to help complete. Welcome to visit my {{< newTab "GitHub profile" "https://www.github.com/ShawxingKwok/" >}},
 or contact with me via {{< newTab email "mailto:ShawxingKwok@126.com">}}.
