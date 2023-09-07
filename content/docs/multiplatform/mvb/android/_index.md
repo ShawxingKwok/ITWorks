@@ -28,12 +28,6 @@ imperative UI mode based on that proposal implementation in which `MVB` still wo
 {{< tabs >}}
 {{< tab "Groovy" >}}
 ```groovy
-repositories {
-    maven{ url "https://s01.oss.sonatype.org/content/repositories/snapshots/" }
-}
-```
-
-```groovy
 android{
     buildFeatures {
         viewBinding true
@@ -46,17 +40,11 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach{
 
 dependencies {
     implementation 'io.github.shawxingkwok:android-util-view:1.0.8'
-    implementation 'io.github.shawxingkwok:mvb-android:1.0.0-SNAPSHOT'
+    implementation 'io.github.shawxingkwok:mvb-android:1.0.0'
 }
 ```
 {{< /tab >}}
 {{< tab "Kotlin" >}}
-```kotlin
-repositories {
-    maven("https://s01.oss.sonatype.org/content/repositories/snapshots/")
-}
-```
-
 ```kotlin
 android{
     buildFeatures {
@@ -70,7 +58,7 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach 
 
 dependencies {
     implementation("io.github.shawxingkwok:android-util-view:1.0.8")
-    implementation("io.github.shawxingkwok:mvb-android:1.0.0-SNAPSHOT")
+    implementation("io.github.shawxingkwok:mvb-android:1.0.0")
 }
 ```
 {{< /tab >}}
