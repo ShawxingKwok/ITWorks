@@ -15,13 +15,13 @@ its recombination mechanism inevitably reconstructs massive objects, resulting i
 - Regarding `navigation parameters` for `Activity` / `Fragment`, I have a proposal on 
 {{< newTab Reddit "https://www.reddit.com/r/androiddev/comments/15pa5qf/proposal_android_could_support_activityfragment/" >}}.
 
-- `RecyclerView.Adapter` is most common among components with complex writing styles, whereas my encapsulated 
+- `RecyclerView.Adapter` is the most common among components with complex writing styles, whereas my encapsulated 
 {{< newTab "KRecyclerViewAdapter" "/ITWorks/docs/android/util-view/#krecyclerviewadapter" >}} arranges sub-items as Compose. 
 Therefore, MVB does not fall short compared to Compose apart from custom views. 
 
 - As for the UI part, I have a {{< newTab "new design pattern proposal" "../proposal" >}}. 
 
-Overall, I suggest using the traditional `View` with `MVB` rather than `Compose` at present, and transiting to the other 
+Overall, I suggest using the traditional `View` with `MVB` rather than `Compose` at present, and switching to the other 
 imperative UI mode with that proposal implementation in which `MVB` still works.
 
 # Setup
