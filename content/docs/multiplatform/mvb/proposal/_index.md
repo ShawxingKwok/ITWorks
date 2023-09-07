@@ -14,7 +14,7 @@ The Figma plugin `relay` does a similar work but outputs `Compose`.
 However, there are some disadvantages as below. 
 1. Works couple between designers and developers.
 2. The recombination mechanism of `Compose` inevitably reconstructs massive objects, resulting in its low upper 
-performance limit, whereas the imperative UI is well and 
+performance limit.
 {{< /hint >}}
 {{< hint info >}}
 Many expected effects are explained with abstract words. Hope you to be patient.
