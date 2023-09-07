@@ -17,7 +17,8 @@ However, there are some disadvantages as below.
 performance limit.
 {{< /hint >}}
 {{< hint info >}}
-Many expected effects are explained with abstract words. Hope you to be patient.
+Below are suggestions those simplify designs and help adaptations with Kotlin platform. Meanwhile, the generated layout
+code is the quickest for measuring. Many expected effects are explained with abstract words. Hope you to be patient.
 {{< /hint >}}
 
 # All positions reference to borders 
@@ -41,10 +42,18 @@ a single component.
 
 # New attributes panel
 The right-side attributes panel is replaced with source code of the selected component exception positions.  
-From   
-<img src=buttonAttributes.png width=200/>  
-to manual code like    
-<img src=buttonXml.png width=250/>  
+<div style="display: flex; justify-content: center; align-items: center;">
+  <div style="text-align: center;">
+    <img src="buttonAttributes.png" alt="" style="width:200px; display: block;">
+  </div>
+
+  <p style="margin:10px"> -> to manual code like </p>
+
+  <div style="text-align: center;">
+    <img src="buttonXml.png" alt="" style="width:200px; display: block;">
+  </div>
+</div>
+
 There popups a progressbar when you type some attributes needing visual modifications like rotation and alpha.
 
 # Custom shapes and animations
