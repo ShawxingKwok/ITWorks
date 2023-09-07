@@ -18,7 +18,7 @@ performance limit.
 {{< /hint >}}
 {{< hint info >}}
 Below are suggestions those simplify designs and help adaptations with Kotlin platform. Meanwhile, the generated layout
-code is the quickest for measuring. Many expected effects are explained with abstract words. Hope you to be patient.
+code is the quickest in measurements. Many expected effects are explained with abstract words. Hope you to be patient.
 {{< /hint >}}
 
 # All positions reference to borders 
