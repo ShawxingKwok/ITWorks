@@ -81,7 +81,7 @@ Initialization of the property declared with `val` is `synchronized`.
 
 ## save
 ### Direct
-The values are not only alive across the device rotation, but also restorable from the process death. 
+Saved values are not only alive across the configuration change, but also restorable from the process death. 
 {{< hint warning >}}
 Directly saved value types should follow {{< newTab Parcelize "https://developer.android.com/kotlin/parcelize" >}} rules.
 {{< /hint >}}
