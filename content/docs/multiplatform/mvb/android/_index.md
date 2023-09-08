@@ -17,12 +17,12 @@ its recombination mechanism inevitably reconstructs massive objects, resulting i
 
 - `RecyclerView.Adapter` is the most common among components with complex writing styles, whereas my encapsulated 
 {{< newTab "KRecyclerViewAdapter" "/ITWorks/docs/android/util-view/#krecyclerviewadapter" >}} arranges sub-items as Compose. 
-Therefore, MVB does not fall short compared to Compose apart from custom views. 
+Therefore, MVB does not fall short compared to Compose apart from custom views at present. 
 
 - As for the UI part, I have a {{< newTab "new design pattern proposal" "../proposal" >}}. 
 
 Overall, I suggest using the traditional `View` with `MVB` rather than `Compose` at present, and switching to the other 
-imperative UI mode based on that proposal implementation in which `MVB` still works.
+imperative UI mode based on that proposal implementation in which `MVB` would still work.
 
 # Setup
 {{< tabs >}}
