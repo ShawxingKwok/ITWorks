@@ -5,10 +5,11 @@ weight: 2
 
 # Abstract
 The implementation requires official assistance to design visual operation interfaces.
-The goal is to make view source code from designers directly usable by developers, including visually
-designed animations, which corresponding to a new imperative multiplatform UI system with Kotlin that could be optimized 
-by {{< newTab `MVB` "../android" >}}. If this could be implemented, it could reduce most code as well as negotiations 
-between designers and developers, which is revolutionary without doubt.
+The goal is to make view source code from designers directly usable by developers without inserting any code, 
+including visually designed animations. All developers need to do is binding `view` with dynamic data in Kt files, which 
+corresponds to a new imperative multiplatform UI system with Kotlin that could be optimized by {{< newTab `MVB` "../android" >}}. 
+If this could be implemented, it could reduce most code as well as negotiations between designers and developers, which is 
+revolutionary without doubt.
 {{< hint info >}}
 Some plugins (e.g. Zeplin) do a similar work but only support basic features. 
 
