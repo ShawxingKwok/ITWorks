@@ -22,10 +22,10 @@ Below are suggestions those simplify designs and help adaptations with Kotlin pl
 code is the quickest in measurements. Many expected effects are explained with abstract words. Hope you to be patient.
 {{< /hint >}}
 
-# All positions reference to borders 
+# All positions reference to borders or dividers
 All the traditional layouts are deprecated, e.g. frame, linear, relative, and constraint.
 Each component is added to the panel with default position limits. For example, a `TextView` is added to the top-right 
-area, and the panel shows its distances to top and right borders. (This is by default and editable.)
+area, and the panel which contains no dividers shows its distances to top and right borders. (This is by default and editable.)
 Besides, the distances are directly editable with mouse or keyboard in the panel. The two blue arrows should be 
 removed.  
 <img src=firstTextView.png width=300/>  
