@@ -10,8 +10,9 @@ designed animations, which corresponding to a new imperative multiplatform UI sy
 by {{< newTab `MVB` "../android" >}}. If this could be implemented, it could reduce most code as well as negotiations 
 between designers and developers, which is revolutionary without doubt.
 {{< hint info >}}
-The Figma plugin `relay` does a similar work but outputs `Compose`. 
-However, there are some disadvantages as below. 
+Some plugins (e.g. Zeplin) do a similar work but only support basic features. 
+
+The Figma plugin `relay` is more powerful but outputs `Compose` which contains serious problems as blow. 
 1. Works couple between designers and developers.
 2. The recombination mechanism of `Compose` inevitably reconstructs massive objects, resulting in its low upper 
 performance limit.
