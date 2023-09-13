@@ -39,7 +39,7 @@ source code.
 
 # Independent components
 Components can't be constrained with each other, but multi-select-editable. Components from another file are seen as 
-a single component.
+a single component.  
 <img src=multi-select.png width=200/>  
 
 # New attributes panel
