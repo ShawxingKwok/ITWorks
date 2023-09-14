@@ -153,7 +153,7 @@ Take the example of simulating the stopwatch page in the IOS clock with concise 
 {{< codeImg stopwatchAdapter.png >}}
 
 ### Static processing
-Declare components and enable them in `Activity.onCreate` / `Fragment.onViewCreated` 
+Declare components and enable them in `ComponentActivity.onCreate` / `Fragment.onViewCreated` 
 {{< codeImg stopwatchFragment.png >}}
 
 ### Bridge
