@@ -112,6 +112,10 @@ Saved value types should follow {{< newTab Parcelize "https://developer.android.
 I strongly suggest using `Flow` instead of `LiveData`, though it takes some time to learn.
 {{< /hint >}}
 {{< hint info >}}
+You could reference the short source code of `saveMutable...` to customize functions to save values of which the types
+are common but not directly savable.
+{{< /hint >}}
+{{< hint info >}}
 Rules below are same to `saveMutableStateFlow`, `saveMutableSharedFlow`, `saveMutableLiveData`, and not limited with 
 `val` / `var`.
 {{< /hint >}}
@@ -128,11 +132,6 @@ don't reference callables from its owner to avoid memory leaks.
 ### Parcelable component
 Sometimes you need to pass `KClass<out Parcelable>` as the parcelable component. 
 {{< codeImg saveWithParcelableComponent.png >}}
-
-{{< hint info >}}
-You could reference the short source code of `saveMutable...` to customize functions to save values of which the types 
-are common but not directly savable.
-{{< /hint >}}
 
 ## observe
 The delegated values via `rmb` / `save` are easily observable if it's `Flow` / `LiveData`. The latter observe lambdas 
