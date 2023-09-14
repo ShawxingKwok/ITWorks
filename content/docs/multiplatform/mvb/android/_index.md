@@ -121,7 +121,7 @@ You could also save values with any type by appending `transform` after `save` w
 {{< newTab Parcelize "https://developer.android.com/kotlin/parcelize" >}} rules.
 {{< codeImg saveWithTransform.png >}}
 {{< hint warning >}}
-The lambda `convert` keeps alive after its owner `ComponentActivity`/`Fragment` is killed by the application. Therefore, 
+The lambda `convert` keeps alive after its lifecycle owner is killed by the application. Therefore, 
 don't reference callables from its owner to avoid memory leaks.
 {{< /hint >}}
 
@@ -137,7 +137,7 @@ are active between every `onStart` and `onStop`, which is generally used for lin
 {{< codeImg observe_.png >}}
 
 ## mvbScope
-This is `viewModelScope` of `MVBViewModel` hidden in `ComponentActivity` / `Fragment`.
+This is `viewModelScope` of the hidden `MVBViewModel`. 
 {{< codeImg mvbScope.png >}}
 
 ## Format  
