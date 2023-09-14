@@ -106,7 +106,7 @@ Switch from the traditional way as below.
 
 {{< /tabs >}}
 {{< hint warning >}}
-Directly saved value types should follow {{< newTab Parcelize "https://developer.android.com/kotlin/parcelize" >}} rules.
+Saved value types should follow {{< newTab Parcelize "https://developer.android.com/kotlin/parcelize" >}} rules.
 {{< /hint >}}
 {{< hint info >}}
 I strongly suggest using `Flow` instead of `LiveData`, though it takes some time to learn.
