@@ -5,8 +5,8 @@ weight: 2
 
 # Abstract
 The implementation requires official assistance to design visual operation interfaces.
-The goal is to make view source code from designers directly usable by developers without inserting any code, 
-including visually designed animations. 
+The goal is to make a new UI design tool based on those traditional e.g. PhotoShop, Figma, which outputs view source code 
+from designers directly usable by developers without inserting any code, including visually designed animations. 
 
 The expected implementation is not a plugin that tries to parse components, but each component has its corresponding 
 Kotlin multiplatform code. All developers need to do is bind `view` with dynamic data in Kt files, which could be 
