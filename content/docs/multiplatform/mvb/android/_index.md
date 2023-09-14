@@ -112,10 +112,6 @@ Saved value types should follow {{< newTab Parcelize "https://developer.android.
 I strongly suggest using `Flow` instead of `LiveData`, though it takes some time to learn.
 {{< /hint >}}
 {{< hint info >}}
-You could reference the short source code of `saveMutable...` to customize functions to save values of which the types
-are common but not directly savable.
-{{< /hint >}}
-{{< hint info >}}
 Rules below are same to `saveMutableStateFlow`, `saveMutableSharedFlow`, `saveMutableLiveData`, and not limited with 
 `val` / `var`.
 {{< /hint >}}
