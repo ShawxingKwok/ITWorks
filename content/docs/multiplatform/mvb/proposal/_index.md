@@ -8,10 +8,10 @@ The implementation requires official assistance to design visual operation inter
 The goal is to make a new UI design tool based on those traditional e.g. PhotoShop, Figma, which outputs view source code 
 from designers directly usable by developers without inserting any code, including visually designed animations. 
 
-The expected implementation is not a plugin that tries to parse components, but each component has its corresponding 
-Kotlin multiplatform code. All developers need to do is bind `view` with dynamic data in Kt files, which could be 
-optimized by {{< newTab `MVB` "../android" >}}. If this could be implemented, it could reduce most code as well as 
-negotiations between designers and developers, which is revolutionary without doubt.
+This corresponds to a new UI system with Kotlin multiplatform in which each component has its corresponding Kotlin code. 
+All developers need to do is bind `view` with dynamic data in Kt files, which could be optimized by {{< newTab `MVB` "../android" >}}. 
+If this could be implemented, it could reduce most code as well as negotiations between designers and developers, which 
+is revolutionary without doubt.
 {{< hint info >}}
 Some plugins (e.g. Zeplin) do a similar work but only support basic features. 
 
