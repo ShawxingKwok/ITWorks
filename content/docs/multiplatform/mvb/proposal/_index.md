@@ -21,7 +21,7 @@ The Figma plugin `relay` is more powerful but outputs `Compose` which contains s
 performance limit.
 {{< /hint >}}
 {{< hint info >}}
-Below are suggestions those simplify designs and help adaptations with Kotlin platform. Meanwhile, the generated layout
+Below are suggestions those simplify designs and help parse with Kotlin platform. Meanwhile, the generated layout
 code is the quickest in measurements. Many expected effects are explained with abstract words. Hope you to be patient.
 {{< /hint >}}
 
