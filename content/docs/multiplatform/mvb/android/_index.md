@@ -66,7 +66,8 @@ dependencies {
 
 # Usage
 {{< hint info >}}
-Examples are all with `Fragment`, but also applicable with `ComponentActivity` which is one superclass of `AppCompatActivity`.  
+Examples are all with `Fragment`, but applicable with each class implements both `LifecycleOwner` and `ViewModelStoreOwner`
+like `ComponentActivity`.
 {{< /hint >}}
 
 ## rmb
