@@ -162,7 +162,7 @@ Declare variable data sources via `rmb` and `save`, and link them to `UI state` 
 {{< codeImg stopwatchBridge2.png >}}
 
 ### Fixed listeners
-I suggest putting fixed listeners here or below.
+I suggest putting fixed listeners here or below, allowing for variating data source or navigating to other pages. 
 {{< codeImg stopwatchSetFixedListeners.png >}}
 
 {{< hint info >}}
