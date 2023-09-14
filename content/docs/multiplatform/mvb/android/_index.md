@@ -71,8 +71,7 @@ like `ComponentActivity`.
 {{< /hint >}}
 
 ## rmb
-This is the abbreviation of `remember`, meaning the value is alive across the configuration change (e.g. rotation) 
-in`ComponentActivity` / `Fragment`. 
+This is the abbreviation of `remember`, meaning the value is alive across the configuration change (e.g. rotation). 
 {{< codeImg rmb.png >}}
 <p style="text-align:center;">↓</p>
 {{< codeImg rmb_.png >}}
