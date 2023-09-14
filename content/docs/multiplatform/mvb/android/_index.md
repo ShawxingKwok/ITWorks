@@ -82,9 +82,7 @@ Initialization of the property declared with `val` is `synchronized`.
 ## save
 ### Direct
 Saved values are not only alive across the configuration change, but also restorable from the process death. 
-{{< hint warning >}}
-Directly saved value types should follow {{< newTab Parcelize "https://developer.android.com/kotlin/parcelize" >}} rules.
-{{< /hint >}}
+
 Switch from the traditional way as below. 
 {{< tabs "save" >}} 
 
@@ -107,7 +105,9 @@ Switch from the traditional way as below.
 {{< /tab >}}
 
 {{< /tabs >}}
-
+{{< hint warning >}}
+Directly saved value types should follow {{< newTab Parcelize "https://developer.android.com/kotlin/parcelize" >}} rules.
+{{< /hint >}}
 {{< hint info >}}
 I strongly suggest using `Flow` instead of `LiveData`, though it takes some time to learn.
 {{< /hint >}}
