@@ -13,7 +13,8 @@ All developers need to do is bind `view` with dynamic data in Kt files, which co
 If this could be implemented, it could reduce most code as well as negotiations between designers and developers, which 
 is revolutionary without doubt.
 {{< hint info >}}
-Some plugins (e.g. Zeplin) do a similar work but only support basic features. 
+Some plugins (e.g. Zeplin) do a similar work but only support basic features and generates several versions of output code 
+for each platform, whereas my expect is a whole multiplatform UI system.  
 
 The Figma plugin `relay` is more powerful but outputs `Compose` which contains serious problems as blow. 
 1. Works couple between designers and developers.
