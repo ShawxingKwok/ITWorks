@@ -121,7 +121,7 @@ You could also save values with any type by appending `transform` after `save` w
 {{< newTab Parcelize "https://developer.android.com/kotlin/parcelize" >}} rules.
 {{< codeImg saveWithTransform.png >}}
 {{< hint warning >}}
-The lambda `convert` is saved after its owner `ComponentActivity`/`Fragment` is killed by the application. Therefore, 
+The lambda `convert` keeps alive after its owner `ComponentActivity`/`Fragment` is killed by the application. Therefore, 
 don't reference callables from its owner to avoid memory leaks.
 {{< /hint >}}
 
