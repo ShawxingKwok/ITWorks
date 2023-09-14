@@ -16,7 +16,7 @@ If this could be implemented, it could reduce most code as well as negotiations 
 is revolutionary without doubt.
 {{< hint info >}}
 Some plugins (e.g. Zeplin) do a similar work but only support basic features and generates several versions of output code 
-for each platform, whereas my expect is a whole multiplatform UI system.  
+for each platform.
 
 The Figma plugin `relay` is more powerful but outputs `Compose` which contains serious problems as blow. 
 1. Works couple between designers and developers.
