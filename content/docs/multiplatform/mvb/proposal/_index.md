@@ -4,12 +4,14 @@ weight: 2
 ---
 
 # Abstract
-The implementation requires official assistance to design visual operation interfaces.
-The goal is to make a new UI design tool based on those traditional e.g. PhotoShop, Figma, which outputs view source code 
+The expected implementation requires official assistance to design visual operation interfaces.
+Goals are as below.
+1. A new UI design tool based on those traditional e.g. PhotoShop, Figma, which outputs view source code 
 from designers directly usable by developers without inserting any code, including visually designed animations. 
 
-This corresponds to a new UI system with Kotlin multiplatform in which each design component has its corresponding Kotlin code. 
+2. A new UI system with Kotlin multiplatform in which each design component has its corresponding Kotlin code. 
 All developers need to do is bind `view` with dynamic data in Kt files, which could be optimized by {{< newTab `MVB` "../android" >}}. 
+
 If this could be implemented, it could reduce most code as well as negotiations between designers and developers, which 
 is revolutionary without doubt.
 {{< hint info >}}
