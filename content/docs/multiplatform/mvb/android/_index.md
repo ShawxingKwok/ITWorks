@@ -126,7 +126,8 @@ don't reference callables from its owner to avoid memory leaks.
 {{< /hint >}}
 
 ### Parcelable component
-Sometimes you need to pass `KClass<out Parcelable>` as the parcelable component. 
+Sometimes you need to pass `KClass<out Parcelable>` as the parcelable component. Besides, there could be no more than 1
+parcelable subtype.
 {{< codeImg saveWithParcelableComponent.png >}}
 
 ## observe
