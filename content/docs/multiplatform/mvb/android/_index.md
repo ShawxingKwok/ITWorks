@@ -106,7 +106,8 @@ Switch from the traditional way as below.
 
 {{< /tabs >}}
 {{< hint warning >}}
-Saved value types should follow {{< newTab Parcelize "https://developer.android.com/kotlin/parcelize" >}} rules.
+Saved value types should follow {{< newTab Parcelize "https://developer.android.com/kotlin/parcelize" >}} rules. 
+Note that there is a mistake in that official document. `Set` is actually saved as `Serialziable` and can't keep `Parcelable`.
 {{< /hint >}}
 {{< hint info >}}
 I strongly suggest using `Flow` instead of `LiveData`, though it takes some time to learn.
