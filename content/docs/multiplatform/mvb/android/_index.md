@@ -66,7 +66,7 @@ dependencies {
 
 # Usage
 {{< hint info >}}
-Examples are all with `Fragment`, but also applicable on `ComponentActivity` (A super class of `AppCompatAtivity`).  
+Examples are all with `Fragment`, but also applicable on `ComponentActivity` (a super class of `AppCompatAtivity`).  
 {{< /hint >}}
 
 ## rmb
