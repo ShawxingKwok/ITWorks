@@ -148,23 +148,23 @@ Take the example of simulating the stopwatch page in the IOS clock with concise 
   <source src="stopwatch.mov" type="video/mp4">
 </video>
 
-### Components
+### Utils and Components for reusable and complex parts 
 {{< codeImg stopwatchUtil.png >}}
 <br> See {{< newTab "KRecyclerViewAdapter" "/ITWorks/docs/android/util-view/#krecyclerviewadapter" >}} if it's new to you.
 {{< codeImg stopwatchAdapter.png >}}
 
 ### Static processing
-Declare components and enable them in `ComponentActivity.onCreate` / `Fragment.onViewCreated` 
-{{< codeImg stopwatchFragment.png >}}
+For example, declare components and enable them in `ComponentActivity.onCreate` / `Fragment.onViewCreated` 
+{{< codeImg staticProcessing.png >}}
 
 ### Bridge
 Declare variable data sources via `rmb` and `save`, and link them to `UI state` via appending `observe`.
-{{< codeImg stopwatchBridge1.png >}}
-{{< codeImg stopwatchBridge2.png >}}
+{{< codeImg bridge1.png >}}
+{{< codeImg bridge2.png >}}
 
 ### Fixed listeners
 I suggest putting fixed listeners here or below, allowing for variating data source or navigating to other pages. 
-{{< codeImg stopwatchSetFixedListeners.png >}}
+{{< codeImg fixedListeners.png >}}
 
 {{< hint info >}}
 Some functions from other libraries are independent with `MVB`, e.g. 
