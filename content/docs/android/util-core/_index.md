@@ -25,6 +25,10 @@ Don't forget to declare your application name which may need to begin with the p
 In this way, your `Database`, `DAO`, `NetService` and some other tools could be
 also static, of which the profit is much more considerable than the additional resource memory.
 
+{{< hint info >}}
+Foreign static objects could be modified with {{< newTab "mockk" "https://mockk.io/" >}} in tests.
+{{< /hint >}}
+
 # Companion extension trick
 Declare static `AppDatabase.INSTANCE` based on `AppContext` and `retrofit` first, then `DAO` and `Service`
 could be created concisely.
