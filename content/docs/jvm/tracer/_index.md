@@ -21,6 +21,8 @@ oriented to interior traceable elements, which realizes **dependency injection**
 {{< tab "Tracer" >}} 
 {{< video src="usagePreview" >}}
 
-> The renaming problem could be solved by an IDE plugin that has not come out yet.
+{{< hint info >}}
+The renaming problem could be solved by an IDE plugin that has not come out yet.
+{{< /hint >}}
 {{< /tab >}}
 {{< /tabs >}}
