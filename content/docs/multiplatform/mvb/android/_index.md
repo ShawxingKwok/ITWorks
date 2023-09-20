@@ -3,9 +3,9 @@ title: Android
 weight: 1
 ---
 # Abstract
-`MVB` is my new architecture standing for `Model-View-Bridge`. It has only an Android implementation at present, 
+`MVB` is my new architecture standing for `Model-View-Bridge`. Now, it only has an Android implementation, 
 but the pattern is applicable to every platform that supports Kotlin. The UI part uses the traditional `View` without 
-`DataBinding`, and the Kt part deprecates `ViewModel` and `outState`, resulting in much less code, looser coupling and 
+`DataBinding`, and the Kt part deprecates `ViewModel`, resulting in much less code, looser coupling and 
 clearer logic.
 
 Other points:
@@ -16,12 +16,12 @@ its recombination mechanism inevitably reconstructs massive objects, resulting i
 {{< newTab Reddit "https://www.reddit.com/r/androiddev/comments/15pa5qf/proposal_android_could_support_activityfragment/" >}}.
 
 - `RecyclerView.Adapter` is the most common among components with complex writing styles, whereas my encapsulated 
-{{< newTab "KRecyclerViewAdapter" "/ITWorks/docs/android/util-view/#krecyclerviewadapter" >}} arranges sub-items as Compose. 
-Therefore, MVB does not fall short compared to Compose apart from custom views at present. 
+{{< newTab "KRecyclerViewAdapter" "/ITWorks/docs/android/util-view/#krecyclerviewadapter" >}} arranges list items as `Compose`. 
+Therefore, `MVB` does not fall short compared to `Compose` apart from custom views at present. 
 
-- As for the UI part, I have a {{< newTab "new design pattern proposal" "../proposal" >}}. 
+- For the UI part, I have a {{< newTab "new design pattern proposal" "../proposal" >}}. 
 
-Overall, I suggest using the traditional `View` with `MVB` rather than `Compose` at present, and switching to the other 
+Overall, I suggest to use the traditional `View` with `MVB` rather than `Compose` at present, and switching to the other 
 imperative UI mode based on that proposal implementation in which `MVB` would still work.
 
 # Setup
@@ -80,7 +80,7 @@ Initialization of the property declared with `val` is `synchronized`.
 
 ## save
 ### Direct
-Saved values are not only alive across the configuration change, but also restorable from the process death. 
+Saved values are not only alive across the configuration change, but also restorable from the killed process. 
 
 Switch from the traditional way as below. 
 {{< tabs "save" >}} 
@@ -106,10 +106,11 @@ Switch from the traditional way as below.
 {{< /tabs >}}
 {{< hint warning >}}
 Saved value types should follow {{< newTab Parcelize "https://developer.android.com/kotlin/parcelize" >}} rules. 
-Note that there is a mistake in that official document. `Set` is actually saved as `Serialziable` and can't keep `Parcelable`.
+Please note that there is a mistake in the official document. `Set` is actually saved as `Serialziable` and can't keep 
+`Parcelable`.
 {{< /hint >}}
 {{< hint info >}}
-I strongly suggest using `Flow` instead of `LiveData`, though it takes some time to learn.
+I suggest to use `Flow` instead of `LiveData`, though it takes some time to learn.
 {{< /hint >}}
 {{< hint info >}}
 Rules below are same to `saveMutableStateFlow`, `saveMutableSharedFlow`, `saveMutableLiveData`, and not limited with 
@@ -131,7 +132,7 @@ parcelable subtype.
 {{< codeImg saveWithParcelableComponent.png >}}
 
 ## observe
-The delegated values via `rmb` / `save` are easily observable if it's `Flow` / `LiveData`. The latter observe lambdas 
+The delegated values via `rmb` / `save` are easily observable if it's `Flow` / `LiveData`. The latter `observe` lambdas 
 are active between every `onStart` and `onStop`, which is generally used for linking `value` to `UI state`.
 {{< codeImg observe.png >}}
 <p style="text-align:center;">↓</p>
@@ -142,7 +143,7 @@ This is `viewModelScope` of the hidden `MVBViewModel`.
 {{< codeImg mvbScope.png >}}
 
 ## Format  
-Take the example of simulating the stopwatch page in the IOS clock with concise code. 
+Take an example of simulating the stopwatch page in the IOS clock with concise code below. 
 
 <video height="400" controls>
   <source src="stopwatch.mov" type="video/mp4">
@@ -154,16 +155,16 @@ Take the example of simulating the stopwatch page in the IOS clock with concise 
 {{< codeImg stopwatchAdapter.png >}}
 
 ### Static processing
-For example, declare components and enable them in `ComponentActivity.onCreate` / `Fragment.onViewCreated` 
+For example, declaring components and enabling them in `ComponentActivity.onCreate` / `Fragment.onViewCreated` 
 {{< codeImg staticProcessing.png >}}
 
 ### Bridge
-Declare variable data sources via `rmb` and `save`, and link them to `UI state` via appending `observe`.
+Declaring variable data sources via `rmb` and `save`, and linking them to `UI state` via appending `observe`.
 {{< codeImg bridge1.png >}}
 {{< codeImg bridge2.png >}}
 
 ### Fixed listeners
-I suggest putting fixed listeners here or below, allowing for variating data source or navigating to other pages. 
+I suggest to put fixed listeners here or below, allowing for variating data source or navigating to other pages. 
 {{< codeImg fixedListeners.png >}}
 
 {{< hint info >}}
