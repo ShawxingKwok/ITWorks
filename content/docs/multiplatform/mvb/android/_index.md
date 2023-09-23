@@ -71,7 +71,8 @@ Examples are all with `Fragment`, but also applicable on `ComponentActivity` (a 
 {{< /hint >}}
 
 ## rmb
-This is the abbreviation of `remember`, meaning the value is alive across the configuration change (e.g. rotation). 
+This is the abbreviation of `remember`, meaning the value is alive across the configuration change (e.g. rotation).
+Switch from the traditional way as below.
 {{< codeImg rmb.png >}}
 <p style="text-align:center;">↓</p>
 {{< codeImg rmb_.png >}}
@@ -83,7 +84,6 @@ Initialization of the property declared with `val` is `synchronized`.
 ### Direct
 Saved values are not only alive across the configuration change, but also restorable from the killed process. 
 
-Switch from the traditional way as below. 
 {{< tabs "save" >}} 
 
 {{< tab `Common` >}}
