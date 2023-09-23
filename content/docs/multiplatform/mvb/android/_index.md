@@ -142,7 +142,8 @@ are active between every `onStart` and `onStop`, which is generally used for lin
 ## mvbScope
 This is `viewModelScope` of the hidden `MVBViewModel`. This `coroutineScope` is not affected by the configuration change, 
 and cancelled only when its owner `ComponentActivity` / `Fragment` is killed by `user presses back` or `low memory`. 
-Besides, it's not static but actually an extensive property so there is no memory leak.
+Besides, it's not static but actually an extensive property. Check out the source code, and you will find there is no 
+memory leak.
 {{< codeImg mvbScope.png >}}
 
 ## Format  
