@@ -139,7 +139,8 @@ are active between every `onStart` and `onStop`, which is generally used for lin
 {{< codeImg observe_.png >}}
 
 ## mvbScope
-This is `viewModelScope` of the hidden `MVBViewModel`. 
+This is `viewModelScope` of the hidden `MVBViewModel`. This `coroutineScope` is not affected by the configuration change, 
+and cancelled only when its owner `ComponentActivity` / `Fragment` is killed by `user presses back` or `low memory`. 
 {{< codeImg mvbScope.png >}}
 
 ## Format  
