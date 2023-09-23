@@ -21,7 +21,7 @@ Therefore, `MVB` does not fall short compared to `Compose` apart from custom vie
 
 - For the UI part, I have a {{< newTab "new design pattern proposal" "../proposal" >}}. 
 
-Overall, I suggest to use the traditional `View` with `MVB` rather than `Compose` at present, and switching to the other 
+I suggest `MVB` if you haven't switched to `Compose` from `View` at present. In the future, there would be a new     
 imperative UI mode based on that proposal implementation in which `MVB` would still work.
 
 # Setup
