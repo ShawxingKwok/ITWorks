@@ -171,6 +171,9 @@ Declaring variable data sources via `rmb` and `save`, and linking them to `UI st
 I suggest to put fixed listeners here or below, allowing for variating data source or navigating to other pages. 
 {{< codeImg fixedListeners.png >}}
 
+Or this style
+{{< codeImg fixedListenersWithSeparateActions.png >}}
+
 {{< hint info >}}
 Some functions from other libraries are independent with `MVB`, e.g. 
 {{< newTab "binding(XxBinding::bind)" "https://dylancaicoding.github.io/ViewBindingKTX/#/en/" >}}, 
