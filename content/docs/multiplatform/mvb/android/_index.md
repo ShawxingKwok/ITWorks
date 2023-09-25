@@ -5,8 +5,7 @@ weight: 1
 # Abstract
 `MVB` is my new architecture standing for `Model-View-Bridge`. Now, it only has an Android implementation, 
 but the pattern is applicable to every platform that supports Kotlin. The UI part uses the traditional `View` without 
-`DataBinding`, and the Kt part deprecates `ViewModel`, resulting in much less code, looser coupling and 
-clearer logic.
+`DataBinding`, and the Kt part hides `ViewModel`, resulting in much less code and clearer logic.
 
 Other points:
 - `Compose` is the most concise declarative UI framework, and also the most flexible in terms of custom views. However, 
