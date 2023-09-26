@@ -9,7 +9,7 @@ Goals are as below.
 1. A new UI design tool based on those traditional e.g. PhotoShop, Figma, which outputs view source code 
 from designers directly usable by developers without inserting any code, including visually designed animations. 
 
-2. A new imperative UI system with Kotlin multiplatform in which each component from the UI tool above has its 
+2. A new imperative UI system with Kotlin multiplatform in which almost each component from the UI tool above has its 
 corresponding Kotlin implementation. All developers need to do are bind `view` with dynamic data in Kt files, which could 
 be optimized by {{< newTab `MVB` "../android" >}}. 
 
@@ -66,5 +66,5 @@ There popups a progressbar when you type some attributes needing visual modifica
 
 # Custom shapes and animations
 These are designed as in `PhotoShop` and `Figma`, but embeddable in mainstream systems and bound-able with foreign Kotlin 
-data. It sounds difficult but is doable for a qualified official team. Even if it's not realized, this proposal is 
-significant enough to beat other patterns. 
+data, except those too complicated. It sounds difficult but is doable for a qualified official team. Even if it's not 
+realized, this proposal is significant enough to beat other patterns. 
