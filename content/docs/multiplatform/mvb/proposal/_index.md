@@ -66,5 +66,5 @@ There popups a progressbar when you type some attributes needing visual modifica
 
 # Custom shapes and animations
 These are designed as in `PhotoShop` and `Figma`, but embeddable in mainstream systems and bound-able with foreign Kotlin 
-data, except those too complicated. It sounds difficult but is doable for a qualified official team. Even if it's not 
+data, except those too complicated. It sounds difficult but is doable for a qualified official team. Even if it's not fully
 realized, this proposal is significant enough to beat other patterns. 
