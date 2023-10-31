@@ -16,7 +16,7 @@ are familiar with tracer and interested.
 Add this dependency below {{< newTab "tracer-compiler" "../../setup" >}}.
 ```kotlin
 // Never put this above 'tracer-compiler'
-ksp ("io.github.shawxingkwok:tracer-android-view-compiler:1.0.0")
+ksp ("io.github.shawxingkwok:tracer-android-view-compiler:1.0.0-1.0.0")
 ```
 
 # Effect

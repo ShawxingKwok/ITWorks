@@ -54,3 +54,8 @@ dependencies {
 ```
 {{< /tab >}}
 {{< /tabs >}}
+
+{{< hint warning >}}
+For the library `tracer-compiler`, common version styles like `1.0.3` are deprecated. Use `1.0.0-1.0.0` instead, 
+in which the former is anchored to the version of `tracer-annotatinos`. 
+{{< /hint >}}
