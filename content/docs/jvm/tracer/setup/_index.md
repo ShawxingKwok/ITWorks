@@ -31,7 +31,7 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
 
 dependencies {
     implementation 'io.github.shawxingkwok:tracer-annotations:1.0.0'
-    ksp 'io.github.shawxingkwok:tracer-compiler:1.0.2'
+    ksp 'io.github.shawxingkwok:tracer-compiler:1.0.0-1.0.0'
 }
 //endregion 
 ```
@@ -48,7 +48,7 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach 
 
 dependencies {
     implementation ("io.github.shawxingkwok:tracer-annotations:1.0.0")
-    ksp ("io.github.shawxingkwok:tracer-compiler:1.0.2")
+    ksp ("io.github.shawxingkwok:tracer-compiler:1.0.0-1.0.0")
 }
 //endregion 
 ```
