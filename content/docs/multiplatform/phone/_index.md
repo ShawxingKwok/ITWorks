@@ -142,6 +142,7 @@ kotlin {
 {{< codeImg user.png >}}
 
 ## Code generation
+Build the module `shared`, and there would generate code in the other two multiplatform modules.  
 {{< video src="generation" >}}
 
 ## Each side
