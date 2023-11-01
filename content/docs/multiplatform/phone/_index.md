@@ -6,9 +6,10 @@ weight: 1
 # Abstract
 At present, each client platform contacts with the server according to the appointment document. 
 However, it is cumbersome and error-prone because message formats differ on each route. Although 
-{{< newTab grpc "https://grpc.io/" >}} works well as a `rpc` (remote procedure call) framework, it requires a third-party language. 
-Therefore, I made a new `rpc` framework based on the new language `Kotlin multiplatform` and its web 
-framework `Ktor`.
+{{< newTab grpc "https://grpc.io/" >}} works well as a `rpc` (remote procedure call) framework, 
+it is not popular because it requires a third-party language and hard extensive. Therefore, I made 
+a new `rpc` framework named `Phone` based on the new popular language `Kotlin multiplatform` and its web framework `Ktor`.
+`Phone` would be a great point for popularizing `Kotlin`, and revolutionary together with it.
 
 Main advantages:
 - Connects with shared interfaces, data types and related logics.
@@ -144,13 +145,13 @@ kotlin {
 {{< video src="generation" >}}
 
 ## Each side
-Implementations the `serverside` or `clientside` on each platform first.
+Apply the generated code on each platform.
 {{< tabs "Call on each side" >}}
 {{< tab Server >}}
-Implements the generated interface.  
+Implement the generated interface.  
 {{< codeImg server_demoApiImpl.png >}}
 <br>
-Configures it before start.
+Configure it before start.
 {{< codeImg server_main.png >}}
 {{< /tab >}}
 {{< tab Browser >}}
@@ -166,6 +167,10 @@ also supported, e.g. `wasm` and `ios`.
 {{< /hint >}}
 
 # Additional functionalities
+## Http methods 
+
+## Polymorphic functions
+
 ## Crypto
 
 ## Auth
