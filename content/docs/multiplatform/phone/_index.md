@@ -148,7 +148,7 @@ Build the module `shared`, and there would generate code in the other two multip
 ## Each side
 Apply the generated code on each platform.
 {{< hint info >}}
-Below `Server`, `Brower` and `Android` are clickable switch tabs.
+Below `Server`, `Browser` and `Android` are clickable switch tabs.
 {{< /hint >}}
 {{< tabs "Call on each side" >}}
 {{< tab Server >}}
