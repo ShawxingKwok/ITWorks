@@ -212,47 +212,58 @@ This is the most common case. Remember to use `Unit` if the returned value is ne
 
 You could also upload files easily as below.
 ### Shared
-{{< codeImg "calls/file_upload_shared.png" >}}
+{{< codeImg "calls/common_upload_shared.png" >}}
 {{< hint warning >}} 
 Don't use `Get` as the http method.
 {{< /hint >}} 
 
 ### Client side
-{{< codeImg "calls/file_upload_client.png" >}}
+{{< codeImg "calls/common_upload_client.png" >}}
 
 ### Server side
-{{< codeImg "calls/file_upload_server.png" >}}
+{{< codeImg "calls/common_upload_server.png" >}}
 
 ## Manual
 With `Phone.Call.Manual`, client also gets `HttpResponse` which is generally for downloading files. 
 
 ### Shared
-{{< codeImg "calls/file_download_shared.png" >}}
+{{< codeImg "calls/manual_shared.png" >}}
 
 ### Server side
-{{< codeImg "calls/file_download_server.png" >}}
+{{< codeImg "calls/manual_server.png" >}}
 
 ### Client side
-{{< codeImg "calls/file_download_client.png" >}}
+{{< codeImg "calls/manual_client.png" >}}
 
 ## PartialContent
 ### Shared
-{{< codeImg "calls/file_partialContent_shared.png" >}}
+{{< codeImg "calls/partialContent_shared.png" >}}
 
 ### Server side
 Responds `File` / `Stream` / `Channel` as before.
 
 ### Client side
-{{< codeImg "calls/file_partialContent_client.png" >}}
+{{< codeImg "calls/partialContent_client.png" >}}
 <br>
 
 Type of the handler
-{{< codeImg "calls/file_partialContent_handlerType.png" >}}
+{{< codeImg "calls/partialContent_handlerType.png" >}}
 The parameter `ranges` is vararg. If you pass no `LongRange`, you would get the whole file.
 
 ## WebSocket
+### Shared
+You could set `isRaw` to `true` and get `ClientWebSocketSession` and `ServerWebSocketSession` on 
+server and client sides.
+{{< codeImg "calls/websocket_shared.png" >}}
 
-`Wss`
+### Client side
+You will get the parameter `enableWss` in the `Phone` constructor.
+{{< codeImg "calls/websocket_enableWss.png" >}}
+<br>
+{{< codeImg "calls/websocket_client.png" >}}
+
+### Server side
+{{< codeImg "calls/websocket_server.png" >}}
 
 # Crypto
 
