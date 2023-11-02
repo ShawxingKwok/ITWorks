@@ -19,7 +19,8 @@ Main advantages:
 
 # Setup
 {{< hint warning >}}
-Kotlin version is required at least `1.9.0`.
+1. Kotlin version is required at least `1.9.0`.
+2. Get familiar with {{< newTab Ktor "https://ktor.io" >}} first.
 {{< /hint >}}
 
 Create three modules of which all could be multiplatform, and configure them as below in `build.gradle.kts`. Your 
@@ -133,36 +134,49 @@ kotlin {
 {{< /tab >}}
 {{< /tabs >}}
 
-# Core usage
+# Core usage sample
 ## Shared code
-{{< codeImg demoApi.png >}}
+Parameters and the generic type (`LoginResult` in this case) should obey
+{{< newTab "Kotlin serialization" "https://github.com/Kotlin/kotlinx.serialization/blob/master/docs/basic-serialization.md" >}} rules,
+or be helped by [custom serializers](#custom-serializers).
+
+{{< codeImg "codeUsageSample/demoApi.png" >}}
 <br>
-{{< codeImg loginResult.png >}}
+{{< codeImg "codeUsageSample/loginResult.png" >}}
 <br>
-{{< codeImg user.png >}}
+{{< codeImg "codeUsageSample/user.png" >}}
 
 ## Code generation
 Build the module `shared`, and there would generate code in the other two multiplatform modules.  
-{{< video src="generation" >}}
+{{< video src=generation >}}
 
 ## Each side
-Apply the generated code on each platform.
 {{< hint info >}}
-Below `Server`, `Browser` and `Android` are clickable switch tabs.
+`Server`, `Browser` and `Android` below are clickable switch tabs.
 {{< /hint >}}
 {{< tabs "Call on each side" >}}
 {{< tab Server >}}
-Implement the generated interface.  
-{{< codeImg server_demoApiImpl.png >}}
+Implement the generated interface in `server side`.
+{{< codeImg "codeUsageSample/server_demoApiImpl.png" >}}
+<br>
+
+Note that type `PipeContextProvider` is a lambda. 
+{{< codeImg "codeUsageSample/pipeContextProvider.png" >}}
 <br>
 Configure it before start.
-{{< codeImg server_main.png >}}
+{{< codeImg "codeUsageSample/server_main.png" >}}
+{{< hint info >}}
+There could be multiple interfaces annotated with `Phone.Api`,
+which are routed like `Phone.routeAll(routing {  }, AApiImpl, BApiImpl)`.
+{{< /hint >}}
 {{< /tab >}}
 {{< tab Browser >}}
-{{< video src="browserDisplay" >}}
+Apply the generated code in `client side`.
+{{< video src=browserDisplay.mp4 >}}
 {{< /tab >}}
 {{< tab Android >}}
-{{< video src="androidDisplay" >}}
+Apply the generated code in `client side`.
+{{< video src=androidDisplay.mp4 >}}
 {{< /tab >}}
 {{< /tabs >}}
 {{< hint info >}}
@@ -170,15 +184,94 @@ Since generated code are multiplatform, desktop and other Kotlin native platform
 also supported, e.g. `wasm` and `ios`.
 {{< /hint >}}
 
-# Additional functionalities
-## Http methods 
+# Http methods
+The default `http method` is indispensable and configured in `shared` module `build.gradle.kts`.
+The options are `get`, `post`, `put`, `delete` and `patch` which could start with an uppercase char.
+{{< codeImg "httpMethods/ksp.png" >}}
+<br>
 
-## Polymorphic functions
+The `http method` of `login` in this case is `Post`. 
+{{< codeImg "codeUsageSample/demoApi.png" >}}
+<br>
 
-## Crypto
+Default methods could be overridden in `Phone.Api`. Methods for each function could also be separately set. 
+Now `login` method is `Post`, and `search` method is `Get`.
+{{< codeImg "httpMethods/loginSearch.png" >}}
 
-## Auth
+# Calls
+{{< hint info >}}
+1. In this section, all parameters and generic type are not limited.
+2. Examples run on Jvm. There are multiple `Ktor` ways of handling file stream in `body`. 
+   Each platform also handles differently.  
+{{< /hint >}}
+
+## Common
+This is the most common case. Remember to use `Unit` if the returned value is needless.
+{{< codeImg "calls/common_delete.png" >}} 
+<br>
+
+You could also upload files easily as below.
+### Shared
+{{< codeImg "calls/file_upload_shared.png" >}}
+{{< hint warning >}} 
+Don't use `Get` as the http method.
+{{< /hint >}} 
+
+### Client side
+{{< codeImg "calls/file_upload_client.png" >}}
+
+### Server side
+{{< codeImg "calls/file_upload_server.png" >}}
+
+## Manual
+With `Phone.Call.Manual`, client also gets `HttpResponse` which is generally for downloading files. 
+
+### Shared
+{{< codeImg "calls/file_download_shared.png" >}}
+
+### Server side
+{{< codeImg "calls/file_download_server.png" >}}
+
+### Client side
+{{< codeImg "calls/file_download_client.png" >}}
+
+## PartialContent
+### Shared
+{{< codeImg "calls/file_partialContent_shared.png" >}}
+
+### Server side
+Responds `File` / `Stream` / `Channel` as before.
+
+### Client side
+{{< codeImg "calls/file_partialContent_client.png" >}}
+<br>
+
+Type of the handler
+{{< codeImg "calls/file_partialContent_handlerType.png" >}}
+The parameter `ranges` is vararg. If you pass no `LongRange`, you would get the whole file.
 
 ## WebSocket
+
+`Wss`
+
+# Crypto
+
+# Auth
+## Form
+
+## Jwt 
+
+## Others
+
+# Custom serializers
+
+2. The parameters are actually placed in the form as far as possible.
+3.
+
+# Extend
+
+# BadRequestException
+
+# Polymorphic functions
 
 # GitHub repo
