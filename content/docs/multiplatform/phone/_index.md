@@ -285,9 +285,6 @@ For this `login` case, I suggest annotating `Phone.Crypto` only on the function.
 
 # Custom serializers
 
-2. The parameters are actually placed in the form as far as possible.
-3.
-
 # Auth
 ## Form
 
@@ -296,6 +293,7 @@ For this `login` case, I suggest annotating `Phone.Crypto` only on the function.
 ## Others
 
 # Extend
+The parameters are actually placed in the form as far as possible.
 
 # BadRequestException
 
