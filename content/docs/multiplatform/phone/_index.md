@@ -253,7 +253,7 @@ The parameter `ranges` is vararg. If you pass no `LongRange`, you would get the 
 ## WebSocket
 ### Shared
 You could set `isRaw` to `true` and get `ClientWebSocketSession` and `ServerWebSocketSession` on 
-server and client sides.
+server and client sides. The default value of `method` is `Get` 
 {{< codeImg "calls/websocket_shared.png" >}}
 
 ### Client side
@@ -266,6 +266,27 @@ You will get the parameter `enableWss` in the `Phone` constructor.
 {{< codeImg "calls/websocket_server.png" >}}
 
 # Crypto
+## Cipher
+First you need to provide a `Cipher` in module `shared` with customed protocol from other 
+Kotlin multiplatform Crypto libraries.   
+{{< codeImg "crypto/cipher.png" >}}
+
+## Targets
+Next you could annotate these symbols with `Phone.Crypto`.
+{{< codeImg "crypto/targets.png" >}}
+1. The top `Phone.Crypto` means all messages in `DemoApi` will be encrypted. 
+The next `Phone.Crypto` on the function `login` means all messages related to this function will 
+be encrypted. 
+2. For parameters, annotating it or its type makes the same sense. 
+3. Annotating the returned `Any` makes `LoginResult` crypto.  
+
+For this `login` case, I suggest annotating `Phone.Crypto` only on the function.  
+{{< codeImg "crypto/style.png" >}}
+
+# Custom serializers
+
+2. The parameters are actually placed in the form as far as possible.
+3.
 
 # Auth
 ## Form
@@ -273,11 +294,6 @@ You will get the parameter `enableWss` in the `Phone` constructor.
 ## Jwt 
 
 ## Others
-
-# Custom serializers
-
-2. The parameters are actually placed in the form as far as possible.
-3.
 
 # Extend
 
