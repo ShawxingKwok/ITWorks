@@ -5,11 +5,12 @@ weight: 1
 
 # Abstract
 At present, each client platform contacts with the server according to the appointment document. 
-However, it is cumbersome and error-prone because message formats differ on each route. Although 
-{{< newTab grpc "https://grpc.io/" >}} works well as a `rpc` (remote procedure call) framework, 
-it is not popular because it requires a third-party language and hard extensive. Therefore, I made 
-a new `rpc` framework named `Phone` based on the new popular language `Kotlin multiplatform` and its web framework `Ktor`.
-`Phone` would be a great point for popularizing `Kotlin`, and revolutionary together with it.
+However, it is cumbersome and error-prone because message formats differ on each route and http 
+method. Although {{< newTab grpc "https://grpc.io/" >}} works well as a `rpc` (remote procedure call) 
+framework, it is not popular because it requires a third-party language and hard extensive. 
+Therefore, I made a new `rpc` framework named `Phone` based on the new popular language `Kotlin multiplatform` 
+and its web framework `Ktor`. `Phone` would be a great point for popularizing `Kotlin`, and revolutionary 
+together with it.
 
 Main advantages:
 - Connects with shared interfaces, data types and related logics.
@@ -23,8 +24,8 @@ Main advantages:
 2. Get familiar with {{< newTab Ktor "https://ktor.io" >}} first.
 {{< /hint >}}
 
-Create three modules of which all could be multiplatform, and configure them as below in `build.gradle.kts`. Your 
-confusion would be cleared in the next video. 
+Create three modules of which all could be multiplatform, configure them as below in `build.gradle.kts`, 
+and implement them in `server` and each `client`. Your confusion would be cleared in the next video. 
 
 {{< tabs setup >}}
 {{< tab shared >}}
@@ -135,54 +136,31 @@ kotlin {
 {{< /tabs >}}
 
 # Core usage sample
-## Shared code
+Other platforms are also supported, e.g. `ios`, `windows`, `macos`, `linux` and `wasm`.   
+{{< tabs "Core usage sample" >}}
+
+{{< tab Shared >}}
+{{< video src=shared >}}
+{{< hint info >}}
 Parameters and the generic type (`LoginResult` in this case) should obey
 {{< newTab "Kotlin serialization" "https://github.com/Kotlin/kotlinx.serialization/blob/master/docs/basic-serialization.md" >}} rules,
-or be helped by [custom serializers](#custom-serializers).
-
-{{< codeImg "codeUsageSample/demoApi.png" >}}
-<br>
-{{< codeImg "codeUsageSample/loginResult.png" >}}
-<br>
-{{< codeImg "codeUsageSample/user.png" >}}
-
-## Code generation
-Build the module `shared`, and there would generate code in the other two multiplatform modules.  
-{{< video src=generation >}}
-
-## Each side
-{{< hint info >}}
-`Server`, `Browser` and `Android` below are clickable switch tabs.
+or be helped by [custom serializers](#serialize-third-party-types).
 {{< /hint >}}
-{{< tabs "Call on each side" >}}
+{{< /tab >}}
+
 {{< tab Server >}}
-Implement the generated interface in `server side`.
-{{< codeImg "codeUsageSample/server_demoApiImpl.png" >}}
-<br>
+{{< video src=server >}}
+{{< /tab >}}
 
-Note that type `PipeContextProvider` is a lambda. 
-{{< codeImg "codeUsageSample/pipeContextProvider.png" >}}
-<br>
-Configure it before start.
-{{< codeImg "codeUsageSample/server_main.png" >}}
-{{< hint info >}}
-There could be multiple interfaces annotated with `Phone.Api`,
-which are routed like `Phone.routeAll(routing {  }, AApiImpl, BApiImpl)`.
-{{< /hint >}}
-{{< /tab >}}
 {{< tab Browser >}}
-Apply the generated code in `client side`.
-{{< video src=browserDisplay.mp4 >}}
+{{< video src=browser.mp4 >}}
 {{< /tab >}}
+
 {{< tab Android >}}
-Apply the generated code in `client side`.
-{{< video src=androidDisplay.mp4 >}}
+{{< video src=android.mp4 >}}
 {{< /tab >}}
+
 {{< /tabs >}}
-{{< hint info >}}
-Since generated code are multiplatform, desktop and other Kotlin native platforms are 
-also supported, e.g. `wasm` and `ios`.
-{{< /hint >}}
 
 # Http methods
 The default `http method` is indispensable and configured in `shared` module `build.gradle.kts`.
@@ -206,64 +184,131 @@ Now `login` method is `Post`, and `search` method is `Get`.
 {{< /hint >}}
 
 ## Common
-This is the most common case. Remember to use `Unit` if the returned value is needless.
-{{< codeImg "calls/common_delete.png" >}} 
+This is the most common case.
+{{< tabs "call common search" >}}
+
+{{< tab shared >}}
+{{< codeImg "calls/common_search_shared.png" >}}
+{{< /tab >}}
+
+{{< tab client >}}
+{{< codeImg "calls/common_search_client.png" >}}
+{{< /tab >}}
+
+{{< tab server >}}
+{{< codeImg "calls/common_search_server.png" >}}
+{{< /tab >}}
+
+{{< /tabs >}}
+<br>
+
+Remember to use `Unit` if the returned value is needless.
+{{< codeImg "calls/common_delete.png" >}}
 <br>
 
 You could also upload files easily as below.
-### Shared
+{{< tabs "call common upload file" >}}
+
+{{< tab shared >}}
 {{< codeImg "calls/common_upload_shared.png" >}}
-{{< hint warning >}} 
-Don't use `Get` as the http method.
-{{< /hint >}} 
+{{< /tab >}}
 
-### Client side
+{{< tab client >}}
 {{< codeImg "calls/common_upload_client.png" >}}
+{{< /tab >}}
 
-### Server side
+{{< tab server >}}
 {{< codeImg "calls/common_upload_server.png" >}}
+{{< /tab >}}
+
+{{< /tabs >}}
 
 ## Manual
 With `Phone.Call.Manual`, client also gets `HttpResponse` which is generally for downloading files. 
 
-### Shared
+{{< tabs "call manual" >}}
+
+{{< tab shared >}}
 {{< codeImg "calls/manual_shared.png" >}}
+{{< /tab >}}
 
-### Server side
-{{< codeImg "calls/manual_server.png" >}}
-
-### Client side
+{{< tab client >}}
 {{< codeImg "calls/manual_client.png" >}}
+{{< /tab >}}
+
+{{< tab server >}}
+{{< codeImg "calls/manual_server.png" >}}
+{{< /tab >}}
+
+{{< /tabs >}}
 
 ## PartialContent
-### Shared
+{{< tabs "call partialContent" >}}
+
+{{< tab shared >}}
 {{< codeImg "calls/partialContent_shared.png" >}}
+{{< /tab >}}
 
-### Server side
-Responds `File` / `Stream` / `Channel` as before.
-
-### Client side
+{{< tab client >}}
 {{< codeImg "calls/partialContent_client.png" >}}
-<br>
 
 Type of the handler
 {{< codeImg "calls/partialContent_handlerType.png" >}}
+
 The parameter `ranges` is vararg. If you pass no `LongRange`, you would get the whole file.
+{{< /tab >}}
+
+{{< tab server >}}
+Responds `File` / `Stream` / `Channel` as before.
+{{< /tab >}}
+
+{{< /tabs >}}
 
 ## WebSocket
-### Shared
-You could set `isRaw` to `true` and get `ClientWebSocketSession` and `ServerWebSocketSession` on 
-server and client sides. The default value of `method` is `Get` 
-{{< codeImg "calls/websocket_shared.png" >}}
+{{< hint warning >}}
+Install `WebSockets` plugins on server and each client first.
+{{< /hint >}}
 
-### Client side
+{{< tabs "call websocket" >}}
+{{< tab shared >}}
+{{< codeImg "calls/websocket_shared.png" >}}
+{{< /tab >}}
+
+{{< tab "client" >}}
 You will get the parameter `enableWss` in the `Phone` constructor.
 {{< codeImg "calls/websocket_enableWss.png" >}}
 <br>
-{{< codeImg "calls/websocket_client.png" >}}
 
-### Server side
+Request
+{{< codeImg "calls/websocket_client.png" >}}
+<br>
+
+I suggest to use `onReceivedSuccess` instead.
+{{< codeImg "calls/websocket_onReceivedSuccess.png" >}}
+
+{{< /tab >}}
+
+{{< tab "server" >}}
 {{< codeImg "calls/websocket_server.png" >}}
+{{< /tab >}}
+
+{{< /tabs >}}
+
+{{< codeImg "calls/websocket_isRaw.png" >}}
+
+You could set `isRaw` to `true` and get `ClientWebSocketSession` and `ServerWebSocketSession` on
+server and client sides.
+
+# Parameter positions
+You may be concerned about the actual parameter positions because `URL` is sometimes a bad choice.
+Actually, `Phone` puts parameters in a form as long as the body is empty. If you set the body before 
+request in this way, the parameters would be put in `URL`.
+```
+Phone.DemoApi{
+    setBody(...)
+}
+```
+
 
 # Crypto
 ## Cipher
@@ -283,17 +328,60 @@ be encrypted.
 For this `login` case, I suggest annotating `Phone.Crypto` only on the function.  
 {{< codeImg "crypto/style.png" >}}
 
-# Custom serializers
+# Serialize third-party types
+Suppose `class Time` is from a third-party library and is not adapted with `Kotlin Serializable`.
+{{< codeImg "customSerializers/classTime.png" >}} 
+
+You could set a serializer annotated with `Phone.Serializer`. 
+{{< codeImg "customSerializers/TimeSerializer.png" >}} 
+
+Note that it's not as intelligent as the original `Kotlin serialization`. A single `TimeSerializer` 
+is not enough for cases below.
+
+{{< codeImg "customSerializers/sumTime.png" >}}
+<br>
+
+These are the actually paired serializers.
+{{< codeImg "customSerializers/serializers.png" >}}
 
 # Auth
-## Form
+{{< hint warning >}}
+Install the plugins `Authentication` on server and `Auth` on each client as in `Ktor` before.
+{{< /hint >}}
+Learn the auth part in Ktor if you are not familiar with it. Then you could get the point in this
+section easily.
 
-## Jwt 
+Annotation `Phone.Auth`
+{{< codeImg "auth/common_authAnnot.png" >}}
+<br>
+{{< codeImg "auth/common_auth.png" >}}
+<br>
+Generated code in the route function.
+{{< codeImg "auth/common_srccode.png" >}}
+<br>
 
-## Others
+For `JWT`, at first tell `Phone` the jwt auth name in `build.gradle(.kts)` in module `shared` as below.
+```
+ksp {
+   arg("phone.jwt-auth-name", "<your-name>") 
+}
+```
+Then you could refresh the jwt token on client as before, and put it in `phone` via 
+`phone.refreshJwtToken(token)`. Then each request header needing the token would get it.
 
 # Extend
-The parameters are actually placed in the form as far as possible.
+I tried making source code `open` and give additional choices.
+{{< tabs extend >}}
+
+{{< tab client >}}
+{{< codeImg "extend/client_srccode.png" >}}
+{{< /tab >}}
+
+{{< tab server >}}
+{{< codeImg "extend/server_srccode.png" >}}
+{{< /tab >}}
+
+{{< /tabs >}}
 
 # BadRequestException
 
