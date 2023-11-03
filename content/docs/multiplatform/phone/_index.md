@@ -370,7 +370,7 @@ Then you could refresh the jwt token on client as before, and put it in `phone` 
 `phone.refreshJwtToken(token)`. Then each request header needing the token would get it.
 
 # Extend
-I tried making source code `open` and give additional choices.
+The source code is `open` with additional choices.
 {{< tabs extend >}}
 
 {{< tab client >}}
