@@ -349,7 +349,7 @@ Generated code in the route function.
 For `JWT`, at first tell `Phone` the jwt auth name in `build.gradle(.kts)` in module `shared` as below.
 ```
 ksp {
-   arg("phone.jwt-auth-name", "<your-name>") 
+   arg("phone.jwt-auth-name", "<your-auth-name>") 
 }
 ```
 Then you could refresh the jwt token on client as before, and put it in `phone` via 
