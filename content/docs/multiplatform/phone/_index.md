@@ -18,14 +18,41 @@ Main advantages:
   WebSocket, PartialContent, crypto, and automatic serialization.
 - Is manually extensible with the provided `Route` on servers, and `HttpRequestBuilder`, `HttpResponse` on clients.
 
+# Core usage sample
+Other platforms are also supported, e.g. `ios` and `wasm`.   
+{{< tabs "Core usage sample" >}}
+
+{{< tab Shared >}}
+{{< video src=shared >}}
+{{< hint info >}}
+Parameters and the generic type (`LoginResult` in this case) should obey
+{{< newTab "Kotlin serialization" "https://github.com/Kotlin/kotlinx.serialization/blob/master/docs/basic-serialization.md" >}} rules,
+or be helped by [custom serializers](#serialize-third-party-types).
+{{< /hint >}}
+{{< /tab >}}
+
+{{< tab Server >}}
+{{< video src=server >}}
+{{< /tab >}}
+
+{{< tab Browser >}}
+{{< video src=browser.mp4 >}}
+{{< /tab >}}
+
+{{< tab Android >}}
+{{< video src=android.mp4 >}}
+{{< /tab >}}
+
+{{< /tabs >}}
+
 # Setup
 {{< hint warning >}}
 1. Kotlin version is required at least `1.9.0`.
 2. Get familiar with {{< newTab Ktor "https://ktor.io" >}} first.
-{{< /hint >}}
+   {{< /hint >}}
 
-Create three modules of which all could be multiplatform, configure them as below in `build.gradle.kts`, 
-and implement them in `server` and each `client`. Your confusion would be cleared in the next video. 
+Create three modules of which all could be multiplatform, configure them as below in `build.gradle.kts`,
+and implement them in `server` and each `client`. 
 
 {{< tabs setup >}}
 {{< tab shared >}}
@@ -133,33 +160,6 @@ kotlin {
 }
 ```
 {{< /tab >}}
-{{< /tabs >}}
-
-# Core usage sample
-Other platforms are also supported, e.g. `ios` and `wasm`.   
-{{< tabs "Core usage sample" >}}
-
-{{< tab Shared >}}
-{{< video src=shared >}}
-{{< hint info >}}
-Parameters and the generic type (`LoginResult` in this case) should obey
-{{< newTab "Kotlin serialization" "https://github.com/Kotlin/kotlinx.serialization/blob/master/docs/basic-serialization.md" >}} rules,
-or be helped by [custom serializers](#serialize-third-party-types).
-{{< /hint >}}
-{{< /tab >}}
-
-{{< tab Server >}}
-{{< video src=server >}}
-{{< /tab >}}
-
-{{< tab Browser >}}
-{{< video src=browser.mp4 >}}
-{{< /tab >}}
-
-{{< tab Android >}}
-{{< video src=android.mp4 >}}
-{{< /tab >}}
-
 {{< /tabs >}}
 
 # Http methods
