@@ -136,7 +136,7 @@ kotlin {
 {{< /tabs >}}
 
 # Core usage sample
-Other platforms are also supported, e.g. `ios`, `windows`, `macos`, `linux` and `wasm`.   
+Other platforms are also supported, e.g. `ios` and `wasm`.   
 {{< tabs "Core usage sample" >}}
 
 {{< tab Shared >}}
@@ -185,11 +185,8 @@ Now `login` method is `Post`, and `search` method is `Get`.
 
 ## Common
 This is the most common case.
-{{< tabs "call common search" >}}
-
-{{< tab shared >}}
 {{< codeImg "calls/common_search_shared.png" >}}
-{{< /tab >}}
+{{< tabs "call common search" >}}
 
 {{< tab client >}}
 {{< codeImg "calls/common_search_client.png" >}}
@@ -207,11 +204,8 @@ Remember to use `Unit` if the returned value is needless.
 <br>
 
 You could also upload files easily as below.
-{{< tabs "call common upload file" >}}
-
-{{< tab shared >}}
 {{< codeImg "calls/common_upload_shared.png" >}}
-{{< /tab >}}
+{{< tabs "call common upload file" >}}
 
 {{< tab client >}}
 {{< codeImg "calls/common_upload_client.png" >}}
@@ -226,11 +220,8 @@ You could also upload files easily as below.
 ## Manual
 With `Phone.Call.Manual`, client also gets `HttpResponse` which is generally for downloading files. 
 
-{{< tabs "call manual" >}}
-
-{{< tab shared >}}
 {{< codeImg "calls/manual_shared.png" >}}
-{{< /tab >}}
+{{< tabs "call manual" >}}
 
 {{< tab client >}}
 {{< codeImg "calls/manual_client.png" >}}
@@ -243,11 +234,8 @@ With `Phone.Call.Manual`, client also gets `HttpResponse` which is generally for
 {{< /tabs >}}
 
 ## PartialContent
-{{< tabs "call partialContent" >}}
-
-{{< tab shared >}}
 {{< codeImg "calls/partialContent_shared.png" >}}
-{{< /tab >}}
+{{< tabs "call partialContent" >}}
 
 {{< tab client >}}
 {{< codeImg "calls/partialContent_client.png" >}}
@@ -259,7 +247,7 @@ The parameter `ranges` is vararg. If you pass no `LongRange`, you would get the 
 {{< /tab >}}
 
 {{< tab server >}}
-Responds `File` / `Stream` / `Channel` as before.
+Responds `File` / `Stream` / `ByteReadChannel` as before.
 {{< /tab >}}
 
 {{< /tabs >}}
@@ -269,10 +257,8 @@ Responds `File` / `Stream` / `Channel` as before.
 Install `WebSockets` plugins on server and each client first.
 {{< /hint >}}
 
-{{< tabs "call websocket" >}}
-{{< tab shared >}}
 {{< codeImg "calls/websocket_shared.png" >}}
-{{< /tab >}}
+{{< tabs "call websocket" >}}
 
 {{< tab "client" >}}
 You will get the parameter `enableWss` in the `Phone` constructor.
@@ -333,7 +319,7 @@ Suppose `class Time` is from a third-party library and is not adapted with `Kotl
 {{< codeImg "customSerializers/classTime.png" >}} 
 
 You could set a serializer annotated with `Phone.Serializer`. 
-{{< codeImg "customSerializers/TimeSerializer.png" >}} 
+{{< codeImg "customSerializers/timeSerializer.png" >}} 
 
 Note that it's not as intelligent as the original `Kotlin serialization`. A single `TimeSerializer` 
 is not enough for cases below.
