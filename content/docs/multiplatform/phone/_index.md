@@ -375,8 +375,8 @@ For the backward compatibility, polymorphic functions except the first are requi
 
 # Exception
 You could intercept exceptions and respond a status code with the Ktor plugin {{< newTab StatusPages "https://ktor.io/docs/status-pages.html#configure" >}}. 
-In each client `Phone`, `HttpStatusCode.OK` and `HttpStatusCode.NoContent` (represents `null`) are accepted, and the body would 
-be parsed into `Result.Success`. Others would be handled as `Result.Failure`.
+`HttpStatusCode.OK` tells the client `Phone` to parse the body to the expected type, and    
+`HttpStatusCode.NoContent` tells `null`. Other status codes means failure.
 
 I suggest to only respond `400` or `500` with messages.
 
