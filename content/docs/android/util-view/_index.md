@@ -111,4 +111,4 @@ example.
 ## Future functionalities
 - `KRecyclerViewAdapter`: drag, swipe and set stickHeader like `Compose`. 
 
-## <a href="https://github.com/ShawxingKwok/AndroidUtil-View" target="_blank"> GitHub repo with demo</a>
+## <a href="https://github.com/ShawxingKwok/AndroidUtil-View" target="_blank"> GitHub repo</a>

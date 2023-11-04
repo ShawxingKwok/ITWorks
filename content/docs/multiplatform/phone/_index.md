@@ -287,7 +287,7 @@ server and client sides.
 
 # Parameter positions
 You may be concerned about the actual parameter positions because `URL` is sometimes a bad choice.
-Actually, `Phone` puts parameters in a form as long as the body is empty. If you set the body before 
+Actually, `Phone` puts parameters in a form as long as the `HttpRequest body` is empty. If you set the body before 
 request in this way, the parameters would be put in `URL`.
 ```
 Phone.DemoApi{
@@ -369,8 +369,15 @@ The source code is `open` with additional choices.
 
 {{< /tabs >}}
 
-# BadRequestException
-
 # Polymorphic functions
+For the backward compatibility, polymorphic functions except the first are required to declare the distinct id.
+{{< codeImg "polymorphic/shared.png" >}}
 
-# GitHub repo
+# Exception
+You could intercept exceptions and respond a status code with the Ktor plugin {{< newTab StatusPages "https://ktor.io/docs/status-pages.html#configure" >}}. 
+In each client `Phone`, `HttpStatusCode.OK` and `HttpStatusCode.NoContent` (represents `null`) are accepted, and the body would 
+be parsed into `Result.Success`. Others would be handled as `Result.Failure`.
+
+I suggest to only respond `400` or `500` with messages.
+
+# <a href="https://github.com/ShawxingKwok/Phone" target="_blank"> GitHub repo</a>

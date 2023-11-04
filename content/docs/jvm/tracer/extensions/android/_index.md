@@ -31,4 +31,4 @@ Generated code
 For the example of public `SharedViewModel` in `MainActivity`, I suggest annotating the subclass of `ViewModel` 
 with `Tracer.Tip` to avoid tracing insides. 
 
-# <a href="https://github.com/ShawxingKwok/Tracer-AndroidView" target="_blank"> GitHub repo with demo</a>
+# <a href="https://github.com/ShawxingKwok/Tracer-AndroidView" target="_blank"> GitHub repo </a>

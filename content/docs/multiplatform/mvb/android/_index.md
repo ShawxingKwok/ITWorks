@@ -179,4 +179,4 @@ Some functions from other libraries are independent with `MVB`, e.g.
 and {{< newTab updateIf "/ITWorks/docs/multiplatform/kt-util/html/-kt-util/pers.shawxingkwok.ktutil/update-if.html" >}}.
 {{< /hint >}}
 
-# <a href="https://github.com/ShawxingKwok/MVB" target="_blank"> GitHub repo with demo</a>
+# <a href="https://github.com/ShawxingKwok/MVB" target="_blank"> GitHub repo</a>
