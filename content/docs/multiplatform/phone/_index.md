@@ -7,7 +7,7 @@ weight: 1
 At present, each client platform contacts with the server according to the appointment document. 
 However, it is cumbersome and error-prone because message formats differ on each route and http 
 method. Although {{< newTab grpc "https://grpc.io/" >}} works well as a `rpc` (remote procedure call) 
-framework, it is not popular because it requires a third-party language and is hard extend. 
+framework, it is not popular because it requires a third-party language and is hard to extend. 
 Therefore, I made a new `rpc` framework named `Phone` based on the new popular language `Kotlin multiplatform` 
 and its web framework `Ktor`. `Phone` would be a great point for popularizing `Kotlin`, and revolutionary 
 together with it.
