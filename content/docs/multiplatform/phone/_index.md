@@ -345,15 +345,29 @@ Generated code in the route function.
 {{< codeImg "auth/common_srccode.png" >}}
 <br>
 
-For `JWT`, at first tell `Phone` the jwt auth name in `build.gradle(.kts)` in module `shared` as below.
-```
-ksp {
-   arg("phone.jwt-auth-name", "<your-auth-name>") 
-}
-```
-Then you could refresh the jwt token on client as before, and put it in `phone` via 
-`phone.refreshJwtToken(token)`. Then each request header needing the token would get it.
+Attentions
 
+1. For `JWT`, at first tell `Phone` the jwt auth name in `build.gradle(.kts)` in module `shared` as below.
+    ```
+    ksp {
+       arg("phone.jwt-auth-name", "<your-auth-name>") 
+    }
+    ```
+    Then you could refresh the jwt token on client as before, and put it in `phone` via 
+    `phone.refreshJwtToken(token)`. Then each request header needing the token would get it.
+
+2. For the form authentication, avoid using `HttpMethod.Get`. 
+
+3. For WebSockets, `JWT` is more suggested than general authentications. Besides, the configured client authentication 
+info would not be put into `HttpHeader` as common `Http requests`. 
+
+    For example, if you apply basic authentication on a `WebSocket` route, you should   
+    extend the request with specific header info before you proceed.    
+    ```
+    phone.CompoundApi{
+        header(HttpHeaders.Authorization, "Basic " + "jetbrains:foobar".encodeBase64())
+    }
+    ```
 # Extend
 The source code is `open` with additional choices.
 {{< tabs extend >}}
