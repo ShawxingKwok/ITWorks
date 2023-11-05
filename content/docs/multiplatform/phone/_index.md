@@ -292,12 +292,13 @@ request in this way, the parameters would be put in `URL`.
 Phone.DemoApi{
     setBody(...)
 }
+...
 ```
 
 
 # Crypto
 ## Cipher
-First you need to provide a `Cipher` in module `shared` with customed protocol from other 
+First you need to provide a `Cipher` in module `shared` with customed protocol with other 
 Kotlin multiplatform Crypto libraries.   
 {{< codeImg "crypto/cipher.png" >}}
 
@@ -356,9 +357,9 @@ Attentions
     Then you could refresh the jwt token on client as before, and put it in `phone` via 
     `phone.refreshJwtToken(token)`. Then each request header needing the token would get it.
 
-2. For the form authentication, avoid using `HttpMethod.Get`. 
+2. For the `form authentication`, avoid using `HttpMethod.Get`. 
 
-3. For WebSockets, `JWT` is more suggested than general authentications. Besides, the configured client authentication 
+3. For `WebSockets`, `JWT` is more suggested than general authentications. Besides, the configured client authentication 
 info would not be put into `HttpHeader` as common `Http requests`. 
 
     For example, if you apply basic authentication on a `WebSocket` route, you should   
@@ -367,6 +368,7 @@ info would not be put into `HttpHeader` as common `Http requests`.
     phone.CompoundApi{
         header(HttpHeaders.Authorization, "Basic " + "jetbrains:foobar".encodeBase64())
     }
+    ...
     ```
 # Extend
 The source code is `open` with additional choices.
