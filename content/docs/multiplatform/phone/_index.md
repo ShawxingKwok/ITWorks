@@ -261,7 +261,7 @@ Install `WebSockets` plugins on server and each client first.
 {{< tabs "call websocket" >}}
 
 {{< tab "client" >}}
-You will get the parameter `enableWss` in the `Phone` constructor.
+You will get the parameter `enablesWss` in the `Phone` constructor.
 {{< codeImg "calls/websocket_enableWss.png" >}}
 <br>
 
