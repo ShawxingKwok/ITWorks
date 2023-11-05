@@ -295,7 +295,6 @@ Phone.DemoApi{
 ...
 ```
 
-
 # Crypto
 ## Cipher
 First you need to provide a `Cipher` in module `shared` with customed protocol with other 
@@ -329,6 +328,24 @@ is not enough for cases below.
 
 These are the actually paired serializers.
 {{< codeImg "customSerializers/serializers.png" >}}
+
+# Extend
+The source code is `open` with additional choices.
+{{< tabs extend >}}
+
+{{< tab client >}}
+{{< codeImg "extend/client_srccode.png" >}}
+{{< /tab >}}
+
+{{< tab server >}}
+{{< codeImg "extend/server_onStart.png" >}}
+<br>
+
+`onStart` is background called as below.
+{{< codeImg "extend/server_onStart_.png" >}}
+{{< /tab >}}
+
+{{< /tabs >}}
 
 # Auth
 {{< hint warning >}}
@@ -367,20 +384,10 @@ on a `WebSocket` route, you should extend the request with specific header info 
         header(HttpHeaders.Authorization, "Basic " + "jetbrains:foobar".encodeBase64())
     }
     ...
-    ```
-# Extend
-The source code is `open` with additional choices.
-{{< tabs extend >}}
+    ``` 
 
-{{< tab client >}}
-{{< codeImg "extend/client_srccode.png" >}}
-{{< /tab >}}
-
-{{< tab server >}}
-{{< codeImg "extend/server_srccode.png" >}}
-{{< /tab >}}
-
-{{< /tabs >}}
+4. For `OAuth`, you should configure its `callback` in `Route.onStart` introduced in the section 
+[extend](#extend). Note that `HttpMethod.Get` is the only permitted method.
 
 # Polymorphic functions
 For the backward compatibility, polymorphic functions except the first are required to declare the distinct id.
