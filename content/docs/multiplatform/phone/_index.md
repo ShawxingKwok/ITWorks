@@ -360,10 +360,8 @@ Attentions
 2. For the `form authentication`, avoid using `HttpMethod.Get`. 
 
 3. For `WebSockets`, `JWT` is more suggested than general authentications. Besides, the configured client authentication 
-info would not be put into `HttpHeader` as common `Http requests`. 
-
-    For example, if you apply basic authentication on a `WebSocket` route, you should   
-    extend the request with specific header info before you proceed.    
+info would not be put into `HttpHeader` as common `Http requests`. If you apply basic authentication 
+on a `WebSocket` route, you should extend the request with specific header info before you proceed.    
     ```
     phone.CompoundApi{
         header(HttpHeaders.Authorization, "Basic " + "jetbrains:foobar".encodeBase64())
