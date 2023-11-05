@@ -280,10 +280,9 @@ I suggest to use `onReceivedSuccess` instead.
 
 {{< /tabs >}}
 
-{{< codeImg "calls/websocket_isRaw.png" >}}
-
 You could set `isRaw` to `true` and get `ClientWebSocketSession` and `ServerWebSocketSession` on
 server and client sides.
+{{< codeImg "calls/websocket_isRaw.png" >}}
 
 # Parameter positions
 You may be concerned about the actual parameter positions because `URL` is sometimes a bad choice.
