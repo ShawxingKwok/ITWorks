@@ -407,7 +407,7 @@ You could intercept exceptions and respond a status code with the Ktor plugin {{
 `HttpStatusCode.OK` tells the client `Phone` to parse the body to the expected type, and `HttpStatusCode.NoContent` 
 tells `null`. Other status codes means failure.
 
-I suggest to only respond `400` or `500` with messages for exceptions
+I suggest to only respond `400` or `500` with messages for exceptions.
 
 # Future
 1. Documents and api generation for other languages.  
