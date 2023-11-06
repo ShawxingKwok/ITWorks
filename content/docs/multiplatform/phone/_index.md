@@ -99,7 +99,8 @@ ksp{
 
     arg("phone.default-method", "post")
     // optional
-    // arg("phone.jwt-auth-name", "")
+    // arg("phone.jwt-auth-name", "<your jwt auth name>")
+    // arg("phone.client-phone-modifiers", "internal abstract") // open by default
 }
 ```
 {{< /tab >}}
@@ -399,5 +400,10 @@ You could intercept exceptions and respond a status code with the Ktor plugin {{
 tells `null`. Other status codes means failure.
 
 I suggest to only respond `400` or `500` with messages.
+
+# Future
+1. Documents generation and api for languages.  
+2. Big binary data as parameters, and limited permission with a new `context`. `call.parameters`, `call.respond` and 
+   some other needless functions are invisible.
 
 # <a href="https://github.com/ShawxingKwok/Phone" target="_blank"> GitHub repo</a>
