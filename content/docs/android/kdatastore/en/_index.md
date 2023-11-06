@@ -194,7 +194,7 @@ Update stored value at `RadioButton`
 
 {{< /tabs >}}
 
-# Configuration
+# Setup
 
 Configure `build.gradle`/`build.gradle.kts` as below, or reference the demo in {{< repo KDataStore Github >}}
 which uses {{< newTab "version catalog" "https://developer.android.com/build/migrate-to-catalogs" >}}.
