@@ -63,7 +63,9 @@ plugins {
     id ("com.google.devtools.ksp") version "$kt-1.0.13"
     kotlin("plugin.serialization") version kt
 }
-
+repositories {
+    maven("https://s01.oss.sonatype.org/content/repositories/snapshots/")
+}
 kotlin {
     jvm{
         jvmToolchain(8)
@@ -110,7 +112,9 @@ ksp{
 plugins {
     kotlin("multiplatform") version "1.9.0"
 }
-
+repositories {
+    maven("https://s01.oss.sonatype.org/content/repositories/snapshots/")
+}
 kotlin {
     jvm{
         jvmToolchain(8)
