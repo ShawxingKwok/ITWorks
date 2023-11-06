@@ -402,7 +402,7 @@ tells `null`. Other status codes means failure.
 I suggest to only respond `400` or `500` with messages.
 
 # Future
-1. Documents generation and api for languages.  
+1. Documents and api generation for other languages.  
 2. Big binary data as parameters, and limited permission with a new `context`. `call.parameters`, `call.respond` and 
    some other needless functions are invisible.
 
