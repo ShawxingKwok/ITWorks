@@ -343,6 +343,14 @@ The source code is `open` with additional choices.
 
 {{< tab client >}}
 {{< codeImg "extend/client_srccode.png" >}}
+
+You could make the generated `Phone` `internal abstract` instead of `open` via ksp args. And then 
+set a public subclass.
+```
+ksp{
+    arg("phone.client-phone-modifiers", "internal abstract")
+}
+```
 {{< /tab >}}
 
 {{< tab server >}}
