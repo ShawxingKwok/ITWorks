@@ -9,22 +9,7 @@ Tracer annotations package is `pers.shawxingkwok.tracer` rather than that in vid
 
 # Root
 Each class with `@Tracer.Root` is considered as the trace start point, followed by its interior
-public/internal elements. You probably have seen this model in the home page. 
-
-<img src=../../singleBedroomHouse.png width=300/>
-<br>
-{{< tabs >}}
-{{< tab "Build" >}}
-Annotate the source class. Next build via the gradle tool.
-{{< video src="build" >}} 
-{{< /tab >}}
-{{< tab "Model" >}} 
-Model with positions and the tracer interface. 
-{{< video src="model" >}} 
-{{< /tab >}}
-{{< tab "Rebuild" >}} {{< video src="rebuild" >}} {{< /tab >}}
-{{< tab "Inject" >}} {{< video src="inject" >}} {{< /tab >}}
-{{< /tabs >}}
+public/internal elements. The code sample is displayed in the {{< newTab "home page" "../../" >}}. 
 
 # Nodes
 Now we add one bedroom and its some inner objects as below. As nodes grow on root or other nodes, 
