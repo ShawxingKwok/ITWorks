@@ -239,6 +239,9 @@ With `Phone.Call.Manual`, client also gets `HttpResponse` which is generally for
 {{< /tabs >}}
 
 ## PartialContent
+{{< hint warning >}}
+Required server plugin: `PartialContent` and `AutoHeadResponse`
+{{< /hint >}}
 {{< codeImg "calls/partialContent_shared.png" >}}
 {{< tabs "call partialContent" >}}
 
@@ -259,7 +262,7 @@ Responds `File` / `Stream` / `ByteReadChannel` as before.
 
 ## WebSocket
 {{< hint warning >}}
-Install `WebSockets` plugins on server and each client first.
+Required server and client plugins: `WebSockets` 
 {{< /hint >}}
 
 {{< codeImg "calls/websocket_shared.png" >}}
@@ -354,7 +357,8 @@ The source code is `open` with additional choices.
 
 # Auth
 {{< hint warning >}}
-Install the plugins `Authentication` on server and `Auth` on each client as in `Ktor` before.
+Required server plugin: `Authentication`   
+Required client plugin: `Auth`
 {{< /hint >}}
 Learn the auth part in Ktor if you are not familiar with it. Then you could get the point in this
 section easily.
