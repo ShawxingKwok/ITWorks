@@ -338,7 +338,7 @@ These are the actually paired serializers.
 {{< codeImg "customSerializers/serializers.png" >}}
 
 # Extend
-The source code is `open` with additional choices.
+The source code is `open` with options.
 {{< tabs extend >}}
 
 {{< tab client >}}
