@@ -4,7 +4,7 @@ weight: 6
 ---
 
 {{< hint warning >}}
-Learn {{< newTab "mockk" "https://mockk.io/" >}} first.
+Firstly learn {{< newTab "mockk" "https://mockk.io/" >}} which also works for static objects.
 {{< /hint >}}
 
 {{< codeImg "Engine.png" >}} 
