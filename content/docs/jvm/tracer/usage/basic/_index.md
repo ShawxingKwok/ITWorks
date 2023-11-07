@@ -12,10 +12,10 @@ Each class with `@Tracer.Root` is considered as the trace start point, followed 
 public/internal elements. The code sample is displayed in the {{< newTab "home page" "../../" >}}. 
 
 # Nodes
-There are some traced properties with the same type. If all of them are traced from the root class, the 
+There are some traced properties with the same type. If all their interior properties are traced from the root class, the 
 generated traces would be huge and chaotic. Considering from a different perspective, repeatedly constructed 
-objects should maintain independence in design, so that they do not require deep exploration when invoked. 
-For example, in modeling a car, you might access the cost of the wheels from the outside, but there is no need 
+objects should maintain independence in design, so that they do not require deep exploration when called. 
+Take the example of a car model, you might access the cost of the wheels from the outside, but there is no need 
 to drill down to the specific prices of the tires and axles.
 
 Now we add one bedroom and its some inner objects as below. As nodes grow on root or other nodes, 
