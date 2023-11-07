@@ -3,7 +3,9 @@ title: Test
 weight: 6
 ---
 
-See {{< newTab "mockk" "https://mockk.io/" >}} if it's new to you.
+{{< hint warning >}}
+Learn {{< newTab "mockk" "https://mockk.io/" >}} first.
+{{< /hint >}}
 
 {{< codeImg "Engine.png" >}} 
 <br>
