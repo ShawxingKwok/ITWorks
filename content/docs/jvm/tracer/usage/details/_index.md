@@ -45,24 +45,6 @@ Makes all generated code internal, which is commonly used in submodules.
 
 {{< rimImg src=_superTypes.png >}}
 
-# Trace ends    
-Elements or their type classes with features below are considered as trace ends, meaning 
-they are never traced insides. Like classes with `Tracer.Root`, they should be designed independently 
-and avoid being exploring too insides.
-- `Tracer.Root`, `Tracer.Nodes` or `Tracer.Tip`
-- Interface, enum, object 
-- Nullable
-- Foreign (from other modules, generated code, or Java files)
-- Rebuilt symbols 
-  - Constructor is not single and empty.   
-  - Generic
-  - Abstract / open  
-  
-{{< rimImg src="trace ends.png" >}}  
-
-No `_Int` appears.  
-{{< rimImg src="_trace ends.png" width=680 >}}  
-
 # Type alias
 Alias types are always converted to its actual types.
 
