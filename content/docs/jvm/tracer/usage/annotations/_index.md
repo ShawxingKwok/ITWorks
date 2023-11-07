@@ -38,7 +38,7 @@ Super type trace rules are later explained on page 'Details'.
 Source code
 {{< codeImg omit.png >}}
 <br>
-`i` with `context receiver` is omitted in generated code. 
+`i` with `context receiver` is omitted in generated code now. 
 {{< codeImg _omit.png >}}
 {{<hint info >}}
 `Tracer interfaces` are not essential to implement in simple tests. 
