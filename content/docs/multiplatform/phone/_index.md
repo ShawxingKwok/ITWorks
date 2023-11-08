@@ -411,11 +411,9 @@ For the backward compatibility, polymorphic functions except the first are requi
 {{< codeImg "polymorphic/shared.png" >}}
 
 # Exception
-You could intercept exceptions and respond a status code with the Ktor plugin {{< newTab StatusPages "https://ktor.io/docs/status-pages.html#configure" >}}. 
-`HttpStatusCode.OK` tells the client `Phone` to parse the body to the expected type, and `HttpStatusCode.NoContent` 
-tells `null`. Other status codes means failure.
-
-I suggest to only respond `400` or `500` with messages for exceptions.
+You could intercept exceptions and respond a status code with the Ktor plugin {{< newTab StatusPages "https://ktor.io/docs/status-pages.html#configure" >}}.
+All status codes except `HttpStatusCode.OK` means failure. I suggest to only respond `400` or `500` with messages for 
+exceptions.
 
 # Roadmap
 1. Documents and api generation for other languages.  
