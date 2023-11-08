@@ -174,7 +174,7 @@ The options are `get`, `post`, `put`, `delete` and `patch` which could start wit
 <br>
 
 The `http method` of `login` in this case is `Post`. 
-{{< codeImg "codeUsageSample/demoApi.png" >}}
+{{< codeImg "coreUsageSample/demoApi.png" >}}
 <br>
 
 Default methods could be overridden in `Phone.Api`. Methods for each function could also be separately set. 
