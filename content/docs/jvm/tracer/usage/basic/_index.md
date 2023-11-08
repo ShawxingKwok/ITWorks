@@ -1,5 +1,5 @@
 ---
-title: Basic usage
+title: Basic
 weight: 1
 ---
 

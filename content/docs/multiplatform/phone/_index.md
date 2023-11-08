@@ -4,15 +4,15 @@ weight: 1
 ---
 
 # Abstract
-At present, each client platform contacts with the server according to the appointment document. 
+At present, each client platform connects to the server according to a predefined document. 
 However, it is cumbersome and error-prone because message formats differ on each route and http 
-method. Although {{< newTab grpc "https://grpc.io/" >}} works well as a `rpc` (remote procedure call) 
+method. Although {{< newTab gRpc "https://grpc.io/" >}} works well as an `RPC` (remote procedure call) 
 framework, it is not popular because it requires a third-party language and is hard to extend. 
-Therefore, I made this new `rpc` framework named `Phone` based on the new popular language `Kotlin multiplatform` 
+Therefore, I made this new `rpc` framework named `Phone` based on the new popular language `Kotlin Multiplatform` 
 and its web framework `Ktor`. `Phone` would be a great point for popularizing `Kotlin`, and revolutionary 
 together with it.
 
-Main advantages:
+Main advantages include:
 - Connects with shared interfaces, data types and related logics.
 - Main features are all supported and easily configured, e.g. various http methods, authentication,
   WebSocket, PartialContent, crypto, and automatic serialization.
