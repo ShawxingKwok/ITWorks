@@ -34,7 +34,7 @@ In `_Window_Bedroom_window`
 {{< rimImg src=_abstractLevel.png width="600" >}}
 
 # Type symbols conversion   
-Android forbids most original common symbols in property names, making me choose these substitutes  `⍒` `❨` `❩`
+Android forbids spaces and most original common symbols in property names, making me choose these substitutes  `⍒` `❨` `❩`
 `→` `‹` `›` `？` `，` `✶` `→` `↑` `↓` instead.
 {{< rimImg src=typeSymbols.png >}}
   
