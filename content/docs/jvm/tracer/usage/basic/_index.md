@@ -7,9 +7,39 @@ weight: 1
 Tracer annotations package is `pers.shawxingkwok.tracer` rather than that in videos.  
 {{< /hint >}}
 
+# Introduction
+<image src="singleBedroomHouse.png" width=300></image>
+
+{{< codeImg general.png >}}
+
+Pictures above explain disadvantages of the general model style. Now with `Kotlin-JVM`, `KSP` 
+and little configuration, `Tracer` generates extensional properties oriented to interior traceable 
+elements, which realizes **dependency injection** in a novel way.
+
+`Tracer` has main advantages compared to common DI tools as below. 
+- Little-config
+- Powerful: generic types and variances are parsable, and super types are also traceable.
+- Fast: no runtime cache or reflection
+
+This page tells how `Tracer` models and extends according to the top picture.   
+
 # Root
 Each class with `@Tracer.Root` is considered as the trace start point, followed by its interior
-public/internal elements. The code sample is displayed in the {{< newTab "home page" "../../" >}}. 
+public/internal elements. The code sample is displayed in the {{< newTab "home page" "../../" >}}.
+
+1. Annotate the source class (`House` in this case) with `Tracer` annotations.
+2. Build.
+3. Model with the generated tracer interfaces (`HouseTracer`).
+   {{< video src=model >}}
+
+4. Rebuild. There generates element traces as below.
+   {{< codeImg generation.png >}}
+5. Inject
+   {{< video src=inject >}}
+
+{{< hint info >}}
+The renaming problem could be solved by an IDE plugin that has not come out yet.
+{{< /hint >}}
 
 # Nodes
 There are some traced properties with the same type. If all their interior properties are traced from the root class, the 
