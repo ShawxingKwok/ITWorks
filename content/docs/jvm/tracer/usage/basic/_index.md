@@ -78,18 +78,17 @@ Generated code
 {{< /tabs >}}
 
 # Tip
-`Tracer.Tip` represents the trace end in which elements wouldn't be traced. 
+`Tracer.Tip` represents the carrier's elements are never traced. 
 
 {{< video src="tip" >}}
 {{<hint info >}}
 Context and the tracer interface are needless in a simple test.
 {{< /hint >}}
 
-# Trace ends
-Elements or their type classes with features below are considered as trace ends, meaning
+Elements or their type classes with features below are also considered as trace ends, meaning
 they are never traced insides. Like classes with `Tracer.Root`, they should be designed independently
 and avoid being exploring too insides.
-- `Tracer.Root`, `Tracer.Nodes` or `Tracer.Tip`
+- `Tracer.Root`, `Tracer.Nodes`
 - Interface, enum, object
 - Nullable
 - Foreign (from other modules, generated code, or Java files)
