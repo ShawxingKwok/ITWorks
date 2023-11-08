@@ -12,16 +12,16 @@ Tracer annotations package is `pers.shawxingkwok.tracer` rather than that in vid
 
 {{< codeImg general.png >}}
 
-Pictures above explain disadvantages of the general model style. Now with `Kotlin-JVM`, `KSP` 
-and little configuration, `Tracer` generates extensional properties oriented to interior traceable 
+The pictures above highlight the disadvantages of the general model style. Now, with `Kotlin-JVM`, `KSP`,
+and minimal configuration, `Tracer` generates extension properties oriented toward internal traceable
 elements, which realizes **dependency injection** in a novel way.
 
-`Tracer` has main advantages compared to common DI tools as below. 
-- Little-config
-- Powerful: generic types and variances are parsable, and super types are also traceable.
-- Fast: no runtime cache or reflection
+`Tracer` has several main advantages over common DI tools, as listed below:
+- Minimal configuration.
+- Powerful: generic types and variances are parsable, and it can trace super types as well.
+- Fast: operates without runtime cache or reflection.
 
-This page tells how `Tracer` models and extends according to the top picture.   
+Contents below tell how `Tracer` models and extends relationships as shown in the top picture.
 
 # Root
 Each class with `@Tracer.Root` is considered as the trace start point, followed by its interior
