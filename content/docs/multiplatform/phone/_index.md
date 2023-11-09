@@ -66,7 +66,7 @@ plugins {
     kotlin("plugin.serialization") version kt
 }
 repositories {
-    maven("https://s01.oss.sonatype.org/content/repositories/snapshots/")
+    mavenCentral()
 }
 kotlin {
     jvm{
@@ -115,7 +115,7 @@ plugins {
     kotlin("multiplatform") version "1.9.0"
 }
 repositories {
-    maven("https://s01.oss.sonatype.org/content/repositories/snapshots/")
+    mavenCentral()
 }
 kotlin {
     jvm{
@@ -143,7 +143,7 @@ plugins {
 }
 
 repositories {
-    maven("https://s01.oss.sonatype.org/content/repositories/snapshots/")
+    mavenCentral()
 }
 
 kotlin {
