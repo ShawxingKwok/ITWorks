@@ -14,7 +14,7 @@ Currently, client platforms connect to the server with one of the following meth
     - A uniform language across all clients and servers, which can be notably restrictive. For example, Java cannot be 
       used on `browsers` and `iOS`.
 
-To address these issues, I have developed this new `RPC` framework named `Phone`, based on the increasingly favored 
+To address these issues, I developed this new `RPC` framework named `Phone`, based on the increasingly favored 
 `Kotlin Multiplatform` and its web framework `Ktor`. `Phone` is poised to greatly promote the use of `Kotlin Multiplatform` 
 and to be revolutionary together with it.
 
