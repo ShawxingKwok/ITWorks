@@ -31,11 +31,6 @@ Other platforms are also supported, e.g. `iOS` and `wasm`.
 
 {{< tab Shared >}}
 {{< video src=shared >}}
-{{< hint info >}}
-Parameters and the generic type (`LoginResult` in this case) should obey
-{{< newTab "Kotlin serialization" "https://github.com/Kotlin/kotlinx.serialization/blob/master/docs/basic-serialization.md" >}} rules,
-or be helped by [custom serializers](#serialize-third-party-types).
-{{< /hint >}}
 {{< /tab >}}
 
 {{< tab Server >}}
