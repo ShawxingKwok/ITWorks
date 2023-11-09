@@ -22,7 +22,7 @@ and to be revolutionary together with it.
 - It facilitates connections using shared `interfaces`, `data types`, and associated logics.
 - It provides robust support and straightforward configuration for essential features, including various `HTTP` methods, `authentication`, `WebSocket`, `PartialContent`, `cryptography`, and automated `serialization`.
 - It allows for custom extensions through the use of `Route` on servers, and `HttpRequestBuilder` and `HttpResponse` on clients, which are intuitively powerful due to their `Ktor` origin.
-- It's compatible with the traditional way. For instance, there may be a client using `C++`. It could connect to the 
+- It's compatible with the traditional way. For instance, there may be a client using `C++`. It can connect to the 
   server with the traditional `Json` conversion, and manual routes, and `HTTP` methods.  
 
 # Core usage sample
