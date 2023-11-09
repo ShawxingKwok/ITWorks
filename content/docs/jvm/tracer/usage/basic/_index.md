@@ -78,7 +78,7 @@ Generated code
 {{< /tabs >}}
 
 # Tip
-`Tracer.Tip` represents the carrier's elements are never traced. 
+`Tracer.Tip` represents the trace end, which means the carrier's elements are never traced. 
 
 {{< video src="tip" >}}
 {{<hint info >}}

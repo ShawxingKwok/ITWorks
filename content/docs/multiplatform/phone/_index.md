@@ -4,22 +4,27 @@ weight: 1
 ---
 
 # Abstract
-At present, each client platform connects to the server according to a predefined document. 
-However, it is cumbersome and error-prone because message formats differ on each route and http 
-method. Although {{< newTab gRpc "https://grpc.io/" >}} works well as an `RPC` (remote procedure call) 
-framework, it is not popular because it requires a third-party language and is hard to extend. 
-Therefore, I made this new `RPC` framework named `Phone` based on the new popular language `Kotlin Multiplatform` 
-and its web framework `Ktor`. `Phone` would be a great point for popularizing `Kotlin`, and revolutionary 
-together with it.
+Currently, client platforms connect to the server with one of the following methods:
 
-Main advantages include:
-- Connects with shared interfaces, data types and related logics.
-- Main features are all supported and easily configured, e.g. various http methods, authentication,
-  WebSocket, PartialContent, crypto, and automatic serialization.
-- Is manually extensible with the provided `Route` on servers, and `HttpRequestBuilder`, `HttpResponse` on clients.
+1. A predefined document, which is common yet cumbersome and prone to errors due to the varying message formats across 
+   different routes and `HTTP` methods.
+
+2. An `RPC` framework that requires either:
+    - A third-party language to define shared `interfaces` and `data types`.
+    - A uniform language across all clients and servers, which can be notably restrictive. For example, Java cannot be 
+      used on `browsers` and `iOS`.
+
+To address these issues, I have developed this new `RPC` framework named `Phone`, based on the increasingly favored 
+`Kotlin Multiplatform` and its web framework `Ktor`. `Phone` is poised to greatly promote the use of `Kotlin Multiplatform` 
+and to be revolutionary together with it.
+
+`Phone` offers key advantages:
+- It facilitates connections using shared `interfaces`, `data types`, and associated logics.
+- It provides robust support and straightforward configuration for essential features, including various `HTTP` methods, `authentication`, `WebSocket`, `PartialContent`, `cryptography`, and automated `serialization`.
+- It allows for custom extensions through the use of `Route` on servers, and `HttpRequestBuilder` and `HttpResponse` on clients, which are intuitively powerful due to their `Ktor` origin.
 
 # Core usage sample
-Other platforms are also supported, e.g. `ios` and `wasm`.   
+Other platforms are also supported, e.g. `iOS` and `wasm`.   
 {{< tabs "Core usage sample" >}}
 
 {{< tab Shared >}}
@@ -277,8 +282,11 @@ Request
 {{< codeImg "calls/websocket_client.png" >}}
 <br>
 
-I suggest to use `onReceivedSuccess` instead.
+I suggest to use `onReceivedSuccess` instead. 
 {{< codeImg "calls/websocket_onReceivedSuccess.png" >}}
+
+This function is generated in module `clientside`.
+{{< codeImg "calls/websocket_onReceivedSuccess_srccode.png" >}}
 
 {{< /tab >}}
 
@@ -403,8 +411,10 @@ on a `WebSocket` route, you should extend the request with specific header info 
     ...
     ``` 
 
-4. For `OAuth`, you should configure its `callback` in `Route.onStart` introduced in the section 
-[extend](#extend). Note that `HttpMethod.Get` is the only permitted method.
+4. OAuth
+{{< codeImg "auth/oauth_shared.png" >}}
+<br>
+{{< codeImg "auth/oauth_server.png" >}}
 
 # Polymorphic functions
 For the backward compatibility, polymorphic functions except the first are required to declare the distinct id.
