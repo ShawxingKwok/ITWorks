@@ -80,7 +80,7 @@ kotlin {
     sourceSets {
         val commonMain by getting{
             dependencies{
-                api("io.github.shawxingkwok:phone-runtime:1.0.0-SNAPSHOT")
+                api("io.github.shawxingkwok:phone-runtime:1.0.0")
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:1.6.0")
                 api("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
             }
@@ -90,7 +90,7 @@ kotlin {
 
 dependencies {
     // other platforms are needless here, because this compiler generates code and copy them to else where.
-    add("kspJvm", "io.github.shawxingkwok:phone-compiler:1.0.0-1.0.0-SNAPSHOT")
+    add("kspJvm", "io.github.shawxingkwok:phone-compiler:1.0.0-1.0.0")
 }
 
 ksp{
@@ -126,7 +126,7 @@ kotlin {
     sourceSets {
         val commonMain by getting{
             dependencies{
-                implementation("io.github.shawxingkwok:phone-runtime:1.0.0-SNAPSHOT"))
+                implementation("io.github.shawxingkwok:phone-runtime:1.0.0"))
                 api(project(":example:api:shared")) // or the remote 
                 implementation("io.ktor:ktor-server-core:<ktor_version>")
             }
@@ -158,7 +158,7 @@ kotlin {
     sourceSets {
         val commonMain by getting{
             dependencies{
-                implementation("io.github.shawxingkwok:phone-runtime:1.0.0-SNAPSHOT"))
+                implementation("io.github.shawxingkwok:phone-runtime:1.0.0"))
                 api(project(":example:api:shared")) // or the remote 
                 implementation("io.ktor:ktor-server-core:<ktor_version>")
             }
