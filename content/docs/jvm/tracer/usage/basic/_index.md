@@ -42,7 +42,7 @@ The renaming problem could be solved by an IDE plugin that has not come out yet.
 {{< /hint >}}
 
 # Nodes
-There are some traced properties with the same type. If all their interior properties are traced from the root class, the 
+There are some traced properties with the same type. If all their interior properties are traced with recurse from the root class, the 
 generated traces would be huge and chaotic. Considering from a different perspective, repeatedly constructed 
 objects should maintain independence in design, so that they do not require deep exploration when called. 
 Take the example of a car model, you might access the cost of the wheels from the outside, but there is no need 
