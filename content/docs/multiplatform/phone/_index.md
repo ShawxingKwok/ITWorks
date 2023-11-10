@@ -394,7 +394,7 @@ Attentions
     }
     ```
     Then you could refresh the jwt token on client as before, and put it in `phone` via 
-    `phone.refreshJwtToken(token)`. Then each request header needing the token would get it.
+    `phone.refreshJwtToken(token)`. Then each request header needing the `JWT` token would get it.
 
 2. For the `form authentication`, avoid using `HttpMethod.Get`. 
 
