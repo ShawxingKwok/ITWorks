@@ -25,7 +25,7 @@ Contents below tell how `Tracer` models and extends relationships as shown in th
 
 # Root
 Each class with `@Tracer.Root` is considered as the trace start point, followed by its interior
-public/internal elements. The code sample is displayed in the {{< newTab "home page" "../../" >}}.
+public/internal elements. 
 
 1. Annotate the source class (`House` in this case) with `Tracer` annotations.
 2. Build.
