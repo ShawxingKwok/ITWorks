@@ -299,8 +299,8 @@ server and client sides.
 
 # Parameter positions
 You may be concerned about the actual parameter positions because `URL` is sometimes a bad choice.
-Actually, `Phone` puts parameters in a form as long as the `HttpRequest body` is empty. If you set the body before 
-request in this way, the parameters would be put in `URL`.
+Actually, `Phone` puts parameters in a form as long as the `HTTP` method is not `Get` and the `HttpRequest body` is empty. 
+If you set the body before request in this way, the parameters would be put in `URL`.
 ```
 Phone.DemoApi{
     setBody(...)
