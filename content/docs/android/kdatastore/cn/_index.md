@@ -13,7 +13,7 @@ weight: 2
 - 通过委托生成 `key`。 
 - 采用 `MutbaleStateFlow` 即时观察、同步读写、异步写入磁盘。
 - 备份数据以处理异常。
-- 优化了类型支持
+- 优化了类型支持, 支持 Kotlin Serializable, 自定义, Nullable
 
 详见 <a href="https://github.com/ShawxingKwok/KDataStore" target="_blank">GitHub 仓库</a>(含demo)。
 
