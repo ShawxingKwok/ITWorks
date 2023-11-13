@@ -410,11 +410,12 @@ on a `WebSocket` route, you should extend the request with specific header info 
     ``` 
 
 4. For `OAuth`
-Shared api
-{{< codeImg "auth/oauth_shared.png" >}}
-<br>
-Server side
-{{< codeImg "auth/oauth_server.png" >}}
+
+   Shared api
+   {{< codeImg "auth/oauth_shared.png" >}}
+   <br>
+   Server side
+   {{< codeImg "auth/oauth_server.png" >}}
 
 # Polymorphic functions
 For the backward compatibility, polymorphic functions except the first are required to declare the distinct id.
