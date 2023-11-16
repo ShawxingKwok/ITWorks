@@ -28,7 +28,7 @@ and to be revolutionary together with it.
 
 {{< hint info >}}
 It's not essential to replace all `JavaScript` with `Kotlin-Js` on the browser side, because the generated `Phone.kt` is callable 
-from `JavaScript`.  
+from `JavaScript`.
 {{< /hint >}}
 
 # Core usage sample
