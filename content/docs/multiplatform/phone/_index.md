@@ -26,6 +26,11 @@ and to be revolutionary together with it.
 - It's compatible with the traditional way. For instance, there may be a client using `C++`. It can connect to the 
   server with the traditional `Json` conversion, manual routes, and `HTTP` methods.  
 
+{{< hint info >}}
+It's not essential to replace all `JavaScript` with `Kotlin-Js` on the browser side, because the generated `Phone.kt` is callable 
+from `JavaScript`.  
+{{< /hint >}}
+
 # Core usage sample
 Other platforms are also supported, e.g. `iOS` and `wasm`.   
 {{< tabs "Core usage sample" >}}
@@ -413,6 +418,7 @@ on a `WebSocket` route, you should extend the request with specific header info 
 
    Shared api
    {{< codeImg "auth/oauth_shared.png" >}}
+
    <br>
    Server side
    {{< codeImg "auth/oauth_server.png" >}}
