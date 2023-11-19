@@ -9,7 +9,7 @@ Currently, client platforms connect to the server with one of the following meth
 1. A predefined document, which is common yet cumbersome and prone to errors due to the varying message formats across 
    different routes and `HTTP` methods.
 
-2. An `RPC` (remote procedure call) framework that requires either:
+2. An `RPC` (remote procedure call) framework that is hard to get `context` and requires either:
     - A third-party language to define shared `interfaces` and `data types`.
     - A uniform language across all clients and servers, which can be notably restrictive. For example, Java cannot be 
       used on `browsers` and `iOS`.
