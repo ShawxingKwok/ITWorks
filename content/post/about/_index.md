@@ -9,9 +9,9 @@ title: About
 This website displays most of my personal open-source works in which {{< newTab `Phone` "/ITWorks/docs/multiplatform/phone" >}}
 is the representative. Note that I center on **Kotlin**, and only `Android.KDataStore` considers `Java` supports.
 
-My code is probably the globally best at present for its functionality, creativity, concision, structure, efficiency, 
-and beauty. Wish you could learn from it！I also encourage those authorities to provide better tutorials with embedded 
-short videos instead of all voluminous words and pictures.
+My code is worth learning for its functionality, creativity, concision, structure, efficiency, and
+beauty. I also encourage those authorities to provide better tutorials with embedded short videos
+instead of all voluminous words and pictures.
 
 In addition, if you are familiar with IT but feel hard to learn Kotlin and love Java or Go more, your logic
 ability may not be well enough for you to engage in IT. If so, do something you love and excel
