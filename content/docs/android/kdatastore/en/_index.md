@@ -46,7 +46,7 @@ This page will be moved to `Multiplatform` after `IOS` support.
     </td>
     <td>All are performed asynchronously, so only <span style="color:red">response time consumption is measured: 8.6ms</span></td>
     <td><span style="color: red;">
-        Startup: 13.5ms</span> <br> This impact is not significant when the file size increases substantially, and it can be also resolved by call the <code>KDataStore subclass </code>asynchronously in the <code>Application</code>.
+        Startup: 13.5ms</span> <br> This impact is not significant when the file size increases substantially, and it can be also resolved by calling the <code>KDataStore subclass </code>asynchronously in the <code>Application</code>.
         <br><br>Reading and writing time consumption is negligible. 
     </td>
 </tr>
