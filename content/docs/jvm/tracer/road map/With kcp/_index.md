@@ -3,7 +3,7 @@ title: With Kcp
 weight: 3
 ---
 
-# Automatic config
+# Automatic initial config
 ```kotlin
 @Tracer.Root
 class House : HouseTracer{
