@@ -1,9 +1,7 @@
 ---
-title: New syntax
+title: With Kcp
 weight: 3
 ---
-
-I expect `Jetbrains` would add these new syntaxes to `Kotlin` one day. 
 
 # Automatic config
 ```kotlin
@@ -29,14 +27,15 @@ class Bed{
 <p align="center">↓</p>  
 
 ```kotlin
-root class House
+@Tracer.Root
+class House
 
-nodes(House)
+@Tracer.Nodes(House::class)
 class Bedroom{
     val bed = Bed()
 }
 
-tracer(Bedroom)
+context(BedroomTracer)
 class Bed{
     private val house get() = __House
 }
@@ -48,7 +47,8 @@ like `private val bedroom get() = _Bedroom` immediately without building.
 
 # Nullable elements are insides traceable and flexibly hinted
 ```kotlin
-root class A{
+@Tracer.Root
+class A{
     var b: B? = null
   
     private val name: String? get() = _String_C_name 
