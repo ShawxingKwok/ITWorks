@@ -99,7 +99,7 @@ and avoid being exploring too insides.
 
 {{< rimImg src="trace ends.png" >}}
 
-No `_Int` appears.  
+Those `x` are not traced.
 {{< rimImg src="_trace ends.png" width=680 >}}
 
 # Omit
