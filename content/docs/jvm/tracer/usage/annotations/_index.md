@@ -13,7 +13,7 @@ Tracer annotations package is `pers.shawxingkwok.tracer` rather than that in vid
 {{< codeImg general.png >}}
 
 The pictures above highlight the disadvantages of the general model style. Now, with `Kotlin-JVM`, `KSP`,
-and minimal configuration, `Tracer` generates extension properties oriented toward internal traceable
+and minimal configuration, `Tracer` generates extensional properties oriented toward internal traceable
 elements, which realizes **dependency injection** in a novel way.
 
 `Tracer` has several main advantages over common DI tools, as listed below:
