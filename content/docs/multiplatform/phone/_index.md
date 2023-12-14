@@ -233,7 +233,7 @@ You could also upload files easily as below.
 ## Manual
 With `Phone.Call.Manual`, client also gets `HttpResponse` which is generally for downloading files. 
 {{< hint info >}} 
-The generic type is not limited to `Pair<String, Long>` but arbitrary.
+The generic type is not limited to `Pair<String, Long>`. 
 {{< /hint >}} 
 {{< codeImg "calls/manual_shared.png" >}}
 {{< tabs "call manual" >}}
