@@ -1,0 +1,191 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Abstract # Currently, client platforms connect to the server with one of the following methods:
+A predefined document, which is common yet cumbersome and prone to errors due to the varying message formats across different routes and HTTP methods.
+An RPC (remote procedure call) framework that is hard to get context and requires either:
+A third-party language to define shared interfaces and data types. A uniform language across all clients and servers, which can be notably restrictive."><meta name=theme-color content="#FFFFFF"><meta name=color-scheme content="light dark"><meta property="og:title" content="Phone"><meta property="og:description" content><meta property="og:type" content="website"><meta property="og:url" content="https://shawxingkwok.github.io/ITWorks/docs/multiplatform/phone/"><title>Phone | ITWorks</title>
+<link rel=manifest href=/ITWorks/manifest.json><link rel=icon href=/ITWorks/favicon.png type=image/x-icon><link rel=stylesheet href=/ITWorks/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz+OQteg=" crossorigin=anonymous><script defer src=/ITWorks/flexsearch.min.js></script><script defer src=/ITWorks/en.search.min.ed93006d887fe830a40f983c60c8998c83bbf91c5e1c77f0b572ac20996fdaa9.js integrity="sha256-7ZMAbYh/6DCkD5g8YMiZjIO7+RxeHHfwtXKsIJlv2qk=" crossorigin=anonymous></script><link rel=alternate type=application/rss+xml href=https://shawxingkwok.github.io/ITWorks/docs/multiplatform/phone/index.xml title=ITWorks></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/ITWorks/><span>ITWorks</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><span>Multiplatform</span><ul><li><a href=/ITWorks/docs/multiplatform/phone/ class=active>Phone</a><ul></ul></li><li><a href=/ITWorks/docs/multiplatform/kt-util/>Kt util</a><ul></ul></li><li><span>MVB</span><ul><li><a href=/ITWorks/docs/multiplatform/mvb/android/>Android</a><ul></ul></li><li><a href=/ITWorks/docs/multiplatform/mvb/proposal/>New UI design proposal</a><ul></ul></li></ul></li></ul></li><li><span>Jvm</span><ul><li><input type=checkbox id=section-f25bd71e28f95a08738fe572911bbd65 class=toggle>
+<label for=section-f25bd71e28f95a08738fe572911bbd65 class="flex justify-between"><a role=button>Tracer</a></label><ul><li><a href=/ITWorks/docs/jvm/tracer/setup/>Setup</a><ul></ul></li><li><span>Usage</span><ul><li><a href=/ITWorks/docs/jvm/tracer/usage/annotations/>Annotations</a><ul></ul></li><li><a href=/ITWorks/docs/jvm/tracer/usage/naming-rules/>Naming rules</a><ul></ul></li><li><a href=/ITWorks/docs/jvm/tracer/usage/details/>Details</a><ul></ul></li><li><a href=/ITWorks/docs/jvm/tracer/usage/notes/>Notes</a><ul></ul></li><li><a href=/ITWorks/docs/jvm/tracer/usage/practice/>Practice</a><ul></ul></li><li><a href=/ITWorks/docs/jvm/tracer/usage/test/>Test</a><ul></ul></li></ul></li><li><input type=checkbox id=section-df9c64161b156bfffd3c37819ba87474 class=toggle>
+<label for=section-df9c64161b156bfffd3c37819ba87474 class="flex justify-between"><a role=button>Road map</a></label><ul><li><a href=/ITWorks/docs/jvm/tracer/road-map/short-term/>Short term</a><ul></ul></li><li><a href=/ITWorks/docs/jvm/tracer/road-map/long-term/>Long term</a><ul></ul></li><li><a href=/ITWorks/docs/jvm/tracer/road-map/With-kcp/>With Kcp</a><ul></ul></li></ul></li><li><span>Extensions</span><ul><li><a href=/ITWorks/docs/jvm/tracer/extensions/android/>Android-view</a><ul></ul></li></ul></li><li><a href=https://github.com/ShawxingKwok/Tracer target=_blank>Github repo</a><ul></ul></li></ul></li></ul></li><li><span>Android</span><ul><li><a href=/ITWorks/docs/android/util-core/>Util-core</a><ul></ul></li><li><a href=/ITWorks/docs/android/util-view/>Util-view</a><ul></ul></li><li><input type=checkbox id=section-48404a5524d1704bcb4add35c067ddd2 class=toggle>
+<label for=section-48404a5524d1704bcb4add35c067ddd2 class="flex justify-between"><a role=button>KDataStore</a></label><ul><li><a href=/ITWorks/docs/android/kdatastore/en/>English</a><ul></ul></li><li><a href=/ITWorks/docs/android/kdatastore/cn/>中文</a><ul></ul></li></ul></li></ul></li></ul><br><ul><li><a href=/ITWorks/post/about/>About</a></li><li><a href=/ITWorks/post/sponsor/>Sponsor</a></li><li><a href=https://github.com/ShawxingKwok target=_blank rel=noopener>Github</a></li><li><a href=mailto:ShawxingKwok@126.com target=_blank rel=noopener>Email</a></li><li><a href=/ITWorks/post/license/>License</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/ITWorks/svg/menu.svg class=book-icon alt=Menu>
+</label><strong>Phone</strong>
+<label for=toc-control><img src=/ITWorks/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#abstract>Abstract</a></li><li><a href=#core-usage-sample>Core usage sample</a></li><li><a href=#setup>Setup</a></li><li><a href=#http-methods>Http methods</a></li><li><a href=#calls>Calls</a><ul><li><a href=#common>Common</a></li><li><a href=#manual>Manual</a></li><li><a href=#partialcontent>PartialContent</a></li><li><a href=#websocket>WebSocket</a></li></ul></li><li><a href=#parameter-positions>Parameter positions</a></li><li><a href=#crypto>Crypto</a><ul><li><a href=#cipher>Cipher</a></li><li><a href=#targets>Targets</a></li></ul></li><li><a href=#serialize-third-party-types>Serialize third-party types</a></li><li><a href=#extend>Extend</a></li><li><a href=#auth>Auth</a></li><li><a href=#polymorphic-functions>Polymorphic functions</a></li><li><a href=#exception>Exception</a></li><li><a href=#roadmap>Roadmap</a></li><li><a href=#a-hrefhttpsgithubcomshawxingkwokphone-target_blank-github-repoa><a href=https://github.com/ShawxingKwok/Phone target=_blank>GitHub repo</a></a></li></ul></nav></aside></header><article class=markdown><h1 id=abstract>Abstract
+<a class=anchor href=#abstract>#</a></h1><p>Currently, client platforms connect to the server with one of the following methods:</p><ol><li><p>A predefined document, which is common yet cumbersome and prone to errors due to the varying message formats across
+different routes and <code>HTTP</code> methods.</p></li><li><p>An <code>RPC</code> (remote procedure call) framework that is hard to get <code>context</code> and requires either:</p><ul><li>A third-party language to define shared <code>interfaces</code> and <code>data types</code>.</li><li>A uniform language across all clients and servers, which can be notably restrictive. For example, Java cannot be
+used on <code>browsers</code> and <code>iOS</code>.</li></ul></li></ol><p>To address these issues, I developed this new <span style=color:red><strong>RPC</strong></span>
+framework named <code>Phone</code>, based on the increasingly favored
+<code>Kotlin Multiplatform</code> and its web framework <code>Ktor</code>. <code>Phone</code> is poised to greatly promote the use of <code>Kotlin Multiplatform</code>
+and to be revolutionary together with it.</p><p><code>Phone</code> offers key advantages:</p><ul><li>It facilitates connections using shared <code>interfaces</code>, <code>data types</code>, and associated logics.</li><li>It provides robust support and straightforward configuration for essential features, including various <code>HTTP</code> methods, <code>authentication</code>, <code>WebSocket</code>, <code>PartialContent</code>, <code>cryptography</code>, and automated <code>serialization</code>.</li><li>It allows for custom extensions through the use of <code>Route</code> on servers, and <code>HttpRequestBuilder</code> and <code>HttpResponse</code> on clients, which are intuitively powerful due to their <code>Ktor</code> origin.</li><li>It&rsquo;s compatible with the traditional way. For instance, there may be a client using <code>C++</code>. It can connect to the
+server with the traditional <code>Json</code> conversion, manual routes, and <code>HTTP</code> methods.</li></ul><blockquote class="book-hint info">It&rsquo;s not essential to replace all <code>JavaScript</code> with <code>Kotlin-Js</code> on the browser side, because the generated <code>Phone.kt</code> is callable
+from <code>JavaScript</code>.</blockquote><h1 id=core-usage-sample>Core usage sample
+<a class=anchor href=#core-usage-sample>#</a></h1><p>Other platforms are also supported, e.g. <code>iOS</code> and <code>wasm</code>.<br><div class=book-tabs><input type=radio class=toggle name="tabs-Core usage sample" id="tabs-Core usage sample-0" checked>
+<label for="tabs-Core usage sample-0">Shared</label><div class="book-tabs-content markdown-inner"><video controls preload=auto width=100% playsinline class=html-video>
+<source src=/ITWorks/docs/multiplatform/phone/shared.mp4 type=video/mp4><span>Your browser doesn't support embedded videos, but don't worry, you can <a href=/ITWorks/docs/multiplatform/phone/shared.mp4>download it</a> and watch it with your favorite video player!</span></video></div><input type=radio class=toggle name="tabs-Core usage sample" id="tabs-Core usage sample-1">
+<label for="tabs-Core usage sample-1">Server</label><div class="book-tabs-content markdown-inner"><video controls preload=auto width=100% playsinline class=html-video>
+<source src=/ITWorks/docs/multiplatform/phone/server.mp4 type=video/mp4><span>Your browser doesn't support embedded videos, but don't worry, you can <a href=/ITWorks/docs/multiplatform/phone/server.mp4>download it</a> and watch it with your favorite video player!</span></video></div><input type=radio class=toggle name="tabs-Core usage sample" id="tabs-Core usage sample-2">
+<label for="tabs-Core usage sample-2">Browser</label><div class="book-tabs-content markdown-inner"><video controls preload=auto width=100% playsinline class=html-video>
+<source src=/ITWorks/docs/multiplatform/phone/browser.mp4 type=video/mp4><span>Your browser doesn't support embedded videos, but don't worry, you can <a href=/ITWorks/docs/multiplatform/phone/browser.mp4>download it</a> and watch it with your favorite video player!</span></video></div><input type=radio class=toggle name="tabs-Core usage sample" id="tabs-Core usage sample-3">
+<label for="tabs-Core usage sample-3">Android</label><div class="book-tabs-content markdown-inner"><video controls preload=auto width=100% playsinline class=html-video>
+<source src=/ITWorks/docs/multiplatform/phone/android.mp4 type=video/mp4><span>Your browser doesn't support embedded videos, but don't worry, you can <a href=/ITWorks/docs/multiplatform/phone/android.mp4>download it</a> and watch it with your favorite video player!</span></video></div></div></p><h1 id=setup>Setup
+<a class=anchor href=#setup>#</a></h1><blockquote class="book-hint warning"><ol><li>Kotlin version is required at least <code>1.9.0</code>.</li><li>Get familiar with <a href=https://ktor.io target=_blank>Ktor</a> first.</li></ol></blockquote><p>Create three modules of which all could be multiplatform, configure them as below in <code>build.gradle.kts</code>,
+and implement them in <code>server</code> and each <code>client</code>.</p><div class=book-tabs><input type=radio class=toggle name=tabs-setup id=tabs-setup-0 checked>
+<label for=tabs-setup-0>shared</label><div class="book-tabs-content markdown-inner"><pre tabindex=0><code>plugins {
+    val kt = &#34;1.9.0&#34;
+    kotlin(&#34;multiplatform&#34;) version kt
+    id (&#34;com.google.devtools.ksp&#34;) version &#34;$kt-1.0.13&#34;
+    kotlin(&#34;plugin.serialization&#34;) version kt
+}
+repositories {
+    mavenCentral()
+}
+kotlin {
+    jvm{
+        jvmToolchain(8)
+    }
+    js{
+        browser()
+    }
+    // other needed native platforms
+
+    sourceSets {
+        val commonMain by getting{
+            dependencies{
+                api(&#34;io.github.shawxingkwok:phone-runtime:1.0.0&#34;)
+                implementation(&#34;org.jetbrains.kotlinx:kotlinx-serialization-core:1.6.0&#34;)
+                api(&#34;org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0&#34;)
+            }
+        }
+    }
+}
+
+dependencies {
+    // other platforms are needless here, because this compiler generates code and copy them to else where.
+    add(&#34;kspJvm&#34;, &#34;io.github.shawxingkwok:phone-compiler:1.0.0-1.0.0&#34;)
+}
+
+ksp{
+    // set your own local path
+    arg(&#34;phone.server-package-path&#34;, &#34;${projectDir.parent}/serverside/src/commonMain/kotlin&#34;)
+    arg(&#34;phone.client-package-path&#34;, &#34;${projectDir.parent}/clientside/src/commonMain/kotlin&#34;)
+
+    arg(&#34;phone.server-package-name&#34;, &#34;pers.shawxingkwok.server.phone&#34;)
+    arg(&#34;phone.client-package-name&#34;, &#34;pers.shawxingkwok.client.phone&#34;)
+
+    arg(&#34;phone.default-method&#34;, &#34;post&#34;)
+    // optional
+    // arg(&#34;phone.jwt-auth-name&#34;, &#34;&lt;your jwt auth name&gt;&#34;)
+    // arg(&#34;phone.client-phone-modifiers&#34;, &#34;internal abstract&#34;) // &#34;open&#34; by default
+}
+</code></pre></div><input type=radio class=toggle name=tabs-setup id=tabs-setup-1>
+<label for=tabs-setup-1>server side</label><div class="book-tabs-content markdown-inner"><pre tabindex=0><code>plugins {
+    kotlin(&#34;multiplatform&#34;) version &#34;1.9.0&#34;
+}
+repositories {
+    mavenCentral()
+}
+kotlin {
+    jvm{
+        jvmToolchain(8)
+    }
+    // other needed native platforms
+
+    sourceSets {
+        val commonMain by getting{
+            dependencies{
+                implementation(&#34;io.github.shawxingkwok:phone-runtime:1.0.0&#34;))
+                api(project(&#34;:example:api:shared&#34;)) // or the remote 
+                implementation(&#34;io.ktor:ktor-server-core:&lt;ktor_version&gt;&#34;)
+            }
+        }
+    }
+}
+</code></pre></div><input type=radio class=toggle name=tabs-setup id=tabs-setup-2>
+<label for=tabs-setup-2>client side</label><div class="book-tabs-content markdown-inner"><pre tabindex=0><code>plugins {
+    kotlin(&#34;multiplatform&#34;) version &#34;1.9.0&#34;
+}
+
+repositories {
+    mavenCentral()
+}
+
+kotlin {
+    jvm{
+        jvmToolchain(8)
+    }
+    js{
+        browser()
+    }
+    // other needed native platforms
+
+    sourceSets {
+        val commonMain by getting{
+            dependencies{
+                implementation(&#34;io.github.shawxingkwok:phone-runtime:1.0.0&#34;))
+                api(project(&#34;:example:api:shared&#34;)) // or the remote 
+                implementation(&#34;io.ktor:ktor-server-core:&lt;ktor_version&gt;&#34;)
+            }
+        }
+    }
+}
+</code></pre></div></div><h1 id=http-methods>Http methods
+<a class=anchor href=#http-methods>#</a></h1><p>The default <code>http method</code> is indispensable and configured in <code>shared</code> module <code>build.gradle.kts</code>.
+The options are <code>get</code>, <code>post</code>, <code>put</code>, <code>delete</code> and <code>patch</code> which could start with an uppercase char.<div style="border:1px solid #000;padding-left:10px;padding-top:10px;padding-right:10px"><img src=httpMethods/ksp.png alt></div><br></p><p>The <code>http method</code> of <code>login</code> in this case is <code>Post</code>.<div style="border:1px solid #000;padding-left:10px;padding-top:10px;padding-right:10px"><img src=coreUsageSample/demoApi.png alt></div><br></p><p>Default methods could be overridden in <code>Phone.Api</code>. Methods for each function could also be separately set.
+Now <code>login</code> method is <code>Post</code>, and <code>search</code> method is <code>Get</code>.<div style="border:1px solid #000;padding-left:10px;padding-top:10px;padding-right:10px"><img src=httpMethods/loginSearch.png alt></div></p><h1 id=calls>Calls
+<a class=anchor href=#calls>#</a></h1><blockquote class="book-hint info"><ol><li>In this section, all parameters and generic type are not limited.</li><li>Examples run on Jvm. There are multiple <code>Ktor</code> ways of handling file stream in <code>body</code>.
+Each platform also handles differently.</li></ol></blockquote><h2 id=common>Common
+<a class=anchor href=#common>#</a></h2><p>This is the most common case.<div style="border:1px solid #000;padding-left:10px;padding-top:10px;padding-right:10px"><img src=calls/common_search_shared.png alt></div><div class=book-tabs><input type=radio class=toggle name="tabs-call common search" id="tabs-call common search-0" checked>
+<label for="tabs-call common search-0">client</label><div class="book-tabs-content markdown-inner"><div style="border:1px solid #000;padding-left:10px;padding-top:10px;padding-right:10px"><img src=calls/common_search_client.png alt></div></div><input type=radio class=toggle name="tabs-call common search" id="tabs-call common search-1">
+<label for="tabs-call common search-1">server</label><div class="book-tabs-content markdown-inner"><div style="border:1px solid #000;padding-left:10px;padding-top:10px;padding-right:10px"><img src=calls/common_search_server.png alt></div></div></div><br></p><p>Remember to use <code>Unit</code> if the returned value is needless.<div style="border:1px solid #000;padding-left:10px;padding-top:10px;padding-right:10px"><img src=calls/common_delete.png alt></div><br></p><p>You could also upload files easily as below.<div style="border:1px solid #000;padding-left:10px;padding-top:10px;padding-right:10px"><img src=calls/common_upload_shared.png alt></div><div class=book-tabs><input type=radio class=toggle name="tabs-call common upload file" id="tabs-call common upload file-0" checked>
+<label for="tabs-call common upload file-0">client</label><div class="book-tabs-content markdown-inner"><div style="border:1px solid #000;padding-left:10px;padding-top:10px;padding-right:10px"><img src=calls/common_upload_client.png alt></div></div><input type=radio class=toggle name="tabs-call common upload file" id="tabs-call common upload file-1">
+<label for="tabs-call common upload file-1">server</label><div class="book-tabs-content markdown-inner"><div style="border:1px solid #000;padding-left:10px;padding-top:10px;padding-right:10px"><img src=calls/common_upload_server.png alt></div></div></div></p><h2 id=manual>Manual
+<a class=anchor href=#manual>#</a></h2><p>With <code>Phone.Call.Manual</code>, client also gets <code>HttpResponse</code> which is generally for downloading files.<blockquote class="book-hint info">The generic type is not limited to <code>Pair&lt;String, Long></code>.</blockquote><div style="border:1px solid #000;padding-left:10px;padding-top:10px;padding-right:10px"><img src=calls/manual_shared.png alt></div><div class=book-tabs><input type=radio class=toggle name="tabs-call manual" id="tabs-call manual-0" checked>
+<label for="tabs-call manual-0">client</label><div class="book-tabs-content markdown-inner"><div style="border:1px solid #000;padding-left:10px;padding-top:10px;padding-right:10px"><img src=calls/manual_client.png alt></div></div><input type=radio class=toggle name="tabs-call manual" id="tabs-call manual-1">
+<label for="tabs-call manual-1">server</label><div class="book-tabs-content markdown-inner"><div style="border:1px solid #000;padding-left:10px;padding-top:10px;padding-right:10px"><img src=calls/manual_server.png alt></div></div></div></p><h2 id=partialcontent>PartialContent
+<a class=anchor href=#partialcontent>#</a></h2><p><blockquote class="book-hint warning">Required server plugin: <code>PartialContent</code> and <code>AutoHeadResponse</code></blockquote><div style="border:1px solid #000;padding-left:10px;padding-top:10px;padding-right:10px"><img src=calls/partialContent_shared.png alt></div><div class=book-tabs><input type=radio class=toggle name="tabs-call partialContent" id="tabs-call partialContent-0" checked>
+<label for="tabs-call partialContent-0">client</label><div class="book-tabs-content markdown-inner"><div style="border:1px solid #000;padding-left:10px;padding-top:10px;padding-right:10px"><img src=calls/partialContent_client.png alt></div><p>Type of the handler</p><div style="border:1px solid #000;padding-left:10px;padding-top:10px;padding-right:10px"><img src=calls/partialContent_handlerType.png alt></div><p>The parameter <code>ranges</code> is vararg. If you pass no <code>LongRange</code>, you would get the whole file.</p></div><input type=radio class=toggle name="tabs-call partialContent" id="tabs-call partialContent-1">
+<label for="tabs-call partialContent-1">server</label><div class="book-tabs-content markdown-inner">Responds <code>File</code> / <code>Stream</code> / <code>ByteReadChannel</code> as before.</div></div></p><h2 id=websocket>WebSocket
+<a class=anchor href=#websocket>#</a></h2><blockquote class="book-hint warning">Required server and client plugins: <code>WebSockets</code></blockquote><p><div style="border:1px solid #000;padding-left:10px;padding-top:10px;padding-right:10px"><img src=calls/websocket_shared.png alt></div><div class=book-tabs><input type=radio class=toggle name="tabs-call websocket" id="tabs-call websocket-0" checked>
+<label for="tabs-call websocket-0">client</label><div class="book-tabs-content markdown-inner"><p>You will get the parameter <code>enablesWss</code> in the <code>Phone</code> constructor.</p><div style="border:1px solid #000;padding-left:10px;padding-top:10px;padding-right:10px"><img src=calls/websocket_enableWss.png alt></div><br><p>Request</p><div style="border:1px solid #000;padding-left:10px;padding-top:10px;padding-right:10px"><img src=calls/websocket_client.png alt></div><br><p>I suggest to use <code>onReceivedSuccess</code> instead.</p><div style="border:1px solid #000;padding-left:10px;padding-top:10px;padding-right:10px"><img src=calls/websocket_onReceivedSuccess.png alt></div><p>This function is generated in module <code>clientside</code>.</p><div style="border:1px solid #000;padding-left:10px;padding-top:10px;padding-right:10px"><img src=calls/websocket_onReceivedSuccess_srccode.png alt></div></div><input type=radio class=toggle name="tabs-call websocket" id="tabs-call websocket-1">
+<label for="tabs-call websocket-1">server</label><div class="book-tabs-content markdown-inner"><div style="border:1px solid #000;padding-left:10px;padding-top:10px;padding-right:10px"><img src=calls/websocket_server.png alt></div></div></div></p><p>You could set <code>isRaw</code> to <code>true</code> and get <code>ClientWebSocketSession</code> and <code>ServerWebSocketSession</code> on
+server and client sides.<div style="border:1px solid #000;padding-left:10px;padding-top:10px;padding-right:10px"><img src=calls/websocket_isRaw.png alt></div></p><h1 id=parameter-positions>Parameter positions
+<a class=anchor href=#parameter-positions>#</a></h1><p>You may be concerned about the actual parameter positions because <code>URL</code> is sometimes a bad choice.
+Actually, <code>Phone</code> puts parameters in a form as long as the <code>HTTP</code> method is not <code>Get</code> and the <code>HttpRequest body</code> is empty.
+If you set the body before request in this way, the parameters would be put in <code>URL</code>.</p><pre tabindex=0><code>Phone.DemoApi{
+    setBody(...)
+}
+...
+</code></pre><h1 id=crypto>Crypto
+<a class=anchor href=#crypto>#</a></h1><h2 id=cipher>Cipher
+<a class=anchor href=#cipher>#</a></h2><p>First you need to provide a <code>Cipher</code> in module <code>shared</code> with customed protocol with other
+Kotlin multiplatform Crypto libraries.<br><div style="border:1px solid #000;padding-left:10px;padding-top:10px;padding-right:10px"><img src=crypto/cipher.png alt></div></p><h2 id=targets>Targets
+<a class=anchor href=#targets>#</a></h2><p>Next you could annotate these symbols with <code>Phone.Crypto</code>.<div style="border:1px solid #000;padding-left:10px;padding-top:10px;padding-right:10px"><img src=crypto/targets.png alt></div></p><ol><li>The top <code>Phone.Crypto</code> means all messages in <code>DemoApi</code> will be encrypted.
+The next <code>Phone.Crypto</code> on the function <code>login</code> means all messages related to this function will
+be encrypted.</li><li>For parameters, annotating it or its type makes the same sense.</li><li>Annotating the returned <code>Any</code> makes <code>LoginResult</code> crypto.</li></ol><p>For this <code>login</code> case, I suggest annotating <code>Phone.Crypto</code> only on the function.<br><div style="border:1px solid #000;padding-left:10px;padding-top:10px;padding-right:10px"><img src=crypto/style.png alt></div></p><h1 id=serialize-third-party-types>Serialize third-party types
+<a class=anchor href=#serialize-third-party-types>#</a></h1><p>Suppose <code>class Time</code> is from a third-party library and is not adapted with <code>Kotlin Serializable</code>.<div style="border:1px solid #000;padding-left:10px;padding-top:10px;padding-right:10px"><img src=customSerializers/classTime.png alt></div></p><p>You could set a serializer annotated with <code>Phone.Serializer</code>.<div style="border:1px solid #000;padding-left:10px;padding-top:10px;padding-right:10px"><img src=customSerializers/timeSerializer.png alt></div></p><p>Note that it&rsquo;s not as intelligent as the original <code>Kotlin serialization</code>. A single <code>TimeSerializer</code>
+is not enough for cases below.</p><p><div style="border:1px solid #000;padding-left:10px;padding-top:10px;padding-right:10px"><img src=customSerializers/sumTime.png alt></div><br></p><p>These are the actually paired serializers.<div style="border:1px solid #000;padding-left:10px;padding-top:10px;padding-right:10px"><img src=customSerializers/serializers.png alt></div></p><h1 id=extend>Extend
+<a class=anchor href=#extend>#</a></h1><p>The source code is <code>open</code> with options.<div class=book-tabs><input type=radio class=toggle name=tabs-extend id=tabs-extend-0 checked>
+<label for=tabs-extend-0>client</label><div class="book-tabs-content markdown-inner"><div style="border:1px solid #000;padding-left:10px;padding-top:10px;padding-right:10px"><img src=extend/client_srccode.png alt></div><p>You could make the generated <code>Phone</code> <code>internal abstract</code> instead of <code>open</code> via ksp args. And then
+set a public subclass.</p><pre tabindex=0><code>ksp{
+    arg(&#34;phone.client-phone-modifiers&#34;, &#34;internal abstract&#34;)
+}
+</code></pre></div><input type=radio class=toggle name=tabs-extend id=tabs-extend-1>
+<label for=tabs-extend-1>server</label><div class="book-tabs-content markdown-inner"><div style="border:1px solid #000;padding-left:10px;padding-top:10px;padding-right:10px"><img src=extend/server_onStart.png alt></div><br><p><code>onStart</code> is background called as below.</p><div style="border:1px solid #000;padding-left:10px;padding-top:10px;padding-right:10px"><img src=extend/server_onStart_.png alt></div></div></div></p><h1 id=auth>Auth
+<a class=anchor href=#auth>#</a></h1><p><blockquote class="book-hint warning">Required server plugin: <code>Authentication</code><br>Required client plugin: <code>Auth</code></blockquote>Learn the auth part in Ktor if you are not familiar with it. Then you could get the point in this
+section easily.</p><p>Annotation <code>Phone.Auth</code><div style="border:1px solid #000;padding-left:10px;padding-top:10px;padding-right:10px"><img src=auth/common_authAnnot.png alt></div><br><div style="border:1px solid #000;padding-left:10px;padding-top:10px;padding-right:10px"><img src=auth/common_auth.png alt></div><br>Generated code in the route function.<div style="border:1px solid #000;padding-left:10px;padding-top:10px;padding-right:10px"><img src=auth/common_srccode.png alt></div><br></p><p>Attentions</p><ol><li><p>For <code>JWT</code>, at first tell <code>Phone</code> the jwt auth name in <code>build.gradle(.kts)</code> in module <code>shared</code> as below.</p><pre tabindex=0><code>ksp {
+   arg(&#34;phone.jwt-auth-name&#34;, &#34;&lt;your-auth-name&gt;&#34;) 
+}
+</code></pre><p>Then you could refresh the jwt token on client as before, and put it in <code>phone</code> via
+<code>phone.refreshJwtToken(token)</code>. Then each request header needing the <code>JWT</code> token would get it.</p></li><li><p>For the <code>form authentication</code>, avoid using <code>HttpMethod.Get</code>.</p></li><li><p>For <code>WebSockets</code>, <code>JWT</code> is more suggested than general authentications. Besides, the configured client authentication
+info would not be put into <code>HttpHeader</code> as common <code>Http requests</code>. If you apply basic authentication
+on a <code>WebSocket</code> route, you should extend the request with specific header info before you proceed.</p><pre tabindex=0><code>phone.CompoundApi{
+    header(HttpHeaders.Authorization, &#34;Basic &#34; + &#34;jetbrains:foobar&#34;.encodeBase64())
+}
+...
+</code></pre></li><li><p>For <code>OAuth</code></p><p>Shared api<div style="border:1px solid #000;padding-left:10px;padding-top:10px;padding-right:10px"><img src=auth/oauth_shared.png alt></div></p><br>Server side<div style="border:1px solid #000;padding-left:10px;padding-top:10px;padding-right:10px"><img src=auth/oauth_server.png alt></div></li></ol><h1 id=polymorphic-functions>Polymorphic functions
+<a class=anchor href=#polymorphic-functions>#</a></h1><p>For the backward compatibility, polymorphic functions except the first are required to declare the distinct id.<div style="border:1px solid #000;padding-left:10px;padding-top:10px;padding-right:10px"><img src=polymorphic/shared.png alt></div></p><h1 id=exception>Exception
+<a class=anchor href=#exception>#</a></h1><p>You could intercept exceptions and respond a status code with the Ktor plugin <a href=https://ktor.io/docs/status-pages.html#configure target=_blank>StatusPages</a>.
+All status codes except <code>HttpStatusCode.OK</code> means failure. I suggest to only respond <code>400</code> or <code>500</code> with messages for
+exceptions.</p><h1 id=roadmap>Roadmap
+<a class=anchor href=#roadmap>#</a></h1><ol><li>Documents and api generation for other languages.</li><li>Big binary data as parameters, and limited permission with a new <code>context</code>. <code>call.parameters</code>, <code>call.respond</code> and
+some other needless functions are invisible.</li></ol><h1 id=a-hrefhttpsgithubcomshawxingkwokphone-target_blank-github-repoa><a href=https://github.com/ShawxingKwok/Phone target=_blank>GitHub repo</a>
+<a class=anchor href=#a-hrefhttpsgithubcomshawxingkwokphone-target_blank-github-repoa>#</a></h1></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/ShawxingKwok/ITWorks/blob/main/content/docs/multiplatform/phone/_index.md target=_blank rel=noopener><img src=/ITWorks/svg/edit.svg class=book-icon alt=Edit>
+<span>Edit this page</span></a></div></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#abstract>Abstract</a></li><li><a href=#core-usage-sample>Core usage sample</a></li><li><a href=#setup>Setup</a></li><li><a href=#http-methods>Http methods</a></li><li><a href=#calls>Calls</a><ul><li><a href=#common>Common</a></li><li><a href=#manual>Manual</a></li><li><a href=#partialcontent>PartialContent</a></li><li><a href=#websocket>WebSocket</a></li></ul></li><li><a href=#parameter-positions>Parameter positions</a></li><li><a href=#crypto>Crypto</a><ul><li><a href=#cipher>Cipher</a></li><li><a href=#targets>Targets</a></li></ul></li><li><a href=#serialize-third-party-types>Serialize third-party types</a></li><li><a href=#extend>Extend</a></li><li><a href=#auth>Auth</a></li><li><a href=#polymorphic-functions>Polymorphic functions</a></li><li><a href=#exception>Exception</a></li><li><a href=#roadmap>Roadmap</a></li><li><a href=#a-hrefhttpsgithubcomshawxingkwokphone-target_blank-github-repoa><a href=https://github.com/ShawxingKwok/Phone target=_blank>GitHub repo</a></a></li></ul></nav></div></aside></main></body></html>
